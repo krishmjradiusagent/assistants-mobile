@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mel background states</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="mel-brand.css">
+<link rel="stylesheet" href="mel-chat-overrides.css">
+<link rel="stylesheet" href="c-prompt-row.css">
+<link rel="stylesheet" href="bg.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rm-root bg" data-theme="{{theme}}" data-expression="quiet" data-platform="ios">
+
+<sc-if value="{{sceneHome}}" hint-placeholder-val="{{true}}">
+<div class="hs">
+<button type="button" class="bg-tap" aria-label="Home screen" onClick="{{tapBg}}"></button>
+<sc-if value="{{showWsm}}" hint-placeholder-val="{{false}}">
+<div class="hs-row" style="position: relative; z-index: 2">
+<button type="button" class="wg wg--s" aria-label="Ask Mel, opens chat" onClick="{{noop}}" style="border: 0; font: inherit; text-align: left; cursor: pointer">
+<span class="bm wg-s__mark" aria-hidden="true"><svg viewBox="-10 -10 140 140" fill="none"><g class="bm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="bm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="bm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span>
+<span><p class="wg-s__t">Ask Mel</p><p class="wg-s__d">Opens chat</p></span>
+</button>
+<button type="button" class="wg wg--s" aria-label="Talk to Mel, starts voice" onClick="{{start}}" style="border: 0; font: inherit; text-align: left; cursor: pointer">
+<span class="wg-s__ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></span>
+<span><p class="wg-s__t">Talk to Mel</p><p class="wg-s__d">Starts voice</p></span>
+</button>
+</div>
+<div class="wg wg--m" style="position: relative; z-index: 2">
+<div class="wg-top">
+<span class="bm" aria-hidden="true"><svg viewBox="-10 -10 140 140" fill="none"><g class="bm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="bm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="bm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span>
+<div class="wg-pill"><span>Ask anything</span><b aria-label="Dictate"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path></svg></b><b class="wg-voice" aria-label="Talk to Mel"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></b></div>
+</div>
+<div class="c-prompt-rows">
+<button type="button" class="c-prompt-row"><svg class="c-prompt-row__glyph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,165.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,168H64a8,8,0,0,1-8-8V40a8,8,0,0,1,16,0V152H204.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,165.66Z"></path></svg><span class="c-prompt-row__text">Follow up with Sarah Reynolds</span></button>
+<button type="button" class="c-prompt-row"><svg class="c-prompt-row__glyph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,165.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,168H64a8,8,0,0,1-8-8V40a8,8,0,0,1,16,0V152H204.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,165.66Z"></path></svg><span class="c-prompt-row__text">Show my top buyers this week</span></button>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{showWl}}" hint-placeholder-val="{{false}}">
+<div class="wg wg--l" style="position: relative; z-index: 2">
+<div class="wg-top">
+<span class="bm" aria-hidden="true"><svg viewBox="-10 -10 140 140" fill="none"><g class="bm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="bm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="bm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span>
+<p class="t-title" style="margin: 0; font-weight: 600">Mel suggests</p>
+</div>
+<p class="wg-info">3 clients need a follow-up today.</p>
+<div class="c-prompt-rows">
+<button type="button" class="c-prompt-row"><svg class="c-prompt-row__glyph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,165.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,168H64a8,8,0,0,1-8-8V40a8,8,0,0,1,16,0V152H204.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,165.66Z"></path></svg><span class="c-prompt-row__text">Follow up with Sarah Reynolds</span></button>
+<button type="button" class="c-prompt-row"><svg class="c-prompt-row__glyph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,165.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,168H64a8,8,0,0,1-8-8V40a8,8,0,0,1,16,0V152H204.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,165.66Z"></path></svg><span class="c-prompt-row__text">Remind me to call Mike at 4 PM</span></button>
+<button type="button" class="c-prompt-row"><svg class="c-prompt-row__glyph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,165.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,168H64a8,8,0,0,1-8-8V40a8,8,0,0,1,16,0V152H204.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,165.66Z"></path></svg><span class="c-prompt-row__text">Show my top buyers this week</span></button>
+<button type="button" class="c-prompt-row"><svg class="c-prompt-row__glyph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,165.66l-48,48a8,8,0,0,1-11.32-11.32L204.69,168H64a8,8,0,0,1-8-8V40a8,8,0,0,1,16,0V152H204.69l-34.35-34.34a8,8,0,0,1,11.32-11.32l48,48A8,8,0,0,1,229.66,165.66Z"></path></svg><span class="c-prompt-row__text">Draft a just-listed email</span></button>
+</div>
+<div class="wg-fill"></div>
+<div class="wg-pill"><span>Ask anything</span><b aria-label="Dictate"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path></svg></b><b class="wg-voice" aria-label="Talk to Mel"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></b></div>
+</div>
+</sc-if>
+<sc-if value="{{showWempty}}" hint-placeholder-val="{{false}}">
+<div class="wg wg--l" style="position: relative; z-index: 2">
+<div class="wg-top">
+<span class="bm" aria-hidden="true"><svg viewBox="-10 -10 140 140" fill="none"><g class="bm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="bm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="bm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span>
+<p class="t-title" style="margin: 0; font-weight: 600">Mel suggests</p>
+</div>
+<div class="wg-empty">
+<p class="t-body" style="font-weight: 600">Nothing due today.</p>
+<p class="t-meta" style="color: var(--text-secondary)">Ask me anything, or talk to me.</p>
+</div>
+<div class="wg-pill"><span>Ask anything</span><b aria-label="Dictate"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path></svg></b><b class="wg-voice" aria-label="Talk to Mel"><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></b></div>
+</div>
+</sc-if>
+<div class="hs-grid" style="position: relative; z-index: 0">
+<sc-for list="{{apps}}" as="a" hint-placeholder-count="8"><span class="hs-app"></span></sc-for>
+</div>
+<div class="hs-dock"><span class="hs-app"></span><span class="hs-app"></span><span class="hs-app"></span><span class="hs-app"></span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{sceneLock}}" hint-placeholder-val="{{false}}">
+<div class="ls">
+<sc-if value="{{showLw}}" hint-placeholder-val="{{false}}">
+<p class="ls-inline"><span class="bm bm--mono" style="width: 16px; height: 16px" aria-hidden="true"><svg viewBox="-10 -10 140 140" fill="none"><g class="bm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="bm-ring" cx="60" cy="60" r="13" stroke="var(--wall)" stroke-width="2.5" fill="none"></circle><circle class="bm-dot" cx="60" cy="60" r="13" fill="var(--wall)"></circle></g></svg></span>2 follow-ups today</p>
+</sc-if>
+<sc-if value="{{noLw}}" hint-placeholder-val="{{true}}"><p class="ls-date">Wednesday 28 October</p></sc-if>
+<p class="ls-time">9:41</p>
+<sc-if value="{{showLw}}" hint-placeholder-val="{{false}}">
+<div class="lw-row">
+<a class="lw-c" href="#" aria-label="Talk to Mel"><span class="bm bm--mono" aria-hidden="true"><svg viewBox="-10 -10 140 140" fill="none"><g class="bm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="bm-ring" cx="60" cy="60" r="13" stroke="var(--wall)" stroke-width="2.5" fill="none"></circle><circle class="bm-dot" cx="60" cy="60" r="13" fill="var(--wall)"></circle></g></svg></span></a>
+<a class="lw-r" href="#" aria-label="Ask Mel, Sarah has not replied in 5 days"><b><span class="bm bm--mono" aria-hidden="true"><svg viewBox="-10 -10 140 140" fill="none"><g class="bm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="bm-ring" cx="60" cy="60" r="13" stroke="var(--wall)" stroke-width="2.5" fill="none"></circle><circle class="bm-dot" cx="60" cy="60" r="13" fill="var(--wall)"></circle></g></svg></span>Ask Mel</b><span>Sarah hasn’t replied in 5 days</span></a>
+<a class="lw-c" href="#" aria-label="Ask Mel, opens chat"><svg width="28" height="28" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.350,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.790,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"></path></svg></a>
+</div>
+</sc-if>
+<div class="ls-bottom"><span class="ls-round" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M184,16H72A16,16,0,0,0,56,32V77.53a8.07,8.07,0,0,0,1.18,4.18L80,121.31V224a16,16,0,0,0,16,16h64a16,16,0,0,0,16-16V121.31l22.82-39.6A8.07,8.07,0,0,0,200,77.53V32A16,16,0,0,0,184,16ZM72,32H184V64H72ZM160,224H96V128h64Z"></path></svg></span><span class="ls-round" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"></path></svg></span></div>
+</div>
+</sc-if>
+
+<sc-if value="{{showLa}}" hint-placeholder-val="{{false}}">
+<div class="la" role="group" aria-label="Mel live activity">
+<div class="dx-head">
+<span class="bm bm--brand" aria-hidden="true"><sc-if value="{{xMIdle}}" hint-placeholder-val="{{true}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3.2s" repeatCount="indefinite"></animateTransform><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"><animate attributeName="r" values="13;30;13" dur="3.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="13" fill="#FFFFFF"><animate attributeName="r" values="13;14.5;13" dur="3.2s" repeatCount="indefinite"></animate></circle></g></svg></sc-if><sc-if value="{{xMListen}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.0s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.0s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="15" fill="#FFFFFF"></circle></svg></sc-if><sc-if value="{{xMThink}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="42" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.00s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.00s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.15s" repeatCount="indefinite"></animate></circle><circle cx="78" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.30s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.30s" repeatCount="indefinite"></animate></circle></svg></sc-if><sc-if value="{{xMSpeak}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><rect x="35.5" y="55.0" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;26;10" dur="0.9s" begin="0.00s" repeatCount="indefinite"></animate><animate attributeName="y" values="55.0;47.0;55.0" dur="0.9s" begin="0.00s" repeatCount="indefinite"></animate></rect><rect x="46.0" y="49.0" width="7" height="22" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="22;8;22" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate><animate attributeName="y" values="49.0;56.0;49.0" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate></rect><rect x="56.5" y="45.0" width="7" height="30" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="30;14;30" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate><animate attributeName="y" values="45.0;53.0;45.0" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate></rect><rect x="67.0" y="53.0" width="7" height="14" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="14;30;14" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate><animate attributeName="y" values="53.0;45.0;53.0" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate></rect><rect x="77.5" y="55.0" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;20;10" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate><animate attributeName="y" values="55.0;50.0;55.0" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate></rect></svg></sc-if><sc-if value="{{xMDone}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="20" fill="#FFFFFF"><animate attributeName="r" values="13;22;20;20" keyTimes="0;0.2;0.3;1" dur="2.8s" repeatCount="indefinite"></animate></circle><path d="M51 60.5 L57.5 67 L70 54" stroke="#12A867" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="30" stroke-dashoffset="30"><animate attributeName="stroke-dashoffset" values="30;30;0;0" keyTimes="0;0.2;0.38;1" dur="2.8s" repeatCount="indefinite"></animate></path></svg></sc-if><sc-if value="{{xMAttn}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#0E2B30"></path><circle cx="60" cy="60" r="13" fill="#3DDC97"><animate attributeName="fill-opacity" values="1;0.35;1" dur="0.9s" repeatCount="indefinite"></animate></circle><circle cx="98" cy="22" r="11" fill="#3DDC97" stroke="#FFFFFF" stroke-width="4"><animate attributeName="r" values="11;13;11" dur="0.9s" repeatCount="indefinite"></animate></circle></svg></sc-if><sc-if value="{{xMOff}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#DCE8E4"></path><circle cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></sc-if></span>
+<div class="dx-id"><p class="dx-t">{{xTitle}}</p><p class="dx-s">{{xSub}}</p></div>
+<sc-if value="{{xHasDots}}" hint-placeholder-val="{{true}}"><span class="dd" data-kind="{{xDotKind}}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></sc-if>
+</div>
+<sc-if value="{{xHasCap}}" hint-placeholder-val="{{true}}"><p class="dx-cap">{{xCap}}</p></sc-if>
+<sc-if value="{{xHasDraft}}" hint-placeholder-val="{{false}}"><div class="dx-draft"><p class="dx-draft__t">{{xDraft}}</p></div></sc-if>
+<sc-if value="{{xHasBar}}" hint-placeholder-val="{{false}}"><div class="dx-bar" role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow="{{xBarNow}}"><i style="{{xBarStyle}}"></i></div></sc-if>
+<div class="dx-acts">
+<sc-if value="{{aVoice}}" hint-placeholder-val="{{true}}">
+<button type="button" class="dx-btn dx-btn--icon" aria-label="{{muteLabel}}" aria-pressed="{{mutedStr}}" onClick="{{toggleMute}}"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.92,218.62l-160-176A8,8,0,0,0,42.08,53.38L80,95.09V128a48,48,0,0,0,69.11,43.12l11.1,12.2A63.41,63.41,0,0,1,128,192a64.070,64.070,0,0,1-64-64,8,8,0,0,0-16,0,80.11,80.11,0,0,0,72,79.6V240a8,8,0,0,0,16,0V207.59a78.83,78.83,0,0,0,35.16-12.22l30.92,34a8,8,0,1,0,11.84-10.76ZM128,160a32,32,0,0,1-32-32V112.69l41.66,45.82A32,32,0,0,1,128,160Zm57.52-3.91A63.32,63.32,0,0,0,192,128a8,8,0,0,1,16,0,79.16,79.16,0,0,1-8.11,35.12,8,8,0,0,1-7.19,4.49,7.88,7.88,0,0,1-3.51-.82A8,8,0,0,1,185.52,156.09ZM84,44.87A48,48,0,0,1,176,64v64a49.19,49.19,0,0,1-.26,5,8,8,0,0,1-8,7.17,8.13,8.13,0,0,1-.84,0,8,8,0,0,1-7.12-8.79c.11-1.1.17-2.24.17-3.36V64A32,32,0,0,0,98.64,51.25,8,8,0,1,1,84,44.87Z"></path></svg></button>
+</sc-if>
+<sc-if value="{{aNeeds}}" hint-placeholder-val="{{false}}"><a class="dx-btn dx-btn--light" href="{{openHref}}">Open</a></sc-if>
+<sc-if value="{{aNet}}" hint-placeholder-val="{{false}}"><button type="button" class="dx-btn dx-btn--light">Try again</button></sc-if>
+<sc-if value="{{aOpen}}" hint-placeholder-val="{{false}}"><button type="button" class="dx-btn dx-btn--light">Open chat</button></sc-if>
+<sc-if value="{{aEnd}}" hint-placeholder-val="{{true}}"><button type="button" class="dx-btn dx-btn--end" onClick="{{end}}"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>End</button></sc-if>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{islandIdle}}" hint-placeholder-val="{{false}}"><div class="di di--idle" aria-hidden="true"></div></sc-if>
+
+<sc-if value="{{islandC}}" hint-placeholder-val="{{true}}">
+<button type="button" class="di di--c" style="{{cWidth}}" aria-label="{{cAria}}" onClick="{{tapIsland}}">
+<span class="bm bm--brand" aria-hidden="true"><sc-if value="{{cMIdle}}" hint-placeholder-val="{{true}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3.2s" repeatCount="indefinite"></animateTransform><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"><animate attributeName="r" values="13;30;13" dur="3.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="13" fill="#FFFFFF"><animate attributeName="r" values="13;14.5;13" dur="3.2s" repeatCount="indefinite"></animate></circle></g></svg></sc-if><sc-if value="{{cMListen}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.0s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.0s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="15" fill="#FFFFFF"></circle></svg></sc-if><sc-if value="{{cMThink}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="42" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.00s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.00s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.15s" repeatCount="indefinite"></animate></circle><circle cx="78" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.30s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.30s" repeatCount="indefinite"></animate></circle></svg></sc-if><sc-if value="{{cMSpeak}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><rect x="35.5" y="55.0" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;26;10" dur="0.9s" begin="0.00s" repeatCount="indefinite"></animate><animate attributeName="y" values="55.0;47.0;55.0" dur="0.9s" begin="0.00s" repeatCount="indefinite"></animate></rect><rect x="46.0" y="49.0" width="7" height="22" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="22;8;22" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate><animate attributeName="y" values="49.0;56.0;49.0" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate></rect><rect x="56.5" y="45.0" width="7" height="30" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="30;14;30" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate><animate attributeName="y" values="45.0;53.0;45.0" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate></rect><rect x="67.0" y="53.0" width="7" height="14" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="14;30;14" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate><animate attributeName="y" values="53.0;45.0;53.0" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate></rect><rect x="77.5" y="55.0" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;20;10" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate><animate attributeName="y" values="55.0;50.0;55.0" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate></rect></svg></sc-if><sc-if value="{{cMDone}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="20" fill="#FFFFFF"><animate attributeName="r" values="13;22;20;20" keyTimes="0;0.2;0.3;1" dur="2.8s" repeatCount="indefinite"></animate></circle><path d="M51 60.5 L57.5 67 L70 54" stroke="#12A867" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="30" stroke-dashoffset="30"><animate attributeName="stroke-dashoffset" values="30;30;0;0" keyTimes="0;0.2;0.38;1" dur="2.8s" repeatCount="indefinite"></animate></path></svg></sc-if><sc-if value="{{cMAttn}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#0E2B30"></path><circle cx="60" cy="60" r="13" fill="#3DDC97"><animate attributeName="fill-opacity" values="1;0.35;1" dur="0.9s" repeatCount="indefinite"></animate></circle><circle cx="98" cy="22" r="11" fill="#3DDC97" stroke="#FFFFFF" stroke-width="4"><animate attributeName="r" values="11;13;11" dur="0.9s" repeatCount="indefinite"></animate></circle></svg></sc-if><sc-if value="{{cMOff}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#DCE8E4"></path><circle cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></sc-if></span>
+<span class="di-trail">
+<sc-if value="{{cRing}}" hint-placeholder-val="{{false}}"><svg class="pr" viewBox="0 0 20 20" aria-hidden="true"><circle class="pr-bg" cx="10" cy="10" r="8"></circle><circle class="pr-fg" cx="10" cy="10" r="8" stroke-dasharray="{{ringDash}}"></circle></svg></sc-if>
+<sc-if value="{{cCheck}}" hint-placeholder-val="{{false}}"><svg width="16" height="16" viewBox="0 0 256 256" fill="#3DDC97" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg></sc-if>
+<sc-if value="{{cWarn}}" hint-placeholder-val="{{false}}"><svg width="16" height="16" viewBox="0 0 256 256" fill="#FF8A80" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z"></path></svg></sc-if>
+<sc-if value="{{cHasLabel}}" hint-placeholder-val="{{false}}"><span class="di-lab" data-tone="{{cTone}}">{{cLabel}}</span></sc-if>
+<sc-if value="{{cDots}}" hint-placeholder-val="{{true}}"><span class="dd" data-kind="{{cDotKind}}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></sc-if>
+</span>
+</button>
+</sc-if>
+
+<sc-if value="{{islandMin}}" hint-placeholder-val="{{false}}">
+<div class="di di--c di--other" style="left: calc(50% - 22px)" aria-label="Timer, 4 minutes 12 seconds"><span class="di-timer"><i></i></span><span class="di-timer">4:12</span></div>
+<button type="button" class="di--min" style="left: 299px; border: 0; padding: 0; cursor: pointer" aria-label="Mel voice, speaking" onClick="{{tapIsland}}"><span class="bm bm--brand" aria-hidden="true"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><rect x="35.5" y="55.0" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;26;10" dur="0.9s" begin="0.00s" repeatCount="indefinite"></animate><animate attributeName="y" values="55.0;47.0;55.0" dur="0.9s" begin="0.00s" repeatCount="indefinite"></animate></rect><rect x="46.0" y="49.0" width="7" height="22" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="22;8;22" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate><animate attributeName="y" values="49.0;56.0;49.0" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate></rect><rect x="56.5" y="45.0" width="7" height="30" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="30;14;30" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate><animate attributeName="y" values="45.0;53.0;45.0" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate></rect><rect x="67.0" y="53.0" width="7" height="14" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="14;30;14" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate><animate attributeName="y" values="53.0;45.0;53.0" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate></rect><rect x="77.5" y="55.0" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;20;10" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate><animate attributeName="y" values="55.0;50.0;55.0" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate></rect></svg></span></button>
+</sc-if>
+
+<sc-if value="{{islandX}}" hint-placeholder-val="{{false}}">
+<div class="di di--x" role="group" aria-label="Mel, expanded">
+<div class="dx-head">
+<span class="bm bm--brand" aria-hidden="true"><sc-if value="{{xMIdle}}" hint-placeholder-val="{{true}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3.2s" repeatCount="indefinite"></animateTransform><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"><animate attributeName="r" values="13;30;13" dur="3.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="13" fill="#FFFFFF"><animate attributeName="r" values="13;14.5;13" dur="3.2s" repeatCount="indefinite"></animate></circle></g></svg></sc-if><sc-if value="{{xMListen}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.0s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.0s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="15" fill="#FFFFFF"></circle></svg></sc-if><sc-if value="{{xMThink}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="42" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.00s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.00s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.15s" repeatCount="indefinite"></animate></circle><circle cx="78" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.30s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.30s" repeatCount="indefinite"></animate></circle></svg></sc-if><sc-if value="{{xMSpeak}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><rect x="35.5" y="55.0" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;26;10" dur="0.9s" begin="0.00s" repeatCount="indefinite"></animate><animate attributeName="y" values="55.0;47.0;55.0" dur="0.9s" begin="0.00s" repeatCount="indefinite"></animate></rect><rect x="46.0" y="49.0" width="7" height="22" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="22;8;22" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate><animate attributeName="y" values="49.0;56.0;49.0" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate></rect><rect x="56.5" y="45.0" width="7" height="30" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="30;14;30" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate><animate attributeName="y" values="45.0;53.0;45.0" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate></rect><rect x="67.0" y="53.0" width="7" height="14" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="14;30;14" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate><animate attributeName="y" values="53.0;45.0;53.0" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate></rect><rect x="77.5" y="55.0" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;20;10" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate><animate attributeName="y" values="55.0;50.0;55.0" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate></rect></svg></sc-if><sc-if value="{{xMDone}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="20" fill="#FFFFFF"><animate attributeName="r" values="13;22;20;20" keyTimes="0;0.2;0.3;1" dur="2.8s" repeatCount="indefinite"></animate></circle><path d="M51 60.5 L57.5 67 L70 54" stroke="#12A867" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="30" stroke-dashoffset="30"><animate attributeName="stroke-dashoffset" values="30;30;0;0" keyTimes="0;0.2;0.38;1" dur="2.8s" repeatCount="indefinite"></animate></path></svg></sc-if><sc-if value="{{xMAttn}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#0E2B30"></path><circle cx="60" cy="60" r="13" fill="#3DDC97"><animate attributeName="fill-opacity" values="1;0.35;1" dur="0.9s" repeatCount="indefinite"></animate></circle><circle cx="98" cy="22" r="11" fill="#3DDC97" stroke="#FFFFFF" stroke-width="4"><animate attributeName="r" values="11;13;11" dur="0.9s" repeatCount="indefinite"></animate></circle></svg></sc-if><sc-if value="{{xMOff}}" hint-placeholder-val="{{false}}"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#DCE8E4"></path><circle cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></sc-if></span>
+<div class="dx-id"><p class="dx-t">{{xTitle}}</p><p class="dx-s">{{xSub}}</p></div>
+<sc-if value="{{xHasDots}}" hint-placeholder-val="{{true}}"><span class="dd" data-kind="{{xDotKind}}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></sc-if>
+</div>
+<sc-if value="{{xHasCap}}" hint-placeholder-val="{{true}}"><p class="dx-cap">{{xCap}}</p></sc-if>
+<sc-if value="{{xHasDraft}}" hint-placeholder-val="{{false}}"><div class="dx-draft"><p class="dx-draft__t">{{xDraft}}</p></div></sc-if>
+<sc-if value="{{xHasBar}}" hint-placeholder-val="{{false}}"><div class="dx-bar" role="progressbar" aria-valuemin="0" aria-valuemax="120" aria-valuenow="{{xBarNow}}"><i style="{{xBarStyle}}"></i></div></sc-if>
+<div class="dx-acts">
+<sc-if value="{{aVoice}}" hint-placeholder-val="{{true}}">
+<button type="button" class="dx-btn dx-btn--icon" aria-label="{{muteLabel}}" aria-pressed="{{mutedStr}}" onClick="{{toggleMute}}"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.92,218.62l-160-176A8,8,0,0,0,42.08,53.38L80,95.09V128a48,48,0,0,0,69.11,43.12l11.1,12.2A63.41,63.41,0,0,1,128,192a64.070,64.070,0,0,1-64-64,8,8,0,0,0-16,0,80.11,80.11,0,0,0,72,79.6V240a8,8,0,0,0,16,0V207.59a78.83,78.83,0,0,0,35.16-12.22l30.92,34a8,8,0,1,0,11.84-10.76ZM128,160a32,32,0,0,1-32-32V112.69l41.66,45.82A32,32,0,0,1,128,160Zm57.52-3.91A63.32,63.32,0,0,0,192,128a8,8,0,0,1,16,0,79.16,79.16,0,0,1-8.11,35.12,8,8,0,0,1-7.19,4.49,7.88,7.88,0,0,1-3.51-.82A8,8,0,0,1,185.52,156.09ZM84,44.87A48,48,0,0,1,176,64v64a49.19,49.19,0,0,1-.26,5,8,8,0,0,1-8,7.17,8.13,8.13,0,0,1-.84,0,8,8,0,0,1-7.12-8.79c.11-1.1.17-2.24.17-3.36V64A32,32,0,0,0,98.64,51.25,8,8,0,1,1,84,44.87Z"></path></svg></button>
+</sc-if>
+<sc-if value="{{aNeeds}}" hint-placeholder-val="{{false}}"><a class="dx-btn dx-btn--light" href="{{openHref}}">Open</a></sc-if>
+<sc-if value="{{aNet}}" hint-placeholder-val="{{false}}"><button type="button" class="dx-btn dx-btn--light">Try again</button></sc-if>
+<sc-if value="{{aOpen}}" hint-placeholder-val="{{false}}"><button type="button" class="dx-btn dx-btn--light">Open chat</button></sc-if>
+<sc-if value="{{aEnd}}" hint-placeholder-val="{{true}}"><button type="button" class="dx-btn dx-btn--end" onClick="{{end}}"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>End</button></sc-if>
+</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"view":{"editor":null},"$preview":{"width":390,"height":844}}'>
+const MEL1 = 'Sarah hasn’t replied in 5 days. I drafted a short follow-up.';
+const NEEDS = 'Here’s the draft. Say send, or tap Send.';
+const DRAFT = 'Hi Sarah, checking in on 412 Marina Blvd. The open house is Saturday, 1 to 4 PM. Want me to save you a time to walk through?';
+const VOICE = { xSkill: 'mel', xTitle: 'Mel', acts: 'voice' };
+// Mark state = Mel Brand Guidelines 07 Mel in motion (idle, listening, working, speaking, done, needs you, paused).
+const XM = (x) => x.m || (x.off ? 'Off' : x.draft || /stopped/i.test(x.xTitle || '') ? 'Attn' : x.dots === 'listen' ? 'Listen' : x.dots === 'think' ? 'Think' : x.dots === 'speak' ? 'Speak' : x.bar ? 'Think' : /added/.test(x.xTitle || '') ? 'Done' : 'Idle');
+// scene: home | lock. island: idle | c | x | min | none. c = compact, x = expanded (also used by the lock screen card).
+const V = {
+  iListen: { scene: 'home', island: 'c', c: { m: 'Listen', dots: 'listen', aria: 'Mel voice, listening' } },
+  iSpeak: { scene: 'home', island: 'c', c: { m: 'Speak', dots: 'speak', aria: 'Mel voice, speaking' } },
+  iThink: { scene: 'home', island: 'c', c: { m: 'Think', dots: 'think', aria: 'Mel voice, working' } },
+  iMuted: { scene: 'home', island: 'c', c: { m: 'Off', off: true, label: 'Muted', tone: 'dim', aria: 'Mel voice, muted' } },
+  iNeeds: { scene: 'home', island: 'c', c: { m: 'Attn', label: 'Draft ready', tone: 'mint', aria: 'Mel needs you, draft ready' } },
+  iEnded: { scene: 'home', island: 'c', c: { m: 'Idle', label: 'Voice ended', tone: 'dim', aria: 'Mel voice ended' } },
+  iNet: { scene: 'home', island: 'c', c: { m: 'Off', off: true, label: 'Reconnecting', tone: 'dim', aria: 'Mel voice, reconnecting' } },
+  iMinimal: { scene: 'home', island: 'min' },
+  xSpeak: { scene: 'home', island: 'x', x: Object.assign({}, VOICE, { sub: 'Speaking', dots: 'speak', cap: MEL1 }) },
+  xNeeds: { scene: 'home', island: 'x', x: Object.assign({}, VOICE, { sub: 'Needs you', cap: NEEDS, draft: DRAFT, acts: 'needs' }) },
+  tWork: { scene: 'home', island: 'c', c: { m: 'Think', label: '42/120', ring: 0.35, aria: 'Mel importing clients, 42 of 120' } },
+  txWork: { scene: 'home', island: 'x', x: { xSkill: 'mel', xTitle: 'Importing clients', sub: '42 of 120', cap: 'Checking for duplicates', bar: 42, acts: 'open', noEnd: true } },
+  tDone: { scene: 'home', island: 'c', c: { m: 'Done', label: '120 added', check: true, aria: 'Mel import done, 120 clients added' } },
+  tErr: { scene: 'home', island: 'c', c: { m: 'Attn', label: 'Stopped', tone: 'err', warn: true, aria: 'Mel import stopped' } },
+  txErr: { scene: 'home', island: 'x', x: { xSkill: 'mel', xTitle: 'Import stopped', sub: '64 of 120 added', cap: 'Row 65 has no name or email. Tell me how to fix it.', acts: 'open', noEnd: true } },
+  lVoice: { scene: 'lock', island: 'idle', la: true, x: Object.assign({}, VOICE, { sub: 'Speaking', dots: 'speak', cap: MEL1 }) },
+  lNeeds: { scene: 'lock', island: 'idle', la: true, x: Object.assign({}, VOICE, { sub: 'Needs you', cap: NEEDS, draft: DRAFT, acts: 'needs' }) },
+  lTask: { scene: 'lock', island: 'idle', la: true, x: { xSkill: 'mel', xTitle: 'Importing clients', sub: '42 of 120', cap: 'Checking for duplicates', bar: 42, acts: 'none', noEnd: true } },
+  lDone: { scene: 'lock', island: 'idle', la: true, x: { xSkill: 'mel', xTitle: '120 clients added', sub: 'Import done', acts: 'open', noEnd: true } },
+  lNet: { scene: 'lock', island: 'idle', la: true, x: { xSkill: 'mel', off: true, xTitle: 'Mel', sub: 'Connection lost', cap: 'Lost connection. Your chat is saved.', acts: 'net' } },
+  wSM: { scene: 'home', island: 'idle', w: 'sm' },
+  wL: { scene: 'home', island: 'idle', w: 'l' },
+  wEmpty: { scene: 'home', island: 'idle', w: 'empty' },
+  lw: { scene: 'lock', island: 'idle', lw: true }
+};
+const SEQ = [['listen', 3000], ['think', 1800], ['speak', 4200], ['needs', 0]];
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { mode: 'c', step: 0, muted: false }; }
+  componentDidMount() { if (this.live()) this.run(); }
+  componentWillUnmount() { clearTimeout(this.t); clearTimeout(this.e); }
+  run() { clearTimeout(this.t); const s = this.state; if (s.muted || s.mode === 'none' || s.mode === 'ended') return; const d = SEQ[s.step][1]; if (d) this.t = setTimeout(() => { this.setState({ step: s.step + 1 }, () => this.run()); }, d); }
+  live() { return !this.props.view || this.props.view === 'proto'; }
+  protoView() {
+    const s = this.state; const k = SEQ[s.step][0];
+    if (s.mode === 'none') return V.wSM;
+    if (s.mode === 'ended') return Object.assign({}, V.iEnded, { w: 'sm' });
+    if (s.mode === 'x') {
+      if (k === 'needs') return Object.assign({}, V.xNeeds, { w: 'sm' });
+      return { scene: 'home', island: 'x', w: 'sm', x: Object.assign({}, VOICE, s.muted ? { sub: 'Muted', off: true, dots: 'off', cap: 'Tap the mic to talk again' } : { sub: k === 'listen' ? 'Listening' : k === 'think' ? 'Working' : 'Speaking', dots: k, cap: k === 'listen' ? 'Follow up with Sarah Reynolds about 412 Marina Blvd' : k === 'think' ? 'Checking Sarah’s last email' : MEL1 }) };
+    }
+    if (s.muted) return Object.assign({}, V.iMuted, { w: 'sm' });
+    if (k === 'needs') return Object.assign({}, V.iNeeds, { w: 'sm' });
+    return { scene: 'home', island: 'c', w: 'sm', c: { m: k === 'listen' ? 'Listen' : k === 'think' ? 'Think' : 'Speak', dots: k, aria: 'Mel voice' } };
+  }
+  renderVals() {
+    const theme = this.props.theme || 'dark';
+    const v = this.live() ? this.protoView() : (V[this.props.view] || V.iSpeak);
+    const c = v.c || {}; const x = v.x || {};
+    const acts = x.acts || 'none';
+    const muted = this.live() && this.state.muted;
+    const ringLen = 2 * Math.PI * 8;
+    const hasLabel = !!c.label;
+    return {
+      cMIdle: (c.m || 'Idle') === 'Idle', cMListen: c.m === 'Listen', cMThink: c.m === 'Think', cMSpeak: c.m === 'Speak', cMDone: c.m === 'Done', cMAttn: c.m === 'Attn', cMOff: c.m === 'Off',
+      xMIdle: XM(x) === 'Idle', xMListen: XM(x) === 'Listen', xMThink: XM(x) === 'Think', xMSpeak: XM(x) === 'Speak', xMDone: XM(x) === 'Done', xMAttn: XM(x) === 'Attn', xMOff: XM(x) === 'Off',
+      theme: theme,
+      sceneHome: v.scene === 'home', sceneLock: v.scene === 'lock',
+      apps: new Array(v.w ? 8 : 20).fill(0),
+      showWsm: v.w === 'sm', showWl: v.w === 'l', showWempty: v.w === 'empty',
+      showLw: !!v.lw, noLw: !v.lw, showLa: !!v.la,
+      islandIdle: v.island === 'idle', islandC: v.island === 'c', islandX: v.island === 'x', islandMin: v.island === 'min',
+      cWidth: 'width: ' + (hasLabel ? (c.label.length > 9 ? 250 : 230) : 210) + 'px',
+      cAria: c.aria || 'Mel', cSkill: c.skill || 'mel', cOff: c.off ? 'true' : 'false',
+      cDots: !!c.dots, cDotKind: c.dots || 'speak',
+      cHasLabel: hasLabel, cLabel: c.label || '', cTone: c.tone || '',
+      cRing: typeof c.ring === 'number', ringDash: (ringLen * (c.ring || 0)).toFixed(1) + ' ' + ringLen.toFixed(1),
+      cCheck: !!c.check, cWarn: !!c.warn,
+      xSkill: x.xSkill || 'mel', xOff: x.off ? 'true' : 'false', xTitle: x.xTitle || 'Mel', xSub: x.sub || '',
+      xHasDots: !!x.dots, xDotKind: x.dots || 'speak',
+      xHasCap: !!x.cap, xCap: x.cap || '', xHasDraft: !!x.draft, xDraft: x.draft || '',
+      xHasBar: typeof x.bar === 'number', xBarNow: x.bar || 0, xBarStyle: 'width: ' + Math.round(((x.bar || 0) / 120) * 100) + '%',
+      aVoice: acts === 'voice', aNeeds: acts === 'needs', aNet: acts === 'net', aOpen: acts === 'open', aEnd: !x.noEnd && acts !== 'none',
+      openHref: theme === 'light' ? 'VoiceProtoLight.dc.html' : 'Main.dc.html',
+      muteLabel: muted ? 'Unmute microphone' : 'Mute microphone', mutedStr: muted ? 'true' : 'false',
+      noop: () => {},
+      tapIsland: () => { if (this.live() && this.state.mode === 'c') this.setState({ mode: 'x' }); },
+      tapBg: () => { if (this.live() && this.state.mode === 'x') this.setState({ mode: 'c' }); },
+      toggleMute: () => { if (!this.live()) return; this.setState({ muted: !this.state.muted }, () => this.run()); },
+      end: () => { if (!this.live()) return; clearTimeout(this.t); this.setState({ mode: 'ended' }); clearTimeout(this.e); this.e = setTimeout(() => this.setState({ mode: 'none' }), 2000); },
+      start: () => { if (!this.live()) return; clearTimeout(this.e); this.setState({ mode: 'c', step: 0, muted: false }, () => this.run()); }
+    };
+  }
+}
+</script>
+</body>
+</html>

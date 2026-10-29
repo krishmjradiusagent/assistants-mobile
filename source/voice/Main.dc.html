@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mel voice mode, prototype</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="mel-brand.css">
+<link rel="stylesheet" href="mel-chat-overrides.css">
+<link rel="stylesheet" href="c-prompt-row.css">
+<link rel="stylesheet" href="c-typeset-chat.css">
+<link rel="stylesheet" href="c-trace.css">
+<link rel="stylesheet" href="chat-board.css">
+<link rel="stylesheet" href="voice.css">
+<link rel="stylesheet" href="concepts.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rm-root" data-theme="{{theme}}" data-expression="quiet" data-platform="ios" onPointerMove="{{bMove}}" onPointerUp="{{bUp}}" style="position: relative; width: 390px; height: 844px; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans)">
+
+<sc-if value="{{isVoice}}" hint-placeholder-val="{{ true }}">
+<section class="vc" data-off="{{off}}" data-card="{{cardStr}}" aria-label="Mel voice mode">
+<div class="va-field" aria-hidden="true"></div>
+<div class="va-zone" aria-hidden="true">
+<sc-for list="{{rings}}" as="r" hint-placeholder-count="3"><div class="va-ring" style="{{r.style}}"></div></sc-for>
+<sc-if value="{{shimmer}}" hint-placeholder-val="{{ false }}"><div class="va-shimmer" style="{{shimmerStyle}}"></div></sc-if>
+</div>
+
+<div class="vc-top">
+<span aria-hidden="true"></span>
+<div class="vc-id"><h1>Mel Voice</h1><sc-if value="{{hasStatus}}" hint-placeholder-val="{{ false }}"><p class="vc-status" role="status" data-tone="{{tone}}">{{status}}</p></sc-if></div>
+<button type="button" class="vc-x vc-glass" aria-label="Minimise to chat, voice stays on" onClick="{{minimise}}"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg></button>
+</div>
+
+<div class="vm2-stage">
+<button type="button" class="vm2-mark" aria-label="{{orbLabel}}" onClick="{{tapOrb}}" style="transform: {{markScale}}">
+<sc-if value="{{kReady}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, ready"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="3" fill="none"><animate attributeName="r" values="13;34;13" dur="2.4s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0.9;0;0.9" dur="2.4s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="13" fill="#FFFFFF"><animate attributeName="r" values="13;15;13" dur="2.4s" repeatCount="indefinite"></animate></circle></svg></sc-if>
+<sc-if value="{{kListen}}" hint-placeholder-val="{{ true }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, listening"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="15" fill="#FFFFFF"></circle></svg></sc-if>
+<sc-if value="{{kThink}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, working"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="42" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.15s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.15s" repeatCount="indefinite"></animate></circle><circle cx="78" cy="60" r="7" fill="#FFFFFF"><animate attributeName="cy" values="60;52;60;60" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.3s" repeatCount="indefinite"></animate><animate attributeName="fill-opacity" values="0.45;1;0.45;0.45" keyTimes="0;0.25;0.5;1" dur="1.2s" begin="0.3s" repeatCount="indefinite"></animate></circle></svg></sc-if>
+<sc-if value="{{kSpeak}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, speaking"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><rect x="35.5" y="55" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;26;10" dur="0.9s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="y" values="55;47;55" dur="0.9s" begin="0s" repeatCount="indefinite"></animate></rect><rect x="46" y="49" width="7" height="22" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="22;8;22" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate><animate attributeName="y" values="49;56;49" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate></rect><rect x="56.5" y="45" width="7" height="30" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="30;14;30" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate><animate attributeName="y" values="45;53;45" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate></rect><rect x="67" y="53" width="7" height="14" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="14;30;14" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate><animate attributeName="y" values="53;45;53" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate></rect><rect x="77.5" y="55" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;20;10" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate><animate attributeName="y" values="55;50;55" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate></rect></svg></sc-if>
+<sc-if value="{{kAttn}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, needs you"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" style="fill: var(--vm-attn)"></path><circle cx="60" cy="60" r="13" fill="#3DDC97"><animate attributeName="fill-opacity" values="1;0.35;1" dur="0.9s" repeatCount="indefinite"></animate></circle><circle cx="98" cy="22" r="11" fill="#3DDC97" stroke-width="4" style="stroke: var(--bg-page)"><animate attributeName="r" values="11;13;11" dur="0.9s" repeatCount="indefinite"></animate></circle></svg></sc-if>
+<sc-if value="{{kDone}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, done"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="20" fill="#FFFFFF"><animate attributeName="r" values="13;22;20;20" keyTimes="0;0.2;0.3;1" dur="2.8s" repeatCount="indefinite"></animate></circle><path d="M51 60.5 L57.5 67 L70 54" stroke="#12A867" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="30" stroke-dashoffset="30"><animate attributeName="stroke-dashoffset" values="30;30;0;0" keyTimes="0;0.2;0.38;1" dur="2.8s" repeatCount="indefinite"></animate></path></svg></sc-if>
+<sc-if value="{{kOff}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, paused"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" style="fill: var(--vm-paused)"></path><circle cx="60" cy="60" r="13" style="fill: var(--vm-paused-dot)"></circle></svg></sc-if>
+<sc-if value="{{kRest}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, pausing"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></sc-if>
+</button>
+<div class="vm2-cap" aria-live="polite">
+<sc-if value="{{hasCut}}" hint-placeholder-val="{{ false }}"><p class="vm__line vm__line--cut">{{cut}}</p></sc-if>
+<sc-if value="{{hasHeard}}" hint-placeholder-val="{{ false }}"><p class="vm__line vm__line--hint">{{heard}}</p></sc-if>
+<sc-if value="{{showWords}}" hint-placeholder-val="{{ true }}"><div class="vm2-capwin"><p class="vc-cap" data-who="{{who}}" aria-label="{{line}}"><sc-for list="{{words}}" as="w" hint-placeholder-count="8"><span class="vc-w" data-lit="true">{{w.t}} </span></sc-for></p></div></sc-if>
+<sc-if value="{{hasHint}}" hint-placeholder-val="{{ false }}"><p class="vm__line vm__line--hint">{{hint}}</p></sc-if>
+<sc-if value="{{isDenied}}" hint-placeholder-val="{{ false }}"><div class="vm__acts"><button type="button" class="rm-btn rm-btn--primary"><span>Open Settings</span></button><button type="button" class="rm-btn rm-btn--secondary" onClick="{{end}}"><span>Type instead</span></button></div></sc-if>
+<sc-if value="{{isNetwork}}" hint-placeholder-val="{{ false }}"><div class="vm__acts"><button type="button" class="rm-btn rm-btn--secondary" onClick="{{retry}}"><span>Try again</span></button></div></sc-if>
+</div>
+</div>
+
+<div class="vm2-dock">
+<sc-if value="{{showDraft}}" hint-placeholder-val="{{ false }}">
+<section class="m-draft" aria-label="Email draft to Sarah Reynolds"><div class="m-draft__head"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path></svg></span><div><p class="t-body-strong">Sarah Reynolds · Email</p><p class="t-meta t-secondary">Re: 412 Marina Blvd</p></div></div><p class="t-body" style="margin: 0">{{draftBody}}</p><div class="m-dfoot"><span class="t-meta t-secondary">Sends from your Radius email</span><sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}"><button type="button" class="rm-btn rm-btn--primary rm-btn--sm t-meta" onClick="{{sendDraft}}"><span>Send</span></button></sc-if><sc-if value="{{sent}}" hint-placeholder-val="{{ false }}"><span class="t-meta vm__sent"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>Sent</span></sc-if></div></section>
+</sc-if>
+<sc-if value="{{isResult}}" hint-placeholder-val="{{ false }}">
+<section class="m-draft" aria-label="{{cTitle}}"><div class="m-draft__head"><span class="rm-tile" aria-hidden="true">
+<sc-if value="{{iUser}}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg></sc-if>
+<sc-if value="{{iNote}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M88,96a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H96A8,8,0,0,1,88,96Zm8,40h64a8,8,0,0,0,0-16H96a8,8,0,0,0,0,16Zm32,16H96a8,8,0,0,0,0,16h32a8,8,0,0,0,0-16ZM224,48V156.69A15.86,15.86,0,0,1,219.31,168L168,219.310A15.86,15.86,0,0,1,156.69,224H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM48,208H152V160a8,8,0,0,1,8-8h48V48H48Zm120-40v28.7L196.69,168Z"></path></svg></sc-if>
+<sc-if value="{{iBell}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg></sc-if>
+</span><div><p class="t-body-strong">{{cTitle}}</p><p class="t-meta t-secondary">{{cSub}}</p></div></div>
+<sc-if value="{{hasCBody}}" hint-placeholder-val="{{ false }}"><p class="t-body" style="margin: 0">{{cBody}}</p></sc-if>
+<div class="m-dfoot"><span class="t-meta t-secondary">{{cFoot}}</span></div></section>
+</sc-if>
+<sc-if value="{{isLink}}" hint-placeholder-val="{{ false }}">
+<a class="vm-link" href="#crm" aria-label="Open Sarah Reynolds in Radius CRM"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg></span><span class="vm-link__text"><span class="t-body-strong">Sarah Reynolds</span><span class="t-meta t-secondary">Radius CRM</span></span><svg width="18" height="18" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></a>
+</sc-if>
+<sc-if value="{{isPick}}" hint-placeholder-val="{{ false }}">
+<section class="vm-pick" aria-label="Pick a contact">
+<sc-for list="{{picks}}" as="p" hint-placeholder-count="2"><button type="button" class="vm-pick__row"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg></span><span class="t-body-strong">{{p.name}}</span></button></sc-for>
+</section>
+</sc-if>
+<sc-if value="{{isConnect}}" hint-placeholder-val="{{ false }}">
+<section class="m-draft" aria-label="Connect Gmail"><div class="m-draft__head"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path></svg></span><div><p class="t-body-strong">Gmail</p><p class="t-meta t-secondary">Google</p></div></div>
+<ul class="vm-perms"><li class="t-body"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>Send email</li><li class="t-body"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>Read replies</li></ul>
+<div class="m-dfoot" style="justify-content: flex-end"><button type="button" class="rm-btn rm-btn--primary rm-btn--sm t-meta"><span>Connect</span></button></div></section>
+</sc-if>
+<div class="vc-dock" style="padding: 0">
+<button type="button" class="vc-btn vc-glass" aria-label="{{muteLabel}}" aria-pressed="{{mutedStr}}" onClick="{{toggleMute}}">
+<sc-if value="{{isMuted}}" hint-placeholder-val="{{ false }}"><svg width="26" height="26" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.92,218.62l-160-176A8,8,0,0,0,42.08,53.38L80,95.09V128a48,48,0,0,0,69.11,43.12l11.1,12.2A63.41,63.41,0,0,1,128,192a64.07,64.07,0,0,1-64-64,8,8,0,0,0-16,0,80.11,80.11,0,0,0,72,79.6V240a8,8,0,0,0,16,0V207.59a78.83,78.83,0,0,0,35.16-12.22l30.92,34a8,8,0,1,0,11.84-10.760ZM128,160a32,32,0,0,1-32-32V112.69l41.66,45.82A32,32,0,0,1,128,160Zm57.52-3.91A63.32,63.32,0,0,0,192,128a8,8,0,0,1,16,0,79.16,79.16,0,0,1-8.11,35.12,8,8,0,0,1-7.19,4.49,7.880,7.880,0,0,1-3.51-.82A8,8,0,0,1,185.52,156.09ZM84,44.87A48,48,0,0,1,176,64v64a49.19,49.19,0,0,1-.26,5,8,8,0,0,1-8,7.17,8.130,8.130,0,0,1-.84,0,8,8,0,0,1-7.12-8.79c.11-1.1.17-2.24.17-3.36V64A32,32,0,0,0,98.64,51.25,8,8,0,1,1,84,44.87Z"></path></svg></sc-if>
+<sc-if value="{{notMuted}}" hint-placeholder-val="{{ true }}"><svg width="26" height="26" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path></svg></sc-if>
+</button>
+<button type="button" class="vc-btn vc-glass" aria-label="Switch to typing" onClick="{{end}}"><svg width="26" height="26" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48H32A16,16,0,0,0,16,64V192a16,16,0,0,0,16,16H224a16,16,0,0,0,16-16V64A16,16,0,0,0,224,48Zm0,144H32V64H224V192Zm-16-64a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,128Zm0-32a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H200A8,8,0,0,1,208,96ZM72,160a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16h8A8,8,0,0,1,72,160Zm96,0a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,160Zm40,0a8,8,0,0,1-8,8h-8a8,8,0,0,1,0-16h8A8,8,0,0,1,208,160Z"></path></svg></button>
+<button type="button" class="vc-end" aria-label="End voice" onClick="{{end}}"><svg width="26" height="26" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></button>
+</div>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isChat}}" hint-placeholder-val="{{ false }}">
+<div data-scroll="1" style="position: absolute; inset: 0; overflow-y: auto; padding: calc(var(--space-8) + var(--size-control-lg) + var(--space-10)) var(--space-gutter) calc(var(--size-control-lg) * 5 + var(--space-8) + var(--space-4))">
+<sc-if value="{{showThread}}" hint-placeholder-val="{{ true }}">
+<div class="rm-stack rm-stack--loose">
+<sc-if value="{{showDivider}}" hint-placeholder-val="{{ true }}"><p class="vm-divider" style="margin: 0">Voice chat · 1:12</p></sc-if>
+<article class="c-ai-message c-ai-message--user" data-slot="message" data-from="user" aria-label="Your message"><div class="c-ai-message__content" data-slot="message-content"><div class="rm-card rm-card--bordered"><p class="t-body" style="margin: 0">Follow up with Sarah Reynolds about 412 Marina Blvd</p></div></div></article>
+<sc-if value="{{tMel1}}" hint-placeholder-val="{{ true }}">
+<article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message"><div class="c-ai-message__content" data-slot="message-content"><div class="c-streaming-text c-mel-plain typeset typeset-chat"><p class="c-streaming-text__body" style="margin: 0">Sarah hasn’t replied in 5 days. I drafted a short follow-up.</p></div></div></article>
+</sc-if>
+<sc-if value="{{tUser2}}" hint-placeholder-val="{{ true }}">
+<article class="c-ai-message c-ai-message--user" data-slot="message" data-from="user" aria-label="Your message"><div class="c-ai-message__content" data-slot="message-content"><div class="rm-card rm-card--bordered"><p class="t-body" style="margin: 0">Wait, add the open house on Saturday</p></div></div></article>
+</sc-if>
+<sc-if value="{{tDraft}}" hint-placeholder-val="{{ true }}">
+<article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message"><div class="c-ai-message__content" data-slot="message-content"><div class="rm-stack">
+<div class="c-streaming-text c-mel-plain typeset typeset-chat"><p class="c-streaming-text__body" style="margin: 0">{{draftIntro}}</p></div>
+<section class="m-draft" aria-label="Email draft to Sarah Reynolds"><div class="m-draft__head"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path></svg></span><div><p class="t-body-strong">Sarah Reynolds · Email</p><p class="t-meta t-secondary">Re: 412 Marina Blvd</p></div></div><p class="t-body" style="margin: 0">{{draftBody}}</p><div class="m-dfoot"><span class="t-meta t-secondary">Sends from your Radius email</span><sc-if value="{{notSent}}" hint-placeholder-val="{{ true }}"><button type="button" class="rm-btn rm-btn--primary rm-btn--sm t-meta" onClick="{{sendDraft}}"><span>Send</span></button></sc-if><sc-if value="{{sent}}" hint-placeholder-val="{{ false }}"><span class="t-meta vm__sent"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>Sent</span></sc-if></div></section>
+</div></div></article>
+</sc-if>
+<sc-if value="{{tSent}}" hint-placeholder-val="{{ true }}">
+<article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message"><div class="c-ai-message__content" data-slot="message-content"><div class="c-streaming-text c-mel-plain typeset typeset-chat"><p class="c-streaming-text__body" style="margin: 0">Sent to Sarah. Anything else?</p></div>
+<div class="c-prompt-rows" aria-label="Suggested prompts">
+<button type="button" class="c-prompt-row"><svg class="c-prompt-row__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2.5v6a2 2 0 0 0 2 2h6.5"></path><path d="M10 7.5l3 3-3 3"></path></svg><span class="c-prompt-row__text t-body-strong">Remind me if Sarah doesn’t reply</span></button>
+<button type="button" class="c-prompt-row"><svg class="c-prompt-row__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2.5v6a2 2 0 0 0 2 2h6.5"></path><path d="M10 7.5l3 3-3 3"></path></svg><span class="c-prompt-row__text t-body-strong">Check in with Grace Lee</span></button>
+</div>
+</div></article>
+</sc-if>
+</div>
+</sc-if>
+</div>
+<header class="m-chathead">
+<button type="button" class="m-avatar" aria-label="Profile">K</button>
+<h1 class="m-chathead__title">Mel</h1>
+<button type="button" class="m-bell" aria-label="Notifications, new"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg><span class="m-bell__dot" aria-hidden="true"></span></button>
+</header>
+<footer class="c-glass-footer c-glass-footer--soft-edge" style="padding: var(--space-3) var(--space-gutter) calc(var(--space-2) + var(--space-6))">
+<form class="c-chat-composer m-cc" aria-label="Message composer" data-typing="{{typingStr}}" data-generating="false">
+<button type="button" class="m-cc__btn" aria-label="Attachments and connected sources" aria-haspopup="menu"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg></button>
+<textarea rows="1" class="c-chat-composer__field t-body" aria-label="Message MEL" placeholder="Ask anything" value="{{dictText}}"></textarea>
+<div class="c-chat-composer__idle"><sc-if value="{{isDictating}}" hint-placeholder-val="{{ false }}"><button type="button" class="m-cc__btn vm-dictstop" aria-label="Stop dictating" onClick="{{stopDictate}}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="2"></rect></svg></button></sc-if><sc-if value="{{notDictating}}" hint-placeholder-val="{{ true }}"><button type="button" class="m-cc__btn" aria-label="Dictate message" onClick="{{startDictate}}"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path></svg></button></sc-if><button type="button" class="rm-btn rm-btn--voice m-cc__round" aria-label="Speak to MEL" onClick="{{startVoice}}"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></button></div>
+<button type="submit" class="rm-btn rm-btn--primary c-chat-composer__send m-cc__round" aria-label="Send message"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path></svg></button>
+<button type="button" class="rm-btn rm-btn--primary c-chat-composer__stop m-cc__round" aria-label="Stop generating"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="2"></rect></svg></button>
+</form>
+<div class="m-navrow">
+<button type="button" class="m-mel" aria-label="Chat with Mel" aria-current="page"><span class="mb-mark" role="img" aria-label="Mel"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g class="mm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="mm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span></button>
+<nav class="m-nav" aria-label="Main">
+<button type="button" class="m-nav__item" aria-label="Dashboard" onClick="{{goHome}}"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></button>
+<button type="button" class="m-nav__item" aria-label="Clients" onClick="{{goClients}}"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></button>
+<button type="button" class="m-nav__item" aria-label="Transactions"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg></button>
+</nav>
+<button type="button" class="m-inbox" aria-label="Inbox"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"></path></svg></button>
+</div>
+</footer>
+</sc-if>
+
+<sc-if value="{{isPage}}" hint-placeholder-val="{{ false }}">
+<div class="sk-page" aria-label="{{pageTitle}}, page content">
+<sc-if value="{{pageHome}}" hint-placeholder-val="{{ true }}">
+<div class="sk-bar sk-bar--h" style="width: 54%"></div>
+<div class="sk-grid"><div class="sk-tile"></div><div class="sk-tile"></div><div class="sk-tile"></div><div class="sk-tile"></div></div>
+<div class="sk-card"><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div></div>
+<div class="sk-card sk-card--tall"></div>
+</sc-if>
+<sc-if value="{{pageClients}}" hint-placeholder-val="{{ false }}">
+<div class="sk-search"></div>
+<div class="sk-chips"><span class="sk-chip"></span><span class="sk-chip"></span><span class="sk-chip"></span></div>
+<div class="sk-card"><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%"></span><span class="sk-bar sk-bar--s" style="width: 38%"></span></span></div></div>
+</sc-if>
+</div>
+<header class="m-chathead">
+<button type="button" class="m-avatar" aria-label="Profile">K</button>
+<h1 class="m-chathead__title">{{pageTitle}}</h1>
+<button type="button" class="m-bell" aria-label="Notifications, new"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg><span class="m-bell__dot" aria-hidden="true"></span></button>
+</header>
+<footer class="c-glass-footer c-glass-footer--soft-edge" style="padding: var(--space-3) var(--space-gutter) calc(var(--space-2) + var(--space-6))">
+<div class="m-navrow">
+<button type="button" class="m-mel" aria-label="Chat with Mel" onClick="{{goChat}}"><span class="mb-mark" role="img" aria-label="Mel"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g class="mm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="mm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span></button>
+<nav class="m-nav" aria-label="Main">
+<button type="button" class="m-nav__item" aria-label="Dashboard" aria-current="{{curHome}}" onClick="{{goHome}}"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></button>
+<button type="button" class="m-nav__item" aria-label="Clients" aria-current="{{curClients}}" onClick="{{goClients}}"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></button>
+<button type="button" class="m-nav__item" aria-label="Transactions"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg></button>
+</nav>
+<button type="button" class="m-inbox" aria-label="Inbox"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"></path></svg></button>
+</div>
+</footer>
+</sc-if>
+<sc-if value="{{showBubble}}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{showTarget}}" hint-placeholder-val="{{ false }}"><div class="vb-target" data-hot="{{targetHot}}" aria-hidden="true"><span class="vb-target__x"><svg width="26" height="26" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></span><span class="vb-target__t">Drop to end</span></div></sc-if>
+<div class="vb" data-side="{{bSide}}" data-kind="{{bKind}}" data-drag="{{bDragStr}}" style="left: {{bx}}px; top: {{by}}px">
+<button type="button" class="vb-btn" aria-label="Back to Mel Voice. Drag to move, drop on the cross to end." onPointerDown="{{bDown}}">
+<sc-if value="{{bListen}}" hint-placeholder-val="{{ true }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, listening"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="15" fill="#FFFFFF"></circle></svg></sc-if>
+<sc-if value="{{bSpeak}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, speaking"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><rect x="35.5" y="55" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;26;10" dur="0.9s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="y" values="55;47;55" dur="0.9s" begin="0s" repeatCount="indefinite"></animate></rect><rect x="46" y="49" width="7" height="22" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="22;8;22" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate><animate attributeName="y" values="49;56;49" dur="0.9s" begin="0.11s" repeatCount="indefinite"></animate></rect><rect x="56.5" y="45" width="7" height="30" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="30;14;30" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate><animate attributeName="y" values="45;53;45" dur="0.9s" begin="0.22s" repeatCount="indefinite"></animate></rect><rect x="67" y="53" width="7" height="14" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="14;30;14" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate><animate attributeName="y" values="53;45;53" dur="0.9s" begin="0.33s" repeatCount="indefinite"></animate></rect><rect x="77.5" y="55" width="7" height="10" rx="3.5" fill="#FFFFFF"><animate attributeName="height" values="10;20;10" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate><animate attributeName="y" values="55;50;55" dur="0.9s" begin="0.44s" repeatCount="indefinite"></animate></rect></svg></sc-if>
+<sc-if value="{{bAttn}}" hint-placeholder-val="{{ false }}"><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, needs you"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" style="fill: var(--vm-attn)"></path><circle cx="60" cy="60" r="13" fill="#3DDC97"><animate attributeName="fill-opacity" values="1;0.35;1" dur="0.9s" repeatCount="indefinite"></animate></circle><circle cx="98" cy="22" r="11" fill="#3DDC97" stroke-width="4" style="stroke: var(--bg-page)"><animate attributeName="r" values="11;13;11" dur="0.9s" repeatCount="indefinite"></animate></circle></svg></sc-if>
+</button>
+<sc-if value="{{bNeeds}}" hint-placeholder-val="{{ false }}"><span class="vb-label" role="status">Draft ready</span></sc-if>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"theme":{"editor":"enum","options":["dark","light"],"default":"dark"},"fixedState":{"editor":null},"flow":{"editor":null},"$preview":{"width":390,"height":844}}'>
+const USER1 = 'Follow up with Sarah Reynolds about 412 Marina Blvd';
+const USER2 = 'Wait, add the open house on Saturday';
+const MEL1 = 'Sarah hasn’t replied in 5 days. I drafted a short follow-up.';
+// Speech timing: uneven per-word duration by length, real pauses at commas and full stops, stress by word weight.
+function timeline(line) {
+  let t = 0;
+  return line.split(' ').map((w) => {
+    const bare = w.replace(/[^A-Za-z0-9’]/g, '');
+    const start = t;
+    t += 0.13 + 0.042 * bare.length;
+    if (/[.?]$/.test(w)) t += 0.55; else if (/,$/.test(w)) t += 0.28;
+    const stress = bare.length <= 2 ? 0.22 : Math.min(1, 0.35 + bare.length * 0.08);
+    return { t: w, start: start, s: stress };
+  });
+}
+// kind = mascot motion; field = what the dot field does; status only where the screen cannot say it by itself.
+const VIEWS = {
+  connecting: { kind: 'ready', field: 'ready', status: 'Connecting', hint: 'Say what you need' },
+  listening: { kind: 'listen', field: 'in', you: USER1 },
+  working: { kind: 'think', field: 'think', you: USER1, still: true, status: 'Checking Sarah’s last email' },
+  speaking: { kind: 'speak', field: 'out', mel: MEL1 },
+  interrupt: { kind: 'listen', field: 'in', cut: 'I drafted a short follow-up…', you: USER2 },
+  working2: { kind: 'think', field: 'think', you: USER2, still: true, status: 'Adding the open house' },
+  needs: { kind: 'attn', field: 'none', mel: 'Here’s the draft. Say send, or tap Send.', draft: true },
+  done: { kind: 'done', field: 'done', mel: 'Sent to Sarah. Anything else?' },
+  voiceChange: { kind: 'speak', field: 'out', heard: 'Use a calmer voice', mel: 'Switched to Sage. Say “change voice” anytime.' },
+  captionsOff: { kind: 'speak', field: 'out', mel: 'Captions off. Say “show captions” to bring them back.', status: 'Captions off', noCap: true },
+  // CRM by voice (KJ approved copy, 28 Oct). Cards sit in the dock slot above the controls; mark shrinks to 96.
+  crmFind: { kind: 'speak', field: 'out', heard: 'Pull up Sarah Reynolds', mel: 'Here’s Sarah. You last talked 5 days ago.', card: { k: 'result', i: 'user', title: 'Sarah Reynolds', sub: 'Buyer · 412 Marina Blvd', foot: 'Last touch 5 days' } },
+  crmNote: { kind: 'speak', field: 'out', heard: 'Add a note, she wants 3 beds under 900K', mel: 'Saved to Sarah’s notes.', card: { k: 'result', i: 'note', title: 'Note saved', sub: 'Sarah Reynolds', body: '“Wants 3 beds under 900K”' } },
+  crmRemind: { kind: 'speak', field: 'out', heard: 'Remind me to call her tomorrow at 10', mel: 'Done. I’ll remind you tomorrow at 10 AM.', card: { k: 'result', i: 'bell', title: 'Reminder', sub: 'Call Sarah Reynolds', foot: 'Tomorrow, 10:00 AM' } },
+  crmOpen: { kind: 'speak', field: 'out', heard: 'Open her profile', mel: 'Here’s Sarah in your CRM.', card: { k: 'link' } },
+  crmNone: { kind: 'speak', field: 'out', heard: 'Find Mike Torres', mel: 'No Mike Torres in your contacts. Want me to add him?' },
+  crmTwo: { kind: 'attn', field: 'none', heard: 'Call Sarah', mel: 'You have two Sarahs. Reynolds or Kim?', card: { k: 'pick' } },
+  crmGmail: { kind: 'attn', field: 'none', heard: 'Email Sarah the listing', mel: 'I need Gmail to send that. Connect it and I’ll send.', card: { k: 'connect' } },
+  idle: { kind: 'ready', field: 'ready', hint: 'Ask anything' },
+  muted: { kind: 'off', field: 'none', off: true, status: 'Muted', tone: 'off', hint: 'Tap the mic to talk again' },
+  denied: { kind: 'off', field: 'none', off: true, status: 'Microphone off', tone: 'off', mel: 'Mel needs your microphone to talk.', still: true, denied: true },
+  cantHear: { kind: 'ready', field: 'ready', status: 'Still there?', mel: 'I didn’t catch that. Try again.' },
+  network: { kind: 'off', field: 'none', off: true, status: 'Connection lost', tone: 'off', mel: 'Lost connection. Your chat is saved.', still: true, network: true }
+};
+const LINES = {};
+Object.keys(VIEWS).forEach((k) => { const v = VIEWS[k]; const l = v.you || v.mel; if (l) LINES[k] = timeline(l); });
+function lineEnd(k) { const tl = LINES[k]; if (!tl) return 0; const w = tl[tl.length - 1]; return w.start + 0.13 + 0.042 * w.t.length; }
+const LIVE_NEXT = { connecting: ['listening', 1.6], listening: ['working', lineEnd('listening') + 0.6], working: ['speaking', 2.4], speaking: ['needs', lineEnd('speaking') + 0.9], interrupt: ['working2', lineEnd('interrupt') + 0.6], working2: ['needs', 1.8], done: ['voiceChange', 2.8], voiceChange: ['captionsOff', lineEnd('voiceChange') + 1.2], captionsOff: ['idle', lineEnd('captionsOff') + 1.2], crmFind: ['crmNote', lineEnd('crmFind') + 2.5], crmNote: ['crmRemind', lineEnd('crmNote') + 2.5], crmRemind: ['crmOpen', lineEnd('crmRemind') + 2.5], crmOpen: ['idle', lineEnd('crmOpen') + 3] };
+// Order of the conversation, so the chat thread under a minimised call shows only what has happened.
+const ORDER = ['connecting', 'listening', 'working', 'speaking', 'interrupt', 'working2', 'needs', 'done', 'voiceChange', 'captionsOff', 'idle'];
+const DICT = 'Follow up with Sarah Reynolds about…';
+const DICT_WORDS = DICT.split(' ');
+const CYCLE = { connecting: 3.2, idle: 3.2, cantHear: 3.2, done: 2.8, working: 2.4, working2: 2.4 };
+function cycleOf(k) { return CYCLE[k] || (LINES[k] ? lineEnd(k) + 3 : 3); }
+const OUT_LIFE = 5.5, IN_LIFE = 2.2;
+function ringStyle(vr, op) { return '--vr: ' + vr.toFixed(1) + 'px; opacity: ' + op.toFixed(3); }
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { st: props.flow === 'crm' ? 'crmFind' : 'connecting', muted: false, sent: false, added: false, screen: 'voice', now: 0, minimised: false, dictating: false, dictAt: 0, dictDone: false, page: 'home', bx: 310, by: 560, drag: null };
+    this.enter = 0; this.t = null;
+  }
+  componentDidMount() {
+    this.enter = performance.now();
+    const tick = (now) => { this.setState({ now: now }); this.raf = requestAnimationFrame(tick); };
+    this.raf = requestAnimationFrame(tick);
+    this.sched();
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); clearTimeout(this.t); clearTimeout(this.mt); }
+  live() { return !this.props.fixedState; }
+  sched() {
+    clearTimeout(this.t);
+    if (!this.live()) return;
+    setTimeout(() => {
+      const s = this.state;
+      if (s.muted || s.screen !== 'voice') return;
+      const f = LIVE_NEXT[s.st];
+      if (f) this.t = setTimeout(() => this.go(f[0]), f[1] * 1000);
+    }, 0);
+  }
+  go(st, extra) { clearTimeout(this.t); this.enter = performance.now(); this.setState(Object.assign({ st: st }, extra || {})); this.sched(); }
+  renderVals() {
+    const fixed = this.props.fixedState;
+    const theme = this.props.theme === 'light' ? 'light' : 'dark';
+    const s = this.state;
+    // Chat-side fixed boards: 'ended', 'minimised' (call live, agent in chat), 'dictating' (mic in the input).
+    const chatFixed = fixed === 'ended' || fixed === 'minimised' || fixed === 'dictating';
+    // Minimised across tabs (KJ, 28 Oct): floating bubble on every tab, chat included. Drag to move, drop on the cross to end.
+    const PG = { pgHome: ['home', 'listen', 310, 560], pgClients: ['clients', 'speak', 310, 560], pgSnap: ['clients', 'listen', 16, 430], pgNeeds: ['clients', 'attn', 310, 560], pgEnd: ['home', 'listen', 163, 646] };
+    const pg = PG[fixed] || null;
+    const st = fixed === 'minimised' ? 'working' : (pg ? 'working' : (chatFixed ? 'done' : (fixed ? fixed : (s.muted ? 'muted' : s.st))));
+    const screen = fixed ? (pg ? 'page' : (chatFixed ? 'chat' : 'voice')) : s.screen;
+    const minimised = fixed ? (fixed === 'minimised' || !!pg) : s.minimised;
+    const dictating = fixed ? fixed === 'dictating' : s.dictating;
+    const sent = fixed ? (fixed === 'ended' || fixed === 'done') : s.sent;
+    const added = fixed ? true : s.added;
+    const v = VIEWS[st] || VIEWS.connecting;
+    const raw = Math.max(0, ((s.now || 0) - this.enter) / 1000);
+    const cyc = cycleOf(st);
+    const n = fixed ? raw % cyc : raw;
+    const tl = LINES[st] || [];
+    const end = lineEnd(st);
+    const isYou = !!v.you;
+    // Caption: your words appear as you say them; Mel's words light up as Mel says them.
+    // Captions show the last 2 lines only: words appear as spoken, older lines roll off the top.
+    const words = tl.filter((w) => {
+      let lit = n >= w.start;
+      if (fixed && n > end + 2.4) lit = false;
+      if (v.still) lit = true;
+      return lit;
+    }).map((w) => ({ t: w.t }));
+    // Thread under a minimised call shows only what has been said so far.
+    const ended = !minimised;
+    const idx = ended ? 99 : ORDER.indexOf(st);
+    // Dictation: words fill the input as the agent speaks.
+    let dictText = '';
+    if (dictating || s.dictDone) {
+      const dn = fixed ? DICT_WORDS.length : Math.min(DICT_WORDS.length, Math.floor((((s.now || 0) - s.dictAt) / 1000) / 0.32) + 1);
+      dictText = dictating && !fixed ? DICT_WORDS.slice(0, dn).join(' ') : DICT;
+    }
+    // Dot field emissions.
+    const rings = [];
+    const offsets = fixed ? [0, -cyc] : [0];
+    const out = (t0, str) => offsets.forEach((o) => { const a = n - (t0 + o); if (a < 0 || a > OUT_LIFE) return; const p = a / OUT_LIFE; const e = 1 - Math.pow(1 - p, 2.2); rings.push({ style: ringStyle(82 + 438 * e, str * Math.min(1, a / 0.15) * (p > 0.96 ? (1 - p) / 0.04 : 1)) }); });
+    const inn = (t0, str) => offsets.forEach((o) => { const a = n - (t0 + o); if (a < 0 || a > IN_LIFE) return; const p = a / IN_LIFE; const e = 1 - Math.pow(1 - p, 1.6); rings.push({ style: ringStyle(460 - 376 * e, str * Math.min(1, a / 0.3) * (1 - Math.pow(p, 4))) }); });
+    let env = 0;
+    if (v.field === 'out') { tl.forEach((w) => { out(w.start, 0.1 + 0.9 * w.s); if (n >= w.start) env = w.s * Math.min(1, (n - w.start) / 0.08) * Math.exp(-(n - w.start) / 0.38); }); if (n > end + 0.2) env = 0; }
+    if (v.field === 'in') tl.forEach((w) => inn(w.start, 0.15 + 0.75 * w.s));
+    if (v.field === 'ready') { for (let k = 0; k * 3.2 < Math.max(n, 3.2) + 0.01; k++) out(k * 3.2, 0.35); }
+    if (v.field === 'done') out(0.55, 0.8);
+    const shimmer = v.field === 'think';
+    const sx = -200 + ((n % 2.4) / 2.4) * 900;
+    const muted = st === 'muted';
+    const body = added
+      ? 'Hi Sarah, checking in on 412 Marina Blvd. The open house is Saturday, 1 to 4 PM. Want me to save you a time to walk through?'
+      : 'Hi Sarah, checking in on 412 Marina Blvd. Want me to set up a time to walk through?';
+    const liveKind = (VIEWS[s.st] || {}).kind;
+    const bKind = pg ? pg[1] : (fixed === 'minimised' ? 'listen' : (liveKind === 'speak' ? 'speak' : (liveKind === 'attn' ? 'attn' : 'listen')));
+    const bx = pg ? pg[2] : (fixed ? 310 : s.bx), by = pg ? pg[3] : (fixed ? 560 : s.by);
+    const page = pg ? pg[0] : s.page;
+    const dragMoved = !!(s.drag && s.drag.moved);
+    const nearT = (x, y) => Math.abs(x + 32 - 195) < 70 && Math.abs(y + 32 - 678) < 70;
+    const rootOf = (e) => (e && e.target && e.target.closest) ? e.target.closest('.rm-root') : null;
+    const goPage = (p) => { if (!this.live()) return; this.setState({ screen: 'page', page: p }); };
+    return {
+      showBubble: minimised && screen !== 'voice',
+      bListen: bKind === 'listen', bSpeak: bKind === 'speak', bAttn: bKind === 'attn', bKind: bKind,
+      bNeeds: fixed === 'pgNeeds' || (!fixed && minimised && s.st === 'needs'),
+      bx: bx, by: by, bSide: bx < 160 ? 'left' : 'right', bDragStr: (fixed === 'pgEnd' || dragMoved) ? 'true' : 'false',
+      showTarget: fixed === 'pgEnd' || dragMoved, targetHot: (fixed === 'pgEnd' || (dragMoved && nearT(s.bx, s.by))) ? 'true' : 'false',
+      isPage: screen === 'page', pageHome: page === 'home', pageClients: page === 'clients', pageTitle: page === 'home' ? 'Dashboard' : 'Clients',
+      curHome: page === 'home' ? 'page' : 'false', curClients: page === 'clients' ? 'page' : 'false',
+      goHome: () => goPage('home'), goClients: () => goPage('clients'),
+      goChat: () => { if (this.live()) this.setState({ screen: 'chat' }); },
+      bDown: (e) => { if (!this.live()) return; const r = rootOf(e); const k = r ? r.getBoundingClientRect().width / 390 : 1; this.setState({ drag: { px: e.clientX, py: e.clientY, bx: s.bx, by: s.by, k: k || 1, moved: false } }); },
+      bMove: (e) => { const d = this.state.drag; if (!d) return; const dx = (e.clientX - d.px) / d.k, dy = (e.clientY - d.py) / d.k; const moved = d.moved || Math.abs(dx) + Math.abs(dy) > 6; this.setState({ drag: Object.assign({}, d, { moved: moved }), bx: Math.max(8, Math.min(318, d.bx + dx)), by: Math.max(110, Math.min(700, d.by + dy)) }); },
+      bUp: () => { const d = this.state.drag; if (!d) return; if (!d.moved) { this.setState({ drag: null }); clearTimeout(this.mt); this.enter = performance.now(); this.setState({ screen: 'voice', minimised: false }); this.sched(); return; } if (nearT(this.state.bx, this.state.by)) { clearTimeout(this.mt); this.setState({ drag: null, minimised: false, bx: 310, by: 560 }); return; } this.setState({ drag: null, bx: this.state.bx + 32 < 195 ? 16 : 310 }); },
+      theme: theme,
+      isVoice: screen === 'voice', isChat: screen === 'chat',
+      off: v.off ? 'true' : 'false',
+      hasStatus: !!v.status, status: v.status || '', tone: v.tone || 'on',
+      kReady: v.kind === 'ready', kListen: v.kind === 'listen', kThink: v.kind === 'think', kSpeak: v.kind === 'speak' && n <= end + 0.2,
+      kAttn: v.kind === 'attn', kDone: v.kind === 'done', kOff: v.kind === 'off', kRest: v.kind === 'speak' && n > end + 0.2,
+      markScale: 'scale(' + (1 + 0.06 * env).toFixed(3) + ')',
+      orbLabel: v.kind === 'speak' ? 'Interrupt Mel' : 'Mel',
+      rings: rings, shimmer: shimmer, shimmerStyle: '--sx: ' + sx.toFixed(1) + 'px',
+      hasCut: !!v.cut, cut: v.cut || '',
+      hasWords: tl.length > 0, showWords: tl.length > 0 && !v.noCap, words: words, line: v.you || v.mel || '', who: isYou ? 'you' : 'mel',
+      hasHeard: !!v.heard, heard: v.heard || '',
+      showThread: this.props.flow !== 'crm', showDivider: ended,
+      cardStr: v.card ? 'true' : 'false',
+      isResult: !!v.card && v.card.k === 'result', isLink: !!v.card && v.card.k === 'link', isPick: !!v.card && v.card.k === 'pick', isConnect: !!v.card && v.card.k === 'connect',
+      iUser: !!v.card && v.card.i === 'user', iNote: !!v.card && v.card.i === 'note', iBell: !!v.card && v.card.i === 'bell',
+      cTitle: (v.card && v.card.title) || '', cSub: (v.card && v.card.sub) || '', cBody: (v.card && v.card.body) || '', hasCBody: !!(v.card && v.card.body), cFoot: (v.card && v.card.foot) || '',
+      picks: [{ name: 'Sarah Reynolds' }, { name: 'Sarah Kim' }], typingStr: (!dictating && !!dictText) ? 'true' : 'false',
+      tMel1: idx >= 3, tUser2: added && idx >= 4, tDraft: idx >= 6, tSent: sent && idx >= 7,
+      draftIntro: added ? 'Added the open house. Here’s the draft.' : 'Here’s the draft.',
+      showPill: minimised && screen === 'chat',
+      isDictating: dictating, notDictating: !dictating, dictText: dictText,
+      minimise: () => { if (!this.live()) return; clearTimeout(this.t); clearTimeout(this.mt); this.setState({ screen: 'chat', minimised: true }); if (['needs', 'done', 'idle', 'muted'].indexOf(this.state.st) === -1) this.mt = setTimeout(() => { if (this.state.minimised) this.setState({ st: 'needs' }); }, 6000); },
+      reopen: () => { if (!this.live()) return; this.enter = performance.now(); this.setState({ screen: 'voice', minimised: false }); this.sched(); },
+      endFromPill: () => { if (this.live()) this.setState({ minimised: false }); },
+      startDictate: () => { if (this.live()) this.setState({ dictating: true, dictDone: false, dictAt: performance.now() }); },
+      stopDictate: () => { if (this.live()) this.setState({ dictating: false, dictDone: true }); },
+      hasHint: !!v.hint, hint: v.hint || '',
+      isDenied: !!v.denied, isNetwork: !!v.network,
+      showDraft: !!v.draft, draftBody: body,
+      sent: sent, notSent: !sent,
+      isMuted: muted, notMuted: !muted, mutedStr: muted ? 'true' : 'false',
+      muteLabel: muted ? 'Unmute microphone' : 'Mute microphone',
+      end: () => { if (!this.live()) return; clearTimeout(this.t); this.setState({ screen: 'chat', muted: false, minimised: false }); },
+      retry: () => { if (this.live()) this.go('connecting'); },
+      tapOrb: () => { if (this.live() && s.st === 'speaking' && !s.muted) this.go('interrupt', { added: true }); },
+      toggleMute: () => {
+        if (!this.live()) return;
+        clearTimeout(this.t);
+        if (s.muted) { this.enter = performance.now(); this.setState({ muted: false, st: 'idle' }); } else { this.setState({ muted: true }); }
+        this.sched();
+      },
+      sendDraft: () => { if (this.live()) this.go('done', { sent: true }); },
+      startVoice: () => { if (!this.live()) return; this.enter = performance.now(); this.setState({ screen: 'voice', st: this.props.flow === 'crm' ? 'crmFind' : 'connecting', muted: false, sent: false, added: false, minimised: false, dictating: false, dictDone: false }); this.sched(); }
+    };
+  }
+}
+</script>
+</body>
+</html>

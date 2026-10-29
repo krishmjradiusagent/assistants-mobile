@@ -1,0 +1,130 @@
+/* Mel voice mode (KJ, 27 Oct). Full-screen page, Gemini/ChatGPT style. Mel mark + 07 Mel in motion states.
+   Breathing Mel-green tint circle only, no halo, no gradient wash. Controls: mute, keyboard, End. Placeholder copy until Biju. */
+.rm-root { --vm-tint-a: .06; --vm-tint-b: .13; --vm-tint-rgb: 18,168,103; --vm-paused: #DCE8E4; --vm-paused-dot: #FFFFFF; --vm-attn: #0E2B30; }
+.rm-root[data-theme="dark"] { --vm-tint-a: .07; --vm-tint-b: .15; --vm-tint-rgb: 61,220,151; --vm-paused: #3A4542; --vm-paused-dot: #8A9894; --vm-attn: #1E4D45; }
+
+.vm { position:relative; width:390px; height:844px; box-sizing:border-box; overflow:hidden; display:flex; flex-direction:column; background:var(--bg-page); color:var(--text-primary); font-family:var(--font-sans); }
+
+/* Top: title + live status, End X right */
+.vm__top { flex:none; display:grid; grid-template-columns:44px 1fr 44px; align-items:center; gap:var(--space-2); padding:54px var(--space-gutter) 0; }
+.vm__head { display:flex; flex-direction:column; align-items:center; gap:2px; min-width:0; }
+.vm__title { margin:0; font-size:17px; line-height:22px; font-weight:600; letter-spacing:-.01em; }
+.vm__status { margin:0; display:inline-flex; align-items:center; gap:6px; font-size:13px; line-height:18px; color:var(--text-secondary); text-align:center; }
+.vm__status-dot { width:6px; height:6px; border-radius:50%; background:var(--mel-green); flex:none; }
+.vm__status[data-tone="off"] .vm__status-dot { background:var(--text-tertiary); }
+.vm__x { width:44px; height:44px; border-radius:50%; border:0; padding:0; display:inline-flex; align-items:center; justify-content:center; background:var(--surface-input); color:var(--text-primary); cursor:pointer; }
+
+/* Stage: mascot + caption */
+.vm__stage { flex:1; min-height:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:44px; padding:0 28px; }
+.vm__orb { position:relative; width:160px; height:160px; flex:none; isolation:isolate; }
+/* Breathing tint circle removed (KJ, 27 Oct): mascot motion alone carries state. */
+.vm__orb svg { display:block; width:160px; height:160px; }
+@keyframes vm-breathe { 0%,100% { opacity:var(--vm-tint-a); transform:scale(1); } 50% { opacity:var(--vm-tint-b); transform:scale(1.06); } }
+
+.vm__cap { min-height:120px; width:100%; display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center; }
+.vm__line { margin:0; max-width:330px; font-size:22px; line-height:30px; font-weight:500; letter-spacing:-.015em; color:var(--text-primary); text-wrap:balance; }
+.vm__line--you { color:var(--text-secondary); }
+.vm__line--cut { font-size:15px; line-height:21px; font-weight:400; color:var(--text-tertiary); text-decoration:line-through; text-decoration-thickness:1px; }
+.vm__line--hint { font-size:15px; line-height:21px; font-weight:400; color:var(--text-secondary); }
+.vm__who { margin:0; font-size:12px; line-height:16px; font-weight:500; letter-spacing:.02em; color:var(--text-tertiary); }
+.vm__acts { display:flex; gap:var(--space-2); justify-content:center; flex-wrap:wrap; margin-top:var(--space-2); }
+
+/* Dock: draft card + controls */
+.vm__dock { flex:none; display:flex; flex-direction:column; gap:var(--space-5); padding:0 var(--space-gutter) 34px; }
+.vm__ctrls { display:flex; align-items:center; justify-content:center; gap:28px; }
+.vm__btn { width:60px; height:60px; border-radius:50%; border:0; padding:0; display:inline-flex; align-items:center; justify-content:center; background:var(--surface-input); color:var(--text-primary); cursor:pointer; }
+.vm__btn[aria-pressed="true"] { background:var(--surface-tile); box-shadow:inset 0 0 0 1.5px var(--text-primary); }
+.vm__btn--end { background:var(--text-primary); color:var(--bg-page); }
+.vm__btn:focus-visible, .vm__x:focus-visible, .vm__orbtap:focus-visible { outline:2px solid var(--text-primary); outline-offset:3px; }
+.vm__orbtap { display:block; padding:0; border:0; background:transparent; border-radius:50%; cursor:pointer; color:inherit; }
+
+/* Draft card (Send only). Same shape as chat draft cards. */
+.m-draft { display:flex; flex-direction:column; gap:var(--space-3); padding:var(--space-card-pad); border-radius:var(--radius-card); background:var(--surface-card); box-shadow:inset 0 0 0 1px var(--border-card); text-align:left; }
+.m-draft__head { display:flex; align-items:center; gap:var(--space-3); }
+.m-draft__head .rm-tile { flex:none; }
+.m-draft__head > div { flex:1; min-width:0; display:flex; flex-direction:column; }
+.m-draft__head p { margin:0; }
+.m-dfoot { display:flex; align-items:center; justify-content:space-between; gap:var(--space-3); padding-top:var(--space-2); border-top:1px solid var(--separator-on-card); }
+.m-dfoot .t-meta { margin:0; }
+.vm__sent { display:inline-flex; align-items:center; gap:6px; color:var(--text-secondary); }
+
+/* Ended in chat: voice divider line in thread */
+.vm-divider { display:flex; align-items:center; gap:var(--space-3); color:var(--text-tertiary); font-size:12px; line-height:16px; }
+.vm-divider::before, .vm-divider::after { content:""; flex:1; height:1px; background:var(--border-card); opacity:.6; }
+.vm-chat { position:relative; width:390px; height:844px; box-sizing:border-box; overflow:hidden; background:var(--bg-page); color:var(--text-primary); font-family:var(--font-sans); }
+
+/* Captions: last 2 lines only (KJ, 27 Oct). Words appear as spoken, older lines roll off the top. 2 x 34px. */
+.vm2-capwin { width:100%; max-height:68px; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; }
+
+/* Minimised: voice stays live while the agent is in chat (KJ, 27 Oct). Pill above the input. Tap = back to voice, X = end. */
+.vm-pill { display:flex; align-items:center; gap:var(--space-2); margin:0 0 var(--space-2); padding:4px 4px 4px 6px; border-radius:var(--radius-pill); background:var(--surface-card); box-shadow:inset 0 0 0 1px var(--border-card); }
+.vm-pill__open { flex:1; min-width:0; min-height:44px; display:flex; align-items:center; gap:10px; padding:0 4px; border:0; border-radius:var(--radius-pill); background:transparent; color:var(--text-primary); font:inherit; text-align:left; cursor:pointer; }
+.vm-pill__mark { flex:none; width:32px; height:32px; }
+.vm-pill__mark svg { display:block; width:100%; height:100%; }
+.vm-pill__text { min-width:0; }
+.vm-pill__end { flex:none; width:44px; height:44px; border:0; padding:0; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:var(--text-primary); color:var(--bg-page); cursor:pointer; }
+.vm-pill__open:focus-visible, .vm-pill__end:focus-visible { outline:2px solid var(--text-primary); outline-offset:2px; }
+
+/* Cards in voice (KJ, 28 Oct): card sits in the dock slot above controls, mark shrinks 140 -> 96, stage moves up. */
+.vc[data-card="true"] .vm2-stage { top:180px; gap:28px; }
+.vc[data-card="true"] .vm2-mark { width:96px; height:96px; }
+.vm-link { display:flex; align-items:center; gap:var(--space-3); min-height:64px; padding:var(--space-card-pad); border-radius:var(--radius-card); background:var(--surface-card); box-shadow:inset 0 0 0 1px var(--border-card); color:var(--text-primary); text-decoration:none; }
+.vm-link .rm-tile { flex:none; }
+.vm-link__text { flex:1; min-width:0; display:flex; flex-direction:column; }
+.vm-link > svg { flex:none; color:var(--text-secondary); }
+.vm-pick { display:flex; flex-direction:column; border-radius:var(--radius-card); background:var(--surface-card); box-shadow:inset 0 0 0 1px var(--border-card); overflow:hidden; }
+.vm-pick__row { display:flex; align-items:center; gap:var(--space-3); min-height:60px; padding:0 var(--space-card-pad); border:0; background:transparent; color:var(--text-primary); font:inherit; text-align:left; cursor:pointer; }
+.vm-pick__row + .vm-pick__row { box-shadow:inset 0 1px 0 var(--separator-on-card); }
+.vm-pick__row .rm-tile { flex:none; }
+.vm-perms { margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:6px; }
+.vm-perms li { display:flex; align-items:center; gap:8px; margin:0; }
+.vm-perms svg { flex:none; color:var(--mel-green); }
+.vm-link:focus-visible, .vm-pick__row:focus-visible { outline:2px solid var(--text-primary); outline-offset:2px; }
+
+/* Dictating: mic becomes a stop square while words fill the input. */
+.vm-dictstop { color:var(--bg-page) !important; background:var(--text-primary) !important; }
+
+@media (prefers-reduced-motion: reduce) { .vm__orb::before { animation:none; } }
+
+/* ===== Minimised across tabs (KJ, 28 Oct). Floating Mel bubble on every tab, chat included (replaces the pill).
+   Tap = back to voice. Drag = move, snaps to the nearest side. Drag onto the cross at the bottom = End.
+   Needs you: bubble turns attention + label, Mel also says it. Background pages are grey skeletons. ===== */
+.vb { position:absolute; z-index:20; width:64px; height:64px; touch-action:none; }
+.vb-btn { position:relative; isolation:isolate; width:64px; height:64px; padding:8px; border:0; border-radius:50%; cursor:grab; touch-action:none; -webkit-backdrop-filter:blur(40px) saturate(150%); backdrop-filter:blur(40px) saturate(150%); }
+.vb-btn svg { display:block; width:48px; height:48px; }
+.rm-root[data-theme="light"] .vb-btn { background:rgba(247,250,249,.86); box-shadow:inset 0 1px 0 rgba(255,255,255,.95), 0 0 0 1px rgba(14,43,48,.06), 0 12px 32px rgba(14,43,48,.20); }
+.rm-root[data-theme="dark"] .vb-btn { background:rgba(32,36,35,.82); box-shadow:inset 0 1px 0 rgba(255,255,255,.20), inset 0 0 0 1px rgba(255,255,255,.10), 0 12px 32px rgba(0,0,0,.5); }
+.vb-btn::after { content:""; position:absolute; inset:-3px; border-radius:50%; border:2px solid var(--mel-green); opacity:.0; animation:vb-live 2.4s ease-out infinite; pointer-events:none; }
+.vb[data-kind="attn"] .vb-btn::after { border-color:#3DDC97; animation-duration:1.2s; }
+@keyframes vb-live { 0% { transform:scale(1); opacity:.7; } 100% { transform:scale(1.35); opacity:0; } }
+.vb[data-drag="true"] .vb-btn { cursor:grabbing; transform:scale(1.08); }
+.vb[data-drag="true"] .vb-btn::after { animation:none; }
+.vb-btn:focus-visible { outline:2px solid var(--text-primary); outline-offset:4px; }
+.vb-label { position:absolute; top:50%; transform:translateY(-50%); white-space:nowrap; padding:8px 12px; border-radius:999px; font:600 14px/18px var(--font-sans); color:var(--text-primary); background:var(--surface-card); box-shadow:inset 0 0 0 1px var(--border-card), 0 8px 24px rgba(14,43,48,.16); }
+.vb[data-side="right"] .vb-label { right:calc(100% + 8px); }
+.vb[data-side="left"] .vb-label { left:calc(100% + 8px); }
+.vb-target { position:absolute; z-index:19; left:50%; top:646px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:8px; pointer-events:none; }
+.vb-target__x { width:64px; height:64px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:var(--text-primary); background:var(--surface-card); box-shadow:inset 0 0 0 1.5px var(--border-card), 0 8px 24px rgba(14,43,48,.14); transition:transform .15s ease, background .15s ease; }
+.vb-target[data-hot="true"] .vb-target__x { transform:scale(1.25); background:var(--text-primary); color:var(--bg-page); }
+.vb-target__t { font:500 13px/18px var(--font-sans); color:var(--text-secondary); }
+.rm-root:has(.vb-target) .vb[data-drag="true"] { z-index:21; }
+/* grey skeleton pages */
+.sk-page { position:absolute; inset:0; overflow:hidden; display:flex; flex-direction:column; gap:var(--space-4); padding:calc(var(--space-8) + 64px) var(--space-gutter) 0; box-sizing:border-box; }
+.sk-bar { display:block; height:12px; border-radius:6px; background:var(--surface-input); }
+.sk-bar--h { height:22px; border-radius:8px; }
+.sk-bar--s { height:10px; opacity:.7; }
+.sk-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:var(--space-3); }
+.sk-tile { height:84px; border-radius:var(--radius-card); background:var(--surface-input); }
+.sk-card { display:flex; flex-direction:column; border-radius:var(--radius-card); background:var(--surface-card); box-shadow:inset 0 0 0 1px var(--border-card); padding:var(--space-1) var(--space-card-pad); }
+.sk-card--tall { height:160px; }
+.sk-row { display:flex; align-items:center; gap:var(--space-3); padding:var(--space-3) 0; }
+.sk-row + .sk-row { box-shadow:inset 0 1px 0 var(--separator-on-card); }
+.sk-av { flex:none; width:36px; height:36px; border-radius:50%; background:var(--surface-input); }
+.sk-lines { flex:1; display:flex; flex-direction:column; gap:8px; }
+.sk-search { height:44px; border-radius:999px; background:var(--surface-input); }
+.sk-chips { display:flex; gap:var(--space-2); }
+.sk-chip { width:76px; height:32px; border-radius:999px; background:var(--surface-input); }
+@media (prefers-reduced-motion: reduce) { .vb-btn::after { animation:none; } }
+/* End = Mel error red (KJ, 28 Oct). Full voice End only; drop target stays neutral. */
+.rm-root .vc-end { background:#B42318; color:#FFFFFF; }
+.rm-root .vc-end:active { background:#8F1C13; }

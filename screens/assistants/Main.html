@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-expression="quiet" data-platform="ios"><head><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Welcome, dark · static snapshot for developers"><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>Welcome, dark</title>
+<style>x-dc{display:none!important}</style>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="c-code-boxes.css">
+<link rel="stylesheet" href="mel-chat-overrides.css?v=109">
+<link rel="stylesheet" href="mel-brand.css?v=109">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap"><style>
+body{margin:0}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="Main"><div class="rm-root" data-theme="dark" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; justify-content: center; background: var(--bg-welcome); color: var(--text-primary); font-family: var(--font-sans);"><div class="mb-dots" aria-hidden="true"></div><div style="min-height: 0px; padding: var(--space-6) var(--space-gutter) 0;"><div style="display: flex; justify-content: center; align-items: center; margin-top: var(--space-5); margin-bottom: var(--space-3);"><span class="mb-mark mb-mark--hero" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="3" fill="none"></circle><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span></div><header class="rm-stack" style="align-items: center; text-align: center; --rm-gap: var(--space-2);"><h1 class="t-large-title" style="margin: 0px;">MEL</h1><p class="t-body t-secondary" style="margin: 0px;">Your AI assistant for real estate.</p></header><section class="rm-card rm-card--list" aria-label="What MEL can do" style="margin-top: var(--space-5); padding: var(--space-2) var(--space-4);"><div class="rm-item" style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0;"><span class="mb-mark mb-mark--row" data-skill="crm" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><div style="min-width: 0px;"><p class="t-body-strong" style="margin: 0px;">Manage clients</p><p class="t-caption t-secondary" style="margin: 0px;">CRM. Import contacts, update records, follow up.</p></div></div><div class="rm-item" style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0;"><span class="mb-mark mb-mark--row" data-skill="marketing" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><div style="min-width: 0px;"><p class="t-body-strong" style="margin: 0px;">Create marketing</p><p class="t-caption t-secondary" style="margin: 0px;">Marketing. Posts, flyers, email, yard signs.</p></div></div><div class="rm-item" style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0;"><span class="mb-mark mb-mark--row" data-skill="mls" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><div style="min-width: 0px;"><p class="t-body-strong" style="margin: 0px;">Explore listings</p><p class="t-caption t-secondary" style="margin: 0px;">MLS. Search homes, pull comps.</p></div></div><div class="rm-item" style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0;"><span class="mb-mark mb-mark--row" data-skill="compliance" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><div style="min-width: 0px;"><p class="t-body-strong" style="margin: 0px;">Check compliance</p><p class="t-caption t-secondary" style="margin: 0px;">Compliance. Flag what a file is missing.</p></div></div><div class="rm-item" style="display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) 0;"><span class="mb-mark mb-mark--row" data-skill="document" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><div style="min-width: 0px;"><p class="t-body-strong" style="margin: 0px;">Review documents</p><p class="t-caption t-secondary" style="margin: 0px;">Document. Summarise, prepare for signing.</p></div></div></section></div><footer class="rm-stack" style="position: relative; z-index: 2; align-items: center; --rm-gap: var(--space-2); padding: var(--space-5) var(--space-gutter) var(--space-8);"><div class="rm-card rm-card--bordered" style="display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); width: 100%; box-sizing: border-box; margin-bottom: var(--space-2); padding: var(--space-3) var(--space-4); background: var(--surface-tile); border: 1px solid var(--border-card);"><div style="min-width: 0px;"><p class="t-body-strong" style="margin: 0px; white-space: nowrap;">Built for agents &amp; teams</p><div class="t-secondary" aria-label="Chat, text, WhatsApp, email" style="display: flex; align-items: center; gap: var(--space-2); margin-top: 2px;"><span title="Chat"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"></path></svg></span><span title="Text"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Zm40-104a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,112Zm0,32a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,144Z"></path></svg></span><span title="WhatsApp (placeholder icon, use official asset)"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71a8,8,0,0,0,.56-.77,16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg></span><span title="Email"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path></svg></span></div></div><div style="flex: 0 0 auto; text-align: right;"><p class="t-title" style="margin: 0px; color: var(--mel-green); line-height: 1.1; font-weight: 800;">10K</p><p class="t-caption t-secondary" style="margin: 0px;">free credits</p></div></div><button type="button" class="rm-btn rm-btn--primary rm-btn--block t-body-strong">Try MEL for free</button><button type="button" class="rm-btn rm-btn--glass rm-btn--block t-body-strong" style="width: 100%; height: var(--size-control-lg, var(--size-control)); padding: 0 var(--space-4); font-size: inherit; border-radius: var(--radius-pill);">Sign in</button></footer></div></div></div>
+
+
+
+</body></html>

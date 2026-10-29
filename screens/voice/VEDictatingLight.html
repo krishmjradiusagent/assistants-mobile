@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="7. Dictating in chat, light · static snapshot for developers"><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>Voice, Dictating in chat, light</title>
+<style>x-dc{display:none!important}</style>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="mel-brand.css">
+<link rel="stylesheet" href="mel-chat-overrides.css">
+<link rel="stylesheet" href="c-prompt-row.css">
+<link rel="stylesheet" href="c-typeset-chat.css">
+<link rel="stylesheet" href="c-trace.css">
+<link rel="stylesheet" href="chat-board.css">
+<link rel="stylesheet" href="voice.css">
+<link rel="stylesheet" href="concepts.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap"><style>
+body{margin:0}
+</style><style>
+body{margin:0}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="VEDictatingLight"><div style="width: 390px; height: 844px; overflow: hidden;"><div class="sc-host" data-sc-name="Main"><div class="rm-root" data-theme="light" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans);"><div data-scroll="1" style="position: absolute; inset: 0px; overflow-y: auto; padding: calc(var(--space-8) + var(--size-control-lg) + var(--space-10)) var(--space-gutter) calc(var(--size-control-lg) * 5 + var(--space-8) + var(--space-4));"><div class="rm-stack rm-stack--loose"><p class="vm-divider" style="margin: 0px;">Voice chat · 1:12</p><article class="c-ai-message c-ai-message--user" data-slot="message" data-from="user" aria-label="Your message"><div class="c-ai-message__content" data-slot="message-content"><div class="rm-card rm-card--bordered"><p class="t-body" style="margin: 0px;">Follow up with Sarah Reynolds about 412 Marina Blvd</p></div></div></article><article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message"><div class="c-ai-message__content" data-slot="message-content"><div class="c-streaming-text c-mel-plain typeset typeset-chat"><p class="c-streaming-text__body" style="margin: 0px;">Sarah hasn’t replied in 5 days. I drafted a short follow-up.</p></div></div></article><article class="c-ai-message c-ai-message--user" data-slot="message" data-from="user" aria-label="Your message"><div class="c-ai-message__content" data-slot="message-content"><div class="rm-card rm-card--bordered"><p class="t-body" style="margin: 0px;">Wait, add the open house on Saturday</p></div></div></article><article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message"><div class="c-ai-message__content" data-slot="message-content"><div class="rm-stack"><div class="c-streaming-text c-mel-plain typeset typeset-chat"><p class="c-streaming-text__body" style="margin: 0px;"><span class="sc-interp">Added the open house. Here’s the draft.</span></p></div><section class="m-draft" aria-label="Email draft to Sarah Reynolds"><div class="m-draft__head"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM203.43,64,128,133.15,52.57,64ZM216,192H40V74.19l82.59,75.71a8,8,0,0,0,10.82,0L216,74.19V192Z"></path></svg></span><div><p class="t-body-strong">Sarah Reynolds · Email</p><p class="t-meta t-secondary">Re: 412 Marina Blvd</p></div></div><p class="t-body" style="margin: 0px;"><span class="sc-interp">Hi Sarah, checking in on 412 Marina Blvd. The open house is Saturday, 1 to 4 PM. Want me to save you a time to walk through?</span></p><div class="m-dfoot"><span class="t-meta t-secondary">Sends from your Radius email</span><button type="button" class="rm-btn rm-btn--primary rm-btn--sm t-meta"><span>Send</span></button></div></section></div></div></article></div></div><header class="m-chathead"><button type="button" class="m-avatar" aria-label="Profile">K</button><h1 class="m-chathead__title">Mel</h1><button type="button" class="m-bell" aria-label="Notifications, new"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg><span class="m-bell__dot" aria-hidden="true"></span></button></header><footer class="c-glass-footer c-glass-footer--soft-edge" style="padding: var(--space-3) var(--space-gutter) calc(var(--space-2) + var(--space-6));"><form class="c-chat-composer m-cc" aria-label="Message composer" data-typing="false" data-generating="false"><button type="button" class="m-cc__btn" aria-label="Attachments and connected sources" aria-haspopup="menu"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg></button><textarea rows="1" class="c-chat-composer__field t-body" aria-label="Message MEL" placeholder="Ask anything" style="">Follow up with Sarah Reynolds about…</textarea><div class="c-chat-composer__idle"><button type="button" class="m-cc__btn vm-dictstop" aria-label="Stop dictating"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="2"></rect></svg></button><button type="button" class="rm-btn rm-btn--voice m-cc__round" aria-label="Speak to MEL"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></button></div><button type="submit" class="rm-btn rm-btn--primary c-chat-composer__send m-cc__round" aria-label="Send message"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path></svg></button><button type="button" class="rm-btn rm-btn--primary c-chat-composer__stop m-cc__round" aria-label="Stop generating"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="2"></rect></svg></button></form><div class="m-navrow"><button type="button" class="m-mel" aria-label="Chat with Mel" aria-current="page"><span class="mb-mark" role="img" aria-label="Mel"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g class="mm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="mm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span></button><nav class="m-nav" aria-label="Main"><button type="button" class="m-nav__item" aria-label="Dashboard"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></button><button type="button" class="m-nav__item" aria-label="Clients"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></button><button type="button" class="m-nav__item" aria-label="Transactions"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg></button></nav><button type="button" class="m-inbox" aria-label="Inbox"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"></path></svg></button></div></footer></div></div></div></div></div>
+
+
+
+</body></html>

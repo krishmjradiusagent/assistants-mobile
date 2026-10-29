@@ -1,0 +1,12 @@
+/* c-prompt-row: suggested prompt as a plain text row (glyph + one line). Tap fills the composer, it does not send.
+   Replaces c-prompt-card and c-follow-up-action in Mel chat. Canvas-only, pending copy into the Radius Mobile DS. */
+.c-prompt-rows { display:flex; flex-direction:column; width:100%; min-width:0; }
+.c-prompt-row { display:flex; align-items:flex-start; gap:var(--space-3); width:100%; min-height:var(--size-hit-ios); padding:var(--space-3) 0; border:0; border-top:1px solid var(--border-card); border-radius:0; background:transparent; color:var(--text-primary); font:inherit; text-align:left; cursor:pointer; box-sizing:border-box; }
+.c-prompt-row:first-child { border-top:0; }
+.c-prompt-row:active { background:var(--surface-tile); }
+.c-prompt-row:focus-visible { outline:2px solid var(--text-primary); outline-offset:2px; }
+.c-prompt-row__glyph { flex:none; width:16px; height:16px; margin-top:0.2em; color:var(--action-primary); }
+.c-prompt-row__text { flex:1; min-width:0; overflow-wrap:anywhere; color:var(--action-primary); }
+/* Suggested prompts in the CTA colour (KJ, chat intimation). Follows --action-primary per theme. */
+.c-prompt-row--more .c-prompt-row__text { color:var(--text-secondary); }
+.c-prompt-row--danger .c-prompt-row__text, .c-prompt-row--danger .c-prompt-row__glyph { color: var(--action-destructive); }

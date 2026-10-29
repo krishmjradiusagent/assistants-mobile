@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-expression="quiet" data-platform="ios">
+<head>
+<meta charset="utf-8">
+<title>Connectors, dark</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="mel-brand.css?v=109">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rm-root" data-theme="dark" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans)">
+
+<div style="position: absolute; inset: 0; overflow-y: auto; padding: var(--space-8) var(--space-gutter) var(--space-8)">
+<div class="rm-stack rm-stack--loose" style="gap: 24px">
+
+<header class="rm-stack" style="--rm-gap: var(--space-3)">
+<span class="mb-mark mb-mark--large mb-mark--hero" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"/><circle class="mb-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="3" fill="none"/><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"/></svg></span>
+<h1 class="t-welcome-title" style="margin: 0">Your MEL, one message away</h1>
+</header>
+
+<div data-dc-group="" style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px; justify-content: normal; align-items: normal"><section class="rm-section" aria-labelledby="reach-title">
+<div class="rm-section-head"><div class="rm-stack rm-stack--tight">
+<div data-dc-group="" style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px; justify-content: normal; align-items: normal"><h2 id="reach-title" class="t-section" style="margin: 0">Let’s stay connected</h2><p class="t-meta t-secondary" style="margin: 0">Message me wherever you prefer.</p></div>
+
+</div></div>
+<div class="rm-card rm-card--list">
+<sc-for list="{{contacts}}" as="c" hint-placeholder-count="3">
+<div class="rm-item" aria-label="{{c.name}}">
+<span class="rm-tile {{c.tone}}" aria-hidden="true">
+<sc-if value="{{c.hasSrc}}" hint-placeholder-val="{{ false }}"><img src="{{c.src}}" alt="" width="32" height="32" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit"></sc-if>
+<sc-if value="{{c.isText}}" hint-placeholder-val="{{ false }}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,48H40A16,16,0,0,0,24,64V224a15.85,15.85,0,0,0,9.24,14.5A16.13,16.13,0,0,0,40,240a15.89,15.89,0,0,0,10.25-3.78l.09-.07L83,208H216a16,16,0,0,0,16-16V64A16,16,0,0,0,216,48ZM40,224h0ZM216,192H80a8,8,0,0,0-5.23,1.95L40,224V64H216ZM88,112a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H96A8,8,0,0,1,88,112Zm0,32a8,8,0,0,1,8-8h64a8,8,0,1,1,0,16H96A8,8,0,0,1,88,144Z"></path></svg></sc-if>
+<sc-if value="{{c.isEmail}}" hint-placeholder-val="{{ false }}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path></svg></sc-if>
+<sc-if value="{{c.isChat}}" hint-placeholder-val="{{ false }}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"></path></svg></sc-if>
+</span>
+<div class="rm-item__body"><div class="t-body-strong">{{c.name}}</div><div class="t-meta t-secondary">{{c.value}}</div></div>
+<sc-if value="{{c.canCopy}}" hint-placeholder-val="{{ true }}"><button type="button" class="rm-btn rm-btn--secondary t-body-strong" aria-label="{{c.aria}}" onClick="{{c.copy}}">
+<sc-if value="{{c.copied}}" hint-placeholder-val="{{ false }}"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg></sc-if>
+<sc-if value="{{c.notCopied}}" hint-placeholder-val="{{ true }}"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg></sc-if>
+</button></sc-if>
+<sc-if value="{{c.isChat}}" hint-placeholder-val="{{ false }}"><span class="rm-item__chev" aria-hidden="true"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></span></sc-if>
+</div>
+</sc-for>
+</div>
+</section><section class="rm-section" aria-labelledby="tools-title">
+<div class="rm-section-head"><div class="rm-stack rm-stack--tight">
+<div data-dc-group="" style="box-sizing: border-box; display: flex; flex-direction: column; gap: 2px; justify-content: normal; align-items: normal"><h2 id="tools-title" class="t-section" style="margin: 0">Connect your tools</h2><p class="t-meta t-secondary" style="margin: 0">Connect now, or do it later.</p></div>
+
+</div></div>
+<div class="rm-card rm-card--list">
+<sc-for list="{{tools}}" as="c" hint-placeholder-count="6">
+<div class="rm-item">
+<span class="rm-tile" aria-hidden="true">
+<sc-if value="{{c.hasSrc}}" hint-placeholder-val="{{ true }}"><img src="{{c.src}}" alt="" width="{{c.px}}" height="{{c.px}}" style="{{c.imgStyle}}"></sc-if>
+<sc-if value="{{c.noSrc}}" hint-placeholder-val="{{ false }}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z"></path></svg></sc-if>
+</span>
+<div class="rm-item__body"><div class="t-body-strong">{{c.name}}</div><div class="t-meta t-secondary">{{c.sub}}</div></div>
+<sc-if value="{{c.connected}}" hint-placeholder-val="{{ false }}"><button type="button" class="rm-btn rm-btn--secondary t-body-strong" aria-label="{{c.disconnectLabel}}" onClick="{{c.toggle}}"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" style="color: var(--action-destructive)"><path d="M198.63,57.37a32,32,0,0,0-45.19-.06L141.79,69.52a8,8,0,0,1-11.58-11l11.72-12.29a1.59,1.59,0,0,1,.13-.13,48,48,0,0,1,67.88,67.88,1.59,1.59,0,0,1-.13.13l-12.29,11.72a8,8,0,0,1-11-11.58l12.21-11.65A32,32,0,0,0,198.63,57.37ZM114.21,186.48l-11.65,12.21a32,32,0,0,1-45.25-45.25l12.21-11.65a8,8,0,0,0-11-11.58L46.19,141.93a1.59,1.59,0,0,0-.13.13,48,48,0,0,0,67.88,67.88,1.59,1.59,0,0,0,.13-.13l11.72-12.29a8,8,0,1,0-11.58-11ZM216,152H192a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16ZM40,104H64a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16Zm120,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V192A8,8,0,0,0,160,184ZM96,72a8,8,0,0,0,8-8V40a8,8,0,0,0-16,0V64A8,8,0,0,0,96,72Z"></path></svg></button></sc-if>
+<sc-if value="{{c.notConnected}}" hint-placeholder-val="{{ true }}"><button type="button" class="rm-btn rm-btn--secondary t-body-strong" aria-label="{{c.connectLabel}}" onClick="{{c.toggle}}">Connect</button></sc-if>
+</div>
+</sc-for>
+<button type="button" class="rm-item" aria-expanded="{{browse}}" style="width:100%;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer" onClick="{{toggleBrowse}}">
+<span class="rm-tile" aria-hidden="true"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></span>
+<span class="rm-item__body t-body-strong">{{browseLabel}}</span>
+<span class="rm-item__chev" aria-hidden="true"><svg class="ph" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></span>
+</button>
+</div>
+</section></div>
+
+
+
+</div>
+</div>
+
+
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+const TOOLS = [{"name": "Gmail", "group": "Email", "src": "/_blob/2c05aec5de7b94bb013978a76b0dd887", "full": true}, {"name": "Google Calendar", "group": "Calendar", "src": "/_blob/0f0ccea24db505d52222d65dfec35e60", "full": true}, {"name": "Follow Up Boss", "group": "CRM", "src": "/_blob/6ee3e0d5ce3443c5329aede7940af5f2", "full": false}, {"name": "Facebook", "group": "Marketing", "src": "/_blob/872d8d720aa5d73f59c2f00195be79f5", "full": true}, {"name": "Instagram", "group": "Marketing", "src": "/_blob/d2f79bd7f8ba231fa3a88f5421d98995", "full": true}, {"name": "ChatGPT", "group": "AI", "src": "/_blob/51b997ca0e9b6228aacd8ee571003865", "full": true}, {"name": "Claude", "group": "AI", "src": "/_blob/14cfec470b2b90c33be55522be51eacb", "full": false}, {"name": "Outlook", "group": "Email & calendar", "src": "/_blob/33e953f5076ee4f87185a5b923ddb667", "full": false}, {"name": "kvCORE", "group": "CRM", "src": "/_blob/1c22be8cfa18815d1d098e18a4e90f1f", "full": false}, {"name": "Salesforce", "group": "CRM", "src": "/_blob/f497b119d348830e9a886f6fb8982a9b", "full": false}, {"name": "Google Drive", "group": "Files", "src": "/_blob/3182b07ae66caac96ddf3e72ea05525d", "full": false}, {"name": "Dropbox", "group": "Files", "src": "/_blob/f55b436b8f58389402e110e999c70770", "full": false}, {"name": "OneDrive", "group": "Files", "src": "/_blob/4610d4741aed73ad0a11278753b5b0ef", "full": false}, {"name": "DocuSign", "group": "Documents", "src": "/_blob/65cada952b731385636927ff463d4bdd", "full": false}, {"name": "MLS provider", "group": "Property", "src": "", "full": false}];
+const NUMBER = '+1 (202) 555-0147';
+const EMAIL = 'hello@mel.example';
+const CONTACTS = [
+  { name: 'Chat with MEL', value: 'In the app', tone: 'tone-success', isChat: true, aria: 'Open chat with MEL' },
+  { name: 'Text MEL', value: NUMBER, tone: 'tone-info', isText: true, aria: 'Copy Text MEL number' },
+  { name: 'WhatsApp', value: NUMBER, src: '/_blob/b8fc826133c7ff9c71450085c61bbd53', aria: 'Copy WhatsApp number' },
+  { name: 'Email MEL', value: EMAIL, tone: 'tone-success', isEmail: true, aria: 'Copy Email MEL address' }
+];
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { browse: false, connected: {}, copied: '' };
+  }
+  renderVals() {
+    const s = this.state;
+    const list = s.browse ? TOOLS : TOOLS.slice(0, 6);
+    return {
+      browse: s.browse,
+      browseLabel: s.browse ? 'Show fewer connectors' : 'Browse all connectors',
+      toggleBrowse: () => this.setState({ browse: !s.browse }),
+      contacts: CONTACTS.map((c) => ({
+        name: c.name, value: c.value, src: c.src || '', tone: c.tone || '', aria: c.aria,
+        hasSrc: !!c.src, isText: !!c.isText, isEmail: !!c.isEmail, isChat: !!c.isChat, canCopy: !c.isChat,
+        copied: s.copied === c.name, notCopied: s.copied !== c.name,
+        copy: () => this.setState({ copied: c.name })
+      })),
+      tools: list.map((t) => {
+        const on = !!s.connected[t.name];
+        return {
+          name: t.name, src: t.src, hasSrc: !!t.src, noSrc: !t.src,
+          px: t.full ? 32 : 20,
+          imgStyle: t.full ? 'width: 100%; height: 100%; object-fit: cover; border-radius: inherit' : 'width: 20px; height: 20px; object-fit: contain',
+          sub: on ? 'Connected' : t.group,
+          connected: on, notConnected: !on,
+          connectLabel: 'Connect ' + t.name, disconnectLabel: 'Disconnect ' + t.name,
+          toggle: () => this.setState({ connected: Object.assign({}, s.connected, { [t.name]: !on }) })
+        };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

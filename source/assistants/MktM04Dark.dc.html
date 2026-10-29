@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-expression="quiet" data-platform="ios">
+<head>
+<meta charset="utf-8">
+<title>Step 4, your brand, dark</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="c-skill-pills.css?v=109">
+<link rel="stylesheet" href="c-prompt-row.css?v=109">
+<link rel="stylesheet" href="mel-brand.css?v=109">
+<link rel="stylesheet" href="mel-chat-overrides.css?v=109">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.m-card{display:flex;flex-direction:column;gap:var(--space-4)}
+.m-lbl{margin:0}
+.m-field-row{display:flex;gap:var(--space-3);align-items:center}
+.m-swatch{flex:none;width:32px;height:32px;border-radius:var(--radius-badge);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-field-row .c-text-field{flex:1;min-width:0}
+.m-ph{position:relative;display:flex;align-items:center;justify-content:center;background:var(--surface-tile);color:var(--text-tertiary);overflow:hidden;border-radius:var(--radius-tile);width:100%}
+.m-ph .ph{font-size:var(--size-icon-row)}
+.m-r-45{aspect-ratio:4/5}.m-r-916{aspect-ratio:9/16}.m-r-43{aspect-ratio:4/3}.m-r-11{aspect-ratio:1/1}.m-r-85{aspect-ratio:17/22}
+.m-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.m-play>span{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--action-glass);color:var(--text-primary);box-shadow:inset 0 0 0 1px var(--border-glass)}
+.m-play .ph{font-size:24px}
+.m-chip-corner{position:absolute;top:var(--space-2);left:var(--space-2)}
+.m-style-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3)}
+.m-style{position:relative;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-2);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);cursor:pointer}
+.m-style--wide{grid-column:1 / -1}
+.m-style input{position:absolute;opacity:0;pointer-events:none}
+.m-style[data-selected]{box-shadow:inset 0 0 0 2px var(--action-primary)}
+.m-style__check{position:absolute;top:var(--space-4);right:var(--space-4);width:24px;height:24px;border-radius:50%;background:var(--action-primary);color:var(--text-on-action);display:none;align-items:center;justify-content:center}
+.m-style[data-selected] .m-style__check{display:flex}
+.m-style__text{padding:0 var(--space-1) var(--space-1);display:flex;flex-direction:column;gap:var(--space-0-5)}
+.m-list-row{display:flex;gap:var(--space-3);align-items:center;padding:var(--space-3);border-radius:var(--radius-tile);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-list-row[data-selected]{box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-list-row__ic{flex:none;font-size:var(--size-icon-row);color:var(--text-secondary)}
+.m-list-row__body{flex:1;min-width:0;display:flex;flex-direction:column;gap:var(--space-0-5)}
+.m-list-row__go{flex:none;font-size:var(--size-icon-row)}
+.m-radio-dot{flex:none;width:var(--size-icon-row);height:var(--size-icon-row);border-radius:50%;background:var(--text-tertiary);opacity:.5}
+.m-dest{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border-radius:var(--radius-tile);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-dest .c-checkbox{flex:none}
+.m-dest__ic{flex:none;font-size:var(--size-icon-row);color:var(--text-secondary)}
+.m-dest__body{flex:1;min-width:0;display:flex;flex-direction:column}
+.m-sep{height:1px;background:var(--separator-on-card);margin:0}
+.m-routine .c-radio__text{white-space:normal;overflow:visible;display:block}
+.m-bullets{margin:0;padding-left:var(--space-5);display:flex;flex-direction:column;gap:var(--space-1)}
+.m-doc{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-card-pad);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);cursor:pointer;width:100%;box-sizing:border-box;text-align:left}
+.m-doc__top{display:flex;align-items:flex-start;gap:var(--space-3)}
+.m-doc__top>div{flex:1;min-width:0}
+.m-doc__strip{display:flex;gap:var(--space-2);align-items:stretch}
+.m-doc__strip .m-ph{border-radius:var(--radius-badge)}
+.m-doc__foot{display:flex;align-items:center;gap:var(--space-2);color:var(--text-secondary)}
+.m-doc__foot .m-doc__go{margin-left:auto;font-size:var(--size-icon-row);color:var(--text-tertiary)}
+.m-viewer-head{position:absolute;inset:0 0 auto 0;z-index:7;display:grid;grid-template-columns:var(--size-control) minmax(0,1fr) auto;align-items:center;gap:var(--space-3);padding:var(--space-8) var(--space-gutter) var(--space-3)}
+.m-viewer-head__t{min-width:0;text-align:center;display:flex;flex-direction:column}
+.m-viewer-head__t>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m-viewer-head__a{display:flex;gap:var(--space-2)}
+.m-viewer-body{position:absolute;inset:0;overflow-y:auto;padding:calc(var(--space-8) + var(--size-control) + var(--space-8)) var(--space-gutter) var(--space-12);display:flex;flex-direction:column;gap:var(--space-6)}
+.m-page{display:flex;flex-direction:column;gap:var(--space-3)}
+.m-page__sheet{padding:var(--space-3);border-radius:var(--radius-card);background:var(--surface-raised);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-page__meta{display:flex;justify-content:space-between;align-items:baseline;padding:0 var(--space-1)}
+.m-page__cap{display:flex;flex-direction:column;gap:var(--space-0-5);padding:0 var(--space-1)}
+.m-bar{position:absolute;left:var(--space-3);right:var(--space-3);bottom:var(--space-3);height:4px;border-radius:2px;background:var(--surface-card)}
+.m-bar>span{display:block;height:100%;width:38%;border-radius:2px;background:var(--action-primary)}
+.m-scrim{position:absolute;inset:0;z-index:20;background:rgba(0,0,0,.5)}
+.m-sheet{position:absolute;left:0;right:0;bottom:0;z-index:21;background:var(--surface-sheet);border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;padding:var(--space-sheet-gutter) var(--space-sheet-gutter) calc(var(--space-sheet-body-bottom) + var(--space-8));display:flex;flex-direction:column;gap:var(--space-4)}
+.m-sheet__grab{width:36px;height:4px;border-radius:2px;background:var(--text-tertiary);opacity:.5;align-self:center}
+.m-sheet .rm-card{background:var(--surface-sheet-card)}
+.m-sheet__opt{display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-3)}
+.m-sheet__opt .c-checkbox{flex:none;margin-top:2px}
+
+.m-prev{position:relative;height:84px;border-radius:var(--radius-tile);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:var(--space-2) var(--space-3);box-sizing:border-box}
+.m-prev__top{display:flex;justify-content:space-between;align-items:flex-start}
+.m-prev__tag{margin:0;font-size:15px;line-height:1.05;font-weight:700;letter-spacing:.02em;text-transform:uppercase}
+.m-prev__logo{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;color:#fff}
+.m-prev__addr{margin:0;font-size:13px;color:#fff;opacity:.9}
+.m-prev__bar{height:3px;width:48px;border-radius:2px}
+.m-bchips{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.m-bchip{position:relative;display:inline-flex;align-items:center;gap:var(--space-2);min-height:36px;padding:0 var(--space-3);border:0;border-radius:999px;background:var(--surface-tile);box-shadow:inset 0 0 0 1px var(--border-card);color:var(--text-primary);font:inherit;cursor:pointer}
+.m-bchip:focus-within,.m-bchip:focus-visible{outline:2px solid var(--text-primary);outline-offset:2px}
+.m-bchip__dot{flex:none;width:16px;height:16px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-bchip input[type=color]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;border:0;padding:0}
+/* Compact composer + icon-only bottom nav (KJ, 27 Oct). In-app Mel chat. No footer skill pills. Phosphor icons. */
+.m-cc.c-chat-composer{flex-direction:row;align-items:center;gap:var(--space-1);padding:var(--space-1-5);border-radius:var(--radius-pill);background:var(--surface-input)}
+.m-cc .c-chat-composer__field{flex:1;min-width:0;min-height:var(--size-control-lg);padding:var(--space-2-5) var(--space-1)}
+.m-cc .c-chat-composer__toolbar{display:contents}
+.m-cc .c-chat-composer__spacer{display:none}
+.m-cc .c-chat-composer__idle{flex:none;gap:var(--space-1)}
+.m-cc .c-chat-composer__icon{flex:none;width:var(--size-control-lg);height:var(--size-control-lg);padding:0;border:0;border-radius:50%;background:transparent;box-shadow:none;color:var(--text-primary)}
+.m-cc .c-chat-composer__speak,.m-cc .c-chat-composer__send,.m-cc .c-chat-composer__stop,.m-cc .m-ctl{flex:none;width:var(--size-control-lg);height:var(--size-control-lg);min-width:0;padding:0;border-radius:50%;margin:0}
+.m-nav{display:flex;gap:var(--space-1);margin-top:var(--space-2);padding:var(--space-1);border-radius:var(--radius-pill);background:var(--surface-card)}
+.m-nav__item{flex:1;display:inline-flex;align-items:center;justify-content:center;height:var(--size-control-lg);padding:0;border:0;border-radius:var(--radius-pill);background:transparent;color:var(--text-secondary);cursor:pointer}
+.m-nav__item[aria-current="page"]{background:var(--surface-tile);color:var(--text-primary)}
+.m-nav__item:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+/* Frosted floating footer (KJ, 27 Oct): composer + nav float as frosted glass, chat scrolls under; active nav = Mel green. Same as Home. */
+.rm-root .c-glass-footer, .rm-root .c-glass-footer--soft-edge { background:transparent !important; }
+.rm-root .m-nav, .rm-root .m-cc.c-chat-composer { position:relative; isolation:isolate; -webkit-backdrop-filter:blur(40px) saturate(150%); backdrop-filter:blur(40px) saturate(150%); }
+.rm-root .m-nav::after, .rm-root .m-cc.c-chat-composer::after { content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; pointer-events:none; background:linear-gradient(180deg, var(--g-sheen) 0%, rgba(255,255,255,0) 45%); }
+.rm-root[data-theme="dark"] .m-nav, .rm-root[data-theme="dark"] .m-cc.c-chat-composer { --g-sheen:rgba(255,255,255,.06); background:rgba(32,36,35,.78); box-shadow:inset 0 1px 0 rgba(255,255,255,.20), inset 0 -1px 0 rgba(255,255,255,.05), inset 0 0 0 1px rgba(255,255,255,.10), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-nav, .rm-root[data-theme="light"] .m-cc.c-chat-composer { --g-sheen:rgba(255,255,255,.35); background:rgba(247,250,249,.82); box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(14,43,48,.04), inset 0 0 0 1px rgba(255,255,255,.60), 0 0 0 1px rgba(14,43,48,.06), 0 10px 30px rgba(14,43,48,.14); }
+.rm-root[data-theme="dark"] .m-nav__item[aria-current="page"] { background:rgba(61,220,151,.16); color:#3DDC97; box-shadow:inset 0 1px 0 rgba(61,220,151,.22); }
+.rm-root[data-theme="light"] .m-nav__item[aria-current="page"] { background:rgba(18,168,103,.14); color:#0B7A4D; box-shadow:inset 0 1px 0 rgba(255,255,255,.7); }
+/* Top bar + split nav = Home (KJ, 27 Oct). Top: K, contextual title "Mel", bell. Bottom: Mel circle (active, breathing tint 12-20%, idle motion) | Dashboard Clients Transactions | Inbox. */
+.m-chathead { position:absolute; inset:0 0 auto 0; z-index:7; display:flex; align-items:center; justify-content:space-between; padding:var(--space-8) var(--space-gutter) var(--space-3); }
+.m-chathead__title { position:absolute; left:50%; top:calc(var(--space-8) + 24px); transform:translate(-50%,-50%); margin:0; font:600 17px/1.2 var(--font-sans); letter-spacing:-0.01em; color:var(--text-primary); white-space:nowrap; pointer-events:none; }
+.m-avatar, .m-bell, .m-mel, .m-inbox { flex:none; position:relative; isolation:isolate; display:inline-flex; align-items:center; justify-content:center; padding:0; border:0; border-radius:50%; cursor:pointer; -webkit-backdrop-filter:blur(40px) saturate(150%); backdrop-filter:blur(40px) saturate(150%); }
+.m-avatar, .m-bell { width:48px; height:48px; color:var(--text-primary); }
+.m-avatar { font:600 17px/1 var(--font-sans); }
+.m-bell__dot { position:absolute; top:11px; right:12px; width:8px; height:8px; border-radius:50%; background:#F0605A; box-shadow:0 0 0 2px var(--bg-page); }
+.m-mel, .m-inbox { width:52px; height:52px; }
+.m-inbox { color:var(--text-secondary); }
+.rm-root[data-theme="dark"] .m-avatar, .rm-root[data-theme="dark"] .m-bell, .rm-root[data-theme="dark"] .m-mel, .rm-root[data-theme="dark"] .m-inbox { background:rgba(32,36,35,.78); box-shadow:inset 0 1px 0 rgba(255,255,255,.20), inset 0 0 0 1px rgba(255,255,255,.10), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-avatar, .rm-root[data-theme="light"] .m-bell, .rm-root[data-theme="light"] .m-mel, .rm-root[data-theme="light"] .m-inbox { background:rgba(247,250,249,.82); box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 0 0 1px rgba(255,255,255,.60), 0 0 0 1px rgba(14,43,48,.06), 0 10px 30px rgba(14,43,48,.14); }
+.m-navrow { display:flex; align-items:center; gap:8px; margin-top:var(--space-2); }
+.m-navrow .m-nav { flex:1; min-width:0; margin-top:0; gap:2px; }
+.m-mel .mb-mark { --mb-size:36px; color:var(--mel-green); }
+.m-mel .mm-float { animation:mm-float 3.2s ease-in-out infinite; }
+.m-mel .mm-ring { transform-box:fill-box; transform-origin:center; animation:mm-ring 3.2s ease-in-out infinite; }
+.m-mel .mm-dot { transform-box:fill-box; transform-origin:center; animation:mm-dot 3.2s ease-in-out infinite; }
+@keyframes mm-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+@keyframes mm-ring { 0%,100% { transform:scale(1); opacity:.6; } 50% { transform:scale(2.3); opacity:0; } }
+@keyframes mm-dot { 0%,100% { transform:scale(1); } 50% { transform:scale(1.115); } }
+.m-mel::before { content:""; position:absolute; inset:0; z-index:-1; border-radius:50%; pointer-events:none; animation:mm-tint-on 3.2s ease-in-out infinite; }
+.rm-root[data-theme="dark"] .m-mel::before { background:rgb(61,220,151); }
+.rm-root[data-theme="light"] .m-mel::before { background:rgb(18,168,103); }
+@keyframes mm-tint-on { 0%,100% { opacity:.12; } 50% { opacity:.20; } }
+/* Composer back to normal (KJ, 27 Oct): solid surface-input, no glass, sheen or shadow. Nav stays glass. */
+.rm-root .m-cc.c-chat-composer { background:var(--surface-input) !important; box-shadow:none !important; -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+.rm-root .m-cc.c-chat-composer::after { display:none !important; }
+/* Mel circle selected = same as Dashboard active on Home (KJ, 27 Oct): steady Mel-green fill + top highlight, no ring, no breathing. */
+.rm-root[data-theme="dark"] .m-mel[aria-current="page"] { box-shadow:inset 0 1px 0 rgba(61,220,151,.22), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-mel[aria-current="page"] { box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 10px 30px rgba(14,43,48,.14); }
+.rm-root .m-mel[aria-current="page"]::before { animation:none; }
+.rm-root[data-theme="dark"] .m-mel[aria-current="page"]::before { opacity:.16; }
+.rm-root[data-theme="light"] .m-mel[aria-current="page"]::before { opacity:.14; }
+@media (prefers-reduced-motion: reduce) { .m-mel .mm-float, .m-mel .mm-ring, .m-mel .mm-dot { animation:none; } .m-mel .mm-ring { opacity:0; } .m-mel::before { animation:none; opacity:.16; } }
+</style>
+</helmet>
+<div class="rm-root" data-theme="dark" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans)">
+<div data-scroll="1" style="position: absolute; inset: 0; overflow-y: auto; padding: calc(var(--space-8) + var(--size-control-lg) + var(--space-6)) var(--space-gutter) calc(var(--size-control-lg) * 5 + var(--space-8) + var(--space-4))">
+<div class="rm-stack rm-stack--loose"><article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message"><div class="c-ai-message__content" data-slot="message-content"><div class="c-streaming-text c-mel-plain"><div class="rm-stack"><p class="t-body" style="margin:0">I found your brand. Change anything by telling me.</p></div></div></div></article><div style="display:flex;flex-direction:column;gap:var(--space-1)"><div class="rm-card rm-card--bordered m-card" aria-label="Your brand"><div class="m-prev" style="background:{{primary}}" role="img" aria-label="Brand preview"><div class="m-prev__top"><p class="m-prev__tag" style="color:{{accent}}">Just listed</p><span class="m-prev__logo"><svg class="ph" width="16" height="16" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></span></div><div style="display:flex;flex-direction:column;gap:6px"><span class="m-prev__bar" style="background:{{accent}}"></span><p class="m-prev__addr">123 Ocean View Drive</p></div></div><div class="m-bchips"><label class="m-bchip"><span class="m-bchip__dot" style="background:{{primary}}"></span><span class="t-meta">Primary</span><input type="color" value="{{primary}}" aria-label="Primary colour" onChange="{{pickPrimary}}"/></label><label class="m-bchip"><span class="m-bchip__dot" style="background:{{accent}}"></span><span class="t-meta">Accent</span><input type="color" value="{{accent}}" aria-label="Accent colour" onChange="{{pickAccent}}"/></label><button type="button" class="m-bchip" onClick="{{logo}}"><svg class="ph" width="16" height="16" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg><span class="t-meta">Logo</span></button></div></div><div class="c-prompt-rows" aria-label="Suggested prompts"><sc-for list="{{rows}}" as="r" hint-placeholder-count="4"><button type="button" class="c-prompt-row" onClick="{{r.pick}}"><svg class="c-prompt-row__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2.5v6a2 2 0 0 0 2 2h6.5"/><path d="M10 7.5l3 3-3 3"/></svg><span class="c-prompt-row__text t-body-strong">{{r.text}}</span></button></sc-for></div></div></div>
+</div>
+<header class="m-chathead">
+<button type="button" class="m-avatar" aria-label="Profile">K</button>
+<h1 class="m-chathead__title">Mel</h1>
+<button type="button" class="m-bell" aria-label="Notifications, new"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg><span class="m-bell__dot" aria-hidden="true"></span></button>
+</header>
+<footer class="c-glass-footer c-glass-footer--soft-edge" style="padding: var(--space-3) var(--space-gutter) calc(var(--space-2) + var(--space-6))">
+<form class="c-chat-composer m-cc" aria-label="Message composer">
+<button type="button" class="rm-btn rm-btn--secondary c-chat-composer__icon" aria-label="Attachments and connected sources" aria-haspopup="menu"><svg width="20" height="20" class="ph"   viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></button>
+<textarea rows="1" class="c-chat-composer__field t-body" aria-label="Message MEL" placeholder="Ask anything" value="{{draft}}" onChange="{{setDraft}}"></textarea>
+<div class="c-chat-composer__toolbar"><div class="c-chat-composer__idle"><span class="c-chat-composer__spacer"></span><button type="button" class="rm-btn rm-btn--secondary c-chat-composer__icon" aria-label="Dictate message"><svg width="20" height="20" class="ph"   viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"/></svg></button><button type="button" class="rm-btn rm-btn--voice c-chat-composer__speak" aria-label="Speak to MEL"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></button></div><button type="submit" class="rm-btn rm-btn--primary c-chat-composer__send" aria-label="Send message"><svg width="20" height="20" class="ph"   viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></svg></button></div>
+</form>
+<div class="m-navrow">
+<button type="button" class="m-mel" aria-label="Chat with Mel" aria-current="page"><span class="mb-mark" role="img" aria-label="Mel"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g class="mm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="mm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span></button>
+<nav class="m-nav" aria-label="Main">
+<button type="button" class="m-nav__item" aria-label="Dashboard"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></button>
+<button type="button" class="m-nav__item" aria-label="Clients"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></button>
+<button type="button" class="m-nav__item" aria-label="Transactions"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg></button>
+</nav>
+<button type="button" class="m-inbox" aria-label="Inbox"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"></path></svg></button>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { draft: '', primary: '#172B4D', accent: '#D4AF37' }; }
+  renderVals() {
+    return {
+      draft: this.state.draft,
+      primary: this.state.primary,
+      accent: this.state.accent,
+      setDraft: (e) => this.setState({ draft: e.target.value }),
+      pickPrimary: (e) => { const v = e.target.value.toUpperCase(); this.setState({ primary: v, draft: 'Change the primary colour to ' + v }); },
+      pickAccent: (e) => { const v = e.target.value.toUpperCase(); this.setState({ accent: v, draft: 'Change the accent colour to ' + v }); },
+      logo: () => this.setState({ draft: 'Upload a new logo' }),
+      rows: ['Use these', 'Change the colours', 'Upload a new logo', 'Use a text-only brand'].map((t) => ({ text: t, pick: () => this.setState({ draft: t }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

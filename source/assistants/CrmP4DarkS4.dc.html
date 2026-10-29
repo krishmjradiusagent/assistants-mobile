@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-expression="quiet" data-platform="ios">
+<head>
+<meta charset="utf-8">
+<title>Remind me Tuesday: 4 Added to calendar, dark</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="mel-brand.css?v=112">
+<link rel="stylesheet" href="mel-chat-overrides.css?v=113">
+<link rel="stylesheet" href="c-prompt-row.css?v=109">
+<link rel="stylesheet" href="c-skill-pills.css?v=109">
+<link rel="stylesheet" href="c-typeset-chat.css?v=1">
+<link rel="stylesheet" href="c-trace.css?v=3">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.c-thinking{display:flex !important;flex-direction:row;align-items:center;gap:8px;margin:0 !important;min-height:20px;line-height:20px}
+.c-thinking>*{margin:0 !important}
+.typeset .c-thinking,.typeset .c-thinking>*{margin-block-start:0 !important}
+.c-thinking .c-trace__spin{flex:none;display:inline-block;width:12px;height:12px;margin:0;border-radius:50%;border:1.8px solid var(--border-card);border-top-color:var(--text-primary);animation:c-trace-spin .8s linear infinite}
+.c-thinking__text{display:inline-block;line-height:20px}
+@keyframes c-trace-spin{to{transform:rotate(360deg)}}
+.m-cards{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-top:var(--space-2)}
+.m-card{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-2);width:100%;min-height:var(--size-hit-ios);padding:var(--space-3);border:0;border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);color:var(--text-primary);font:inherit;text-align:left;cursor:pointer;box-sizing:border-box}
+.m-card:active{background:var(--surface-tile)}
+.m-card:focus-visible{outline:2px solid var(--text-primary);outline-offset:2px}
+.m-card__text{overflow-wrap:anywhere}
+.m-filechip{display:flex;align-items:center;gap:var(--space-2)}
+.m-filechip p{margin:0}
+.m-filechip>div{display:flex;flex-direction:column}
+.m-crm-card{display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-card-pad);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-2)}
+.m-stat{display:flex;flex-direction:column;padding:var(--space-3);border-radius:var(--radius-tile);background:var(--surface-tile)}
+.m-stat p{margin:0}
+.m-warnrow{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-1) 0}
+.m-warnrow__ic{display:flex;color:var(--status-warning-fg)}
+.m-link{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);color:var(--text-primary);text-decoration:none}
+.m-link__t{flex:1;min-width:0;display:flex;flex-direction:column}
+.m-link__go{flex:none;color:var(--text-tertiary)}
+.m-status{display:inline-flex;align-items:center;gap:var(--space-2);color:var(--text-secondary);margin:0}
+.m-status__dot{width:8px;height:8px;border-radius:50%;background:var(--status-success-fg)}
+.m-plist{gap:0;padding:var(--space-1) var(--space-card-pad)}
+.m-prow{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-2) 0;border-bottom:1px solid var(--separator-on-card)}
+.m-prow:last-child{border-bottom:0}
+.m-prow__t{flex:1;min-width:0;display:flex;flex-direction:column}
+.m-av{flex:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--surface-tile);font-size:12px;font-weight:600}
+.m-kv{display:flex;flex-direction:column;gap:2px;padding:var(--space-2) 0;border-top:1px solid var(--separator-on-card)}
+.m-dfoot{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);padding-top:var(--space-2);border-top:1px solid var(--separator-on-card)}
+/* Compact composer + icon-only bottom nav (KJ, 27 Oct). In-app Mel chat. No footer skill pills. Phosphor icons. */
+.m-cc.c-chat-composer{flex-direction:row;align-items:center;gap:var(--space-1);padding:var(--space-1-5);border-radius:var(--radius-pill);background:var(--surface-input)}
+.m-cc .c-chat-composer__field{flex:1;min-width:0;min-height:var(--size-control-lg);padding:var(--space-2-5) var(--space-1)}
+.m-cc .c-chat-composer__toolbar{display:contents}
+.m-cc .c-chat-composer__spacer{display:none}
+.m-cc .c-chat-composer__idle{flex:none;gap:var(--space-1)}
+.m-cc .c-chat-composer__icon{flex:none;width:var(--size-control-lg);height:var(--size-control-lg);padding:0;border:0;border-radius:50%;background:transparent;box-shadow:none;color:var(--text-primary)}
+.m-cc .c-chat-composer__speak,.m-cc .c-chat-composer__send,.m-cc .c-chat-composer__stop,.m-cc .m-ctl{flex:none;width:var(--size-control-lg);height:var(--size-control-lg);min-width:0;padding:0;border-radius:50%;margin:0}
+.m-nav{display:flex;gap:var(--space-1);margin-top:var(--space-2);padding:var(--space-1);border-radius:var(--radius-pill);background:var(--surface-card)}
+.m-nav__item{flex:1;display:inline-flex;align-items:center;justify-content:center;height:var(--size-control-lg);padding:0;border:0;border-radius:var(--radius-pill);background:transparent;color:var(--text-secondary);cursor:pointer}
+.m-nav__item[aria-current="page"]{background:var(--surface-tile);color:var(--text-primary)}
+.m-nav__item:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+/* Frosted floating footer (KJ, 27 Oct): composer + nav float as frosted glass, chat scrolls under; active nav = Mel green. Same as Home. */
+.rm-root .c-glass-footer, .rm-root .c-glass-footer--soft-edge { background:transparent !important; }
+.rm-root .m-nav, .rm-root .m-cc.c-chat-composer { position:relative; isolation:isolate; -webkit-backdrop-filter:blur(40px) saturate(150%); backdrop-filter:blur(40px) saturate(150%); }
+.rm-root .m-nav::after, .rm-root .m-cc.c-chat-composer::after { content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; pointer-events:none; background:linear-gradient(180deg, var(--g-sheen) 0%, rgba(255,255,255,0) 45%); }
+.rm-root[data-theme="dark"] .m-nav, .rm-root[data-theme="dark"] .m-cc.c-chat-composer { --g-sheen:rgba(255,255,255,.06); background:rgba(32,36,35,.78); box-shadow:inset 0 1px 0 rgba(255,255,255,.20), inset 0 -1px 0 rgba(255,255,255,.05), inset 0 0 0 1px rgba(255,255,255,.10), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-nav, .rm-root[data-theme="light"] .m-cc.c-chat-composer { --g-sheen:rgba(255,255,255,.35); background:rgba(247,250,249,.82); box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(14,43,48,.04), inset 0 0 0 1px rgba(255,255,255,.60), 0 0 0 1px rgba(14,43,48,.06), 0 10px 30px rgba(14,43,48,.14); }
+.rm-root[data-theme="dark"] .m-nav__item[aria-current="page"] { background:rgba(61,220,151,.16); color:#3DDC97; box-shadow:inset 0 1px 0 rgba(61,220,151,.22); }
+.rm-root[data-theme="light"] .m-nav__item[aria-current="page"] { background:rgba(18,168,103,.14); color:#0B7A4D; box-shadow:inset 0 1px 0 rgba(255,255,255,.7); }
+/* Top bar + split nav = Home (KJ, 27 Oct). Top: K, contextual title "Mel", bell. Bottom: Mel circle (active, breathing tint 12-20%, idle motion) | Dashboard Clients Transactions | Inbox. */
+.m-chathead { position:absolute; inset:0 0 auto 0; z-index:7; display:flex; align-items:center; justify-content:space-between; padding:var(--space-8) var(--space-gutter) var(--space-3); }
+.m-chathead__title { position:absolute; left:50%; top:calc(var(--space-8) + 24px); transform:translate(-50%,-50%); margin:0; font:600 17px/1.2 var(--font-sans); letter-spacing:-0.01em; color:var(--text-primary); white-space:nowrap; pointer-events:none; }
+.m-avatar, .m-bell, .m-mel, .m-inbox { flex:none; position:relative; isolation:isolate; display:inline-flex; align-items:center; justify-content:center; padding:0; border:0; border-radius:50%; cursor:pointer; -webkit-backdrop-filter:blur(40px) saturate(150%); backdrop-filter:blur(40px) saturate(150%); }
+.m-avatar, .m-bell { width:48px; height:48px; color:var(--text-primary); }
+.m-avatar { font:600 17px/1 var(--font-sans); }
+.m-bell__dot { position:absolute; top:11px; right:12px; width:8px; height:8px; border-radius:50%; background:#F0605A; box-shadow:0 0 0 2px var(--bg-page); }
+.m-mel, .m-inbox { width:52px; height:52px; }
+.m-inbox { color:var(--text-secondary); }
+.rm-root[data-theme="dark"] .m-avatar, .rm-root[data-theme="dark"] .m-bell, .rm-root[data-theme="dark"] .m-mel, .rm-root[data-theme="dark"] .m-inbox { background:rgba(32,36,35,.78); box-shadow:inset 0 1px 0 rgba(255,255,255,.20), inset 0 0 0 1px rgba(255,255,255,.10), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-avatar, .rm-root[data-theme="light"] .m-bell, .rm-root[data-theme="light"] .m-mel, .rm-root[data-theme="light"] .m-inbox { background:rgba(247,250,249,.82); box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 0 0 1px rgba(255,255,255,.60), 0 0 0 1px rgba(14,43,48,.06), 0 10px 30px rgba(14,43,48,.14); }
+.m-navrow { display:flex; align-items:center; gap:8px; margin-top:var(--space-2); }
+.m-navrow .m-nav { flex:1; min-width:0; margin-top:0; gap:2px; }
+.m-mel .mb-mark { --mb-size:36px; color:var(--mel-green); }
+.m-mel .mm-float { animation:mm-float 3.2s ease-in-out infinite; }
+.m-mel .mm-ring { transform-box:fill-box; transform-origin:center; animation:mm-ring 3.2s ease-in-out infinite; }
+.m-mel .mm-dot { transform-box:fill-box; transform-origin:center; animation:mm-dot 3.2s ease-in-out infinite; }
+@keyframes mm-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+@keyframes mm-ring { 0%,100% { transform:scale(1); opacity:.6; } 50% { transform:scale(2.3); opacity:0; } }
+@keyframes mm-dot { 0%,100% { transform:scale(1); } 50% { transform:scale(1.115); } }
+.m-mel::before { content:""; position:absolute; inset:0; z-index:-1; border-radius:50%; pointer-events:none; animation:mm-tint-on 3.2s ease-in-out infinite; }
+.rm-root[data-theme="dark"] .m-mel::before { background:rgb(61,220,151); }
+.rm-root[data-theme="light"] .m-mel::before { background:rgb(18,168,103); }
+@keyframes mm-tint-on { 0%,100% { opacity:.12; } 50% { opacity:.20; } }
+/* Composer back to normal (KJ, 27 Oct): solid surface-input, no glass, sheen or shadow. Nav stays glass. */
+.rm-root .m-cc.c-chat-composer { background:var(--surface-input) !important; box-shadow:none !important; -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+.rm-root .m-cc.c-chat-composer::after { display:none !important; }
+/* Mel circle selected = same as Dashboard active on Home (KJ, 27 Oct): steady Mel-green fill + top highlight, no ring, no breathing. */
+.rm-root[data-theme="dark"] .m-mel[aria-current="page"] { box-shadow:inset 0 1px 0 rgba(61,220,151,.22), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-mel[aria-current="page"] { box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 10px 30px rgba(14,43,48,.14); }
+.rm-root .m-mel[aria-current="page"]::before { animation:none; }
+.rm-root[data-theme="dark"] .m-mel[aria-current="page"]::before { opacity:.16; }
+.rm-root[data-theme="light"] .m-mel[aria-current="page"]::before { opacity:.14; }
+@media (prefers-reduced-motion: reduce) { .m-mel .mm-float, .m-mel .mm-ring, .m-mel .mm-dot { animation:none; } .m-mel .mm-ring { opacity:0; } .m-mel::before { animation:none; opacity:.16; } }
+</style>
+</helmet>
+<div class="rm-root" data-theme="dark" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans)">
+
+<div data-scroll="1" style="position: absolute; inset: 0; overflow-y: auto; padding: calc(var(--space-8) + var(--size-control-lg) + var(--space-10)) var(--space-gutter) calc(var(--size-control-lg) * 5 + var(--space-8) + var(--space-4))">
+<div class="rm-stack rm-stack--loose">
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="2">
+<div class="rm-stack">
+<sc-if value="{{m.isUser}}" hint-placeholder-val="{{ false }}">
+<article class="c-ai-message c-ai-message--user" data-slot="message" data-from="user" aria-label="Your message">
+<div class="c-ai-message__content" data-slot="message-content"><div class="rm-card rm-card--bordered"><p class="t-body" style="margin: 0">{{m.text}}</p></div></div>
+</article>
+</sc-if>
+<sc-if value="{{m.isFile}}" hint-placeholder-val="{{ false }}">
+<article class="c-ai-message c-ai-message--user" data-slot="message" data-from="user" aria-label="Your file"><div class="c-ai-message__content" data-slot="message-content"><div class="rm-card rm-card--bordered"><div class="m-filechip"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.66,82.34l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V88A8,8,0,0,0,213.66,82.34ZM160,51.31,188.69,80H160ZM200,216H56V40h88V88a8,8,0,0,0,8,8h48V216Z"></path></svg><div><p class="t-body-strong">clients-export.csv</p><p class="t-meta t-secondary">CSV · 1,280 rows</p></div></div></div></div></article>
+</sc-if>
+<sc-if value="{{m.isMel}}" hint-placeholder-val="{{ true }}">
+<article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message">
+<div class="c-ai-message__content" data-slot="message-content">
+<sc-if value="{{m.hasTrace}}" hint-placeholder-val="{{ false }}"><div class="c-trace" data-running="{{m.traceRunning}}">
+<button type="button" class="c-trace__sum" aria-expanded="{{m.traceOpen}}" onClick="{{m.toggleTrace}}">
+<span class="c-trace__icon" aria-hidden="true"><sc-if value="{{m.traceRunning}}" hint-placeholder-val="{{ true }}"><span class="c-trace__spin"></span></sc-if><sc-if value="{{m.traceDone}}" hint-placeholder-val="{{ false }}"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"></circle><path d="M5.2 8.2l1.9 1.9 3.8-4"></path></svg></sc-if></span>
+<span class="c-trace__title">{{m.traceTitle}}</span>
+<svg class="c-trace__chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6l4 4 4-4"></path></svg>
+</button>
+<sc-if value="{{m.traceOpen}}" hint-placeholder-val="{{ true }}"><div class="c-trace__steps">
+<sc-for list="{{m.steps}}" as="s" hint-placeholder-count="2">
+<div class="c-trace__line" data-status="{{s.status}}"><span class="c-trace__icon" aria-hidden="true"><sc-if value="{{s.running}}" hint-placeholder-val="{{ false }}"><span class="c-trace__spin"></span></sc-if><sc-if value="{{s.done}}" hint-placeholder-val="{{ true }}"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6.5"></circle><path d="M5.2 8.2l1.9 1.9 3.8-4"></path></svg></sc-if></span><span class="c-trace__text">{{s.text}}</span></div>
+</sc-for>
+</div></sc-if>
+</div></sc-if>
+<div class="c-streaming-text c-mel-plain typeset typeset-chat">
+<sc-if value="{{m.thinkingPlain}}" hint-placeholder-val="{{ false }}"><p class="t-meta t-secondary c-thinking" role="status" style="margin: 0"><span class="c-trace__spin" aria-hidden="true"></span><span class="c-thinking__text">Thinking…</span></p></sc-if>
+<sc-if value="{{m.hasText}}" hint-placeholder-val="{{ true }}"><p class="c-streaming-text__body" style="margin: 0; white-space: pre-line">{{m.text}}</p></sc-if>
+</div>
+<sc-if value="{{m.hasList}}" hint-placeholder-val="{{ true }}"><div class="m-cards" role="list" aria-label="What MEL can do">
+<sc-for list="{{m.list}}" as="c" hint-placeholder-count="6">
+<button type="button" class="m-card" role="listitem" onClick="{{c.pick}}"><span class="mb-mark mb-mark--inline" data-skill="{{c.skill}}" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="m-card__text t-body-strong">{{c.text}}</span></button>
+</sc-for>
+</div></sc-if>
+<sc-if value="{{m.isStats}}" hint-placeholder-val="{{ false }}"><div class="rm-stack" style="margin-top: var(--space-3)"><div class="m-crm-card" aria-label="Import result"><div class="m-stats"><div class="m-stat"><p class="t-body-strong">1,248</p><p class="t-meta t-secondary">Imported</p></div><div class="m-stat"><p class="t-body-strong">836</p><p class="t-meta t-secondary">Buyers</p></div><div class="m-stat"><p class="t-body-strong">412</p><p class="t-meta t-secondary">Sellers</p></div><div class="m-stat"><p class="t-body-strong">32</p><p class="t-meta t-secondary">Duplicates skipped</p></div></div><div class="m-warnrow"><span class="m-warnrow__ic"><svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M236.8,188.09,149.35,36.22h0a24.76,24.76,0,0,0-42.7,0L19.2,188.09a23.51,23.51,0,0,0,0,23.72A24.35,24.35,0,0,0,40.55,224h174.9a24.35,24.35,0,0,0,21.33-12.19A23.51,23.51,0,0,0,236.8,188.09ZM222.93,203.8a8.5,8.5,0,0,1-7.48,4.2H40.55a8.5,8.5,0,0,1-7.48-4.2,7.59,7.59,0,0,1,0-7.72L120.52,44.21a8.75,8.75,0,0,1,15,0l87.45,151.87A7.59,7.59,0,0,1,222.93,203.8ZM120,144V104a8,8,0,0,1,16,0v40a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,180Z"></path></svg></span><span class="t-meta"><span class="t-body-strong">12 need review</span> · missing phone or email</span></div></div><a class="m-link" href="#" aria-label="View my contacts in Radius CRM"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></span><span class="m-link__t"><span class="t-body-strong">View my contacts</span><span class="t-meta t-secondary">1,248 in Radius CRM</span></span><svg class="m-link__go" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></a></div></sc-if>
+<sc-if value="{{m.hasStatus}}" hint-placeholder-val="{{ false }}"><p class="m-status t-meta" role="status" style="margin-bottom: var(--space-2)"><span class="m-status__dot" aria-hidden="true"></span>{{m.status}}</p></sc-if>
+<sc-if value="{{m.isContact}}" hint-placeholder-val="{{ false }}"><div class="rm-stack" style="margin-top: var(--space-3)"><div class="m-crm-card"><div class="m-prow" style="border:0;padding-top:0"><span class="m-av" aria-hidden="true">JL</span><span class="m-prow__t"><span class="t-body-strong">Jordan Lee</span><span class="t-meta t-secondary">Buyer · Active</span></span></div><div class="m-kv"><span class="t-meta t-secondary">Phone</span><span class="t-body">(555) 014 2290</span></div><div class="m-kv"><span class="t-meta t-secondary">Email</span><span class="t-body">jordan.lee@gmail.com</span></div><div class="m-kv"><span class="t-meta t-secondary">Looking for</span><span class="t-body">3 beds · Oak Street · under [PRICE]</span></div><div class="m-kv"><span class="t-meta t-secondary">Last contact</span><span class="t-body">12 days ago · text</span></div></div><a class="m-link" href="#"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></span><span class="m-link__t"><span class="t-body-strong">Open Jordan in CRM</span><span class="t-meta t-secondary">Notes, activity and family</span></span><svg class="m-link__go" width="16" height="16" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg></a></div></sc-if>
+<sc-if value="{{m.isUpd}}" hint-placeholder-val="{{ false }}"><div class="m-crm-card" style="margin-top: var(--space-3)"><p class="t-body-strong" style="margin:0">Jordan Lee · preferences</p><div class="m-kv"><span class="t-meta t-secondary">Beds</span><span class="t-body"><s class="t-secondary">2</s> → 3</span></div><div class="m-kv"><span class="t-meta t-secondary">Area</span><span class="t-body">Oak Street · no change</span></div><div class="m-kv"><span class="t-meta t-secondary">Budget</span><span class="t-body">Under [PRICE] · no change</span></div></div></sc-if>
+<sc-if value="{{m.isDraft}}" hint-placeholder-val="{{ false }}"><section class="m-crm-card" aria-label="Draft message" style="margin-top: var(--space-3)"><div class="m-kv" style="border-top:0;padding-top:0"><span class="t-meta t-secondary">To</span><span class="t-body-strong">Jordan Lee · Text</span></div><p class="t-body" style="margin:0">{{m.draftText}}</p><div class="m-dfoot"><span class="t-meta t-secondary">Sends from your Radius number</span><button type="button" class="rm-btn rm-btn--primary rm-btn--sm t-meta" onClick="{{m.sendDraft}}"><span>Send</span></button></div></section></sc-if>
+<sc-if value="{{m.isFu}}" hint-placeholder-val="{{ false }}"><div class="m-crm-card" style="margin-top: var(--space-3)"><div class="m-prow" style="border:0;padding:0"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z"></path></svg></span><span class="m-prow__t"><span class="t-body-strong">Call Jordan Lee</span><span class="t-meta t-secondary">Tue, Oct 27 · 10:00 AM</span></span></div><div class="m-kv"><span class="t-meta t-secondary">Reminder</span><span class="t-body">15 minutes before</span></div><div class="m-kv"><span class="t-meta t-secondary">Calendar</span><span class="t-body">Google Calendar</span></div></div></sc-if>
+<sc-if value="{{m.isCamp}}" hint-placeholder-val="{{ false }}"><div class="m-crm-card" style="margin-top: var(--space-3)"><div class="m-prow" style="border:0;padding:0"><span class="rm-tile" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M248,120a48.05,48.05,0,0,0-48-48H160.2c-2.91-.17-53.62-3.74-101.91-44.24A16,16,0,0,0,32,40V200a16,16,0,0,0,26.29,12.25c37.77-31.68,77-40.76,93.71-43.3v31.72A16,16,0,0,0,159.12,214l11,7.33A16,16,0,0,0,194.5,212l11.77-44.36A48.07,48.07,0,0,0,248,120ZM48,199.93V40h0c42.81,35.91,86.63,45,104,47.24v65.48C134.65,155,90.84,164.07,48,199.93Zm131,8,0,.11-11-7.33V168h21.6ZM200,152H168V88h32a32,32,0,1,1,0,64Z"></path></svg></span><span class="m-prow__t"><span class="t-body-strong">4-week check-in</span><span class="t-meta t-secondary">12 inactive clients · not contacted in 90 days</span></span></div><div class="m-kv"><span class="t-meta t-secondary">Week 1</span><span class="t-body">Text · “Still thinking about a move this year?”</span></div><div class="m-kv"><span class="t-meta t-secondary">Week 2</span><span class="t-body">Email · new listings near them</span></div><div class="m-kv"><span class="t-meta t-secondary">Week 3</span><span class="t-body">Text · market update</span></div><div class="m-kv"><span class="t-meta t-secondary">Week 4</span><span class="t-body">Call reminder for you</span></div><p class="t-meta t-secondary" style="margin:0">Stops for anyone who replies.</p></div></sc-if>
+<sc-if value="{{m.isTop}}" hint-placeholder-val="{{ false }}"><div class="m-crm-card m-plist" style="margin-top: var(--space-3)"><div class="m-prow"><span class="m-av" aria-hidden="true">JL</span><span class="m-prow__t"><span class="t-body-strong">Jordan Lee</span><span class="t-meta t-secondary">Buyer · 6 listing views</span></span><span class="t-meta t-secondary">Replied today</span></div><div class="m-prow"><span class="m-av" aria-hidden="true">PN</span><span class="m-prow__t"><span class="t-body-strong">Priya Nair</span><span class="t-meta t-secondary">Buyer · 4 listing views</span></span><span class="t-meta t-secondary">Saved 2 homes</span></div><div class="m-prow"><span class="m-av" aria-hidden="true">TB</span><span class="m-prow__t"><span class="t-body-strong">Tom Becker</span><span class="t-meta t-secondary">Buyer · 3 listing views</span></span><span class="t-meta t-secondary">Tour booked</span></div></div></sc-if>
+<sc-if value="{{m.hasRows}}" hint-placeholder-val="{{ false }}"><div class="c-prompt-rows" aria-label="Suggested prompts">
+<sc-for list="{{m.rows}}" as="c" hint-placeholder-count="3">
+<button type="button" class="c-prompt-row" onClick="{{c.send}}"><svg class="c-prompt-row__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2.5v6a2 2 0 0 0 2 2h6.5"></path><path d="M10 7.5l3 3-3 3"></path></svg><span class="c-prompt-row__text t-body-strong">{{c.text}}</span></button>
+</sc-for>
+</div></sc-if>
+</div>
+</article>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<header class="m-chathead">
+<button type="button" class="m-avatar" aria-label="Profile">K</button>
+<h1 class="m-chathead__title">Mel</h1>
+<button type="button" class="m-bell" aria-label="Notifications, new"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg><span class="m-bell__dot" aria-hidden="true"></span></button>
+</header>
+
+<footer class="c-glass-footer c-glass-footer--soft-edge" style="padding: var(--space-3) var(--space-gutter) calc(var(--space-2) + var(--space-6))">
+<form class="c-chat-composer m-cc" aria-label="Message composer" data-typing="{{typing}}" data-generating="{{generating}}" onSubmit="{{send}}">
+<button type="button" class="rm-btn rm-btn--secondary c-chat-composer__icon" aria-label="Attachments and connected sources" aria-haspopup="menu"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg></button>
+<textarea rows="1" class="c-chat-composer__field t-body" aria-label="Message MEL" placeholder="Ask anything" value="{{draft}}" onChange="{{setDraft}}" onKeyDown="{{key}}"></textarea>
+<div class="c-chat-composer__toolbar"><div class="c-chat-composer__idle"><span class="c-chat-composer__spacer"></span><button type="button" class="rm-btn rm-btn--secondary c-chat-composer__icon" aria-label="Dictate message"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path></svg></button><button type="button" class="rm-btn rm-btn--voice c-chat-composer__speak" aria-label="Speak to MEL"><svg width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M56,96v64a8,8,0,0,1-16,0V96a8,8,0,0,1,16,0ZM88,24a8,8,0,0,0-8,8V224a8,8,0,0,0,16,0V32A8,8,0,0,0,88,24Zm40,32a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,128,56Zm40,32a8,8,0,0,0-8,8v64a8,8,0,0,0,16,0V96A8,8,0,0,0,168,88Zm40-16a8,8,0,0,0-8,8v96a8,8,0,0,0,16,0V80A8,8,0,0,0,208,72Z"></path></svg></button></div><button type="submit" class="rm-btn rm-btn--primary c-chat-composer__send" aria-label="Send message"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path></svg></button><button type="button" class="rm-btn rm-btn--primary c-chat-composer__stop" aria-label="Stop generating" onClick="{{stop}}"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="10" height="10" rx="2"></rect></svg></button></div>
+</form>
+<div class="m-navrow">
+<button type="button" class="m-mel" aria-label="Chat with Mel" aria-current="page"><span class="mb-mark" role="img" aria-label="Mel"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g class="mm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="mm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span></button>
+<nav class="m-nav" aria-label="Main">
+<button type="button" class="m-nav__item" aria-label="Dashboard"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></button>
+<button type="button" class="m-nav__item" aria-label="Clients"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></button>
+<button type="button" class="m-nav__item" aria-label="Transactions"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg></button>
+</nav>
+<button type="button" class="m-inbox" aria-label="Inbox"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"></path></svg></button>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+const LINES = ["Add and manage your clients", "Market a listing", "Run follow-up campaigns", "Keep clients updated", "Check transaction files", "Prepare documents"];
+const LINE_SKILLS = ['crm','marketing','campaign','client','compliance','document'];
+const INTRO = 'Hey, I’m MEL, your AI assistant.  I can:';
+const QUESTION = 'Do you want to start by adding your clients? Reply yes, or pick a number.';
+const YES_SKILL = 'crm';
+const SKILLS = [
+  { id: 'crm', name: 'CRM', row: 'Manage clients', title: 'MEL CRM', mel: 'Let’s bring your contacts together so I can help you manage relationships and follow-ups.\n\nHow would you like to add your contacts?', rows: ['Upload a CSV', 'Import from another CRM', 'I’ll add contacts later'] },
+  { id: 'marketing', name: 'Marketing', row: 'Create listing package', title: 'MEL Marketing', mel: 'I create the full marketing package for a listing: posts, reels, flyers, email, website and yard sign.\n\nWhich listing do you want to market?', rows: ['Market my newest listing', 'Pick from my active listings'] },
+  { id: 'campaign', name: 'Campaigns', row: 'Start a campaign', title: 'MEL Campaigns', mel: 'I set up drip emails and texts for a group of clients and keep them running.\n\nWho should this campaign reach?', rows: ['Buyers in my CRM', 'Past clients', 'Pick clients myself'] },
+  { id: 'client', name: 'Client experience', row: 'Client experience', title: 'MEL Client experience', mel: 'I keep your clients updated and answer their questions while you work.\n\nWhere do you want to start?', rows: ['Invite clients to their portal', 'See what clients asked today'] },
+  { id: 'mls', name: 'MLS', row: 'Explore listings', title: 'MEL MLS', mel: 'I search listings, pull comps and track changes for you.\n\nWhat do you want to look up?', rows: ['Find homes for a buyer', 'Pull comps for an address'] },
+  { id: 'compliance', name: 'Compliance', row: 'Check compliance', title: 'MEL Compliance', mel: 'I check your transaction files and flag what is missing before it becomes a problem.\n\nWhich transaction should I check?', rows: ['Check my open transactions', 'Check one file'] },
+  { id: 'document', name: 'Document', row: 'Review documents', title: 'MEL Document', mel: 'I read, summarise and prepare documents for signature.\n\nWhich document should I start with?', rows: ['Summarise a contract', 'Prepare a document for signing'] }
+];
+const ROUTE = [[/campaign|drip/i, 'campaign'], [/keep clients|client experience|portal/i, 'client'], [/post|flyer|reel|market|social|instagram/i, 'marketing'], [/comp|listing|mls|homes? for|search homes/i, 'mls'], [/compliance|disclosure|transaction file/i, 'compliance'], [/contract|document|sign/i, 'document'], [/client|contact|follow.?up|lead|crm/i, 'crm']];
+const FALLBACK = 'Got it. Tell me which client or listing and I start there.';
+const TRACES = {
+  crm: { running: 'Checking your CRM', summary: 'Checked 2 things', steps: ['Checked your CRM · 0 contacts', 'Checked connected tools · none'] },
+  marketing: { running: 'Pulling the listing from MLS', summary: 'Checked 2 things', steps: ['Pulled 124 Oak Street · 12 photos', 'Checked your brand kit · logo and colours found'] },
+  other: { running: 'Working', summary: 'Checked 2 things', steps: ['Checked your CRM', 'Checked connected tools'] }
+};
+const NEXT = {
+  'upload a csv': 'Attach your contacts file here. Any CSV works, I read the columns myself.',
+  'import from another crm': 'Which CRM are you on now? I connect to Follow Up Boss, kvCORE and Salesforce.',
+  'i’ll add contacts later': 'No problem. I ask again when you share your first client.',
+  'market my newest listing': 'Starting the package for 124 Oak Street: posts, reels, flyers, email, website and yard sign. Pick a style first.',
+  'pick from my active listings': 'You have 3 active listings. Which one?'
+};
+const NEXT_ROWS = {
+  'market my newest listing': ['Modern', 'Classic', 'Bold'],
+  'pick from my active listings': ['124 Oak Street', '88 Pine Avenue', '12 Harbor Lane']
+};
+function skillByText(t) {
+  const low = t.toLowerCase().trim();
+  const num = low.match(/^([1-6])\b/);
+  if (num) { const id = LINE_SKILLS[Number(num[1]) - 1]; return SKILLS.filter((k) => k.id === id)[0]; }
+  if (/^(yes|yeah|yep|sure|ok|okay|go|do it|build it|start)\b/.test(low)) return SKILLS.filter((k) => k.id === YES_SKILL)[0];
+  const hit = ROUTE.filter((r) => r[0].test(low))[0];
+  return hit ? SKILLS.filter((k) => k.id === hit[1])[0] : null;
+}
+function traceFor(id) { return TRACES[id] || TRACES.other; }
+function introMsgs() { return [{ role: 'mel', text: INTRO, list: LINES, rows: [] }, { role: 'mel', text: QUESTION, rows: [] }]; }
+function skillMsg(k) { const tr = traceFor(k.id); return { role: 'mel', title: k.title, text: k.mel, rows: k.rows, trace: { running: false, open: false, title: tr.summary, steps: tr.steps } }; }
+function runningMsg(k) { const tr = traceFor(k.id); return { role: 'mel', text: '', thinking: true, rows: [], trace: { running: true, open: true, title: tr.running, steps: [tr.steps[0]], live: true } }; }
+function nextMsg(t) { const low = t.toLowerCase().trim(); const txt = NEXT[low]; return txt ? { role: 'mel', text: txt, rows: NEXT_ROWS[low] || [] } : null; }
+const CRM = {
+  w: 'I’m your CRM assistant. Let’s bring your contacts in so I can help with follow-ups.\n\nHow do you want to add them?',
+  wRows: ['Upload a CSV', 'Import from another CRM', 'I’ll add contacts later'],
+  u: 'Attach your CSV. Any column layout works. I match the fields for you.',
+  f: 'I found 1,280 contacts and matched name, phone, email, address, client type and notes.\n\n32 are duplicates. Import 1,248 and skip them?',
+  fRows: ['Import and skip duplicates', 'Show me the duplicates'],
+  i: 'Done. Here is what came in.',
+  iRows: ['Review the 12 contacts', 'What can you do with them?'],
+  s: 'Try one of these, or ask in your own words.',
+  sRows: ['Find Jordan Lee', 'Update Jordan’s preferences to 3 beds', 'Draft a message to Jordan', 'Remind me to call Jordan on Tuesday', 'Start a check-in campaign for inactive clients', 'Show my top buyers this month']
+};
+const CRM_TRACES = {
+  start: { running: 'Checking your CRM', summary: 'Checked 2 things', steps: ['Checked your CRM · 0 contacts', 'Checked connected tools · none'] },
+  read: { running: 'Reading clients-export.csv', summary: 'Read the file in 2 steps', steps: ['Read 1,280 rows', 'Matched name, phone, email, address, client type, notes'] },
+  imp: { running: 'Importing 1,248 contacts', summary: 'Imported in 2 steps', steps: ['Skipped 32 duplicates', 'Imported 1,248 contacts to Radius CRM'] }
+};
+function tr(t, live) { return live ? { running: true, open: true, title: t.running, steps: [t.steps[0]], live: true } : { running: false, open: false, title: t.summary, steps: t.steps }; }
+function mel(text, rows, extra) { return Object.assign({ role: 'mel', text: text, rows: rows || [] }, extra || {}); }
+function usr(text) { return { role: 'user', text: text }; }
+function working(t) { return { role: 'mel', text: '', thinking: true, rows: [], trace: tr(t, true) }; }
+function strip(a) { return a.map((m) => Object.assign({}, m, { rows: [] })); }
+const CRM_STEPS = (function () {
+  const I = introMsgs();
+  const s = {};
+  s.S01 = { msgs: I };
+  s.S02 = { msgs: I, draft: 'Yes' };
+  s.S03 = { msgs: strip(I).concat([usr('Yes'), working(CRM_TRACES.start)]), skill: 'crm', typing: true, focus: true };
+  s.S04 = { msgs: strip(I).concat([usr('Yes'), mel(CRM.w, CRM.wRows, { trace: tr(CRM_TRACES.start) })]), skill: 'crm', focus: true };
+  s.S05 = { msgs: strip(s.S04.msgs).concat([usr('Upload a CSV'), { role: 'mel', text: '', thinking: true, rows: [] }]), skill: 'crm', typing: true, focus: true };
+  s.S06 = { msgs: strip(s.S04.msgs).concat([usr('Upload a CSV'), mel(CRM.u)]), skill: 'crm', focus: true };
+  s.S07 = { msgs: strip(s.S06.msgs).concat([{ role: 'user', file: true, text: '' }]), skill: 'crm', focus: true };
+  s.S08 = { msgs: strip(s.S07.msgs).concat([working(CRM_TRACES.read)]), skill: 'crm', typing: true, focus: true };
+  s.S09 = { msgs: strip(s.S07.msgs).concat([mel(CRM.f, CRM.fRows, { trace: tr(CRM_TRACES.read) })]), skill: 'crm', focus: true };
+  s.S10 = { msgs: strip(s.S09.msgs).concat([usr('Import and skip duplicates'), working(CRM_TRACES.imp)]), skill: 'crm', typing: true, focus: true };
+  s.S11 = { msgs: strip(s.S09.msgs).concat([usr('Import and skip duplicates'), mel(CRM.i, CRM.iRows, { trace: tr(CRM_TRACES.imp), stats: true })]), skill: 'crm', focus: true };
+  s.S12 = { msgs: strip(s.S11.msgs).concat([usr('What can you do with them?'), { role: 'mel', text: '', thinking: true, rows: [] }]), skill: 'crm', typing: true, focus: true };
+  s.S13 = { msgs: strip(s.S11.msgs).concat([usr('What can you do with them?'), mel(CRM.s, CRM.sRows)]), skill: 'crm', focus: true };
+  return s;
+})();
+const NEXT_CRM = { 'upload a csv': ['u'], 'attach clients-export.csv': ['file'], 'import and skip duplicates': ['i'], 'what can you do with them?': ['s'], 'show me the duplicates': ['f'] };
+const DRAFT1 = 'Hi Jordan, two homes near Oak Street match your budget. Want to tour on Saturday?';
+const DRAFT2 = 'Hi Jordan, two homes near Oak Street fit. Tour Saturday?';
+const WHAT = ['What else can you do?'];
+const PT = {
+  p1: { running: 'Searching your CRM', summary: 'Searched in 1 step', steps: ['Found Jordan Lee · Buyer · Active'] },
+  p2: { running: 'Reading Jordan’s record', summary: 'Checked 2 things', steps: ['Read Jordan Lee’s preferences', 'Prepared the change · beds 2 → 3'] },
+  p2s: { running: 'Saving', summary: 'Saved in 1 step', steps: ['Saved Jordan Lee · preferences'] },
+  p3: { running: 'Reading Jordan’s activity', summary: 'Checked 2 things', steps: ['Read Jordan Lee · 6 listing views, replied today', 'Found 2 matching homes near Oak Street'] },
+  p3e: { running: 'Rewriting', summary: 'Rewrote in 1 step', steps: ['Cut the draft to 11 words'] },
+  p3s: { running: 'Sending', summary: 'Sent in 2 steps', steps: ['Sent text from your Radius number', 'Logged in Jordan Lee’s activity'] },
+  p4: { running: 'Checking your calendar', summary: 'Checked 2 things', steps: ['Read Google Calendar · Tuesday free at 10:00 AM', 'Prepared the follow-up'] },
+  p4s: { running: 'Adding to Google Calendar', summary: 'Added in 1 step', steps: ['Added Call Jordan Lee · Tue, Oct 27 · 10:00 AM'] },
+  p5: { running: 'Finding inactive clients', summary: 'Checked 2 things', steps: ['Found 12 clients not contacted in 90 days', 'Built a 4-week plan'] },
+  p5s: { running: 'Starting the campaign', summary: 'Started in 2 steps', steps: ['Enrolled 12 clients', 'Scheduled week 1 · tomorrow 9 AM'] },
+  p6: { running: 'Ranking buyers by activity', summary: 'Checked 1 thing', steps: ['Ranked 836 buyers by views, saves and replies'] }
+};
+const S13 = strip(introMsgs()).concat([usr('Yes'), mel(CRM.w, []), usr('Upload a CSV'), mel(CRM.u), { role: 'user', file: true, text: '' }, mel(CRM.f, []), usr('Import and skip duplicates'), mel(CRM.i, [], { stats: true }), usr('What can you do with them?'), mel(CRM.s, CRM.sRows)]);
+function after(base, pairs) { let m = strip(base); pairs.forEach((p) => { m = m.concat(p); }); return m; }
+const P_STEPS = (function () {
+  const s = {}; const B = S13;
+  const P1 = 'Find Jordan Lee', P2 = 'Update Jordan’s preferences to 3 beds', P3 = 'Draft a message to Jordan', P4 = 'Remind me to call Jordan on Tuesday', P5 = 'Start a check-in campaign for inactive clients', P6 = 'Show my top buyers this month';
+  const st = (msgs, typing) => ({ msgs: msgs, skill: 'crm', focus: true, typing: !!typing });
+  // 1 find
+  s.P1S1 = st(after(B, [[usr(P1), working(PT.p1)]]), true);
+  s.P1S2 = st(after(B, [[usr(P1), mel('Here is Jordan.', ['Draft a message to Jordan', 'Remind me to call Jordan on Tuesday'], { trace: tr(PT.p1), contact: true })]]));
+  s.P1S3 = st(after(B, [[usr(P1), mel('Here is Jordan.', [], { trace: tr(PT.p1), contact: true }), usr(P3), working(PT.p3)]]), true);
+  // 2 update
+  const U2 = mel('Here is the change. Save it?', ['Save it', 'Also add a pool'], { trace: tr(PT.p2), upd: true });
+  s.P2S1 = st(after(B, [[usr(P2), working(PT.p2)]]), true);
+  s.P2S2 = st(after(B, [[usr(P2), U2]]));
+  s.P2S3 = st(after(B, [[usr(P2), U2, usr('Save it'), working(PT.p2s)]]), true);
+  s.P2S4 = st(after(B, [[usr(P2), U2, usr('Save it'), mel('Saved. I use this when new listings come in.', WHAT, { trace: tr(PT.p2s), status: 'Saved · Jordan Lee' })]]));
+  s.P2S5 = st(after(B, [[usr(P2), U2, usr('Save it'), mel('Saved. I use this when new listings come in.', [], { trace: tr(PT.p2s), status: 'Saved · Jordan Lee' }), usr('What else can you do?'), { role: 'mel', text: '', thinking: true, rows: [] }]]), true);
+  s.P2S6 = st(after(B, [[usr(P2), U2, usr('Save it'), mel('Saved. I use this when new listings come in.', [], { trace: tr(PT.p2s), status: 'Saved · Jordan Lee' }), usr('What else can you do?'), mel(CRM.s, CRM.sRows)]]));
+  // 3 draft
+  const D1 = mel('Here is a draft. Send it, or tell me what to change.', ['Make it shorter', 'Send it by email instead'], { trace: tr(PT.p3), draft: DRAFT1 });
+  const D2 = mel('Shorter. Send it?', ['Send it by email instead'], { trace: tr(PT.p3e), draft: DRAFT2 });
+  s.P3S1 = st(after(B, [[usr(P3), working(PT.p3)]]), true);
+  s.P3S2 = st(after(B, [[usr(P3), D1]]));
+  s.P3S3 = st(after(B, [[usr(P3), D1, usr('Make it shorter'), working(PT.p3e)]]), true);
+  s.P3S4 = st(after(B, [[usr(P3), D1, usr('Make it shorter'), D2]]));
+  s.P3S5 = st(after(B, [[usr(P3), D1, usr('Make it shorter'), D2, { role: 'user', text: '', silent: true }, working(PT.p3s)]]), true);
+  s.P3S6 = st(after(B, [[usr(P3), D1, usr('Make it shorter'), D2, { role: 'user', text: '', silent: true }, mel('Sent and logged in Jordan’s activity.', WHAT, { trace: tr(PT.p3s), status: 'Sent · text to Jordan Lee' })]]));
+  s.P3S7 = st(after(B, [[usr(P3), D1, usr('Make it shorter'), D2, { role: 'user', text: '', silent: true }, mel('Sent and logged in Jordan’s activity.', [], { trace: tr(PT.p3s), status: 'Sent · text to Jordan Lee' }), usr('What else can you do?'), { role: 'mel', text: '', thinking: true, rows: [] }]]), true);
+  s.P3S8 = st(after(B, [[usr(P3), D1, usr('Make it shorter'), D2, { role: 'user', text: '', silent: true }, mel('Sent and logged in Jordan’s activity.', [], { trace: tr(PT.p3s), status: 'Sent · text to Jordan Lee' }), usr('What else can you do?'), mel(CRM.s, CRM.sRows)]]));
+  // 4 follow-up
+  const F1 = mel('Here is the follow-up. Add it?', ['Add it', 'Make it Wednesday'], { trace: tr(PT.p4), fu: true });
+  s.P4S1 = st(after(B, [[usr(P4), working(PT.p4)]]), true);
+  s.P4S2 = st(after(B, [[usr(P4), F1]]));
+  s.P4S3 = st(after(B, [[usr(P4), F1, usr('Add it'), working(PT.p4s)]]), true);
+  s.P4S4 = st(after(B, [[usr(P4), F1, usr('Add it'), mel('Added. I remind you 15 minutes before.', WHAT, { trace: tr(PT.p4s), status: 'Added · Google Calendar' })]]));
+  s.P4S5 = st(after(B, [[usr(P4), F1, usr('Add it'), mel('Added. I remind you 15 minutes before.', [], { trace: tr(PT.p4s), status: 'Added · Google Calendar' }), usr('What else can you do?'), { role: 'mel', text: '', thinking: true, rows: [] }]]), true);
+  s.P4S6 = st(after(B, [[usr(P4), F1, usr('Add it'), mel('Added. I remind you 15 minutes before.', [], { trace: tr(PT.p4s), status: 'Added · Google Calendar' }), usr('What else can you do?'), mel(CRM.s, CRM.sRows)]]));
+  // 5 campaign
+  const C1 = mel('Here is the plan. Start it?', ['Start the campaign', 'Make it 6 weeks'], { trace: tr(PT.p5), camp: true });
+  s.P5S1 = st(after(B, [[usr(P5), working(PT.p5)]]), true);
+  s.P5S2 = st(after(B, [[usr(P5), C1]]));
+  s.P5S3 = st(after(B, [[usr(P5), C1, usr('Start the campaign'), working(PT.p5s)]]), true);
+  s.P5S4 = st(after(B, [[usr(P5), C1, usr('Start the campaign'), mel('Started. The first message goes out tomorrow at 9 AM.', WHAT, { trace: tr(PT.p5s), status: 'Started · 12 clients' })]]));
+  s.P5S5 = st(after(B, [[usr(P5), C1, usr('Start the campaign'), mel('Started. The first message goes out tomorrow at 9 AM.', [], { trace: tr(PT.p5s), status: 'Started · 12 clients' }), usr('What else can you do?'), { role: 'mel', text: '', thinking: true, rows: [] }]]), true);
+  s.P5S6 = st(after(B, [[usr(P5), C1, usr('Start the campaign'), mel('Started. The first message goes out tomorrow at 9 AM.', [], { trace: tr(PT.p5s), status: 'Started · 12 clients' }), usr('What else can you do?'), mel(CRM.s, CRM.sRows)]]));
+  // 6 top buyers
+  s.P6S1 = st(after(B, [[usr(P6), working(PT.p6)]]), true);
+  s.P6S2 = st(after(B, [[usr(P6), mel('Your top buyers this month, by activity:', ['Draft a message to Jordan', 'What else can you do?'], { trace: tr(PT.p6), top: true })]]));
+  s.P6S3 = st(after(B, [[usr(P6), mel('Your top buyers this month, by activity:', [], { trace: tr(PT.p6), top: true }), usr(P3), working(PT.p3)]]), true);
+  return s;
+})();
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = Object.assign({ msgs: introMsgs(), skill: null, draft: '', typing: false, menuOpen: false }, (P_STEPS.P4S4));
+    this.timer = null;
+  }
+  componentDidMount() {}
+  componentWillUnmount() { if (this.timer) clearInterval(this.timer); }
+  scrollDown(root) { setTimeout(() => { try { const el = root && root.querySelector('[data-scroll]'); if (el) el.scrollTop = 0; } catch (e) {} }, 30); }
+  pick(text, root) {
+    if (this.state.typing) return;
+    this.setState({ draft: text });
+    setTimeout(() => { try { const f = root && root.querySelector('.c-chat-composer__field'); if (f) f.focus(); } catch (e) {} }, 30);
+  }
+  toggleTrace(i) { const msgs = this.state.msgs.slice(); const m = msgs[i]; if (!m || !m.trace) return; msgs[i] = Object.assign({}, m, { trace: Object.assign({}, m.trace, { open: !m.trace.open }) }); this.setState({ msgs: msgs }); }
+  ask(text, root) {
+    const t = String(text || '').trim();
+    if (!t || this.state.typing) return;
+    const k = this.state.skill ? null : skillByText(t);
+    const low = t.toLowerCase().trim();
+    let nx = this.state.skill ? nextMsg(t) : null;
+    let pend = null;
+    if (this.state.skill === 'crm') {
+      if (low === 'upload a csv') nx = mel(CRM.u);
+      else if (low === 'import and skip duplicates') { nx = mel(CRM.i, CRM.iRows, { trace: tr(CRM_TRACES.imp), stats: true }); pend = working(CRM_TRACES.imp); }
+      else if (low === 'what can you do with them?') nx = mel(CRM.s, CRM.sRows);
+      else if (low === 'find jordan lee') { nx = mel('Here is Jordan.', ['Draft a message to Jordan', 'Remind me to call Jordan on Tuesday'], { trace: tr(PT.p1), contact: true }); pend = working(PT.p1); }
+      else if (low.indexOf('preferences') > -1) { nx = mel('Here is the change. Save it?', ['Save it', 'Also add a pool'], { trace: tr(PT.p2), upd: true }); pend = working(PT.p2); }
+      else if (low === 'save it') { nx = mel('Saved. I use this when new listings come in.', WHAT, { trace: tr(PT.p2s), status: 'Saved · Jordan Lee' }); pend = working(PT.p2s); }
+      else if (low === 'draft a message to jordan') { nx = mel('Here is a draft. Send it, or tell me what to change.', ['Make it shorter', 'Send it by email instead'], { trace: tr(PT.p3), draft: DRAFT1 }); pend = working(PT.p3); }
+      else if (low === 'make it shorter') { nx = mel('Shorter. Send it?', ['Send it by email instead'], { trace: tr(PT.p3e), draft: DRAFT2 }); pend = working(PT.p3e); }
+      else if (low === 'send' || low === 'send it') { nx = mel('Sent and logged in Jordan’s activity.', WHAT, { trace: tr(PT.p3s), status: 'Sent · text to Jordan Lee' }); pend = working(PT.p3s); }
+      else if (low.indexOf('remind me') > -1) { nx = mel('Here is the follow-up. Add it?', ['Add it', 'Make it Wednesday'], { trace: tr(PT.p4), fu: true }); pend = working(PT.p4); }
+      else if (low === 'add it') { nx = mel('Added. I remind you 15 minutes before.', WHAT, { trace: tr(PT.p4s), status: 'Added · Google Calendar' }); pend = working(PT.p4s); }
+      else if (low.indexOf('campaign') > -1 && low.indexOf('start the') === -1) { nx = mel('Here is the plan. Start it?', ['Start the campaign', 'Make it 6 weeks'], { trace: tr(PT.p5), camp: true }); pend = working(PT.p5); }
+      else if (low === 'start the campaign') { nx = mel('Started. The first message goes out tomorrow at 9 AM.', WHAT, { trace: tr(PT.p5s), status: 'Started · 12 clients' }); pend = working(PT.p5s); }
+      else if (low.indexOf('top buyers') > -1) { nx = mel('Your top buyers this month, by activity:', ['Draft a message to Jordan', 'What else can you do?'], { trace: tr(PT.p6), top: true }); pend = working(PT.p6); }
+      else if (low === 'what else can you do?') nx = mel(CRM.s, CRM.sRows);
+      else if (low === 'show me the duplicates') nx = mel('These rows share an email or phone with another row. I keep the most complete record of each.', ['Import and skip duplicates']);
+    }
+    const final = k ? (k.id === 'crm' ? mel(CRM.w, CRM.wRows, { trace: tr(CRM_TRACES.start) }) : skillMsg(k)) : (nx || { role: 'mel', text: FALLBACK, rows: [] });
+    const prev = this.state.msgs.map((m) => Object.assign({}, m, { rows: [] }));
+    const pending = pend || (k ? runningMsg(k) : { role: 'mel', text: '', thinking: true, rows: [] });
+    this.setState({ msgs: prev.concat([(t.toLowerCase().trim() === 'send' ? { role: 'user', text: '', silent: true } : { role: 'user', text: t }), pending]), draft: '', typing: true, focus: true, skill: k ? k.id : this.state.skill });
+    this.scrollDown(root);
+    const words = final.text.split(' ');
+    let n = 0;
+    setTimeout(() => {
+      this.timer = setInterval(() => {
+        n += 1;
+        const msgs = this.state.msgs.slice();
+        const done = n >= words.length;
+        msgs[msgs.length - 1] = Object.assign({}, final, { text: words.slice(0, n).join(' '), rows: done ? final.rows : [] });
+        this.setState({ msgs: msgs, typing: !done });
+        this.scrollDown(root);
+        if (done) { clearInterval(this.timer); this.timer = null; }
+      }, 60);
+    }, k ? 1400 : 800);
+  }
+  stop() {
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    const msgs = this.state.msgs.slice(); const last = msgs[msgs.length - 1];
+    if (last && last.role === 'mel') { msgs[msgs.length - 1] = Object.assign({}, last, { thinking: false, text: last.text || 'Stopped. Tell me what to do instead.', trace: last.trace ? Object.assign({}, last.trace, { running: false, open: false, title: 'Stopped' }) : undefined }); }
+    this.setState({ msgs: msgs, typing: false });
+  }
+  reset() {
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    this.setState({ msgs: introMsgs(), skill: null, draft: '', typing: false, menuOpen: false, focus: false });
+  }
+  renderVals() {
+    const s = this.state;
+    const rootOf = (e) => (e && e.target && e.target.closest) ? e.target.closest('.rm-root') : null;
+    const cur = SKILLS.filter((k) => k.id === s.skill)[0];
+    return {
+      skin: cur ? cur.id : 'mel',
+      menuOpen: s.menuOpen,
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      newChat: () => this.reset(),
+      msgs: (s.focus ? s.msgs.slice(Math.max(0, s.msgs.map((m) => m.role).lastIndexOf('user'))) : s.msgs).map((m, i) => ({
+        isUser: m.role === 'user' && !m.file && !m.silent, isFile: m.role === 'user' && !!m.file, isMel: m.role === 'mel', isStats: !!m.stats, isContact: !!m.contact, isUpd: !!m.upd, isDraft: !!m.draft, draftText: m.draft || '', isFu: !!m.fu, isCamp: !!m.camp, isTop: !!m.top, hasStatus: !!m.status, status: m.status || '', sendDraft: (e) => this.ask('Send', rootOf(e)),
+        text: m.text, thinking: !!m.thinking, thinkingPlain: !!m.thinking && !m.trace, hasText: !m.thinking && !!m.text,
+        hasTrace: !!m.trace, traceRunning: !!(m.trace && m.trace.running), traceDone: !!(m.trace && !m.trace.running), traceOpen: !!(m.trace && m.trace.open), traceTitle: m.trace ? m.trace.title : '',
+        toggleTrace: () => this.toggleTrace(s.focus ? Math.max(0, s.msgs.map((m) => m.role).lastIndexOf('user')) + i : i),
+        steps: (m.trace ? m.trace.steps : []).map((st, j) => { const run = !!(m.trace.live && j === m.trace.steps.length - 1); return { text: st, status: run ? 'running' : 'done', running: run, done: !run }; }),
+        hasList: !!(m.list && m.list.length), list: (m.list || []).map((r, j) => ({ skill: LINE_SKILLS[j], text: r, pick: (e) => this.pick(r, rootOf(e)) })),
+        hasRows: !!(m.rows && m.rows.length), rows: (m.rows || []).map((r) => ({ text: r, send: (e) => this.ask(r, rootOf(e)) }))
+      })),
+      draft: s.draft,
+      generating: !!s.typing, stop: () => this.stop(),
+      typing: !!s.draft.trim(), canSend: !!s.draft.trim(), cantSend: !s.draft.trim(),
+      setDraft: (e) => this.setState({ draft: String(e.target.value) }),
+      key: (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.ask(s.draft, rootOf(e)); } },
+      send: (e) => { e.preventDefault(); this.ask(s.draft, rootOf(e)); }
+    };
+  }
+}
+</script>
+</body>
+</html>

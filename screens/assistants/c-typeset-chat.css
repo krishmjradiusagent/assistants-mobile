@@ -1,0 +1,43 @@
+/* c-typeset-chat: shadcn Typeset pattern (size, leading, flow) ported to the Radius Mobile DS. Mel message text only.
+   Fonts: Mona Sans from the DS. Size: DS t-body (15px) bumped to 16px for chat on phone, Dynamic Type aware.
+   New tokens, canvas-only, pending DS decision: --typeset-size, --typeset-leading, --typeset-flow. */
+.typeset {
+  --typeset-font-body: var(--font-sans);
+  --typeset-font-heading: var(--font-display);
+  --typeset-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --typeset-size: var(--t-body-size);
+  --typeset-leading: 1.6;
+  --typeset-flow: 1em;
+  font-family: var(--typeset-font-body);
+  font-size: var(--typeset-size);
+  line-height: var(--typeset-leading);
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+.typeset :where(p, ul, ol, h1, h2, h3, h4, table, blockquote, pre, hr) { margin: 0; }
+.typeset :where(* + *) { margin-block-start: var(--typeset-flow); }
+.typeset :where(h1, h2, h3, h4) { font-family: var(--typeset-font-heading); font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+.typeset :where(h1) { font-size: calc(var(--typeset-size) * 1.35); }
+.typeset :where(h2) { font-size: calc(var(--typeset-size) * 1.2); }
+.typeset :where(h3, h4) { font-size: calc(var(--typeset-size) * 1.05); }
+.typeset :where(strong, b) { font-weight: 600; }
+.typeset :where(ul, ol) { padding-inline-start: 1.25em; }
+.typeset :where(li + li) { margin-block-start: 0.25em; }
+.typeset :where(a) { color: var(--action-primary); text-decoration: underline; text-underline-offset: 0.15em; }
+.typeset :where(code) { font-family: var(--typeset-font-mono); font-size: 0.9em; padding: 0.1em 0.35em; border-radius: var(--radius-badge); background: var(--surface-tile); }
+.typeset :where(pre) { font-family: var(--typeset-font-mono); font-size: 0.9em; line-height: 1.5; padding: var(--space-3); border-radius: var(--radius-tile); background: var(--surface-tile); overflow-x: auto; }
+.typeset :where(blockquote) { padding-inline-start: var(--space-3); border-inline-start: 2px solid var(--border-card); color: var(--text-secondary); }
+.typeset :where(hr) { border: 0; border-top: 1px solid var(--border-card); }
+.typeset :where(table) { width: 100%; border-collapse: collapse; font-size: var(--t-meta-size); }
+.typeset :where(th, td) { text-align: left; padding: var(--space-2) var(--space-2); border-top: 1px solid var(--border-card); }
+.typeset :where(th) { font-weight: 600; border-top: 0; }
+
+/* Chat preset: a touch larger than DS body, tight blocks. */
+.typeset-chat {
+  --typeset-size: min(calc(16px * var(--type-scale)), 24px);
+  --typeset-leading: 1.6;
+  --typeset-flow: 1em;
+}
+/* Dark surfaces read tighter. Loosen the leading a little. */
+[data-theme="dark"] .typeset, .rm-root[data-theme="dark"] .typeset { --typeset-leading: 1.7; }
+.not-typeset, [data-not-typeset] { font: inherit; line-height: inherit; }

@@ -1,0 +1,1251 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-10-27T13:35:41Z"
+  },
+  "title": "Mel voice mode",
+  "launch": {
+    "view": "canvas",
+    "page": "concepts"
+  },
+  "pages": [
+    {
+      "id": "voice",
+      "name": "Voice mode · mobile"
+    },
+    {
+      "id": "concepts",
+      "name": "Voice concepts"
+    },
+    {
+      "id": "bg",
+      "name": "Background states · iOS"
+    }
+  ],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "Prototype, dark",
+      "is_interactive": true
+    },
+    "VoiceProtoLight.dc.html": {
+      "x": 470,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "Prototype, light",
+      "is_interactive": true
+    },
+    "VHConnectingDark.dc.html": {
+      "x": 0,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "1. Connecting, dark"
+    },
+    "VHListeningDark.dc.html": {
+      "x": 470,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "2. Listening, dark"
+    },
+    "VHWorkingDark.dc.html": {
+      "x": 940,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "3. Working, dark"
+    },
+    "VHSpeakingDark.dc.html": {
+      "x": 1410,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "4. Speaking, dark"
+    },
+    "VHInterruptDark.dc.html": {
+      "x": 1880,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "5. Interrupt, you talk over Mel, dark"
+    },
+    "VHNeedsDark.dc.html": {
+      "x": 2350,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "6. Needs you, draft to send, dark"
+    },
+    "VHEndedDark.dc.html": {
+      "x": 3290,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "8. Ended, back in chat, dark"
+    },
+    "VHConnectingLight.dc.html": {
+      "x": 0,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "1. Connecting, light"
+    },
+    "VHListeningLight.dc.html": {
+      "x": 470,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "2. Listening, light"
+    },
+    "VHWorkingLight.dc.html": {
+      "x": 940,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "3. Working, light"
+    },
+    "VHSpeakingLight.dc.html": {
+      "x": 1410,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "4. Speaking, light"
+    },
+    "VHInterruptLight.dc.html": {
+      "x": 1880,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "5. Interrupt, you talk over Mel, light"
+    },
+    "VHNeedsLight.dc.html": {
+      "x": 2350,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "6. Needs you, draft to send, light"
+    },
+    "VHEndedLight.dc.html": {
+      "x": 3290,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "8. Ended, back in chat, light"
+    },
+    "VEMutedDark.dc.html": {
+      "x": 0,
+      "y": 3452,
+      "w": 390,
+      "h": 844,
+      "title": "1. Muted, dark"
+    },
+    "VEDeniedDark.dc.html": {
+      "x": 470,
+      "y": 3452,
+      "w": 390,
+      "h": 844,
+      "title": "2. Mic permission denied, dark"
+    },
+    "VECantHearDark.dc.html": {
+      "x": 940,
+      "y": 3452,
+      "w": 390,
+      "h": 844,
+      "title": "3. Can’t hear you, dark"
+    },
+    "VENetworkDark.dc.html": {
+      "x": 1410,
+      "y": 3452,
+      "w": 390,
+      "h": 844,
+      "title": "4. Network dropped, dark"
+    },
+    "VEMutedLight.dc.html": {
+      "x": 0,
+      "y": 4416,
+      "w": 390,
+      "h": 844,
+      "title": "1. Muted, light"
+    },
+    "VEDeniedLight.dc.html": {
+      "x": 470,
+      "y": 4416,
+      "w": 390,
+      "h": 844,
+      "title": "2. Mic permission denied, light"
+    },
+    "VECantHearLight.dc.html": {
+      "x": 940,
+      "y": 4416,
+      "w": 390,
+      "h": 844,
+      "title": "3. Can’t hear you, light"
+    },
+    "VENetworkLight.dc.html": {
+      "x": 1410,
+      "y": 4416,
+      "w": 390,
+      "h": 844,
+      "title": "4. Network dropped, light"
+    },
+    "VoiceConcept.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "A · Dot field, dark",
+      "page": "concepts"
+    },
+    "VoiceConceptALight.dc.html": {
+      "x": 0,
+      "y": 964,
+      "w": 390,
+      "h": 844,
+      "title": "A · Dot field, light",
+      "page": "concepts"
+    },
+    "VHDoneDark.dc.html": {
+      "x": 2820,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "7. Done, sent, dark"
+    },
+    "VHDoneLight.dc.html": {
+      "x": 2820,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "7. Done, sent, light"
+    },
+    "VHMinimisedDark.dc.html": {
+      "x": 3760,
+      "y": 1244,
+      "w": 390,
+      "h": 844,
+      "title": "9. Minimised, bubble in chat, dark"
+    },
+    "VHMinimisedLight.dc.html": {
+      "x": 3760,
+      "y": 2208,
+      "w": 390,
+      "h": 844,
+      "title": "9. Minimised, bubble in chat, light"
+    },
+    "VEVoiceChangeDark.dc.html": {
+      "x": 1880,
+      "y": 3452,
+      "w": 390,
+      "h": 844,
+      "title": "5. Change voice by asking, dark"
+    },
+    "VEVoiceChangeLight.dc.html": {
+      "x": 1880,
+      "y": 4416,
+      "w": 390,
+      "h": 844,
+      "title": "5. Change voice by asking, light"
+    },
+    "VECaptionsOffDark.dc.html": {
+      "x": 2350,
+      "y": 3452,
+      "w": 390,
+      "h": 844,
+      "title": "6. Captions off by asking, dark"
+    },
+    "VECaptionsOffLight.dc.html": {
+      "x": 2350,
+      "y": 4416,
+      "w": 390,
+      "h": 844,
+      "title": "6. Captions off by asking, light"
+    },
+    "VEDictatingDark.dc.html": {
+      "x": 2820,
+      "y": 3452,
+      "w": 390,
+      "h": 844,
+      "title": "7. Dictating in chat, dark"
+    },
+    "VEDictatingLight.dc.html": {
+      "x": 2820,
+      "y": 4416,
+      "w": 390,
+      "h": 844,
+      "title": "7. Dictating in chat, light"
+    },
+    "VCProtoDark.dc.html": {
+      "x": 0,
+      "y": 5680,
+      "w": 390,
+      "h": 844,
+      "title": "CRM by voice, prototype, dark",
+      "is_interactive": true
+    },
+    "VCFindDark.dc.html": {
+      "x": 940,
+      "y": 5680,
+      "w": 390,
+      "h": 844,
+      "title": "1. Find contact, result card, dark"
+    },
+    "VCNoteDark.dc.html": {
+      "x": 1410,
+      "y": 5680,
+      "w": 390,
+      "h": 844,
+      "title": "2. Add note, result card, dark"
+    },
+    "VCRemindDark.dc.html": {
+      "x": 1880,
+      "y": 5680,
+      "w": 390,
+      "h": 844,
+      "title": "3. Set follow-up, result card, dark"
+    },
+    "VCOpenDark.dc.html": {
+      "x": 2350,
+      "y": 5680,
+      "w": 390,
+      "h": 844,
+      "title": "4. Open profile, link card, dark"
+    },
+    "VCNoneDark.dc.html": {
+      "x": 2820,
+      "y": 5680,
+      "w": 390,
+      "h": 844,
+      "title": "5. No match, dark"
+    },
+    "VCTwoDark.dc.html": {
+      "x": 3290,
+      "y": 5680,
+      "w": 390,
+      "h": 844,
+      "title": "6. Two matches, pick card, dark"
+    },
+    "VCGmailDark.dc.html": {
+      "x": 3760,
+      "y": 5680,
+      "w": 390,
+      "h": 844,
+      "title": "7. Gmail not connected, connector card, dark"
+    },
+    "VCProtoLight.dc.html": {
+      "x": 470,
+      "y": 6644,
+      "w": 390,
+      "h": 844,
+      "title": "CRM by voice, prototype, light",
+      "is_interactive": true
+    },
+    "VCFindLight.dc.html": {
+      "x": 940,
+      "y": 6644,
+      "w": 390,
+      "h": 844,
+      "title": "1. Find contact, result card, light"
+    },
+    "VCNoteLight.dc.html": {
+      "x": 1410,
+      "y": 6644,
+      "w": 390,
+      "h": 844,
+      "title": "2. Add note, result card, light"
+    },
+    "VCRemindLight.dc.html": {
+      "x": 1880,
+      "y": 6644,
+      "w": 390,
+      "h": 844,
+      "title": "3. Set follow-up, result card, light"
+    },
+    "VCOpenLight.dc.html": {
+      "x": 2350,
+      "y": 6644,
+      "w": 390,
+      "h": 844,
+      "title": "4. Open profile, link card, light"
+    },
+    "VCNoneLight.dc.html": {
+      "x": 2820,
+      "y": 6644,
+      "w": 390,
+      "h": 844,
+      "title": "5. No match, light"
+    },
+    "VCTwoLight.dc.html": {
+      "x": 3290,
+      "y": 6644,
+      "w": 390,
+      "h": 844,
+      "title": "6. Two matches, pick card, light"
+    },
+    "VCGmailLight.dc.html": {
+      "x": 3760,
+      "y": 6644,
+      "w": 390,
+      "h": 844,
+      "title": "7. Gmail not connected, connector card, light"
+    },
+    "VMVoiceDark.dc.html": {
+      "x": 0,
+      "y": 8168,
+      "w": 390,
+      "h": 844,
+      "title": "1. Voice live, tap minimise, dark"
+    },
+    "VMHomeDark.dc.html": {
+      "x": 470,
+      "y": 8168,
+      "w": 390,
+      "h": 844,
+      "title": "2. Dashboard, bubble listening, dark"
+    },
+    "VMClientsDark.dc.html": {
+      "x": 940,
+      "y": 8168,
+      "w": 390,
+      "h": 844,
+      "title": "3. Clients, bubble speaking, dark"
+    },
+    "VMSnapDark.dc.html": {
+      "x": 1410,
+      "y": 8168,
+      "w": 390,
+      "h": 844,
+      "title": "4. Dragged, snaps to the side, dark"
+    },
+    "VMNeedsDark.dc.html": {
+      "x": 1880,
+      "y": 8168,
+      "w": 390,
+      "h": 844,
+      "title": "5. Needs you, Draft ready, dark"
+    },
+    "VMBackDark.dc.html": {
+      "x": 2350,
+      "y": 8168,
+      "w": 390,
+      "h": 844,
+      "title": "6. Tap bubble, back to voice with the card, dark"
+    },
+    "VMEndDark.dc.html": {
+      "x": 2820,
+      "y": 8168,
+      "w": 390,
+      "h": 844,
+      "title": "7. Drag onto the cross to end, dark"
+    },
+    "VMVoiceLight.dc.html": {
+      "x": 0,
+      "y": 9132,
+      "w": 390,
+      "h": 844,
+      "title": "1. Voice live, tap minimise, light"
+    },
+    "VMHomeLight.dc.html": {
+      "x": 470,
+      "y": 9132,
+      "w": 390,
+      "h": 844,
+      "title": "2. Dashboard, bubble listening, light"
+    },
+    "VMClientsLight.dc.html": {
+      "x": 940,
+      "y": 9132,
+      "w": 390,
+      "h": 844,
+      "title": "3. Clients, bubble speaking, light"
+    },
+    "VMSnapLight.dc.html": {
+      "x": 1410,
+      "y": 9132,
+      "w": 390,
+      "h": 844,
+      "title": "4. Dragged, snaps to the side, light"
+    },
+    "VMNeedsLight.dc.html": {
+      "x": 1880,
+      "y": 9132,
+      "w": 390,
+      "h": 844,
+      "title": "5. Needs you, Draft ready, light"
+    },
+    "VMBackLight.dc.html": {
+      "x": 2350,
+      "y": 9132,
+      "w": 390,
+      "h": 844,
+      "title": "6. Tap bubble, back to voice with the card, light"
+    },
+    "VMEndLight.dc.html": {
+      "x": 2820,
+      "y": 9132,
+      "w": 390,
+      "h": 844,
+      "title": "7. Drag onto the cross to end, light"
+    },
+    "Bg.dc.html": {
+      "x": 0,
+      "y": 260,
+      "w": 390,
+      "h": 844,
+      "title": "Prototype, dark",
+      "page": "bg",
+      "is_interactive": true
+    },
+    "BgProtoLight.dc.html": {
+      "x": 470,
+      "y": 260,
+      "w": 390,
+      "h": 844,
+      "title": "Prototype, light",
+      "page": "bg",
+      "is_interactive": true
+    },
+    "BGA1Dark.dc.html": {
+      "x": 0,
+      "y": 1664,
+      "w": 390,
+      "h": 844,
+      "title": "1. Compact, listening, dark",
+      "page": "bg"
+    },
+    "BGA2Dark.dc.html": {
+      "x": 470,
+      "y": 1664,
+      "w": 390,
+      "h": 844,
+      "title": "2. Compact, speaking, dark",
+      "page": "bg"
+    },
+    "BGA3Dark.dc.html": {
+      "x": 940,
+      "y": 1664,
+      "w": 390,
+      "h": 844,
+      "title": "3. Compact, working, dark",
+      "page": "bg"
+    },
+    "BGA4Dark.dc.html": {
+      "x": 1410,
+      "y": 1664,
+      "w": 390,
+      "h": 844,
+      "title": "4. Compact, muted, dark",
+      "page": "bg"
+    },
+    "BGA5Dark.dc.html": {
+      "x": 1880,
+      "y": 1664,
+      "w": 390,
+      "h": 844,
+      "title": "5. Compact, needs you, draft ready, dark",
+      "page": "bg"
+    },
+    "BGA6Dark.dc.html": {
+      "x": 2350,
+      "y": 1664,
+      "w": 390,
+      "h": 844,
+      "title": "6. Expanded, long press, speaking, dark",
+      "page": "bg"
+    },
+    "BGA7Dark.dc.html": {
+      "x": 2820,
+      "y": 1664,
+      "w": 390,
+      "h": 844,
+      "title": "7. Expanded, needs you, Open, dark",
+      "page": "bg"
+    },
+    "BGA8Dark.dc.html": {
+      "x": 3290,
+      "y": 1664,
+      "w": 390,
+      "h": 844,
+      "title": "8. Minimal, shared with another app, dark",
+      "page": "bg"
+    },
+    "BGA1Light.dc.html": {
+      "x": 0,
+      "y": 2628,
+      "w": 390,
+      "h": 844,
+      "title": "1. Compact, listening, light",
+      "page": "bg"
+    },
+    "BGA2Light.dc.html": {
+      "x": 470,
+      "y": 2628,
+      "w": 390,
+      "h": 844,
+      "title": "2. Compact, speaking, light",
+      "page": "bg"
+    },
+    "BGA3Light.dc.html": {
+      "x": 940,
+      "y": 2628,
+      "w": 390,
+      "h": 844,
+      "title": "3. Compact, working, light",
+      "page": "bg"
+    },
+    "BGA4Light.dc.html": {
+      "x": 1410,
+      "y": 2628,
+      "w": 390,
+      "h": 844,
+      "title": "4. Compact, muted, light",
+      "page": "bg"
+    },
+    "BGA5Light.dc.html": {
+      "x": 1880,
+      "y": 2628,
+      "w": 390,
+      "h": 844,
+      "title": "5. Compact, needs you, draft ready, light",
+      "page": "bg"
+    },
+    "BGA6Light.dc.html": {
+      "x": 2350,
+      "y": 2628,
+      "w": 390,
+      "h": 844,
+      "title": "6. Expanded, long press, speaking, light",
+      "page": "bg"
+    },
+    "BGA7Light.dc.html": {
+      "x": 2820,
+      "y": 2628,
+      "w": 390,
+      "h": 844,
+      "title": "7. Expanded, needs you, Open, light",
+      "page": "bg"
+    },
+    "BGA8Light.dc.html": {
+      "x": 3290,
+      "y": 2628,
+      "w": 390,
+      "h": 844,
+      "title": "8. Minimal, shared with another app, light",
+      "page": "bg"
+    },
+    "BGB1Dark.dc.html": {
+      "x": 0,
+      "y": 4032,
+      "w": 390,
+      "h": 844,
+      "title": "1. Compact, importing, dark",
+      "page": "bg"
+    },
+    "BGB2Dark.dc.html": {
+      "x": 470,
+      "y": 4032,
+      "w": 390,
+      "h": 844,
+      "title": "2. Expanded, progress, dark",
+      "page": "bg"
+    },
+    "BGB3Dark.dc.html": {
+      "x": 940,
+      "y": 4032,
+      "w": 390,
+      "h": 844,
+      "title": "3. Compact, done, dark",
+      "page": "bg"
+    },
+    "BGB4Dark.dc.html": {
+      "x": 1410,
+      "y": 4032,
+      "w": 390,
+      "h": 844,
+      "title": "4. Compact, stopped, dark",
+      "page": "bg"
+    },
+    "BGB5Dark.dc.html": {
+      "x": 1880,
+      "y": 4032,
+      "w": 390,
+      "h": 844,
+      "title": "5. Expanded, stopped, Open chat, dark",
+      "page": "bg"
+    },
+    "BGB1Light.dc.html": {
+      "x": 0,
+      "y": 4996,
+      "w": 390,
+      "h": 844,
+      "title": "1. Compact, importing, light",
+      "page": "bg"
+    },
+    "BGB2Light.dc.html": {
+      "x": 470,
+      "y": 4996,
+      "w": 390,
+      "h": 844,
+      "title": "2. Expanded, progress, light",
+      "page": "bg"
+    },
+    "BGB3Light.dc.html": {
+      "x": 940,
+      "y": 4996,
+      "w": 390,
+      "h": 844,
+      "title": "3. Compact, done, light",
+      "page": "bg"
+    },
+    "BGB4Light.dc.html": {
+      "x": 1410,
+      "y": 4996,
+      "w": 390,
+      "h": 844,
+      "title": "4. Compact, stopped, light",
+      "page": "bg"
+    },
+    "BGB5Light.dc.html": {
+      "x": 1880,
+      "y": 4996,
+      "w": 390,
+      "h": 844,
+      "title": "5. Expanded, stopped, Open chat, light",
+      "page": "bg"
+    },
+    "BGC1Dark.dc.html": {
+      "x": 0,
+      "y": 6400,
+      "w": 390,
+      "h": 844,
+      "title": "1. Voice live, dark",
+      "page": "bg"
+    },
+    "BGC2Dark.dc.html": {
+      "x": 470,
+      "y": 6400,
+      "w": 390,
+      "h": 844,
+      "title": "2. Voice needs you, draft ready, dark",
+      "page": "bg"
+    },
+    "BGC3Dark.dc.html": {
+      "x": 940,
+      "y": 6400,
+      "w": 390,
+      "h": 844,
+      "title": "3. Chat task, progress, dark",
+      "page": "bg"
+    },
+    "BGC4Dark.dc.html": {
+      "x": 1410,
+      "y": 6400,
+      "w": 390,
+      "h": 844,
+      "title": "4. Chat task, done, dark",
+      "page": "bg"
+    },
+    "BGC1Light.dc.html": {
+      "x": 0,
+      "y": 7364,
+      "w": 390,
+      "h": 844,
+      "title": "1. Voice live, light",
+      "page": "bg"
+    },
+    "BGC2Light.dc.html": {
+      "x": 470,
+      "y": 7364,
+      "w": 390,
+      "h": 844,
+      "title": "2. Voice needs you, draft ready, light",
+      "page": "bg"
+    },
+    "BGC3Light.dc.html": {
+      "x": 940,
+      "y": 7364,
+      "w": 390,
+      "h": 844,
+      "title": "3. Chat task, progress, light",
+      "page": "bg"
+    },
+    "BGC4Light.dc.html": {
+      "x": 1410,
+      "y": 7364,
+      "w": 390,
+      "h": 844,
+      "title": "4. Chat task, done, light",
+      "page": "bg"
+    },
+    "BGD1Dark.dc.html": {
+      "x": 0,
+      "y": 8768,
+      "w": 390,
+      "h": 844,
+      "title": "1. Home, small x2 + medium, dark",
+      "page": "bg"
+    },
+    "BGD2Dark.dc.html": {
+      "x": 470,
+      "y": 8768,
+      "w": 390,
+      "h": 844,
+      "title": "2. Home, large, Mel suggests, dark",
+      "page": "bg"
+    },
+    "BGD3Dark.dc.html": {
+      "x": 940,
+      "y": 8768,
+      "w": 390,
+      "h": 844,
+      "title": "3. Lock screen, circular + rectangular + inline, dark",
+      "page": "bg"
+    },
+    "BGD1Light.dc.html": {
+      "x": 0,
+      "y": 9732,
+      "w": 390,
+      "h": 844,
+      "title": "1. Home, small x2 + medium, light",
+      "page": "bg"
+    },
+    "BGD2Light.dc.html": {
+      "x": 470,
+      "y": 9732,
+      "w": 390,
+      "h": 844,
+      "title": "2. Home, large, Mel suggests, light",
+      "page": "bg"
+    },
+    "BGD3Light.dc.html": {
+      "x": 940,
+      "y": 9732,
+      "w": 390,
+      "h": 844,
+      "title": "3. Lock screen, circular + rectangular + inline, light",
+      "page": "bg"
+    },
+    "BGE1Dark.dc.html": {
+      "x": 0,
+      "y": 11136,
+      "w": 390,
+      "h": 844,
+      "title": "1. Connection lost, lock screen, dark",
+      "page": "bg"
+    },
+    "BGE2Dark.dc.html": {
+      "x": 470,
+      "y": 11136,
+      "w": 390,
+      "h": 844,
+      "title": "2. Reconnecting, island, dark",
+      "page": "bg"
+    },
+    "BGE3Dark.dc.html": {
+      "x": 940,
+      "y": 11136,
+      "w": 390,
+      "h": 844,
+      "title": "3. Mic denied, from a widget tap, dark",
+      "page": "bg"
+    },
+    "BGE4Dark.dc.html": {
+      "x": 1410,
+      "y": 11136,
+      "w": 390,
+      "h": 844,
+      "title": "4. Widget, nothing due, dark",
+      "page": "bg"
+    },
+    "BGE1Light.dc.html": {
+      "x": 0,
+      "y": 12100,
+      "w": 390,
+      "h": 844,
+      "title": "1. Connection lost, lock screen, light",
+      "page": "bg"
+    },
+    "BGE2Light.dc.html": {
+      "x": 470,
+      "y": 12100,
+      "w": 390,
+      "h": 844,
+      "title": "2. Reconnecting, island, light",
+      "page": "bg"
+    },
+    "BGE3Light.dc.html": {
+      "x": 940,
+      "y": 12100,
+      "w": 390,
+      "h": 844,
+      "title": "3. Mic denied, from a widget tap, light",
+      "page": "bg"
+    },
+    "BGE4Light.dc.html": {
+      "x": 1410,
+      "y": 12100,
+      "w": 390,
+      "h": 844,
+      "title": "4. Widget, nothing due, light",
+      "page": "bg"
+    },
+    "BGF1Dark.dc.html": {
+      "x": 0,
+      "y": 13504,
+      "w": 390,
+      "h": 844,
+      "title": "1. Voice live, swipe home, dark",
+      "page": "bg"
+    },
+    "BGF2Dark.dc.html": {
+      "x": 470,
+      "y": 13504,
+      "w": 390,
+      "h": 844,
+      "title": "2. Island compact, Mel keeps talking, dark",
+      "page": "bg"
+    },
+    "BGF3Dark.dc.html": {
+      "x": 940,
+      "y": 13504,
+      "w": 390,
+      "h": 844,
+      "title": "3. Long press, expanded, dark",
+      "page": "bg"
+    },
+    "BGF4Dark.dc.html": {
+      "x": 1410,
+      "y": 13504,
+      "w": 390,
+      "h": 844,
+      "title": "4. Mel needs you, island flags it, dark",
+      "page": "bg"
+    },
+    "BGF5Dark.dc.html": {
+      "x": 1880,
+      "y": 13504,
+      "w": 390,
+      "h": 844,
+      "title": "5. Tap island, back to voice with the draft, dark",
+      "page": "bg"
+    },
+    "BGF6Dark.dc.html": {
+      "x": 2350,
+      "y": 13504,
+      "w": 390,
+      "h": 844,
+      "title": "6. End, island says Voice ended, then hides, dark",
+      "page": "bg"
+    },
+    "BGF1Light.dc.html": {
+      "x": 0,
+      "y": 14468,
+      "w": 390,
+      "h": 844,
+      "title": "1. Voice live, swipe home, light",
+      "page": "bg"
+    },
+    "BGF2Light.dc.html": {
+      "x": 470,
+      "y": 14468,
+      "w": 390,
+      "h": 844,
+      "title": "2. Island compact, Mel keeps talking, light",
+      "page": "bg"
+    },
+    "BGF3Light.dc.html": {
+      "x": 940,
+      "y": 14468,
+      "w": 390,
+      "h": 844,
+      "title": "3. Long press, expanded, light",
+      "page": "bg"
+    },
+    "BGF4Light.dc.html": {
+      "x": 1410,
+      "y": 14468,
+      "w": 390,
+      "h": 844,
+      "title": "4. Mel needs you, island flags it, light",
+      "page": "bg"
+    },
+    "BGF5Light.dc.html": {
+      "x": 1880,
+      "y": 14468,
+      "w": 390,
+      "h": 844,
+      "title": "5. Tap island, back to voice with the draft, light",
+      "page": "bg"
+    },
+    "BGF6Light.dc.html": {
+      "x": 2350,
+      "y": 14468,
+      "w": 390,
+      "h": 844,
+      "title": "6. End, island says Voice ended, then hides, light",
+      "page": "bg"
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "VoiceProtoLight.dc.html",
+    "VHConnectingDark.dc.html",
+    "VHListeningDark.dc.html",
+    "VHWorkingDark.dc.html",
+    "VHSpeakingDark.dc.html",
+    "VHInterruptDark.dc.html",
+    "VHNeedsDark.dc.html",
+    "VHDoneDark.dc.html",
+    "VHEndedDark.dc.html",
+    "VHConnectingLight.dc.html",
+    "VHListeningLight.dc.html",
+    "VHWorkingLight.dc.html",
+    "VHSpeakingLight.dc.html",
+    "VHInterruptLight.dc.html",
+    "VHNeedsLight.dc.html",
+    "VHDoneLight.dc.html",
+    "VHEndedLight.dc.html",
+    "VEMutedDark.dc.html",
+    "VEDeniedDark.dc.html",
+    "VECantHearDark.dc.html",
+    "VENetworkDark.dc.html",
+    "VEMutedLight.dc.html",
+    "VEDeniedLight.dc.html",
+    "VECantHearLight.dc.html",
+    "VENetworkLight.dc.html",
+    "VoiceConcept.dc.html",
+    "VoiceConceptALight.dc.html",
+    "VHMinimisedDark.dc.html",
+    "VHMinimisedLight.dc.html",
+    "VEVoiceChangeDark.dc.html",
+    "VEVoiceChangeLight.dc.html",
+    "VECaptionsOffDark.dc.html",
+    "VECaptionsOffLight.dc.html",
+    "VEDictatingDark.dc.html",
+    "VEDictatingLight.dc.html",
+    "VCProtoDark.dc.html",
+    "VCFindDark.dc.html",
+    "VCNoteDark.dc.html",
+    "VCRemindDark.dc.html",
+    "VCOpenDark.dc.html",
+    "VCNoneDark.dc.html",
+    "VCTwoDark.dc.html",
+    "VCGmailDark.dc.html",
+    "VCProtoLight.dc.html",
+    "VCFindLight.dc.html",
+    "VCNoteLight.dc.html",
+    "VCRemindLight.dc.html",
+    "VCOpenLight.dc.html",
+    "VCNoneLight.dc.html",
+    "VCTwoLight.dc.html",
+    "VCGmailLight.dc.html",
+    "VMVoiceDark.dc.html",
+    "VMHomeDark.dc.html",
+    "VMClientsDark.dc.html",
+    "VMSnapDark.dc.html",
+    "VMNeedsDark.dc.html",
+    "VMBackDark.dc.html",
+    "VMEndDark.dc.html",
+    "VMVoiceLight.dc.html",
+    "VMHomeLight.dc.html",
+    "VMClientsLight.dc.html",
+    "VMSnapLight.dc.html",
+    "VMNeedsLight.dc.html",
+    "VMBackLight.dc.html",
+    "VMEndLight.dc.html",
+    "Bg.dc.html",
+    "BgProtoLight.dc.html",
+    "BGA1Dark.dc.html",
+    "BGA2Dark.dc.html",
+    "BGA3Dark.dc.html",
+    "BGA4Dark.dc.html",
+    "BGA5Dark.dc.html",
+    "BGA6Dark.dc.html",
+    "BGA7Dark.dc.html",
+    "BGA8Dark.dc.html",
+    "BGA1Light.dc.html",
+    "BGA2Light.dc.html",
+    "BGA3Light.dc.html",
+    "BGA4Light.dc.html",
+    "BGA5Light.dc.html",
+    "BGA6Light.dc.html",
+    "BGA7Light.dc.html",
+    "BGA8Light.dc.html",
+    "BGB1Dark.dc.html",
+    "BGB2Dark.dc.html",
+    "BGB3Dark.dc.html",
+    "BGB4Dark.dc.html",
+    "BGB5Dark.dc.html",
+    "BGB1Light.dc.html",
+    "BGB2Light.dc.html",
+    "BGB3Light.dc.html",
+    "BGB4Light.dc.html",
+    "BGB5Light.dc.html",
+    "BGC1Dark.dc.html",
+    "BGC2Dark.dc.html",
+    "BGC3Dark.dc.html",
+    "BGC4Dark.dc.html",
+    "BGC1Light.dc.html",
+    "BGC2Light.dc.html",
+    "BGC3Light.dc.html",
+    "BGC4Light.dc.html",
+    "BGD1Dark.dc.html",
+    "BGD2Dark.dc.html",
+    "BGD3Dark.dc.html",
+    "BGD1Light.dc.html",
+    "BGD2Light.dc.html",
+    "BGD3Light.dc.html",
+    "BGE1Dark.dc.html",
+    "BGE2Dark.dc.html",
+    "BGE3Dark.dc.html",
+    "BGE4Dark.dc.html",
+    "BGE1Light.dc.html",
+    "BGE2Light.dc.html",
+    "BGE3Light.dc.html",
+    "BGE4Light.dc.html",
+    "BGF1Dark.dc.html",
+    "BGF2Dark.dc.html",
+    "BGF3Dark.dc.html",
+    "BGF4Dark.dc.html",
+    "BGF5Dark.dc.html",
+    "BGF6Dark.dc.html",
+    "BGF1Light.dc.html",
+    "BGF2Light.dc.html",
+    "BGF3Light.dc.html",
+    "BGF4Light.dc.html",
+    "BGF5Light.dc.html",
+    "BGF6Light.dc.html"
+  ],
+  "notes": {
+    "tProto": {
+      "x": 0,
+      "y": -300,
+      "text": "Prototype · tap the green voice button to restart",
+      "kind": "title1",
+      "maxW": 860
+    },
+    "tHappy": {
+      "x": 0,
+      "y": 964,
+      "text": "Happy path",
+      "kind": "title1",
+      "maxW": 4150
+    },
+    "tEdge": {
+      "x": 0,
+      "y": 3172,
+      "text": "Edge states, voice asks, dictation",
+      "kind": "title1",
+      "maxW": 3210
+    },
+    "tConcepts": {
+      "x": 0,
+      "y": -300,
+      "text": "Voice concept A (approved) · speaking",
+      "kind": "title1",
+      "maxW": 390,
+      "page": "concepts"
+    },
+    "tCrm": {
+      "x": 0,
+      "y": 5400,
+      "text": "CRM by voice · cards in voice",
+      "kind": "title1",
+      "maxW": 4150
+    },
+    "tMin": {
+      "x": 0,
+      "y": 7888,
+      "text": "Minimised across tabs · floating bubble",
+      "kind": "title1",
+      "maxW": 3210
+    },
+    "tMinCopy": {
+      "x": 3380,
+      "y": 8168,
+      "w": 420,
+      "maxH": 700,
+      "fill": "orange",
+      "text": "NEW (KJ, 28 Oct)\n\n· Bubble replaces the pill everywhere, chat included.\n· Tap = back to voice. Drag = move, snaps to the side. Drop on the cross = End.\n· Needs you: bubble turns attention + label. Mel also says it.\n· Dashboard and Clients are grey skeletons, not real pages.\n\nCopy not from Biju: \"Draft ready\", \"Drop to end\".\n\nPrototype: tap minimise, tap Dashboard or Clients in the nav, drag the bubble. After 6s Mel flags the draft."
+    },
+    "bgProto": {
+      "x": 0,
+      "y": 0,
+      "text": "Background states · prototype",
+      "kind": "title1",
+      "maxW": 860,
+      "page": "bg"
+    },
+    "bgCopy": {
+      "x": 940,
+      "y": 260,
+      "w": 440,
+      "maxH": 800,
+      "fill": "orange",
+      "page": "bg",
+      "text": "NEW (KJ, 28 Oct) · iOS only\n\nPrototype: island starts live. Tap island = expand. Tap wallpaper = collapse. Mute toggles. End = Voice ended, then hides. Talk to Mel widget = start again. After ~9s Mel needs you; Open goes to the voice prototype.\n\n· Mel Brand Guidelines only (KJ, 28 Oct): marks = 07 Mel in motion per state (listening, working, speaking, done, needs you = Deep Teal + mint, paused = grey). Open / Open chat / Try again = 08 Accent button (green, Deep Teal label). Mute = brand outline/secondary. End stays red (approved earlier, not in brand file). No skill teal.\n· ↳ rows in widgets: tap = open chat + send.\n· Mini Dot field in the island: out = speaking, in = listening, slow = working.\n· Lock screen widgets render monochrome on iOS, so no green there.\n· App icons + dock are grey skeletons.\n\nCopy not from Biju: Draft ready, Voice ended, Reconnecting, Stopped, 42/120, 120 added, Importing clients, Checking for duplicates, Import stopped, Row 65 has no name or email…, 120 clients added, Import done, Open, Open chat, Try again, Ask Mel, Opens chat, Talk to Mel, Starts voice, Mel suggests, 3 clients need a follow-up today, Nothing due today, Ask me anything, or talk to me, 2 follow-ups today, all widget ↳ prompts."
+    },
+    "bgtA": {
+      "x": 0,
+      "y": 1404,
+      "text": "Dynamic Island · voice",
+      "kind": "title1",
+      "maxW": 3680,
+      "page": "bg"
+    },
+    "bgtB": {
+      "x": 0,
+      "y": 3772,
+      "text": "Dynamic Island · chat task (Mel works while you're out)",
+      "kind": "title1",
+      "maxW": 2270,
+      "page": "bg"
+    },
+    "bgtC": {
+      "x": 0,
+      "y": 6140,
+      "text": "Lock screen · Live Activity",
+      "kind": "title1",
+      "maxW": 1800,
+      "page": "bg"
+    },
+    "bgtD": {
+      "x": 0,
+      "y": 8508,
+      "text": "Widgets · home + lock",
+      "kind": "title1",
+      "maxW": 1330,
+      "page": "bg"
+    },
+    "bgtE": {
+      "x": 0,
+      "y": 10876,
+      "text": "Edge states",
+      "kind": "title1",
+      "maxW": 1800,
+      "page": "bg"
+    },
+    "bgtF": {
+      "x": 0,
+      "y": 13244,
+      "text": "Flow · leave the app mid voice",
+      "kind": "title1",
+      "maxW": 2740,
+      "page": "bg"
+    }
+  },
+  "designSystems": [
+    {
+      "title": "Radius Mobile",
+      "namespace": "radius-mobile",
+      "artifact": "https://claude.ai/code/artifact/5dc86977-fd78-4cfe-bb3d-e6905539c228",
+      "version": "1793170777-c3cc",
+      "copiedAt": "2026-10-28T06:59:58Z"
+    }
+  ]
+}

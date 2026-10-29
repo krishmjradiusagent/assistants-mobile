@@ -1,0 +1,63 @@
+/* mel-brand: Mel brand layer on mobile (approved by KJ, v104). Source: Mel Brand Guidelines, Logo / Assistants / Gradients / Mel in motion.
+   Mark = rounded shape + living white dot. Accents from the brand Assistants page. Canvas-only, pending DS decision. */
+:root, .rm-root {
+  --mel-green: #12A867; --mel-deep-teal: #0E2B30; --mel-mint: #3DDC97;
+  --mel-crm: #0FA3B1; --mel-marketing: #EE6A4C; --mel-mls: #E9A320; --mel-compliance: #4479B3; --mel-document: #9C6B4F;
+  --mel-pill-crm: #D5F1F3; --mel-pill-crm-fg: #0A5F68;
+  --mel-pill-marketing: #FDE6DF; --mel-pill-marketing-fg: #9A3418;
+  --mel-pill-mls: #FCEFD3; --mel-pill-mls-fg: #7A5200;
+  --mel-pill-compliance: #E1EAF5; --mel-pill-compliance-fg: #244B78;
+  --mel-pill-document: #F3E8E1; --mel-pill-document-fg: #6A3E26;
+}
+.mb-mark { display:inline-block; flex:none; width:var(--mb-size, 32px); height:var(--mb-size, 32px); color:var(--mel-green); }
+.mb-mark svg { width:100%; height:100%; display:block; }
+.mb-mark[data-skill="crm"] { color:var(--mel-crm); }
+.mb-mark[data-skill="marketing"] { color:var(--mel-marketing); }
+.mb-mark[data-skill="mls"] { color:var(--mel-mls); }
+.mb-mark[data-skill="compliance"] { color:var(--mel-compliance); }
+.mb-mark[data-skill="document"] { color:var(--mel-document); }
+.mb-mark--hero { --mb-size: 120px; position:relative; isolation:isolate; animation: mb-float 3.2s ease-in-out infinite; }
+.mb-mark--hero svg { position:relative; z-index:1; }
+.mb-mark--hero::before { content:""; position:absolute; inset:-56px; border-radius:50%; background: radial-gradient(circle, rgba(61,220,151,var(--mb-glow, .30)) 0%, rgba(61,220,151,0) 68%); z-index:0; pointer-events:none; }
+[data-theme="dark"] .mb-mark--hero, .rm-root[data-theme="dark"] .mb-mark--hero { --mb-glow: .10; }
+[data-theme="dark"] .mb-mark--hero::before, .rm-root[data-theme="dark"] .mb-mark--hero::before { inset:-36px; }
+.mb-mark--hero .mb-ring { animation: mb-ring 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.mb-mark--hero .mb-dot { animation: mb-dot 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.mb-mark--row { --mb-size: 32px; }
+@keyframes mb-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+@keyframes mb-ring { 0%,100% { transform:scale(1.15); opacity:.85; } 50% { transform:scale(2.1); opacity:.15; } }
+@keyframes mb-dot { 0%,100% { transform:scale(1); } 50% { transform:scale(1.15); } }
+@media (prefers-reduced-motion: reduce) { .mb-mark--hero, .mb-mark--hero .mb-ring, .mb-mark--hero .mb-dot { animation:none; } .mb-mark--hero .mb-ring { opacity:0; } }
+
+/* Dot grid, brand Pattern page: 12px grid, 1.4px dot, one colour, low opacity. Faded out below the hero. Slow drift. */
+.mb-dots { position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image: radial-gradient(circle, var(--mb-dot, rgba(18,168,103,.055)) 1.4px, rgba(0,0,0,0) 1.6px); background-size: 12px 12px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 62%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 62%);
+  animation: mb-drift 9s linear infinite; }
+[data-theme="dark"] .mb-dots, .rm-root[data-theme="dark"] .mb-dots { --mb-dot: rgba(61,220,151,.008); }
+.mb-dots ~ * { position: relative; z-index: 1; }
+@keyframes mb-drift { from { background-position: 0 0; } to { background-position: 12px 12px; } }
+@media (prefers-reduced-motion: reduce) { .mb-dots { animation:none; } }
+
+/* Brand mark size variants replacing the DS mascot sizes */
+.mb-mark--dock { --mb-size: var(--size-mel-dock, 40px); }
+.mb-mark--inline { --mb-size: var(--size-mel-inline, 26px); }
+.mb-mark--large { --mb-size: var(--size-mel-hero, 64px); }
+.mb-mark[data-skill="mel"], .mb-mark[data-skill=""] { color: var(--mel-green); }
+
+/* Campaign skill accent (KJ, v110). Campaigns amber from the Assistants screenshot. Mark and pill only. */
+:root, .rm-root { --mel-campaign: #DFA641; --mel-pill-campaign: #FBEFD6; --mel-pill-campaign-fg: #7A5300; }
+.mb-mark[data-skill="campaign"] { color: var(--mel-campaign); }
+
+/* Client Experience skill accent (KJ, v111). From Mel brand guidelines Assistants page. Mark and pill only. */
+:root, .rm-root { --mel-client: #E0588A; --mel-pill-client: #FBE2EB; --mel-pill-client-fg: #9A2351; }
+.mb-mark[data-skill="client"] { color: var(--mel-client); }
+
+/* Suggestion chips (KJ, chat intimation). shadcn Suggestion shape and sizing, DS colours. Tap = send. Intro cards keep fill-input. Canvas-only, pending DS decision. */
+:root, .rm-root { --suggest-border: var(--border-card); --suggest-radius: 8px; }
+.c-suggest { display: flex; gap: var(--space-2); overflow-x: auto; overscroll-behavior-x: contain; padding: var(--space-1) var(--space-gutter) var(--space-1); margin: var(--space-2) calc(-1 * var(--space-gutter)) 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent); }
+.c-suggest::-webkit-scrollbar { display: none; }
+.c-suggest__btn { flex: none; display: inline-flex; align-items: center; min-height: var(--size-hit-ios); padding: 0; border: 0; background: transparent; color: var(--text-primary); font: inherit; cursor: pointer; }
+.c-suggest__btn > span { display: inline-flex; align-items: center; height: 32px; padding: 0 var(--space-3); border-radius: var(--suggest-radius); box-shadow: inset 0 0 0 1px var(--suggest-border); background: var(--surface-tile); font-size: min(calc(14px * var(--type-scale)), 21px); font-weight: 500; line-height: 1; white-space: nowrap; }
+.c-suggest__btn:active > span { background: var(--surface-input); }
+.c-suggest__btn:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }

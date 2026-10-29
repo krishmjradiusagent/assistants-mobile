@@ -1,0 +1,7 @@
+/* c-skill-pills: horizontal row of Mel skill pills above the composer. Mascot in skill colour + what the skill does.
+   Tap starts the skill in chat. No active state: pills are a picker, not tabs. Canvas-only, pending copy into the Radius Mobile DS. */
+.c-skill-pills { display:flex; gap:var(--space-2); overflow-x:auto; padding:0 var(--space-gutter) var(--space-3); margin:0 calc(-1 * var(--space-gutter)); scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.c-skill-pills::-webkit-scrollbar { display:none; }
+.c-skill-pill { flex:none; display:inline-flex; align-items:center; gap:var(--space-2); min-height:var(--size-hit-ios); padding:var(--space-1) var(--space-3) var(--space-1) 12px; border:0; border-radius:var(--radius-pill); background:var(--surface-tile); color:var(--text-primary); font:inherit; cursor:pointer; white-space:nowrap; }
+.c-skill-pill:active { opacity:.8; }
+.c-skill-pill .mel { --mel-size: var(--size-mel-inline); }

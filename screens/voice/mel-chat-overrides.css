@@ -1,0 +1,24 @@
+/* mel-chat-overrides: neutral grey surfaces for Mel chat, light theme only (KJ, v102). Dark theme unchanged.
+   Overrides the Radius Mobile DS paper tints inside chat boards. Canvas-only, pending DS decision. */
+[data-theme="light"].rm-root, [data-theme="light"] .rm-root, .rm-root[data-theme="light"] {
+  --p-paper-card: #F4F5F6; --p-paper-input: #EEF0F1; --p-paper-tile: #E8EAEC;
+  --p-paper-line-card: #DDE0E3; --p-paper-line-gray: #DDE0E3;
+}
+
+/* Mel speaks in plain text, no card (KJ, v106). User turns keep their bubble. Result cards stay cards. */
+.c-mel-plain { background: transparent !important; box-shadow: none !important; border: 0 !important; padding: 0 !important; border-radius: 0 !important; }
+.c-ai-message--assistant .c-ai-message__content { max-width: 100%; }
+
+/* User bubble: bg only, no border (KJ, v107) */
+.c-ai-message--user .rm-card--bordered { box-shadow: none; background: var(--surface-tile); }
+
+/* No blur over chat content (KJ, v109). Footer is flat; chat gets enough bottom room to sit fully above pills + composer. */
+.c-glass-footer--soft-edge::before, .c-glass-footer--soft-edge::after { display: none !important; }
+.c-glass-footer, .c-glass-footer--soft-edge { background: var(--bg-page) !important; box-shadow: none !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+[data-scroll] { padding-bottom: calc(var(--size-control-lg) * 6 + var(--space-8) + var(--space-6)) !important; }
+
+/* Composer generating state (KJ, chat intimation). While Mel works: Speak and Send hide, Stop shows. Canvas-only, pending DS. */
+.c-chat-composer__stop { display: none; flex: none; width: var(--size-control-lg); padding: 0; margin-inline-start: auto; }
+.c-chat-composer[data-generating="true"] .c-chat-composer__idle, .c-chat-composer[data-generating="true"] .c-chat-composer__send { display: none !important; }
+.c-chat-composer[data-generating="true"] .c-chat-composer__stop { display: inline-flex; }
+.c-chat-composer[data-generating="true"] .c-chat-composer__field { pointer-events: none; }

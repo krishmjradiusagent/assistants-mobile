@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Cover · static snapshot for developers"><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>Mel brand guidelines</title>
+<style>x-dc{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap" rel="stylesheet"><style>
+body{margin:0}
+a{color:#0E2B30}a:hover{color:#0B7A4D}
+
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="Main"><div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 64px 72px; background: rgb(255, 255, 255); color: rgb(14, 43, 48); font-family: &quot;Mona Sans&quot;, sans-serif; display: flex; flex-direction: column; gap: 40px; overflow: hidden;"><div style="flex: 1 1 0%; display: grid; grid-template-columns: minmax(0px, 1.1fr) minmax(0px, 1fr); gap: 56px; align-items: center;"><div style="display: flex; flex-direction: column; gap: 28px;"><div style="display: flex; align-items: center; gap: 15px;"><svg width="92" height="92" viewBox="0 0 120 120" fill="none" role="img" aria-label="Mel"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="3" fill="none"><animate attributeName="r" values="13;34;13" dur="2.4s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0.9;0;0.9" dur="2.4s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="13" fill="#FFFFFF"><animate attributeName="r" values="13;15;13" dur="2.4s" repeatCount="indefinite"></animate></circle></svg><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 600; font-size: 110px; letter-spacing: -0.045em; line-height: 1; color: rgb(14, 43, 48);">mel</div></div><h1 style="margin: 0px; font-weight: 400; font-size: 64px; line-height: 1.04; letter-spacing: -0.03em;">Brand guidelines</h1><p style="margin: 0px; font-size: 20px; line-height: 1.55; color: rgb(74, 94, 97); max-width: 560px;">How Mel looks, moves, and sounds. Use this kit for the website, the product, social, and anything else that carries the Mel name.</p><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: rgb(11, 122, 77);">Mint direction · v1 · October 2026</div></div><div style="position: relative; height: 560px; border-radius: 28px; overflow: hidden; background: rgb(255, 255, 255); border: 1px solid rgb(220, 232, 228);"><div style="position: absolute; width: 520px; height: 520px; left: -140px; top: -160px; border-radius: 50%; background: radial-gradient(circle, rgba(61, 220, 151, 0.16) 0%, rgba(61, 220, 151, 0) 70%);"></div><div style="position: absolute; width: 520px; height: 520px; right: -160px; bottom: -180px; border-radius: 50%; background: radial-gradient(circle, rgba(150, 205, 240, 0.18) 0%, rgba(150, 205, 240, 0) 70%);"></div><div style="position: absolute; inset: 0px; display: flex; align-items: center; justify-content: center;"><svg width="260" height="260" viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, idle"><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="3.2s" repeatCount="indefinite"></animateTransform><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"><animate attributeName="r" values="13;30;13" dur="3.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0.6;0;0.6" dur="3.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="13" fill="#FFFFFF"><animate attributeName="r" values="13;14.5;13" dur="3.2s" repeatCount="indefinite"></animate></circle></g></svg></div></div></div><div style="display: grid; grid-template-columns: repeat(10, minmax(0px, 1fr)); gap: 12px; border-top: 1px solid rgb(220, 232, 228); padding-top: 24px;"><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">01</div><div style="font-size: 15px; font-weight: 600;">Logo</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">02</div><div style="font-size: 15px; font-weight: 600;">Color</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">03</div><div style="font-size: 15px; font-weight: 600;">Gradients</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">04</div><div style="font-size: 15px; font-weight: 600;">Pattern</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">05</div><div style="font-size: 15px; font-weight: 600;">Typography</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">06</div><div style="font-size: 15px; font-weight: 600;">Iconography</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">07</div><div style="font-size: 15px; font-weight: 600;">Mel in motion</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">08</div><div style="font-size: 15px; font-weight: 600;">Buttons</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">09</div><div style="font-size: 15px; font-weight: 600;">Interactions</div></div><div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-family: &quot;Mona Sans&quot;, sans-serif; font-weight: 500; font-size: 11px; color: rgb(11, 122, 77);">10</div><div style="font-size: 15px; font-weight: 600;">Assistants</div></div></div></div></div></div>
+
+
+
+</body></html>

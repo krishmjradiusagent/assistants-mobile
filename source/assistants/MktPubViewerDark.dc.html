@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-expression="quiet" data-platform="ios">
+<head>
+<meta charset="utf-8">
+<title>Review all, Instagram, dark</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="c-skill-pills.css?v=109">
+<link rel="stylesheet" href="c-prompt-row.css?v=109">
+<link rel="stylesheet" href="mel-brand.css?v=109">
+<link rel="stylesheet" href="mel-chat-overrides.css?v=109">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.m-card{display:flex;flex-direction:column;gap:var(--space-4)}
+.m-lbl{margin:0}
+.m-field-row{display:flex;gap:var(--space-3);align-items:center}
+.m-swatch{flex:none;width:32px;height:32px;border-radius:var(--radius-badge);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-field-row .c-text-field{flex:1;min-width:0}
+.m-ph{position:relative;display:flex;align-items:center;justify-content:center;background:var(--surface-tile);color:var(--text-tertiary);overflow:hidden;border-radius:var(--radius-tile);width:100%}
+.m-ph .ph{font-size:var(--size-icon-row)}
+.m-r-45{aspect-ratio:4/5}.m-r-916{aspect-ratio:9/16}.m-r-43{aspect-ratio:4/3}.m-r-11{aspect-ratio:1/1}.m-r-85{aspect-ratio:17/22}
+.m-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.m-play>span{display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--action-glass);color:var(--text-primary);box-shadow:inset 0 0 0 1px var(--border-glass)}
+.m-play .ph{font-size:24px}
+.m-chip-corner{position:absolute;top:var(--space-2);left:var(--space-2)}
+.m-style-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-3)}
+.m-style{position:relative;display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-2);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);cursor:pointer}
+.m-style--wide{grid-column:1 / -1}
+.m-style input{position:absolute;opacity:0;pointer-events:none}
+.m-style[data-selected]{box-shadow:inset 0 0 0 2px var(--action-primary)}
+.m-style__check{position:absolute;top:var(--space-4);right:var(--space-4);width:24px;height:24px;border-radius:50%;background:var(--action-primary);color:var(--text-on-action);display:none;align-items:center;justify-content:center}
+.m-style[data-selected] .m-style__check{display:flex}
+.m-style__text{padding:0 var(--space-1) var(--space-1);display:flex;flex-direction:column;gap:var(--space-0-5)}
+.m-list-row{display:flex;gap:var(--space-3);align-items:center;padding:var(--space-3);border-radius:var(--radius-tile);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-list-row[data-selected]{box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-list-row__ic{flex:none;font-size:var(--size-icon-row);color:var(--text-secondary)}
+.m-list-row__body{flex:1;min-width:0;display:flex;flex-direction:column;gap:var(--space-0-5)}
+.m-list-row__go{flex:none;font-size:var(--size-icon-row)}
+.m-radio-dot{flex:none;width:var(--size-icon-row);height:var(--size-icon-row);border-radius:50%;background:var(--text-tertiary);opacity:.5}
+.m-dest{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-3);border-radius:var(--radius-tile);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-dest .c-checkbox{flex:none}
+.m-dest__ic{flex:none;font-size:var(--size-icon-row);color:var(--text-secondary)}
+.m-dest__body{flex:1;min-width:0;display:flex;flex-direction:column}
+.m-sep{height:1px;background:var(--separator-on-card);margin:0}
+.m-routine .c-radio__text{white-space:normal;overflow:visible;display:block}
+.m-bullets{margin:0;padding-left:var(--space-5);display:flex;flex-direction:column;gap:var(--space-1)}
+.m-doc{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-card-pad);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);cursor:pointer;width:100%;box-sizing:border-box;text-align:left}
+.m-doc__top{display:flex;align-items:flex-start;gap:var(--space-3)}
+.m-doc__top>div{flex:1;min-width:0}
+.m-doc__strip{display:flex;gap:var(--space-2);align-items:stretch}
+.m-doc__strip .m-ph{border-radius:var(--radius-badge)}
+.m-doc__foot{display:flex;align-items:center;gap:var(--space-2);color:var(--text-secondary)}
+.m-doc__foot .m-doc__go{margin-left:auto;font-size:var(--size-icon-row);color:var(--text-tertiary)}
+.m-viewer-head{position:absolute;inset:0 0 auto 0;z-index:7;display:grid;grid-template-columns:var(--size-control) minmax(0,1fr) auto;align-items:center;gap:var(--space-3);padding:var(--space-8) var(--space-gutter) var(--space-3)}
+.m-viewer-head__t{min-width:0;text-align:center;display:flex;flex-direction:column}
+.m-viewer-head__t>span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m-viewer-head__a{display:flex;gap:var(--space-2)}
+.m-viewer-body{position:absolute;inset:0;overflow-y:auto;padding:calc(var(--space-8) + var(--size-control) + var(--space-8)) var(--space-gutter) var(--space-12);display:flex;flex-direction:column;gap:var(--space-6)}
+.m-page{display:flex;flex-direction:column;gap:var(--space-3)}
+.m-page__sheet{padding:var(--space-3);border-radius:var(--radius-card);background:var(--surface-raised);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-page__meta{display:flex;justify-content:space-between;align-items:baseline;padding:0 var(--space-1)}
+.m-page__cap{display:flex;flex-direction:column;gap:var(--space-0-5);padding:0 var(--space-1)}
+.m-bar{position:absolute;left:var(--space-3);right:var(--space-3);bottom:var(--space-3);height:4px;border-radius:2px;background:var(--surface-card)}
+.m-bar>span{display:block;height:100%;width:38%;border-radius:2px;background:var(--action-primary)}
+.m-scrim{position:absolute;inset:0;z-index:20;background:rgba(0,0,0,.5)}
+.m-sheet{position:absolute;left:0;right:0;bottom:0;z-index:21;background:var(--surface-sheet);border-radius:var(--radius-sheet) var(--radius-sheet) 0 0;padding:var(--space-sheet-gutter) var(--space-sheet-gutter) calc(var(--space-sheet-body-bottom) + var(--space-8));display:flex;flex-direction:column;gap:var(--space-4)}
+.m-sheet__grab{width:36px;height:4px;border-radius:2px;background:var(--text-tertiary);opacity:.5;align-self:center}
+.m-sheet .rm-card{background:var(--surface-sheet-card)}
+.m-sheet__opt{display:flex;align-items:flex-start;gap:var(--space-3);padding:var(--space-3)}
+.m-sheet__opt .c-checkbox{flex:none;margin-top:2px}
+
+.m-card .c-status-row{padding-block:var(--space-1-5)}
+.m-card .rm-stack{gap:0}
+.m-card .c-alert{margin-bottom:var(--space-2)}
+
+.m-status{display:inline-flex;align-items:center;gap:var(--space-2);color:var(--text-secondary)}
+.m-status__dot{width:8px;height:8px;border-radius:50%;background:var(--action-primary);animation:mPulse 1.4s ease-in-out infinite}
+@keyframes mPulse{0%,100%{opacity:1}50%{opacity:.3}}
+@media (prefers-reduced-motion: reduce){.m-status__dot{animation:none}}
+.m-queue{display:inline-flex;align-items:center;gap:var(--space-2);align-self:flex-start;min-height:36px;margin-bottom:var(--space-2);padding:0 var(--space-3) 0 var(--space-2);border:0;border-radius:999px;background:var(--action-glass);box-shadow:inset 0 0 0 1px var(--border-glass),var(--shadow-glass);-webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);color:var(--text-primary);font:inherit;cursor:pointer}
+.m-queue__bar{width:40px;height:4px;border-radius:2px;background:var(--surface-tile);overflow:hidden}
+.m-queue__bar>span{display:block;height:100%;width:33%;background:var(--action-primary)}
+
+.m-ctl{flex:none;width:var(--size-control-lg);height:var(--size-control-lg);padding:0}
+.c-chat-composer[data-busy="true"] .c-chat-composer__field::placeholder{color:var(--text-tertiary)}
+.m-status__dot--done{animation:none;background:var(--text-tertiary)}
+.m-draft{display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-card-pad);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-draft__head{display:flex;align-items:center;gap:var(--space-3)}
+.m-draft__head .rm-tile{flex:none}
+.m-draft__head>div{flex:1;min-width:0;display:flex;flex-direction:column}
+.m-draft__head p{margin:0}
+.m-asset{display:flex;gap:var(--space-3);align-items:flex-start}
+.m-asset__thumb{flex:none;width:64px}
+.m-asset__thumb .m-ph{border-radius:var(--radius-badge)}
+.m-asset__body{flex:1;min-width:0;display:flex;flex-direction:column;gap:var(--space-1)}
+.m-asset__body p{margin:0}
+.m-tags{color:var(--text-secondary)}
+.m-field{display:flex;flex-direction:column;gap:var(--space-0-5)}
+.m-field p{margin:0}
+.m-draft__foot{display:flex;align-items:center;gap:var(--space-3)}
+.m-draft__foot>p{flex:1;min-width:0;margin:0}
+.m-pkg-strip4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-1)}
+.m-pkg-strip4 span{aspect-ratio:4/5;border-radius:6px;background:var(--surface-tile);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-pkg-strip4 span.m-more{display:flex;align-items:center;justify-content:center;color:var(--text-secondary)}
+.m-viewer-body--plain{padding-bottom:var(--space-12)}
+.m-ph-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--text-primary);font-size:14px}
+
+.m-pkg{display:flex;flex-direction:column;gap:var(--space-2);padding:var(--space-3);border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);border:0;color:var(--text-primary);font:inherit;text-align:left;cursor:pointer;width:100%;box-sizing:border-box}
+.m-pkg__top{display:flex;align-items:center;gap:var(--space-2)}
+.m-pkg__top>div{flex:1;min-width:0}
+.m-pkg__top p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.m-pkg__go{flex:none;font-size:var(--size-icon-row);color:var(--text-tertiary)}
+.m-pkg__strip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--space-1)}
+.m-pkg__strip span{height:52px;border-radius:6px;background:var(--surface-tile);box-shadow:inset 0 0 0 1px var(--border-card)}
+.m-ph__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+.m-ph:has(.m-ph__img)>svg.ph{display:none}
+</style>
+</helmet>
+<div class="rm-root" data-theme="dark" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans)">
+<div class="m-viewer-body m-viewer-body--plain" data-scroll="1"><section class="m-page" aria-label="Piece 1 of 12"><div class="m-page__sheet"><div><div class="m-ph m-r-45"><img class="m-ph__img" src="/_blob/7b70c41340c372da76fa7b2e7ee3f761" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">1 of 12 · Feed post</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Just listed. 123 Ocean View Drive, [BEDS] beds, [BATHS] baths. Tour link in bio.</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 2 of 12"><div class="m-page__sheet"><div><div class="m-ph m-r-45"><img class="m-ph__img" src="/_blob/6b77f9a00ae1cf27066859af78ce2f3e" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">2 of 12 · Feed post</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">The kitchen at 123 Ocean View Drive. [FEATURE].</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 3 of 12"><div class="m-page__sheet"><div><div class="m-ph m-r-45"><img class="m-ph__img" src="/_blob/4ac3d95adafeb236235cd8aab9bbce2c" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">3 of 12 · Feed post</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Sunset from the deck. Open house [DATE].</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 4 of 12"><div class="m-page__sheet"><div><div class="m-ph m-r-45"><img class="m-ph__img" src="/_blob/7b70c41340c372da76fa7b2e7ee3f761" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">4 of 12 · Feed post</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">The primary suite. [FEATURE].</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 5 of 12"><div class="m-page__sheet"><div><div class="m-ph m-r-45"><img class="m-ph__img" src="/_blob/6b77f9a00ae1cf27066859af78ce2f3e" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">5 of 12 · Feed post</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Neighbourhood: [NEARBY PLACES].</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 6 of 12"><div class="m-page__sheet"><div><div class="m-ph m-r-45"><img class="m-ph__img" src="/_blob/4ac3d95adafeb236235cd8aab9bbce2c" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">6 of 12 · Feed post</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Priced at [PRICE]. Message me for a showing.</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 7 of 12"><div class="m-page__sheet"><div style="width:62%;align-self:center"><div class="m-ph m-r-916"><img class="m-ph__img" src="/_blob/7b70c41340c372da76fa7b2e7ee3f761" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">7 of 12 · Story</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">New on the market. Tap for the tour.</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 8 of 12"><div class="m-page__sheet"><div style="width:62%;align-self:center"><div class="m-ph m-r-916"><img class="m-ph__img" src="/_blob/6b77f9a00ae1cf27066859af78ce2f3e" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">8 of 12 · Story</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Open house [DATE]. Tap to save it.</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 9 of 12"><div class="m-page__sheet"><div style="width:62%;align-self:center"><div class="m-ph m-r-916"><img class="m-ph__img" src="/_blob/4ac3d95adafeb236235cd8aab9bbce2c" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">9 of 12 · Story</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Swipe through the rooms.</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 10 of 12"><div class="m-page__sheet"><div style="width:62%;align-self:center"><div class="m-ph m-r-916"><img class="m-ph__img" src="/_blob/7b70c41340c372da76fa7b2e7ee3f761" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">10 of 12 · Story</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Ask me anything about this home.</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 11 of 12"><div class="m-page__sheet"><div style="width:62%;align-self:center"><div class="m-ph m-r-916"><img class="m-ph__img" src="/_blob/6b77f9a00ae1cf27066859af78ce2f3e" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg><span class="m-play" aria-hidden="true"><span><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></span></span></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">11 of 12 · Reel</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Walk through 123 Ocean View Drive in 30 seconds.</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section><section class="m-page" aria-label="Piece 12 of 12"><div class="m-page__sheet"><div style="width:62%;align-self:center"><div class="m-ph m-r-916"><img class="m-ph__img" src="/_blob/4ac3d95adafeb236235cd8aab9bbce2c" alt=""/><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"/></svg><span class="m-play" aria-hidden="true"><span><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"/></svg></span></span></div></div></div><div class="m-page__meta"><span class="t-meta t-secondary">12 of 12 · Reel</span></div><div class="m-page__cap"><p class="t-body" style="margin:0">Golden hour at 123 Ocean View Drive.</p><p class="t-meta t-secondary" style="margin:0">#justlisted #oceanview #[CITY]homes</p></div></section></div><header class="c-glass-header c-glass-header--soft-edge m-viewer-head"><button type="button" class="rm-btn rm-btn--glass" aria-label="Back to chat"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button><div class="m-viewer-head__t"><span class="t-row-title">Instagram</span><span class="t-meta t-secondary">12 pieces · 123 Ocean View Dr</span></div><div class="m-viewer-head__a"></div></header>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* Mel chat board styles, copied from Mel welcome canvas (ChatLive boards, 27 Oct). */
+.c-thinking{display:flex !important;flex-direction:row;align-items:center;gap:8px;margin:0 !important;min-height:20px;line-height:20px}
+.c-thinking>*{margin:0 !important}
+.typeset .c-thinking,.typeset .c-thinking>*{margin-block-start:0 !important}
+.c-thinking .c-trace__spin{flex:none;display:inline-block;width:12px;height:12px;margin:0;border-radius:50%;border:1.8px solid var(--border-card);border-top-color:var(--text-primary);animation:c-trace-spin .8s linear infinite}
+.c-thinking__text{display:inline-block;line-height:20px}
+@keyframes c-trace-spin{to{transform:rotate(360deg)}}
+.m-cards{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);margin-top:var(--space-2)}
+.m-card{display:flex;flex-direction:column;align-items:flex-start;gap:var(--space-2);width:100%;min-height:var(--size-hit-ios);padding:var(--space-3);border:0;border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);color:var(--text-primary);font:inherit;text-align:left;cursor:pointer;box-sizing:border-box}
+.m-card:active{background:var(--surface-tile)}
+.m-card:focus-visible{outline:2px solid var(--text-primary);outline-offset:2px}
+.m-card__text{overflow-wrap:anywhere}
+/* Compact composer + icon-only bottom nav (KJ, 27 Oct). Mel chat only. No footer skill pills. Phosphor icons. */
+.m-cc.c-chat-composer{flex-direction:row;align-items:center;gap:var(--space-1);padding:var(--space-1-5);border-radius:var(--radius-pill);background:var(--surface-input)}
+.m-cc .c-chat-composer__field{flex:1;min-width:0;min-height:var(--size-control-lg);padding:var(--space-2-5) var(--space-1)}
+.m-cc .c-chat-composer__idle{flex:none;gap:var(--space-1)}
+.m-cc__btn{flex:none;display:inline-flex;align-items:center;justify-content:center;width:var(--size-control-lg);height:var(--size-control-lg);padding:0;border:0;border-radius:50%;background:transparent;color:var(--text-primary);cursor:pointer}
+.m-cc__btn:active{background:var(--surface-tile)}
+.m-cc .m-cc__round{flex:none;width:var(--size-control-lg);height:var(--size-control-lg);min-width:0;padding:0;border-radius:50%;margin:0}
+.m-nav{display:flex;gap:var(--space-1);margin-top:var(--space-2);padding:var(--space-1);border-radius:var(--radius-pill);background:var(--surface-card)}
+.m-nav__item{flex:1;display:inline-flex;align-items:center;justify-content:center;height:var(--size-control-lg);padding:0;border:0;border-radius:var(--radius-pill);background:transparent;color:var(--text-secondary);cursor:pointer}
+.m-nav__item[aria-current="page"]{background:var(--surface-tile);color:var(--text-primary)}
+.m-nav__item:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+/* Frosted floating footer (KJ, 27 Oct): composer + nav float as frosted glass, chat scrolls under; active nav = Mel green. Same as Home. */
+.rm-root .c-glass-footer, .rm-root .c-glass-footer--soft-edge { background:transparent !important; }
+.rm-root .m-nav, .rm-root .m-cc.c-chat-composer { position:relative; isolation:isolate; -webkit-backdrop-filter:blur(40px) saturate(150%); backdrop-filter:blur(40px) saturate(150%); }
+.rm-root .m-nav::after, .rm-root .m-cc.c-chat-composer::after { content:""; position:absolute; inset:0; z-index:-1; border-radius:inherit; pointer-events:none; background:linear-gradient(180deg, var(--g-sheen) 0%, rgba(255,255,255,0) 45%); }
+.rm-root[data-theme="dark"] .m-nav, .rm-root[data-theme="dark"] .m-cc.c-chat-composer { --g-sheen:rgba(255,255,255,.06); background:rgba(32,36,35,.78); box-shadow:inset 0 1px 0 rgba(255,255,255,.20), inset 0 -1px 0 rgba(255,255,255,.05), inset 0 0 0 1px rgba(255,255,255,.10), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-nav, .rm-root[data-theme="light"] .m-cc.c-chat-composer { --g-sheen:rgba(255,255,255,.35); background:rgba(247,250,249,.82); box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 -1px 0 rgba(14,43,48,.04), inset 0 0 0 1px rgba(255,255,255,.60), 0 0 0 1px rgba(14,43,48,.06), 0 10px 30px rgba(14,43,48,.14); }
+.rm-root[data-theme="dark"] .m-nav__item[aria-current="page"] { background:rgba(61,220,151,.16); color:#3DDC97; box-shadow:inset 0 1px 0 rgba(61,220,151,.22); }
+.rm-root[data-theme="light"] .m-nav__item[aria-current="page"] { background:rgba(18,168,103,.14); color:#0B7A4D; box-shadow:inset 0 1px 0 rgba(255,255,255,.7); }
+/* Top bar + split nav = Home (KJ, 27 Oct). Top: K, contextual title "Mel", bell. Bottom: Mel circle (active, breathing tint 12-20%, idle motion) | Dashboard Clients Transactions | Inbox. */
+.m-chathead { position:absolute; inset:0 0 auto 0; z-index:7; display:flex; align-items:center; justify-content:space-between; padding:var(--space-8) var(--space-gutter) var(--space-3); }
+.m-chathead__title { position:absolute; left:50%; top:calc(var(--space-8) + 24px); transform:translate(-50%,-50%); margin:0; font:600 17px/1.2 var(--font-sans); letter-spacing:-0.01em; color:var(--text-primary); white-space:nowrap; pointer-events:none; }
+.m-avatar, .m-bell, .m-mel, .m-inbox { flex:none; position:relative; isolation:isolate; display:inline-flex; align-items:center; justify-content:center; padding:0; border:0; border-radius:50%; cursor:pointer; -webkit-backdrop-filter:blur(40px) saturate(150%); backdrop-filter:blur(40px) saturate(150%); }
+.m-avatar, .m-bell { width:48px; height:48px; color:var(--text-primary); }
+.m-avatar { font:600 17px/1 var(--font-sans); }
+.m-bell__dot { position:absolute; top:11px; right:12px; width:8px; height:8px; border-radius:50%; background:#F0605A; box-shadow:0 0 0 2px var(--bg-page); }
+.m-mel, .m-inbox { width:52px; height:52px; }
+.m-inbox { color:var(--text-secondary); }
+.rm-root[data-theme="dark"] .m-avatar, .rm-root[data-theme="dark"] .m-bell, .rm-root[data-theme="dark"] .m-mel, .rm-root[data-theme="dark"] .m-inbox { background:rgba(32,36,35,.78); box-shadow:inset 0 1px 0 rgba(255,255,255,.20), inset 0 0 0 1px rgba(255,255,255,.10), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-avatar, .rm-root[data-theme="light"] .m-bell, .rm-root[data-theme="light"] .m-mel, .rm-root[data-theme="light"] .m-inbox { background:rgba(247,250,249,.82); box-shadow:inset 0 1px 0 rgba(255,255,255,.95), inset 0 0 0 1px rgba(255,255,255,.60), 0 0 0 1px rgba(14,43,48,.06), 0 10px 30px rgba(14,43,48,.14); }
+.m-navrow { display:flex; align-items:center; gap:8px; margin-top:var(--space-2); }
+.m-navrow .m-nav { flex:1; min-width:0; margin-top:0; gap:2px; }
+.m-mel .mb-mark { --mb-size:36px; color:var(--mel-green); }
+.m-mel .mm-float { animation:mm-float 3.2s ease-in-out infinite; }
+.m-mel .mm-ring { transform-box:fill-box; transform-origin:center; animation:mm-ring 3.2s ease-in-out infinite; }
+.m-mel .mm-dot { transform-box:fill-box; transform-origin:center; animation:mm-dot 3.2s ease-in-out infinite; }
+@keyframes mm-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+@keyframes mm-ring { 0%,100% { transform:scale(1); opacity:.6; } 50% { transform:scale(2.3); opacity:0; } }
+@keyframes mm-dot { 0%,100% { transform:scale(1); } 50% { transform:scale(1.115); } }
+.m-mel::before { content:""; position:absolute; inset:0; z-index:-1; border-radius:50%; pointer-events:none; animation:mm-tint-on 3.2s ease-in-out infinite; }
+.rm-root[data-theme="dark"] .m-mel::before { background:rgb(61,220,151); }
+.rm-root[data-theme="light"] .m-mel::before { background:rgb(18,168,103); }
+@keyframes mm-tint-on { 0%,100% { opacity:.12; } 50% { opacity:.20; } }
+/* Composer back to normal (KJ, 27 Oct): solid surface-input, no glass, sheen or shadow. Nav stays glass. */
+.rm-root .m-cc.c-chat-composer { background:var(--surface-input) !important; box-shadow:none !important; -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+.rm-root .m-cc.c-chat-composer::after { display:none !important; }
+/* Mel circle selected = same as Dashboard active on Home (KJ, 27 Oct): steady Mel-green fill + top highlight, no ring, no breathing. */
+.rm-root[data-theme="dark"] .m-mel[aria-current="page"] { box-shadow:inset 0 1px 0 rgba(61,220,151,.22), 0 10px 30px rgba(0,0,0,.45); }
+.rm-root[data-theme="light"] .m-mel[aria-current="page"] { box-shadow:inset 0 1px 0 rgba(255,255,255,.7), 0 10px 30px rgba(14,43,48,.14); }
+.rm-root .m-mel[aria-current="page"]::before { animation:none; }
+.rm-root[data-theme="dark"] .m-mel[aria-current="page"]::before { opacity:.16; }
+.rm-root[data-theme="light"] .m-mel[aria-current="page"]::before { opacity:.14; }
+@media (prefers-reduced-motion: reduce) { .m-mel .mm-float, .m-mel .mm-ring, .m-mel .mm-dot { animation:none; } .m-mel .mm-ring { opacity:0; } .m-mel::before { animation:none; opacity:.16; } }

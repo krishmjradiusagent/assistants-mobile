@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "assetGroups": {},
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-15T15:59:00Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [],
+  "lastChange": {
+    "at": "2026-10-28T06:59:58Z",
+    "by": "KJ",
+    "via": "Claude (Cowork)",
+    "note": "Mel mark motion aligned to brand 07 + 09: centre cross-fade 240ms, 3 listening rings, brand bar ranges, done dot grow, badge pulse, reduced motion keeps fades; composer Mel icon on send; voice mark speech scale. Audit: 0 fails."
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "RadiusMobile",
+  "sections": {},
+  "title": "Radius Mobile"
+}

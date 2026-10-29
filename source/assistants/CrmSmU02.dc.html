@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-expression="quiet" data-platform="ios">
+<head>
+<meta charset="utf-8">
+<title>8 Uploading the CSV, Messages</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="mel-brand.css?v=112">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.up-url{position:absolute;inset:0 0 auto 0;height:96px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:10px;box-sizing:border-box;background:var(--surface-tile);border-bottom:1px solid var(--border-card)}
+.up-url span{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 16px;border-radius:12px;background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);font-size:15px;color:var(--text-primary)}
+.up-main{position:absolute;inset:96px 0 0 0;padding:56px var(--space-gutter) 40px;display:flex;flex-direction:column;align-items:center;text-align:center;box-sizing:border-box}
+.up-pill{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 10px;border-radius:var(--radius-pill);background:var(--mel-pill-crm);color:var(--mel-pill-crm-fg);font-size:13px;font-weight:600}
+.up-pill .mb-mark{--mb-size:14px;color:var(--mel-crm)}
+.up-file{display:flex;align-items:center;gap:12px;width:100%;padding:14px;border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);text-align:left;box-sizing:border-box}
+.up-file>svg{flex:none;color:var(--text-secondary)}
+.up-file>div{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.up-track{height:6px;border-radius:3px;background:var(--surface-tile);overflow:hidden}
+.up-track i{display:block;height:100%;border-radius:3px;background:var(--mel-green)}
+.up-ok{flex:none;width:32px;height:32px;border-radius:50%;background:var(--mel-green);color:#fff;display:flex;align-items:center;justify-content:center}
+.up-foot{margin-top:auto;width:100%;display:flex;flex-direction:column;gap:12px;align-items:center}
+</style>
+</helmet>
+<div class="rm-root" data-theme="light" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans)">
+<div class="up-url"><span><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1zm2 0h6V7a3 3 0 0 0-6 0z"/></svg>radiusagent.com</span></div>
+<main class="up-main">
+<div style="margin: 24px 0 40px"><span class="mb-mark mb-mark--hero" role="img" aria-label="MEL"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span></div>
+<div class="rm-stack" style="align-items: center; gap: 12px; width: 100%">
+<span class="up-pill"><span class="mb-mark" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span>CRM</span>
+<h1 class="t-page-title" style="margin: 0">Uploading</h1>
+<div class="up-file" style="margin-top: 12px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><div><span class="t-body-strong">clients-export.csv</span><span class="up-track" role="progressbar" aria-label="Upload progress" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"><i style="width: 64%"></i></span><span class="t-meta t-tertiary">136 of 212 KB</span></div></div>
+</div>
+<div class="up-foot">
+<p class="t-meta t-tertiary" style="margin: 0">Keep this page open until it’s done.</p>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

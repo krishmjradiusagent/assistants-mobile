@@ -1,0 +1,5686 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "BranchApp1DarkR.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "State 1, yes, Mel reply, dark",
+      "w": 390,
+      "x": 3490,
+      "y": 0
+    },
+    "BranchApp1LightR.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "State 1, yes, Mel reply, light",
+      "w": 390,
+      "x": 3490,
+      "y": 1240
+    },
+    "BranchApp2DarkR.dc.html": {
+      "h": 844,
+      "w": 390,
+      "x": 7050,
+      "y": 0,
+      "page": "main"
+    },
+    "BranchApp2LightR.dc.html": {
+      "h": 844,
+      "w": 390,
+      "x": 7520,
+      "y": 0,
+      "page": "main"
+    },
+    "BranchMail1.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 1 intro, listing live",
+      "w": 390,
+      "x": 2080,
+      "y": 4960
+    },
+    "BranchMail1R.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 1, yes, Mel reply",
+      "w": 390,
+      "x": 2550,
+      "y": 4960
+    },
+    "BranchMail2.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 2 intro, CRM empty",
+      "w": 390,
+      "x": 3020,
+      "y": 4960
+    },
+    "BranchMail2R.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 2, yes, Mel reply",
+      "w": 390,
+      "x": 3490,
+      "y": 4960
+    },
+    "BranchSms1.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 1 intro, listing live",
+      "w": 390,
+      "x": 2080,
+      "y": 3720
+    },
+    "BranchSms1R.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 1, yes, Mel reply",
+      "w": 390,
+      "x": 2550,
+      "y": 3720
+    },
+    "BranchSms2.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 2 intro, CRM empty",
+      "w": 390,
+      "x": 3020,
+      "y": 3720
+    },
+    "BranchSms2R.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 2, yes, Mel reply",
+      "w": 390,
+      "x": 3490,
+      "y": 3720
+    },
+    "BranchWa1.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 1 intro, listing live",
+      "w": 390,
+      "x": 2080,
+      "y": 2480
+    },
+    "BranchWa1R.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 1, yes, Mel reply",
+      "w": 390,
+      "x": 2550,
+      "y": 2480
+    },
+    "BranchWa2.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 2 intro, CRM empty",
+      "w": 390,
+      "x": 3020,
+      "y": 2480
+    },
+    "BranchWa2R.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "State 2, yes, Mel reply",
+      "w": 390,
+      "x": 3490,
+      "y": 2480
+    },
+    "ChatAutoRouteDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "Chat, skill routes itself, dark",
+      "w": 390,
+      "x": 470,
+      "y": -2439
+    },
+    "ChatAutoRouteLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "Chat, skill routes itself, light",
+      "w": 390,
+      "x": 470,
+      "y": -1475
+    },
+    "ChatLiveDark-lo57.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Chat live, dark copy",
+      "w": 390,
+      "x": -1000,
+      "y": 400
+    },
+    "ChatLiveDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "Chat live, dark",
+      "w": 390,
+      "x": 0,
+      "y": -2439
+    },
+    "ChatLiveLight-lo57.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Chat live, light copy",
+      "w": 390,
+      "x": -1000,
+      "y": 1344
+    },
+    "ChatLiveLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "Chat live, light",
+      "w": 390,
+      "x": 0,
+      "y": -1475
+    },
+    "ChatSwitchDark.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "Chat, switches to Marketing, dark",
+      "w": 390,
+      "x": 940,
+      "y": -2439
+    },
+    "ChatSwitchLight.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "Chat, switches to Marketing, light",
+      "w": 390,
+      "x": 940,
+      "y": -1475
+    },
+    "CmpE01Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "No contacts yet, dark",
+      "w": 390,
+      "x": 0,
+      "y": 6096
+    },
+    "CmpE01Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "No contacts yet, light",
+      "w": 390,
+      "x": 0,
+      "y": 7060
+    },
+    "CmpE02Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "No clients match, dark",
+      "w": 390,
+      "x": 470,
+      "y": 6096
+    },
+    "CmpE02Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "No clients match, light",
+      "w": 390,
+      "x": 470,
+      "y": 7060
+    },
+    "CmpE03Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "Connect email and texting, dark",
+      "w": 390,
+      "x": 940,
+      "y": 6096
+    },
+    "CmpE03Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "Connect email and texting, light",
+      "w": 390,
+      "x": 940,
+      "y": 7060
+    },
+    "CmpE04Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "Playbook unreadable, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 6096
+    },
+    "CmpE04Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "Playbook unreadable, light",
+      "w": 390,
+      "x": 1410,
+      "y": 7060
+    },
+    "CmpE05Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "Some messages bounced, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 6096
+    },
+    "CmpE05Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "Some messages bounced, light",
+      "w": 390,
+      "x": 1880,
+      "y": 7060
+    },
+    "CmpH01Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "1 Meet Mel, dark",
+      "w": 390,
+      "x": 0,
+      "y": 400
+    },
+    "CmpH01Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "1 Meet Mel, light",
+      "w": 390,
+      "x": 0,
+      "y": 1364
+    },
+    "CmpH02Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "2 Who to reach, dark",
+      "w": 390,
+      "x": 470,
+      "y": 400
+    },
+    "CmpH02Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "2 Who to reach, light",
+      "w": 390,
+      "x": 470,
+      "y": 1364
+    },
+    "CmpH03Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "3 Audience and playbook, dark",
+      "w": 390,
+      "x": 940,
+      "y": 400
+    },
+    "CmpH03Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "3 Audience and playbook, light",
+      "w": 390,
+      "x": 940,
+      "y": 1364
+    },
+    "CmpH04Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "4 Campaign goals, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 400
+    },
+    "CmpH04Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "4 Campaign goals, light",
+      "w": 390,
+      "x": 1410,
+      "y": 1364
+    },
+    "CmpH05Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "5 Channels and start, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 400
+    },
+    "CmpH05Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "5 Channels and start, light",
+      "w": 390,
+      "x": 1880,
+      "y": 1364
+    },
+    "CmpH06Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "6 Writing the campaign, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 400
+    },
+    "CmpH06Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "6 Writing the campaign, light",
+      "w": 390,
+      "x": 2350,
+      "y": 1364
+    },
+    "CmpH07Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "7 Campaign ready, dark",
+      "w": 390,
+      "x": 2820,
+      "y": 400
+    },
+    "CmpH07Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "7 Campaign ready, light",
+      "w": 390,
+      "x": 2820,
+      "y": 1364
+    },
+    "CmpH08Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "8 Change by asking, dark",
+      "w": 390,
+      "x": 3290,
+      "y": 400
+    },
+    "CmpH08Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "8 Change by asking, light",
+      "w": 390,
+      "x": 3290,
+      "y": 1364
+    },
+    "CmpH09Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "9 Approve and launch, dark",
+      "w": 390,
+      "x": 3760,
+      "y": 400
+    },
+    "CmpH09Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "9 Approve and launch, light",
+      "w": 390,
+      "x": 3760,
+      "y": 1364
+    },
+    "CmpH09bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "9b Full launch summary, dark",
+      "w": 390,
+      "x": 4230,
+      "y": 400
+    },
+    "CmpH09bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "9b Full launch summary, light",
+      "w": 390,
+      "x": 4230,
+      "y": 1364
+    },
+    "CmpH10Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "10 Campaign live, dark",
+      "w": 390,
+      "x": 4700,
+      "y": 400
+    },
+    "CmpH10Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "10 Campaign live, light",
+      "w": 390,
+      "x": 4700,
+      "y": 1364
+    },
+    "CmpV01Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "Variant: playbook uploaded, dark",
+      "w": 390,
+      "x": 0,
+      "y": 3688
+    },
+    "CmpV01Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "campaign",
+      "title": "Variant: playbook uploaded, light",
+      "w": 390,
+      "x": 0,
+      "y": 4652
+    },
+    "ConnectorsDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "onboarding",
+      "title": "Connectors, dark",
+      "w": 390,
+      "x": 0,
+      "y": 2400
+    },
+    "ConnectorsLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "onboarding",
+      "title": "Connectors, light",
+      "w": 390,
+      "x": 470,
+      "y": 2400
+    },
+    "CrmAgentCampaignDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Step 5.3 nurture campaign, dark",
+      "w": 390,
+      "x": 940,
+      "y": 24012,
+      "page": "main"
+    },
+    "CrmAgentCampaignLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Step 5.3 nurture campaign, light",
+      "w": 390,
+      "x": 940,
+      "y": 24976,
+      "page": "main"
+    },
+    "CrmAgentCloseDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Step 6 Mel closes the onboarding, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 24012,
+      "page": "main"
+    },
+    "CrmAgentCloseLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Step 6 Mel closes the onboarding, light",
+      "w": 390,
+      "x": 1410,
+      "y": 24976,
+      "page": "main"
+    },
+    "CrmAgentSendDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Step 5.1 send a client message, dark",
+      "w": 390,
+      "x": 0,
+      "y": 24012,
+      "page": "main"
+    },
+    "CrmAgentSendLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Step 5.1 send a client message, light",
+      "w": 390,
+      "x": 0,
+      "y": 24976,
+      "page": "main"
+    },
+    "CrmAgentUpdateDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Step 5.2 update a client record, dark",
+      "w": 390,
+      "x": 470,
+      "y": 24012,
+      "page": "main"
+    },
+    "CrmAgentUpdateLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Step 5.2 update a client record, light",
+      "w": 390,
+      "x": 470,
+      "y": 24976,
+      "page": "main"
+    },
+    "CrmDoneDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CRM demo, tap through, dark",
+      "w": 390,
+      "x": 0,
+      "y": 3600,
+      "page": "main"
+    },
+    "CrmDoneLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CRM demo, tap through, light",
+      "w": 390,
+      "x": 0,
+      "y": 4564,
+      "page": "main"
+    },
+    "CrmFlowCampEnrolledDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Campaign: enrolled confirmation, dark",
+      "w": 390,
+      "x": 470,
+      "y": 30816,
+      "page": "main"
+    },
+    "CrmFlowCampEnrolledLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Campaign: enrolled confirmation, light",
+      "w": 390,
+      "x": 470,
+      "y": 31780,
+      "page": "main"
+    },
+    "CrmFlowCampMissingDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Recovery: missing contact details, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 30816,
+      "page": "main"
+    },
+    "CrmFlowCampMissingLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Recovery: missing contact details, light",
+      "w": 390,
+      "x": 1410,
+      "y": 31780,
+      "page": "main"
+    },
+    "CrmFlowCampReviewDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Campaign: enrollment review, dark",
+      "w": 390,
+      "x": 0,
+      "y": 30816,
+      "page": "main"
+    },
+    "CrmFlowCampReviewLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Campaign: enrollment review, light",
+      "w": 390,
+      "x": 0,
+      "y": 31780,
+      "page": "main"
+    },
+    "CrmFlowCampUnavailableDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Recovery: campaign unavailable, dark",
+      "w": 390,
+      "x": 940,
+      "y": 30816,
+      "page": "main"
+    },
+    "CrmFlowCampUnavailableLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Recovery: campaign unavailable, light",
+      "w": 390,
+      "x": 940,
+      "y": 31780,
+      "page": "main"
+    },
+    "CrmFlowDarkS01.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Intro, state 2, dark",
+      "w": 390,
+      "x": 0,
+      "y": 440
+    },
+    "CrmFlowDarkS02.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Agent types Yes, dark",
+      "w": 390,
+      "x": 470,
+      "y": 440
+    },
+    "CrmFlowDarkS03.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Sent, Mel working, dark",
+      "w": 390,
+      "x": 940,
+      "y": 440
+    },
+    "CrmFlowDarkS04.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 CRM assistant, how to add contacts, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 440
+    },
+    "CrmFlowDarkS05.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 Upload a CSV sent, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 440
+    },
+    "CrmFlowDarkS06.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Mel asks for the file, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 440
+    },
+    "CrmFlowDarkS07.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "7 File attached, sent, dark",
+      "w": 390,
+      "x": 2820,
+      "y": 440
+    },
+    "CrmFlowDarkS08.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "8 Reading the file, dark",
+      "w": 390,
+      "x": 3290,
+      "y": 440
+    },
+    "CrmFlowDarkS09.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "9 Found 1,280, duplicates question, dark",
+      "w": 390,
+      "x": 3760,
+      "y": 440
+    },
+    "CrmFlowDarkS10.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "10 Import sent, importing, dark",
+      "w": 390,
+      "x": 4230,
+      "y": 440
+    },
+    "CrmFlowDarkS11.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "11 Imported, result card, View my contacts, dark",
+      "w": 390,
+      "x": 4700,
+      "y": 440
+    },
+    "CrmFlowDarkS12.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "12 What can you do, sent, dark",
+      "w": 390,
+      "x": 5170,
+      "y": 440
+    },
+    "CrmFlowDarkS13.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "13 Mel offers 6 prompts, dark",
+      "w": 390,
+      "x": 5640,
+      "y": 440
+    },
+    "CrmFlowDraftEditDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: edit and review again, dark",
+      "w": 390,
+      "x": 0,
+      "y": 26280,
+      "page": "main"
+    },
+    "CrmFlowDraftEditLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: edit and review again, light",
+      "w": 390,
+      "x": 0,
+      "y": 27244,
+      "page": "main"
+    },
+    "CrmFlowDraftSentDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: sent status, dark",
+      "w": 390,
+      "x": 470,
+      "y": 26280,
+      "page": "main"
+    },
+    "CrmFlowDraftSentLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: sent status, light",
+      "w": 390,
+      "x": 470,
+      "y": 27244,
+      "page": "main"
+    },
+    "CrmFlowEmailReviewDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: email review, dark",
+      "w": 390,
+      "x": 940,
+      "y": 26280,
+      "page": "main"
+    },
+    "CrmFlowEmailReviewLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: email review, light",
+      "w": 390,
+      "x": 940,
+      "y": 27244,
+      "page": "main"
+    },
+    "CrmFlowLightS01.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Intro, state 2, light",
+      "w": 390,
+      "x": 0,
+      "y": 1680
+    },
+    "CrmFlowLightS02.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Agent types Yes, light",
+      "w": 390,
+      "x": 470,
+      "y": 1680
+    },
+    "CrmFlowLightS03.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Sent, Mel working, light",
+      "w": 390,
+      "x": 940,
+      "y": 1680
+    },
+    "CrmFlowLightS04.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 CRM assistant, how to add contacts, light",
+      "w": 390,
+      "x": 1410,
+      "y": 1680
+    },
+    "CrmFlowLightS05.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 Upload a CSV sent, light",
+      "w": 390,
+      "x": 1880,
+      "y": 1680
+    },
+    "CrmFlowLightS06.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Mel asks for the file, light",
+      "w": 390,
+      "x": 2350,
+      "y": 1680
+    },
+    "CrmFlowLightS07.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "7 File attached, sent, light",
+      "w": 390,
+      "x": 2820,
+      "y": 1680
+    },
+    "CrmFlowLightS08.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "8 Reading the file, light",
+      "w": 390,
+      "x": 3290,
+      "y": 1680
+    },
+    "CrmFlowLightS09.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "9 Found 1,280, duplicates question, light",
+      "w": 390,
+      "x": 3760,
+      "y": 1680
+    },
+    "CrmFlowLightS10.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "10 Import sent, importing, light",
+      "w": 390,
+      "x": 4230,
+      "y": 1680
+    },
+    "CrmFlowLightS11.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "11 Imported, result card, View my contacts, light",
+      "w": 390,
+      "x": 4700,
+      "y": 1680
+    },
+    "CrmFlowLightS12.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "12 What can you do, sent, light",
+      "w": 390,
+      "x": 5170,
+      "y": 1680
+    },
+    "CrmFlowLightS13.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "13 Mel offers 6 prompts, light",
+      "w": 390,
+      "x": 5640,
+      "y": 1680
+    },
+    "CrmFlowMissingEmailDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Recovery: missing email, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 26280,
+      "page": "main"
+    },
+    "CrmFlowMissingEmailLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Recovery: missing email, light",
+      "w": 390,
+      "x": 1410,
+      "y": 27244,
+      "page": "main"
+    },
+    "CrmFlowPrefsReviewDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: preferences review, dark",
+      "w": 390,
+      "x": 940,
+      "y": 28548,
+      "page": "main"
+    },
+    "CrmFlowPrefsReviewLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: preferences review, light",
+      "w": 390,
+      "x": 940,
+      "y": 29512,
+      "page": "main"
+    },
+    "CrmFlowSendFailedDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Recovery: send failed, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 26280,
+      "page": "main"
+    },
+    "CrmFlowSendFailedLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Recovery: send failed, light",
+      "w": 390,
+      "x": 1880,
+      "y": 27244,
+      "page": "main"
+    },
+    "CrmFlowStatusReviewDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: status review, dark",
+      "w": 390,
+      "x": 0,
+      "y": 28548,
+      "page": "main"
+    },
+    "CrmFlowStatusReviewLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: status review, light",
+      "w": 390,
+      "x": 0,
+      "y": 29512,
+      "page": "main"
+    },
+    "CrmFlowStatusSavedDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: saved confirmation, dark",
+      "w": 390,
+      "x": 470,
+      "y": 28548,
+      "page": "main"
+    },
+    "CrmFlowStatusSavedLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: saved confirmation, light",
+      "w": 390,
+      "x": 470,
+      "y": 29512,
+      "page": "main"
+    },
+    "CrmH2Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "2 Upload a CSV, dark",
+      "w": 390,
+      "x": 470,
+      "y": 5868,
+      "page": "main"
+    },
+    "CrmH2Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "2 Upload a CSV, light",
+      "w": 390,
+      "x": 470,
+      "y": 6832,
+      "page": "main"
+    },
+    "CrmH4Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "4 Duplicates, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 5868,
+      "page": "main"
+    },
+    "CrmH4Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "4 Duplicates, light",
+      "w": 390,
+      "x": 1410,
+      "y": 6832,
+      "page": "main"
+    },
+    "CrmImportDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "3 CSV read, dark",
+      "w": 390,
+      "x": 940,
+      "y": 5868,
+      "page": "main"
+    },
+    "CrmImportLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "3 CSV read, light",
+      "w": 390,
+      "x": 940,
+      "y": 6832,
+      "page": "main"
+    },
+    "CrmLaterDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CRM add contacts later, dark",
+      "w": 390,
+      "x": 0,
+      "y": 21744,
+      "page": "main"
+    },
+    "CrmLaterLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CRM add contacts later, light",
+      "w": 390,
+      "x": 0,
+      "y": 22708,
+      "page": "main"
+    },
+    "CrmP1DarkS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, searching, dark",
+      "w": 390,
+      "x": 0,
+      "y": 3018
+    },
+    "CrmP1DarkS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Contact card, dark",
+      "w": 390,
+      "x": 470,
+      "y": 3018
+    },
+    "CrmP1DarkS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Draft a message sent, dark",
+      "w": 390,
+      "x": 940,
+      "y": 3018
+    },
+    "CrmP1LightS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, searching, light",
+      "w": 390,
+      "x": 0,
+      "y": 4258
+    },
+    "CrmP1LightS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Contact card, light",
+      "w": 390,
+      "x": 470,
+      "y": 4258
+    },
+    "CrmP1LightS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Draft a message sent, light",
+      "w": 390,
+      "x": 940,
+      "y": 4258
+    },
+    "CrmP1aDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Find: contact card, dark",
+      "w": 390,
+      "x": 0,
+      "y": 8136,
+      "page": "main"
+    },
+    "CrmP1aLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Find: contact card, light",
+      "w": 390,
+      "x": 0,
+      "y": 9100,
+      "page": "main"
+    },
+    "CrmP1bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Find: no match, dark",
+      "w": 390,
+      "x": 470,
+      "y": 8136,
+      "page": "main"
+    },
+    "CrmP1bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Find: no match, light",
+      "w": 390,
+      "x": 470,
+      "y": 9100,
+      "page": "main"
+    },
+    "CrmP2DarkS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, reading record, dark",
+      "w": 390,
+      "x": 0,
+      "y": 5498
+    },
+    "CrmP2DarkS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Change card, save it?, dark",
+      "w": 390,
+      "x": 470,
+      "y": 5498
+    },
+    "CrmP2DarkS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Save it sent, dark",
+      "w": 390,
+      "x": 940,
+      "y": 5498
+    },
+    "CrmP2DarkS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 Saved, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 5498
+    },
+    "CrmP2DarkS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 What else sent, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 5498
+    },
+    "CrmP2DarkS6.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Six prompts again, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 5498
+    },
+    "CrmP2LightS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, reading record, light",
+      "w": 390,
+      "x": 0,
+      "y": 6738
+    },
+    "CrmP2LightS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Change card, save it?, light",
+      "w": 390,
+      "x": 470,
+      "y": 6738
+    },
+    "CrmP2LightS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Save it sent, light",
+      "w": 390,
+      "x": 940,
+      "y": 6738
+    },
+    "CrmP2LightS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 Saved, light",
+      "w": 390,
+      "x": 1410,
+      "y": 6738
+    },
+    "CrmP2LightS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 What else sent, light",
+      "w": 390,
+      "x": 1880,
+      "y": 6738
+    },
+    "CrmP2LightS6.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Six prompts again, light",
+      "w": 390,
+      "x": 2350,
+      "y": 6738
+    },
+    "CrmP2aDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: review change, dark",
+      "w": 390,
+      "x": 0,
+      "y": 10404,
+      "page": "main"
+    },
+    "CrmP2aLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: review change, light",
+      "w": 390,
+      "x": 0,
+      "y": 11368,
+      "page": "main"
+    },
+    "CrmP2bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: saved, dark",
+      "w": 390,
+      "x": 470,
+      "y": 10404,
+      "page": "main"
+    },
+    "CrmP2bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Update: saved, light",
+      "w": 390,
+      "x": 470,
+      "y": 11368,
+      "page": "main"
+    },
+    "CrmP3DarkS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, reading activity, dark",
+      "w": 390,
+      "x": 0,
+      "y": 7978
+    },
+    "CrmP3DarkS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Draft card, Send, dark",
+      "w": 390,
+      "x": 470,
+      "y": 7978
+    },
+    "CrmP3DarkS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Make it shorter sent, dark",
+      "w": 390,
+      "x": 940,
+      "y": 7978
+    },
+    "CrmP3DarkS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 Shorter draft, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 7978
+    },
+    "CrmP3DarkS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 Send tapped, sending, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 7978
+    },
+    "CrmP3DarkS6.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Sent and logged, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 7978
+    },
+    "CrmP3DarkS7.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "7 What else sent, dark",
+      "w": 390,
+      "x": 2820,
+      "y": 7978
+    },
+    "CrmP3DarkS8.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "8 Six prompts again, dark",
+      "w": 390,
+      "x": 3290,
+      "y": 7978
+    },
+    "CrmP3LightS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, reading activity, light",
+      "w": 390,
+      "x": 0,
+      "y": 9218
+    },
+    "CrmP3LightS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Draft card, Send, light",
+      "w": 390,
+      "x": 470,
+      "y": 9218
+    },
+    "CrmP3LightS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Make it shorter sent, light",
+      "w": 390,
+      "x": 940,
+      "y": 9218
+    },
+    "CrmP3LightS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 Shorter draft, light",
+      "w": 390,
+      "x": 1410,
+      "y": 9218
+    },
+    "CrmP3LightS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 Send tapped, sending, light",
+      "w": 390,
+      "x": 1880,
+      "y": 9218
+    },
+    "CrmP3LightS6.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Sent and logged, light",
+      "w": 390,
+      "x": 2350,
+      "y": 9218
+    },
+    "CrmP3LightS7.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "7 What else sent, light",
+      "w": 390,
+      "x": 2820,
+      "y": 9218
+    },
+    "CrmP3LightS8.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "8 Six prompts again, light",
+      "w": 390,
+      "x": 3290,
+      "y": 9218
+    },
+    "CrmP3aDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: review and send, dark",
+      "w": 390,
+      "x": 0,
+      "y": 12672,
+      "page": "main"
+    },
+    "CrmP3aLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: review and send, light",
+      "w": 390,
+      "x": 0,
+      "y": 13636,
+      "page": "main"
+    },
+    "CrmP3bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: sent, dark",
+      "w": 390,
+      "x": 470,
+      "y": 12672,
+      "page": "main"
+    },
+    "CrmP3bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Draft: sent, light",
+      "w": 390,
+      "x": 470,
+      "y": 13636,
+      "page": "main"
+    },
+    "CrmP4DarkS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, checking calendar, dark",
+      "w": 390,
+      "x": 0,
+      "y": 10458
+    },
+    "CrmP4DarkS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Follow-up card, add it?, dark",
+      "w": 390,
+      "x": 470,
+      "y": 10458
+    },
+    "CrmP4DarkS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Add it sent, dark",
+      "w": 390,
+      "x": 940,
+      "y": 10458
+    },
+    "CrmP4DarkS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 Added to calendar, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 10458
+    },
+    "CrmP4DarkS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 What else sent, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 10458
+    },
+    "CrmP4DarkS6.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Six prompts again, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 10458
+    },
+    "CrmP4LightS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, checking calendar, light",
+      "w": 390,
+      "x": 0,
+      "y": 11698
+    },
+    "CrmP4LightS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Follow-up card, add it?, light",
+      "w": 390,
+      "x": 470,
+      "y": 11698
+    },
+    "CrmP4LightS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Add it sent, light",
+      "w": 390,
+      "x": 940,
+      "y": 11698
+    },
+    "CrmP4LightS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 Added to calendar, light",
+      "w": 390,
+      "x": 1410,
+      "y": 11698
+    },
+    "CrmP4LightS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 What else sent, light",
+      "w": 390,
+      "x": 1880,
+      "y": 11698
+    },
+    "CrmP4LightS6.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Six prompts again, light",
+      "w": 390,
+      "x": 2350,
+      "y": 11698
+    },
+    "CrmP4aDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Follow-up: review, dark",
+      "w": 390,
+      "x": 0,
+      "y": 14940,
+      "page": "main"
+    },
+    "CrmP4aLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Follow-up: review, light",
+      "w": 390,
+      "x": 0,
+      "y": 15904,
+      "page": "main"
+    },
+    "CrmP4bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Follow-up: added, dark",
+      "w": 390,
+      "x": 470,
+      "y": 14940,
+      "page": "main"
+    },
+    "CrmP4bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Follow-up: added, light",
+      "w": 390,
+      "x": 470,
+      "y": 15904,
+      "page": "main"
+    },
+    "CrmP4cDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Follow-up: calendar not connected, dark",
+      "w": 390,
+      "x": 940,
+      "y": 14940,
+      "page": "main"
+    },
+    "CrmP4cLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Follow-up: calendar not connected, light",
+      "w": 390,
+      "x": 940,
+      "y": 15904,
+      "page": "main"
+    },
+    "CrmP5DarkS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, finding clients, dark",
+      "w": 390,
+      "x": 0,
+      "y": 12938
+    },
+    "CrmP5DarkS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Plan card, start it?, dark",
+      "w": 390,
+      "x": 470,
+      "y": 12938
+    },
+    "CrmP5DarkS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Start sent, dark",
+      "w": 390,
+      "x": 940,
+      "y": 12938
+    },
+    "CrmP5DarkS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 Started, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 12938
+    },
+    "CrmP5DarkS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 What else sent, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 12938
+    },
+    "CrmP5DarkS6.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Six prompts again, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 12938
+    },
+    "CrmP5LightS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, finding clients, light",
+      "w": 390,
+      "x": 0,
+      "y": 14178
+    },
+    "CrmP5LightS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Plan card, start it?, light",
+      "w": 390,
+      "x": 470,
+      "y": 14178
+    },
+    "CrmP5LightS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Start sent, light",
+      "w": 390,
+      "x": 940,
+      "y": 14178
+    },
+    "CrmP5LightS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "4 Started, light",
+      "w": 390,
+      "x": 1410,
+      "y": 14178
+    },
+    "CrmP5LightS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "5 What else sent, light",
+      "w": 390,
+      "x": 1880,
+      "y": 14178
+    },
+    "CrmP5LightS6.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "6 Six prompts again, light",
+      "w": 390,
+      "x": 2350,
+      "y": 14178
+    },
+    "CrmP5aDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Campaign: review plan, dark",
+      "w": 390,
+      "x": 0,
+      "y": 17208,
+      "page": "main"
+    },
+    "CrmP5aLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Campaign: review plan, light",
+      "w": 390,
+      "x": 0,
+      "y": 18172,
+      "page": "main"
+    },
+    "CrmP5bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Campaign: started, dark",
+      "w": 390,
+      "x": 470,
+      "y": 17208,
+      "page": "main"
+    },
+    "CrmP5bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Campaign: started, light",
+      "w": 390,
+      "x": 470,
+      "y": 18172,
+      "page": "main"
+    },
+    "CrmP6DarkS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, ranking, dark",
+      "w": 390,
+      "x": 0,
+      "y": 15418
+    },
+    "CrmP6DarkS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Ranked list, dark",
+      "w": 390,
+      "x": 470,
+      "y": 15418
+    },
+    "CrmP6DarkS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Draft a message sent, dark",
+      "w": 390,
+      "x": 940,
+      "y": 15418
+    },
+    "CrmP6LightS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "1 Sent, ranking, light",
+      "w": 390,
+      "x": 0,
+      "y": 16658
+    },
+    "CrmP6LightS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "2 Ranked list, light",
+      "w": 390,
+      "x": 470,
+      "y": 16658
+    },
+    "CrmP6LightS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "crm",
+      "title": "3 Draft a message sent, light",
+      "w": 390,
+      "x": 940,
+      "y": 16658
+    },
+    "CrmP6aDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Top buyers: ranked, dark",
+      "w": 390,
+      "x": 0,
+      "y": 19476,
+      "page": "main"
+    },
+    "CrmP6aLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Top buyers: ranked, light",
+      "w": 390,
+      "x": 0,
+      "y": 20440,
+      "page": "main"
+    },
+    "CrmP6bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Top buyers: no activity yet, dark",
+      "w": 390,
+      "x": 470,
+      "y": 19476,
+      "page": "main"
+    },
+    "CrmP6bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Top buyers: no activity yet, light",
+      "w": 390,
+      "x": 470,
+      "y": 20440,
+      "page": "main"
+    },
+    "CrmReadyDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "5 Import result, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 5868,
+      "page": "main"
+    },
+    "CrmReadyLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "5 Import result, light",
+      "w": 390,
+      "x": 1880,
+      "y": 6832,
+      "page": "main"
+    },
+    "CrmResumeDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CRM resume unfinished import, dark",
+      "w": 390,
+      "x": 470,
+      "y": 21744,
+      "page": "main"
+    },
+    "CrmResumeLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "CRM resume unfinished import, light",
+      "w": 390,
+      "x": 470,
+      "y": 22708,
+      "page": "main"
+    },
+    "CrmSkillsDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "6 What Mel can do, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 5868,
+      "page": "main"
+    },
+    "CrmSkillsLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "6 What Mel can do, light",
+      "w": 390,
+      "x": 2350,
+      "y": 6832,
+      "page": "main"
+    },
+    "CrmWaP1S1.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 1",
+      "w": 390,
+      "x": 0,
+      "y": 20178
+    },
+    "CrmWaP1S2.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: searching",
+      "w": 390,
+      "x": 470,
+      "y": 20178
+    },
+    "CrmWaP1S3.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "3 Contact in text, next question",
+      "w": 390,
+      "x": 940,
+      "y": 20178
+    },
+    "CrmWaP2S1.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 2",
+      "w": 390,
+      "x": 0,
+      "y": 21418
+    },
+    "CrmWaP2S2.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: reading",
+      "w": 390,
+      "x": 470,
+      "y": 21418
+    },
+    "CrmWaP2S3.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "3 Change in text, save it?",
+      "w": 390,
+      "x": 940,
+      "y": 21418
+    },
+    "CrmWaP2S4.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "4 Agent says yes",
+      "w": 390,
+      "x": 1410,
+      "y": 21418
+    },
+    "CrmWaP2S5.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "5 Mel: saving",
+      "w": 390,
+      "x": 1880,
+      "y": 21418
+    },
+    "CrmWaP2S6.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "6 Saved, anything else",
+      "w": 390,
+      "x": 2350,
+      "y": 21418
+    },
+    "CrmWaP3S1.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 3",
+      "w": 390,
+      "x": 0,
+      "y": 22658
+    },
+    "CrmWaP3S2.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: reading",
+      "w": 390,
+      "x": 470,
+      "y": 22658
+    },
+    "CrmWaP3S3.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "3 Draft in text, send it?",
+      "w": 390,
+      "x": 940,
+      "y": 22658
+    },
+    "CrmWaP3S4.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "4 Make it shorter",
+      "w": 390,
+      "x": 1410,
+      "y": 22658
+    },
+    "CrmWaP3S5.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "5 Mel: on it",
+      "w": 390,
+      "x": 1880,
+      "y": 22658
+    },
+    "CrmWaP3S6.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "6 Shorter draft, send it?",
+      "w": 390,
+      "x": 2350,
+      "y": 22658
+    },
+    "CrmWaP3S7.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "7 Agent: send it",
+      "w": 390,
+      "x": 2820,
+      "y": 22658
+    },
+    "CrmWaP3S8.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "8 Mel: sending",
+      "w": 390,
+      "x": 3290,
+      "y": 22658
+    },
+    "CrmWaP3S9.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "9 Sent and logged, anything else",
+      "w": 390,
+      "x": 3760,
+      "y": 22658
+    },
+    "CrmWaP4S1.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 4",
+      "w": 390,
+      "x": 0,
+      "y": 23898
+    },
+    "CrmWaP4S2.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: checking calendar",
+      "w": 390,
+      "x": 470,
+      "y": 23898
+    },
+    "CrmWaP4S3.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "3 Follow-up in text, add it?",
+      "w": 390,
+      "x": 940,
+      "y": 23898
+    },
+    "CrmWaP4S4.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "4 Agent says yes",
+      "w": 390,
+      "x": 1410,
+      "y": 23898
+    },
+    "CrmWaP4S5.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "5 Mel: adding",
+      "w": 390,
+      "x": 1880,
+      "y": 23898
+    },
+    "CrmWaP4S6.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "6 Added, anything else",
+      "w": 390,
+      "x": 2350,
+      "y": 23898
+    },
+    "CrmWaP5S1.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 5",
+      "w": 390,
+      "x": 0,
+      "y": 25138
+    },
+    "CrmWaP5S2.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: finding clients",
+      "w": 390,
+      "x": 470,
+      "y": 25138
+    },
+    "CrmWaP5S3.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "3 Plan in text, start it?",
+      "w": 390,
+      "x": 940,
+      "y": 25138
+    },
+    "CrmWaP5S4.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "4 Agent: start it",
+      "w": 390,
+      "x": 1410,
+      "y": 25138
+    },
+    "CrmWaP5S5.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "5 Mel: starting",
+      "w": 390,
+      "x": 1880,
+      "y": 25138
+    },
+    "CrmWaP5S6.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "6 Started, anything else",
+      "w": 390,
+      "x": 2350,
+      "y": 25138
+    },
+    "CrmWaP6S1.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 6",
+      "w": 390,
+      "x": 0,
+      "y": 26378
+    },
+    "CrmWaP6S2.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: ranking",
+      "w": 390,
+      "x": 470,
+      "y": 26378
+    },
+    "CrmWaP6S3.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "3 Ranked list in text, next question",
+      "w": 390,
+      "x": 940,
+      "y": 26378
+    },
+    "CrmWaS01.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "1 Intro, state 2",
+      "w": 390,
+      "x": 0,
+      "y": 18938
+    },
+    "CrmWaS02.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "2 Agent says yes",
+      "w": 390,
+      "x": 470,
+      "y": 18938
+    },
+    "CrmWaS03.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "3 Mel: on it",
+      "w": 390,
+      "x": 940,
+      "y": 18938
+    },
+    "CrmWaS04.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "4 CRM assistant, 3 options",
+      "w": 390,
+      "x": 1410,
+      "y": 18938
+    },
+    "CrmWaS05.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "5 Agent picks 1",
+      "w": 390,
+      "x": 1880,
+      "y": 18938
+    },
+    "CrmWaS06.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "6 Mel asks for the file",
+      "w": 390,
+      "x": 2350,
+      "y": 18938
+    },
+    "CrmWaS07.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "7 File sent",
+      "w": 390,
+      "x": 2820,
+      "y": 18938
+    },
+    "CrmWaS08.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "8 Mel: reading",
+      "w": 390,
+      "x": 3290,
+      "y": 18938
+    },
+    "CrmWaS09.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "9 Found 1,280, duplicates question",
+      "w": 390,
+      "x": 3760,
+      "y": 18938
+    },
+    "CrmWaS10.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "10 Agent picks 1",
+      "w": 390,
+      "x": 4230,
+      "y": 18938
+    },
+    "CrmWaS11.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "11 Mel: importing",
+      "w": 390,
+      "x": 4700,
+      "y": 18938
+    },
+    "CrmWaS12.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "12 Done, counts, Radius link",
+      "w": 390,
+      "x": 5170,
+      "y": 18938
+    },
+    "CrmWaS13.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "13 What can you do",
+      "w": 390,
+      "x": 5640,
+      "y": 18938
+    },
+    "CrmWaS14.dc.html": {
+      "h": 844,
+      "page": "crm",
+      "title": "14 Six prompts",
+      "w": 390,
+      "x": 6110,
+      "y": 18938
+    },
+    "CrmWelcomeDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "1 Welcome, dark",
+      "w": 390,
+      "x": 0,
+      "y": 5868,
+      "page": "main"
+    },
+    "CrmWelcomeLight-xga7.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "CRM welcome, light copy",
+      "w": 390,
+      "x": -1000,
+      "y": 2288
+    },
+    "CrmWelcomeLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "1 Welcome, light",
+      "w": 390,
+      "x": 0,
+      "y": 6832,
+      "page": "main"
+    },
+    "CxE01Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "No contacts yet, dark",
+      "w": 390,
+      "x": 0,
+      "y": 6096
+    },
+    "CxE01Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "No contacts yet, light",
+      "w": 390,
+      "x": 0,
+      "y": 7060
+    },
+    "CxE02Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Connect email and texting, dark",
+      "w": 390,
+      "x": 470,
+      "y": 6096
+    },
+    "CxE02Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Connect email and texting, light",
+      "w": 390,
+      "x": 470,
+      "y": 7060
+    },
+    "CxE03Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Some invites failed, dark",
+      "w": 390,
+      "x": 940,
+      "y": 6096
+    },
+    "CxE03Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Some invites failed, light",
+      "w": 390,
+      "x": 940,
+      "y": 7060
+    },
+    "CxE04Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Portal build failed, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 6096
+    },
+    "CxE04Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Portal build failed, light",
+      "w": 390,
+      "x": 1410,
+      "y": 7060
+    },
+    "CxE05Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Legal question escalated, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 6096
+    },
+    "CxE05Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Legal question escalated, light",
+      "w": 390,
+      "x": 1880,
+      "y": 7060
+    },
+    "CxH01Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "1 Meet Mel, dark",
+      "w": 390,
+      "x": 0,
+      "y": 400
+    },
+    "CxH01Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "1 Meet Mel, light",
+      "w": 390,
+      "x": 0,
+      "y": 1364
+    },
+    "CxH02Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "2 Portal ready, dark",
+      "w": 390,
+      "x": 470,
+      "y": 400
+    },
+    "CxH02Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "2 Portal ready, light",
+      "w": 390,
+      "x": 470,
+      "y": 1364
+    },
+    "CxH03Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "3 What clients can do, dark",
+      "w": 390,
+      "x": 940,
+      "y": 400
+    },
+    "CxH03Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "3 What clients can do, light",
+      "w": 390,
+      "x": 940,
+      "y": 1364
+    },
+    "CxH04Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "4 Who to invite, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 400
+    },
+    "CxH04Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "4 Who to invite, light",
+      "w": 390,
+      "x": 1410,
+      "y": 1364
+    },
+    "CxH05Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "5 How to invite, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 400
+    },
+    "CxH05Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "5 How to invite, light",
+      "w": 390,
+      "x": 1880,
+      "y": 1364
+    },
+    "CxH06Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "6 Invitation preview, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 400
+    },
+    "CxH06Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "6 Invitation preview, light",
+      "w": 390,
+      "x": 2350,
+      "y": 1364
+    },
+    "CxH06bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "6b Change by asking, dark",
+      "w": 390,
+      "x": 2820,
+      "y": 400
+    },
+    "CxH06bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "6b Change by asking, light",
+      "w": 390,
+      "x": 2820,
+      "y": 1364
+    },
+    "CxH07Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "7 How Mel talks to clients, dark",
+      "w": 390,
+      "x": 3290,
+      "y": 400
+    },
+    "CxH07Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "7 How Mel talks to clients, light",
+      "w": 390,
+      "x": 3290,
+      "y": 1364
+    },
+    "CxH08Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "8 Insights, dark",
+      "w": 390,
+      "x": 3760,
+      "y": 400
+    },
+    "CxH08Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "8 Insights, light",
+      "w": 390,
+      "x": 3760,
+      "y": 1364
+    },
+    "CxH08bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "8b Insights card first, dark",
+      "w": 390,
+      "x": 4230,
+      "y": 400
+    },
+    "CxH08bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "8b Insights card first, light",
+      "w": 390,
+      "x": 4230,
+      "y": 1364
+    },
+    "CxProtoDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Prototype H01 to H08, dark",
+      "w": 390,
+      "x": 0,
+      "y": 8504
+    },
+    "CxProtoLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Prototype H01 to H08, light",
+      "w": 390,
+      "x": 470,
+      "y": 8504
+    },
+    "CxV01Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Variant: no branding, dark",
+      "w": 390,
+      "x": 0,
+      "y": 3688
+    },
+    "CxV01Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "cx",
+      "title": "Variant: no branding, light",
+      "w": 390,
+      "x": 0,
+      "y": 4652
+    },
+    "FlowAppDarkS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "2 Card tapped, box filled, dark",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "FlowAppDarkS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "3 Sent, Mel working, dark",
+      "w": 390,
+      "x": 940,
+      "y": 0
+    },
+    "FlowAppDarkS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "4 Mel reply, trace, suggestions, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 0
+    },
+    "FlowAppDarkS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "5 Suggestion tapped, sent, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 0
+    },
+    "FlowAppDarkS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "6 Mel next step, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 0
+    },
+    "FlowAppLightS1.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "2 Card tapped, box filled, light",
+      "w": 390,
+      "x": 470,
+      "y": 1240
+    },
+    "FlowAppLightS2.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "3 Sent, Mel working, light",
+      "w": 390,
+      "x": 940,
+      "y": 1240
+    },
+    "FlowAppLightS3.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "4 Mel reply, trace, suggestions, light",
+      "w": 390,
+      "x": 1410,
+      "y": 1240
+    },
+    "FlowAppLightS4.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "5 Suggestion tapped, sent, light",
+      "w": 390,
+      "x": 1880,
+      "y": 1240
+    },
+    "FlowAppLightS5.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "6 Mel next step, light",
+      "w": 390,
+      "x": 2350,
+      "y": 1240
+    },
+    "FlowMailS1.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "2 Agent replies 1",
+      "w": 390,
+      "x": 470,
+      "y": 4960
+    },
+    "FlowMailS2.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "3 Mel says it is working",
+      "w": 390,
+      "x": 940,
+      "y": 4960
+    },
+    "FlowMailS3.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "4 Mel reply, numbered options",
+      "w": 390,
+      "x": 1410,
+      "y": 4960
+    },
+    "FlowSmsS1.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "2 Agent replies 1",
+      "w": 390,
+      "x": 470,
+      "y": 3720
+    },
+    "FlowSmsS2.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "3 Mel says it is working",
+      "w": 390,
+      "x": 940,
+      "y": 3720
+    },
+    "FlowSmsS3.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "4 Mel reply, numbered options",
+      "w": 390,
+      "x": 1410,
+      "y": 3720
+    },
+    "FlowWaS1.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "2 Agent replies 1",
+      "w": 390,
+      "x": 470,
+      "y": 2480
+    },
+    "FlowWaS2.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "3 Mel says it is working",
+      "w": 390,
+      "x": 940,
+      "y": 2480
+    },
+    "FlowWaS3.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "4 Mel reply, numbered options",
+      "w": 390,
+      "x": 1410,
+      "y": 2480
+    },
+    "IntroAppADark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "1 Intro, state 3, dark",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "IntroAppALight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "1 Intro, state 3, light",
+      "w": 390,
+      "x": 0,
+      "y": 1240
+    },
+    "IntroAppBDark.dc.html": {
+      "h": 844,
+      "w": 390,
+      "x": 7990,
+      "y": 0,
+      "page": "main"
+    },
+    "IntroAppBLight.dc.html": {
+      "h": 844,
+      "w": 390,
+      "x": 8460,
+      "y": 0,
+      "page": "main"
+    },
+    "IntroAppCDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "State 1 intro, listing live, dark",
+      "w": 390,
+      "x": 3020,
+      "y": 0
+    },
+    "IntroAppCLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "intimation",
+      "title": "State 1 intro, listing live, light",
+      "w": 390,
+      "x": 3020,
+      "y": 1240
+    },
+    "IntroMailA.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "1 Intro, state 3",
+      "w": 390,
+      "x": 0,
+      "y": 4960
+    },
+    "IntroMailB.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "Duplicate, delete",
+      "w": 390,
+      "x": 1880,
+      "y": 6200
+    },
+    "IntroMailC.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "Duplicate, delete",
+      "w": 390,
+      "x": 2350,
+      "y": 6200
+    },
+    "IntroSmsA.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "1 Intro, state 3",
+      "w": 390,
+      "x": 0,
+      "y": 3720
+    },
+    "IntroSmsB.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "Duplicate, delete",
+      "w": 390,
+      "x": 940,
+      "y": 6200
+    },
+    "IntroSmsC.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "Duplicate, delete",
+      "w": 390,
+      "x": 1410,
+      "y": 6200
+    },
+    "IntroWaA.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "1 Intro, state 3",
+      "w": 390,
+      "x": 0,
+      "y": 2480
+    },
+    "IntroWaB.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "Duplicate, delete",
+      "w": 390,
+      "x": 0,
+      "y": 6200
+    },
+    "IntroWaC.dc.html": {
+      "h": 844,
+      "page": "intimation",
+      "title": "Duplicate, delete",
+      "w": 390,
+      "x": 470,
+      "y": 6200
+    },
+    "Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "onboarding",
+      "title": "Welcome, light",
+      "w": 390,
+      "x": 470,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "onboarding",
+      "title": "Welcome, dark",
+      "w": 390,
+      "x": 0,
+      "y": 0
+    },
+    "MktB1Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "B1 What to create, dark",
+      "w": 390,
+      "x": 0,
+      "y": 18336
+    },
+    "MktB1Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "B1 What to create, light",
+      "w": 390,
+      "x": 0,
+      "y": 19300
+    },
+    "MktB2Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "B2 Where it goes, dark",
+      "w": 390,
+      "x": 470,
+      "y": 18336
+    },
+    "MktB2Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "B2 Where it goes, light",
+      "w": 390,
+      "x": 470,
+      "y": 19300
+    },
+    "MktB3Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "B3 Templates for your picks, dark",
+      "w": 390,
+      "x": 940,
+      "y": 18336
+    },
+    "MktB3Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "B3 Templates for your picks, light",
+      "w": 390,
+      "x": 940,
+      "y": 19300
+    },
+    "MktB4Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "B4 One message skips steps, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 18336
+    },
+    "MktB4Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "B4 One message skips steps, light",
+      "w": 390,
+      "x": 1410,
+      "y": 19300
+    },
+    "MktC1Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "10 Review Facebook, dark",
+      "w": 390,
+      "x": 4230,
+      "y": 400
+    },
+    "MktC1Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "10 Review Facebook, light",
+      "w": 390,
+      "x": 4230,
+      "y": 1364
+    },
+    "MktC2Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "5 Designing, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 400
+    },
+    "MktC2Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "5 Designing, light",
+      "w": 390,
+      "x": 1880,
+      "y": 1364
+    },
+    "MktC2bDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "6 Package ready, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 400
+    },
+    "MktC2bLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "6 Package ready, light",
+      "w": 390,
+      "x": 2350,
+      "y": 1364
+    },
+    "MktC3Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Mixed result, dark",
+      "w": 390,
+      "x": 0,
+      "y": 15728
+    },
+    "MktC3Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Mixed result, light",
+      "w": 390,
+      "x": 0,
+      "y": 16692
+    },
+    "MktC4Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Failed result, dark",
+      "w": 390,
+      "x": 470,
+      "y": 15728
+    },
+    "MktC4Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Failed result, light",
+      "w": 390,
+      "x": 470,
+      "y": 16692
+    },
+    "MktC5Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Routine status, dark",
+      "w": 390,
+      "x": 1600,
+      "y": 6096
+    },
+    "MktC5Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Routine status, light",
+      "w": 390,
+      "x": 1600,
+      "y": 7060
+    },
+    "MktC6Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Connect destinations, dark",
+      "w": 390,
+      "x": 0,
+      "y": 6096
+    },
+    "MktC6Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Connect destinations, light",
+      "w": 390,
+      "x": 0,
+      "y": 7060
+    },
+    "MktClientAddedDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Client added for the email, dark",
+      "w": 390,
+      "x": 2350,
+      "y": 15728
+    },
+    "MktClientAddedLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Client added for the email, light",
+      "w": 390,
+      "x": 2350,
+      "y": 16692
+    },
+    "MktCsvDoneDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "CSV uploaded for the email, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 15728
+    },
+    "MktCsvDoneLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "CSV uploaded for the email, light",
+      "w": 390,
+      "x": 1880,
+      "y": 16692
+    },
+    "MktM01Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "1 Meet Mel, dark",
+      "w": 390,
+      "x": 0,
+      "y": 400
+    },
+    "MktM01Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "1 Meet Mel, light",
+      "w": 390,
+      "x": 0,
+      "y": 1364
+    },
+    "MktM02Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "2 Pick a listing, dark",
+      "w": 390,
+      "x": 470,
+      "y": 400
+    },
+    "MktM02Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "2 Pick a listing, light",
+      "w": 390,
+      "x": 470,
+      "y": 1364
+    },
+    "MktM03Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "3 Pick a style, dark",
+      "w": 390,
+      "x": 940,
+      "y": 400
+    },
+    "MktM03Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "3 Pick a style, light",
+      "w": 390,
+      "x": 940,
+      "y": 1364
+    },
+    "MktM04Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "4 Your brand, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 400
+    },
+    "MktM04Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "4 Your brand, light",
+      "w": 390,
+      "x": 1410,
+      "y": 1364
+    },
+    "MktM05Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Instagram, more than 3 pieces, dark",
+      "w": 390,
+      "x": 0,
+      "y": 3688
+    },
+    "MktM05Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Instagram, more than 3 pieces, light",
+      "w": 390,
+      "x": 0,
+      "y": 4652
+    },
+    "MktM06Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "7 Change by asking, dark",
+      "w": 390,
+      "x": 2820,
+      "y": 400
+    },
+    "MktM06Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "7 Change by asking, light",
+      "w": 390,
+      "x": 2820,
+      "y": 1364
+    },
+    "MktM07Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "8 Where it goes, dark",
+      "w": 390,
+      "x": 3290,
+      "y": 400
+    },
+    "MktM07Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "8 Where it goes, light",
+      "w": 390,
+      "x": 3290,
+      "y": 1364
+    },
+    "MktM08Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "9 Review Instagram, dark",
+      "w": 390,
+      "x": 3760,
+      "y": 400
+    },
+    "MktM08Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "9 Review Instagram, light",
+      "w": 390,
+      "x": 3760,
+      "y": 1364
+    },
+    "MktM09Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "13 Campaign live, dark",
+      "w": 390,
+      "x": 5640,
+      "y": 400
+    },
+    "MktM09Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "13 Campaign live, light",
+      "w": 390,
+      "x": 5640,
+      "y": 1364
+    },
+    "MktM10Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "14 Save as routine, dark",
+      "w": 390,
+      "x": 6110,
+      "y": 400
+    },
+    "MktM10Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "14 Save as routine, light",
+      "w": 390,
+      "x": 6110,
+      "y": 1364
+    },
+    "MktM11Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "15 Routine set, dark",
+      "w": 390,
+      "x": 6580,
+      "y": 400
+    },
+    "MktM11Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "15 Routine set, light",
+      "w": 390,
+      "x": 6580,
+      "y": 1364
+    },
+    "MktNewChatDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Typed while designing, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 13320
+    },
+    "MktNewChatLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Typed while designing, light",
+      "w": 390,
+      "x": 1880,
+      "y": 14284
+    },
+    "MktNoClientsDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "No clients for the email, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 15728
+    },
+    "MktNoClientsLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "No clients for the email, light",
+      "w": 390,
+      "x": 1410,
+      "y": 16692
+    },
+    "MktPubEmailDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "12 Review email, dark",
+      "w": 390,
+      "x": 5170,
+      "y": 400
+    },
+    "MktPubEmailLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "12 Review email, light",
+      "w": 390,
+      "x": 5170,
+      "y": 1364
+    },
+    "MktPubViewerDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Review all, Instagram, dark",
+      "w": 390,
+      "x": 470,
+      "y": 3688
+    },
+    "MktPubViewerLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Review all, Instagram, light",
+      "w": 390,
+      "x": 470,
+      "y": 4652
+    },
+    "MktPubWebDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "11 Review website, dark",
+      "w": 390,
+      "x": 4700,
+      "y": 400
+    },
+    "MktPubWebLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "11 Review website, light",
+      "w": 390,
+      "x": 4700,
+      "y": 1364
+    },
+    "MktR10Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Change or pause routine, dark",
+      "w": 390,
+      "x": 2070,
+      "y": 6096
+    },
+    "MktR10Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Change or pause routine, light",
+      "w": 390,
+      "x": 2070,
+      "y": 7060
+    },
+    "MktR1Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "No listings found, dark",
+      "w": 390,
+      "x": 0,
+      "y": 10912
+    },
+    "MktR1Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "No listings found, light",
+      "w": 390,
+      "x": 0,
+      "y": 11876
+    },
+    "MktR2Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Several profiles, dark",
+      "w": 390,
+      "x": 470,
+      "y": 10912
+    },
+    "MktR2Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Several profiles, light",
+      "w": 390,
+      "x": 470,
+      "y": 11876
+    },
+    "MktR3Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Missing photos or details, dark",
+      "w": 390,
+      "x": 940,
+      "y": 10912
+    },
+    "MktR3Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Missing photos or details, light",
+      "w": 390,
+      "x": 940,
+      "y": 11876
+    },
+    "MktR4Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Missing logo, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 10912
+    },
+    "MktR4Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Missing logo, light",
+      "w": 390,
+      "x": 1410,
+      "y": 11876
+    },
+    "MktR5Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Partial generation, dark",
+      "w": 390,
+      "x": 0,
+      "y": 13320
+    },
+    "MktR5Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Partial generation, light",
+      "w": 390,
+      "x": 0,
+      "y": 14284
+    },
+    "MktR6Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Edit after approval, dark",
+      "w": 390,
+      "x": 470,
+      "y": 13320
+    },
+    "MktR6Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Edit after approval, light",
+      "w": 390,
+      "x": 470,
+      "y": 14284
+    },
+    "MktR7Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Expired connection, dark",
+      "w": 390,
+      "x": 470,
+      "y": 6096
+    },
+    "MktR7Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Expired connection, light",
+      "w": 390,
+      "x": 470,
+      "y": 7060
+    },
+    "MktR8Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Partial publishing, dark",
+      "w": 390,
+      "x": 940,
+      "y": 15728
+    },
+    "MktR8Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Partial publishing, light",
+      "w": 390,
+      "x": 940,
+      "y": 16692
+    },
+    "MktR9Dark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Listing changed, dark",
+      "w": 390,
+      "x": 940,
+      "y": 13320
+    },
+    "MktR9Light.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Listing changed, light",
+      "w": 390,
+      "x": 940,
+      "y": 14284
+    },
+    "MktStopDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Stopped while designing, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 13320
+    },
+    "MktStopLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "mktdesign",
+      "title": "Stopped while designing, light",
+      "w": 390,
+      "x": 1410,
+      "y": 14284
+    },
+    "MktV1Dark.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Viewer, top, dark",
+      "w": 390,
+      "x": 0,
+      "y": 8504
+    },
+    "MktV1Light.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Viewer, top, light",
+      "w": 390,
+      "x": 0,
+      "y": 9468
+    },
+    "MktV2Dark.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Viewer, video page, dark",
+      "w": 390,
+      "x": 470,
+      "y": 8504
+    },
+    "MktV2Light.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Viewer, video page, light",
+      "w": 390,
+      "x": 470,
+      "y": 9468
+    },
+    "MktV3Dark.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Viewer, video playing, dark",
+      "w": 390,
+      "x": 940,
+      "y": 8504
+    },
+    "MktV3Light.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Viewer, video playing, light",
+      "w": 390,
+      "x": 940,
+      "y": 9468
+    },
+    "MktV4Dark.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Share sheet, dark",
+      "w": 390,
+      "x": 1410,
+      "y": 8504
+    },
+    "MktV4Light.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Share sheet, light",
+      "w": 390,
+      "x": 1410,
+      "y": 9468
+    },
+    "MktV5Dark.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Download sheet, dark",
+      "w": 390,
+      "x": 1880,
+      "y": 8504
+    },
+    "MktV5Light.dc.html": {
+      "h": 844,
+      "page": "mktdesign",
+      "title": "Download sheet, light",
+      "w": 390,
+      "x": 1880,
+      "y": 9468
+    },
+    "SignupCodeDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "onboarding",
+      "title": "Sign up code, dark",
+      "w": 390,
+      "x": 940,
+      "y": 1200
+    },
+    "SignupCodeLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "onboarding",
+      "title": "Sign up code, light",
+      "w": 390,
+      "x": 1410,
+      "y": 1200
+    },
+    "SignupPhoneDark.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "onboarding",
+      "title": "Sign up phone, dark",
+      "w": 390,
+      "x": 0,
+      "y": 1200
+    },
+    "SignupPhoneLight.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "page": "onboarding",
+      "title": "Sign up phone, light",
+      "w": 390,
+      "x": 470,
+      "y": 1200
+    },
+    "CrmSmS01.dc.html": {
+      "x": 0,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "1 Intro, state 2"
+    },
+    "CrmSmS02.dc.html": {
+      "x": 470,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "2 Agent says yes"
+    },
+    "CrmSmS03.dc.html": {
+      "x": 940,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "3 Mel: on it"
+    },
+    "CrmSmS04.dc.html": {
+      "x": 1410,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "4 CRM assistant, 3 options"
+    },
+    "CrmSmS05.dc.html": {
+      "x": 1880,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "5 Agent picks 1"
+    },
+    "CrmSmS06.dc.html": {
+      "x": 2350,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "6 Mel texts the upload link"
+    },
+    "CrmSmU01.dc.html": {
+      "x": 2820,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "7 Uploader opens from the link"
+    },
+    "CrmSmU02.dc.html": {
+      "x": 3290,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "8 Uploading"
+    },
+    "CrmSmU03.dc.html": {
+      "x": 3760,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "9 Done, back to Messages"
+    },
+    "CrmSmS07.dc.html": {
+      "x": 4230,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "10 Back in Messages, Mel reads the file"
+    },
+    "CrmSmS08.dc.html": {
+      "x": 4700,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "11 Found 1,280, duplicates question"
+    },
+    "CrmSmS09.dc.html": {
+      "x": 5170,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "12 Agent picks 1"
+    },
+    "CrmSmS10.dc.html": {
+      "x": 5640,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "13 Mel: importing"
+    },
+    "CrmSmS11.dc.html": {
+      "x": 6110,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "14 Done, counts, Radius link"
+    },
+    "CrmSmS12.dc.html": {
+      "x": 6580,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "15 What can you do"
+    },
+    "CrmSmS13.dc.html": {
+      "x": 7050,
+      "y": 27818,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "16 Six prompts"
+    },
+    "CrmSmP1S1.dc.html": {
+      "x": 0,
+      "y": 29058,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 1"
+    },
+    "CrmSmP1S2.dc.html": {
+      "x": 470,
+      "y": 29058,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: searching"
+    },
+    "CrmSmP1S3.dc.html": {
+      "x": 940,
+      "y": 29058,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "3 Contact in text, next question"
+    },
+    "CrmSmP2S1.dc.html": {
+      "x": 0,
+      "y": 30298,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 2"
+    },
+    "CrmSmP2S2.dc.html": {
+      "x": 470,
+      "y": 30298,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: reading"
+    },
+    "CrmSmP2S3.dc.html": {
+      "x": 940,
+      "y": 30298,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "3 Change in text, save it?"
+    },
+    "CrmSmP2S4.dc.html": {
+      "x": 1410,
+      "y": 30298,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "4 Agent says yes"
+    },
+    "CrmSmP2S5.dc.html": {
+      "x": 1880,
+      "y": 30298,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "5 Mel: saving"
+    },
+    "CrmSmP2S6.dc.html": {
+      "x": 2350,
+      "y": 30298,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "6 Saved, anything else"
+    },
+    "CrmSmP3S1.dc.html": {
+      "x": 0,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 3"
+    },
+    "CrmSmP3S2.dc.html": {
+      "x": 470,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: reading"
+    },
+    "CrmSmP3S3.dc.html": {
+      "x": 940,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "3 Draft in text, send it?"
+    },
+    "CrmSmP3S4.dc.html": {
+      "x": 1410,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "4 Make it shorter"
+    },
+    "CrmSmP3S5.dc.html": {
+      "x": 1880,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "5 Mel: on it"
+    },
+    "CrmSmP3S6.dc.html": {
+      "x": 2350,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "6 Shorter draft, send it?"
+    },
+    "CrmSmP3S7.dc.html": {
+      "x": 2820,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "7 Agent: send it"
+    },
+    "CrmSmP3S8.dc.html": {
+      "x": 3290,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "8 Mel: sending"
+    },
+    "CrmSmP3S9.dc.html": {
+      "x": 3760,
+      "y": 31538,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "9 Sent and logged, anything else"
+    },
+    "CrmSmP4S1.dc.html": {
+      "x": 0,
+      "y": 32778,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 4"
+    },
+    "CrmSmP4S2.dc.html": {
+      "x": 470,
+      "y": 32778,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: checking calendar"
+    },
+    "CrmSmP4S3.dc.html": {
+      "x": 940,
+      "y": 32778,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "3 Follow-up in text, add it?"
+    },
+    "CrmSmP4S4.dc.html": {
+      "x": 1410,
+      "y": 32778,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "4 Agent says yes"
+    },
+    "CrmSmP4S5.dc.html": {
+      "x": 1880,
+      "y": 32778,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "5 Mel: adding"
+    },
+    "CrmSmP4S6.dc.html": {
+      "x": 2350,
+      "y": 32778,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "6 Added, anything else"
+    },
+    "CrmSmP5S1.dc.html": {
+      "x": 0,
+      "y": 34018,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 5"
+    },
+    "CrmSmP5S2.dc.html": {
+      "x": 470,
+      "y": 34018,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: finding clients"
+    },
+    "CrmSmP5S3.dc.html": {
+      "x": 940,
+      "y": 34018,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "3 Plan in text, start it?"
+    },
+    "CrmSmP5S4.dc.html": {
+      "x": 1410,
+      "y": 34018,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "4 Agent: start it"
+    },
+    "CrmSmP5S5.dc.html": {
+      "x": 1880,
+      "y": 34018,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "5 Mel: starting"
+    },
+    "CrmSmP5S6.dc.html": {
+      "x": 2350,
+      "y": 34018,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "6 Started, anything else"
+    },
+    "CrmSmP6S1.dc.html": {
+      "x": 0,
+      "y": 35258,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "1 Agent picks 6"
+    },
+    "CrmSmP6S2.dc.html": {
+      "x": 470,
+      "y": 35258,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "2 Mel: ranking"
+    },
+    "CrmSmP6S3.dc.html": {
+      "x": 940,
+      "y": 35258,
+      "w": 390,
+      "h": 844,
+      "page": "crm",
+      "title": "3 Ranked list in text, next question"
+    },
+    "HomeDark.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "Home, dark",
+      "page": "home"
+    },
+    "HomeLight.dc.html": {
+      "x": 470,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "Home, light",
+      "page": "home"
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-16T09:00:00Z",
+    "v": 1
+  },
+  "designSystems": [
+    {
+      "artifact": "https://claude.ai/code/artifact/5dc86977-fd78-4cfe-bb3d-e6905539c228",
+      "copiedAt": "2026-10-28T06:59:58Z",
+      "namespace": "radius-mobile",
+      "title": "Radius Mobile",
+      "version": "1793170777-c3cc"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "agentRow": {
+      "kind": "title1",
+      "maxW": 1800,
+      "text": "Agent conversations",
+      "w": 240,
+      "x": 0,
+      "y": 23752,
+      "page": "main"
+    },
+    "chatRow": {
+      "kind": "title1",
+      "maxW": 1330,
+      "page": "intimation",
+      "text": "Main chat, all skills",
+      "w": 240,
+      "x": 0,
+      "y": -2699
+    },
+    "cmpCap0": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "campaign",
+      "size": 40,
+      "text": "An agent sets up a client campaign by chatting with Mel. Tap a prompt to fill the box, then send to move on.",
+      "w": 2000,
+      "x": 0,
+      "y": 130
+    },
+    "cmpFoot0": {
+      "fill": "orange",
+      "maxH": 700,
+      "page": "campaign",
+      "text": "ENGINEERING RULES\n\nBackend does the work. Frontend shows prompts, status and cards only.\n\nAudience: Mel shows the real matching count, email and text reach, and excluded contacts before launch.\n\nPlaybook: real file attach. Agent never prepares a special format.\n\nLaunch: validate recipients, channel consent, suppression lists, sender setup, message limits and unsubscribe handling before scheduling.\n\nNo edit buttons. Changes come from chat. Approve & Launch stays, like Send.",
+      "w": 560,
+      "x": 0,
+      "y": 2288
+    },
+    "cmpFoot1": {
+      "fill": "orange",
+      "maxH": 700,
+      "page": "campaign",
+      "text": "OPEN FOR KJ\n\n“!” stripped from Biju copy. Words kept.\n\nBiju forms (audience, goals, channels, start, frequency) are now prompts. Goals append, so several can be picked.\n\n“Run campaigns” pill added to the footer on this page only.\n\nNumbers, names and the day 3 rewrite are sample data.",
+      "w": 560,
+      "x": 620,
+      "y": 2288
+    },
+    "cmpS1": {
+      "kind": "title1",
+      "maxW": 5090,
+      "page": "campaign",
+      "text": "Campaign happy path",
+      "w": 240,
+      "x": 0,
+      "y": 0
+    },
+    "cmpS2": {
+      "kind": "title1",
+      "maxW": 1200,
+      "page": "campaign",
+      "text": "Variant: bring your playbook",
+      "w": 240,
+      "x": 0,
+      "y": 3288
+    },
+    "cmpS3": {
+      "kind": "title1",
+      "maxW": 2270,
+      "page": "campaign",
+      "text": "Recovery",
+      "w": 240,
+      "x": 0,
+      "y": 5696
+    },
+    "connectorsRow": {
+      "kind": "title1",
+      "maxW": 1840,
+      "page": "onboarding",
+      "text": "Connectors",
+      "w": 240,
+      "x": 0,
+      "y": 2140
+    },
+    "crmCap": {
+      "fill": "gray",
+      "maxH": 131,
+      "page": "crm",
+      "size": 40,
+      "text": "CRM happy path from the State 2 intro. Agent says yes, uploads a CSV, imports, gets the 6 prompts. Copy from the CRM page (Biju). Traces, working lines and the View my contacts link are new.",
+      "w": 2000,
+      "x": 0,
+      "y": 151
+    },
+    "crmDemoRow": {
+      "kind": "title1",
+      "maxW": 900,
+      "text": "CRM demo, tap through end to end",
+      "w": 240,
+      "x": 0,
+      "y": 3340,
+      "page": "main"
+    },
+    "crmOtherRow": {
+      "kind": "title1",
+      "maxW": 900,
+      "text": "CRM other starts",
+      "w": 240,
+      "x": 0,
+      "y": 21484,
+      "page": "main"
+    },
+    "crmP1": {
+      "kind": "title1",
+      "maxW": 900,
+      "text": "Prompt: find a contact",
+      "w": 240,
+      "x": 0,
+      "y": 7876,
+      "page": "main"
+    },
+    "crmP2": {
+      "kind": "title1",
+      "maxW": 900,
+      "text": "Prompt: update preferences",
+      "w": 240,
+      "x": 0,
+      "y": 10144,
+      "page": "main"
+    },
+    "crmP3": {
+      "kind": "title1",
+      "maxW": 900,
+      "text": "Prompt: draft and send a message",
+      "w": 240,
+      "x": 0,
+      "y": 12412,
+      "page": "main"
+    },
+    "crmP4": {
+      "kind": "title1",
+      "maxW": 1330,
+      "text": "Prompt: schedule a follow-up",
+      "w": 240,
+      "x": 0,
+      "y": 14680,
+      "page": "main"
+    },
+    "crmP5": {
+      "kind": "title1",
+      "maxW": 900,
+      "text": "Prompt: start a campaign",
+      "w": 240,
+      "x": 0,
+      "y": 16948,
+      "page": "main"
+    },
+    "crmP6": {
+      "kind": "title1",
+      "maxW": 900,
+      "text": "Prompt: top buyers this month",
+      "w": 240,
+      "x": 0,
+      "y": 19216,
+      "page": "main"
+    },
+    "crmPCap": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "crm",
+      "size": 40,
+      "text": "The 6 prompts Mel offers after import, each end to end. Every row starts from CRM board 13. Copy and cards from the CRM page (Biju). Traces and the shorter draft are new.",
+      "w": 2000,
+      "x": 0,
+      "y": 2888
+    },
+    "crmPP1Dark": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Find Jordan Lee, in-app dark",
+      "w": 240,
+      "x": 0,
+      "y": 2758
+    },
+    "crmPP1Light": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Find Jordan Lee, in-app light",
+      "w": 240,
+      "x": 0,
+      "y": 3998
+    },
+    "crmPP2Dark": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Update preferences, in-app dark",
+      "w": 240,
+      "x": 0,
+      "y": 5238
+    },
+    "crmPP2Light": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Update preferences, in-app light",
+      "w": 240,
+      "x": 0,
+      "y": 6478
+    },
+    "crmPP3Dark": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Draft a message, in-app dark",
+      "w": 240,
+      "x": 0,
+      "y": 7718
+    },
+    "crmPP3Light": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Draft a message, in-app light",
+      "w": 240,
+      "x": 0,
+      "y": 8958
+    },
+    "crmPP4Dark": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Remind me Tuesday, in-app dark",
+      "w": 240,
+      "x": 0,
+      "y": 10198
+    },
+    "crmPP4Light": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Remind me Tuesday, in-app light",
+      "w": 240,
+      "x": 0,
+      "y": 11438
+    },
+    "crmPP5Dark": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Check-in campaign, in-app dark",
+      "w": 240,
+      "x": 0,
+      "y": 12678
+    },
+    "crmPP5Light": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Check-in campaign, in-app light",
+      "w": 240,
+      "x": 0,
+      "y": 13918
+    },
+    "crmPP6Dark": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Top buyers, in-app dark",
+      "w": 240,
+      "x": 0,
+      "y": 15158
+    },
+    "crmPP6Light": {
+      "kind": "title1",
+      "maxW": 3800,
+      "page": "crm",
+      "text": "CRM prompt: Top buyers, in-app light",
+      "w": 240,
+      "x": 0,
+      "y": 16398
+    },
+    "crmRow": {
+      "kind": "title1",
+      "maxW": 2740,
+      "text": "CRM happy path: import contacts",
+      "w": 240,
+      "x": 0,
+      "y": 5608,
+      "page": "main"
+    },
+    "crmRowDark": {
+      "kind": "title1",
+      "maxW": 6100,
+      "page": "crm",
+      "text": "CRM skill, in-app dark, end to end",
+      "w": 240,
+      "x": 0,
+      "y": 21
+    },
+    "crmRowLight": {
+      "kind": "title1",
+      "maxW": 6100,
+      "page": "crm",
+      "text": "CRM skill, in-app light, end to end",
+      "w": 240,
+      "x": 0,
+      "y": 1420
+    },
+    "cxCap0": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "cx",
+      "size": 40,
+      "text": "An agent sets up a branded client portal, invites clients and picks how Mel talks to them. All in chat. Tap a prompt to fill the box, then send to move on.",
+      "w": 2000,
+      "x": 0,
+      "y": 130
+    },
+    "cxFoot0": {
+      "fill": "orange",
+      "maxH": 700,
+      "page": "cx",
+      "text": "ENGINEERING RULES\n\nBackend does the work. Frontend shows prompts, status and cards only.\n\nPortal: real URL and preview come from the created Radius portal. Branding from the Radius profile. No branding: Mel asks for logo and colors in chat (variant).\n\nInvites: respect email and SMS permissions, opt-outs and duplicate-invitation suppression. Show recipients and preview before sending.\n\nClient-facing Mel always says it is the agent’s AI assistant. Never impersonates the agent. Negotiations, contract commitments and legal questions go to the agent.\n\nNo edit buttons. Changes come from chat. Approve & Send Invites stays, like Send.",
+      "w": 560,
+      "x": 0,
+      "y": 2288
+    },
+    "cxFoot1": {
+      "fill": "orange",
+      "maxH": 700,
+      "page": "cx",
+      "text": "OPEN FOR KJ\n\n“!” stripped from Biju copy, words kept. Also in the invite drafts.\n\nBiju forms (who to invite, how to invite, autonomy) are now prompts. “Save Assistant Preferences”, “Preview Client Invitations” and “Edit” removed.\n\nAutonomy prompts carry Biju’s one-line description under the label. New two-line prompt row, this page only.\n\n“Build client portal” pill added to the footer on this page only. Label not from Biju.\n\nPortal preview is a placeholder. Biju’s image was a Dribbble shot.\n\nNot Biju copy: H05 count line, H08 confirm line, V01, E01–E05, chip labels. Numbers and names are sample data.",
+      "w": 560,
+      "x": 620,
+      "y": 2288
+    },
+    "cxS1": {
+      "kind": "title1",
+      "maxW": 4620,
+      "page": "cx",
+      "text": "Client experience happy path",
+      "w": 240,
+      "x": 0,
+      "y": 0
+    },
+    "cxS2": {
+      "kind": "title1",
+      "maxW": 1200,
+      "page": "cx",
+      "text": "Variant: no branding",
+      "w": 240,
+      "x": 0,
+      "y": 3288
+    },
+    "cxS3": {
+      "kind": "title1",
+      "maxW": 2270,
+      "page": "cx",
+      "text": "Recovery",
+      "w": 240,
+      "x": 0,
+      "y": 5696
+    },
+    "cxS4": {
+      "kind": "title1",
+      "maxW": 860,
+      "page": "cx",
+      "text": "Prototype",
+      "w": 240,
+      "x": 0,
+      "y": 8104
+    },
+    "flowBr0": {
+      "fill": "gray",
+      "maxH": 100,
+      "page": "intimation",
+      "size": 28,
+      "text": "Other starts. States 1 and 2: Mel leads with what it found. Agent says yes. Rest of the flow continues as on the left.",
+      "w": 1800,
+      "x": 3020,
+      "y": -120
+    },
+    "flowBr1": {
+      "fill": "gray",
+      "maxH": 100,
+      "page": "intimation",
+      "size": 28,
+      "text": "Other starts. States 1 and 2: Mel leads with what it found. Agent says yes. Rest of the flow continues as on the left.",
+      "w": 1800,
+      "x": 3020,
+      "y": 1120
+    },
+    "flowBr2": {
+      "fill": "gray",
+      "maxH": 100,
+      "page": "intimation",
+      "size": 28,
+      "text": "Other starts. States 1 and 2: Mel leads with what it found. Agent says yes. Rest of the flow continues as on the left.",
+      "w": 1800,
+      "x": 2080,
+      "y": 2360
+    },
+    "flowBr3": {
+      "fill": "gray",
+      "maxH": 100,
+      "page": "intimation",
+      "size": 28,
+      "text": "Other starts. States 1 and 2: Mel leads with what it found. Agent says yes. Rest of the flow continues as on the left.",
+      "w": 1800,
+      "x": 2080,
+      "y": 3600
+    },
+    "flowBr4": {
+      "fill": "gray",
+      "maxH": 100,
+      "page": "intimation",
+      "size": 28,
+      "text": "Other starts. States 1 and 2: Mel leads with what it found. Agent says yes. Rest of the flow continues as on the left.",
+      "w": 1800,
+      "x": 2080,
+      "y": 4840
+    },
+    "flowCap": {
+      "fill": "gray",
+      "maxH": 184,
+      "page": "intimation",
+      "size": 40,
+      "text": "First chat after connectors. Mel speaks first: intro, what it can do, one question. Left to right = what happens next. In-app: cards fill the box, suggestions send. Other paths: text only, agent replies a number. Priority when several states are true: 1 > 2 > 3.",
+      "w": 2000,
+      "x": 0,
+      "y": -301
+    },
+    "flowRow0": {
+      "kind": "title1",
+      "maxW": 2500,
+      "page": "intimation",
+      "text": "In-app chat, dark, end to end",
+      "w": 240,
+      "x": 0,
+      "y": -431
+    },
+    "flowRow1": {
+      "kind": "title1",
+      "maxW": 2500,
+      "page": "intimation",
+      "text": "In-app chat, light, end to end",
+      "w": 240,
+      "x": 0,
+      "y": 980
+    },
+    "flowRow2": {
+      "kind": "title1",
+      "maxW": 2500,
+      "page": "intimation",
+      "text": "WhatsApp, end to end",
+      "w": 240,
+      "x": 0,
+      "y": 2220
+    },
+    "flowRow3": {
+      "kind": "title1",
+      "maxW": 2500,
+      "page": "intimation",
+      "text": "Messages, end to end",
+      "w": 240,
+      "x": 0,
+      "y": 3460
+    },
+    "flowRow4": {
+      "kind": "title1",
+      "maxW": 2500,
+      "page": "intimation",
+      "text": "Email, end to end",
+      "w": 240,
+      "x": 0,
+      "y": 4700
+    },
+    "mktCap0": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "mktdesign",
+      "size": 40,
+      "text": "An agent gets a full listing marketing package in minutes. Mel asks before anything goes live.",
+      "w": 2000,
+      "x": 0,
+      "y": 130
+    },
+    "mktCap1": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "mktdesign",
+      "size": 40,
+      "text": "Tap the package card to view every design, play the video, share or download.",
+      "w": 2000,
+      "x": 0,
+      "y": 8234
+    },
+    "mktCap2": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "mktdesign",
+      "size": 40,
+      "text": "What Mel does when something is missing, fails or changes. Mel never says it is live when it is not.",
+      "w": 2000,
+      "x": 0,
+      "y": 10642
+    },
+    "mktFlowB": {
+      "kind": "title1",
+      "maxW": 1800,
+      "page": "mktdesign",
+      "text": "Flow B: pick what to create",
+      "w": 240,
+      "x": 0,
+      "y": 17936
+    },
+    "mktFlowBCap": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "mktdesign",
+      "size": 40,
+      "text": "Mel asks what to create, then where it goes, then shows templates sized for those platforms. After B3 it joins step 4 Your brand.",
+      "w": 2000,
+      "x": 0,
+      "y": 18066
+    },
+    "mktFoot0": {
+      "fill": "orange",
+      "maxH": 700,
+      "page": "mktdesign",
+      "text": "BIJU FOOTNOTES, steps 1 to 3\n\nStep 1: Conceptual onboarding interface. Production requires an authorized MLS or brokerage listing-data integration; a license number alone does not guarantee listing access.\n\nStep 2: In production, Mel should retrieve the property photos, description, price, features, open-house information, and listing status automatically, using authorized listing data.\n\nStep 3: Visual references illustrate the five style directions, not finished listing designs.\n\nSource: Biju, Marketing Design Assistant script (Slack DM, 15 Oct). Exact footnotes.",
+      "w": 560,
+      "x": 0,
+      "y": 2288
+    },
+    "mktFoot1": {
+      "fill": "orange",
+      "maxH": 700,
+      "page": "mktdesign",
+      "text": "BIJU FOOTNOTES, steps 5 and 6\n\nStep 5 (package preview): Illustrative design references only. Actual generated assets should have working preview, edit, and download links.\n\nStep 6 (recipients and approval): All external publishing, mass emails, and vendor deliveries require connected services, appropriate permissions, and an approval step.\n\nSource: Biju, Marketing Design Assistant script (Slack DM, 15 Oct). Exact footnotes.",
+      "w": 560,
+      "x": 2820,
+      "y": 2288
+    },
+    "mktFoot2": {
+      "fill": "orange",
+      "maxH": 700,
+      "page": "mktdesign",
+      "text": "BIJU FOOTNOTES, step 7\n\nStep 7 (confirm execution): After the agent approves and the relevant publishing services report success, Mel should provide an execution summary.\nInside the report card: Example of a completed campaign report — not actual publishing activity.\n\nSteps 4, 8 and 9: no footnote in Biju's script.\n\nSource: Biju, Marketing Design Assistant script (Slack DM, 15 Oct). Exact footnotes.",
+      "w": 560,
+      "x": 5640,
+      "y": 2288
+    },
+    "mktS1": {
+      "kind": "title1",
+      "maxW": 6970,
+      "page": "mktdesign",
+      "text": "Marketing happy path",
+      "w": 240,
+      "x": 0,
+      "y": 0
+    },
+    "mktS2": {
+      "kind": "title1",
+      "maxW": 1200,
+      "page": "mktdesign",
+      "text": "Connections",
+      "w": 240,
+      "x": 0,
+      "y": 5696
+    },
+    "mktS3": {
+      "kind": "title1",
+      "maxW": 1200,
+      "page": "mktdesign",
+      "text": "Routine",
+      "w": 240,
+      "x": 1600,
+      "y": 5696
+    },
+    "mktS4": {
+      "kind": "title1",
+      "maxW": 2270,
+      "page": "mktdesign",
+      "text": "Package viewer",
+      "w": 240,
+      "x": 0,
+      "y": 8104
+    },
+    "mktS5": {
+      "kind": "title1",
+      "maxW": 1800,
+      "page": "mktdesign",
+      "text": "Recovery: before designing",
+      "w": 240,
+      "x": 0,
+      "y": 10512
+    },
+    "mktS6": {
+      "kind": "title1",
+      "maxW": 2270,
+      "page": "mktdesign",
+      "text": "Recovery: while designing",
+      "w": 240,
+      "x": 0,
+      "y": 12920
+    },
+    "mktS7": {
+      "kind": "title1",
+      "maxW": 2740,
+      "page": "mktdesign",
+      "text": "Recovery: publishing",
+      "w": 240,
+      "x": 0,
+      "y": 15328
+    },
+    "mktS8": {
+      "kind": "title1",
+      "maxW": 1200,
+      "page": "mktdesign",
+      "text": "Variant: more than 3 pieces for one destination",
+      "w": 240,
+      "x": 0,
+      "y": 3288
+    },
+    "phoneRow": {
+      "kind": "title1",
+      "maxW": 1840,
+      "page": "onboarding",
+      "text": "Sign up with phone number",
+      "w": 240,
+      "x": 0,
+      "y": 940
+    },
+    "shape-ipplu6": {
+      "d": "M0 0 L6352.853 0",
+      "h": 2,
+      "kind": "pen",
+      "page": "intimation",
+      "w": 6352.853,
+      "x": -193.6,
+      "y": 6982.9
+    },
+    "shape-tdwyg5": {
+      "color": "pink",
+      "h": 127,
+      "kind": "rect",
+      "page": "intimation",
+      "w": 7369,
+      "x": -194,
+      "y": 6742
+    },
+    "title": {
+      "kind": "title1",
+      "maxW": 860,
+      "page": "onboarding",
+      "text": "Mel welcome: dark and light",
+      "w": 240,
+      "x": 0,
+      "y": -260
+    },
+    "waCrmCap": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "crm",
+      "size": 40,
+      "text": "CRM on WhatsApp, text only. Same flow and words as in-app. Options are numbered, the agent replies a number or words. Mel says it is working, then answers. Cards become lines. Links are URLs.",
+      "w": 2000,
+      "x": 0,
+      "y": 18808
+    },
+    "waCrmP1": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Find Jordan Lee, WhatsApp",
+      "w": 240,
+      "x": 0,
+      "y": 19918
+    },
+    "waCrmP2": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Update preferences, WhatsApp",
+      "w": 240,
+      "x": 0,
+      "y": 21158
+    },
+    "waCrmP3": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Draft a message, WhatsApp",
+      "w": 240,
+      "x": 0,
+      "y": 22398
+    },
+    "waCrmP4": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Remind me Tuesday, WhatsApp",
+      "w": 240,
+      "x": 0,
+      "y": 23638
+    },
+    "waCrmP5": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Check-in campaign, WhatsApp",
+      "w": 240,
+      "x": 0,
+      "y": 24878
+    },
+    "waCrmP6": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Top buyers, WhatsApp",
+      "w": 240,
+      "x": 0,
+      "y": 26118
+    },
+    "waCrmRow": {
+      "kind": "title1",
+      "maxW": 6600,
+      "page": "crm",
+      "text": "CRM skill, WhatsApp, end to end",
+      "w": 240,
+      "x": 0,
+      "y": 18678
+    },
+    "smsCrmRow": {
+      "kind": "title1",
+      "maxW": 7450,
+      "page": "crm",
+      "text": "CRM skill, Messages, end to end",
+      "w": 240,
+      "x": 0,
+      "y": 27558
+    },
+    "smsCrmCap": {
+      "fill": "gray",
+      "maxH": 110,
+      "page": "crm",
+      "size": 40,
+      "text": "CRM on Messages (SMS), text only. Same flow and words as WhatsApp. Texts can’t carry a CSV, so Mel texts a link to a branded uploader (boards 7 to 9), then picks up in Messages.",
+      "w": 2000,
+      "x": 0,
+      "y": 27688
+    },
+    "smsCrmOpen": {
+      "fill": "orange",
+      "maxH": 700,
+      "page": "crm",
+      "text": "OPEN FOR KJ\n\nNot Biju copy:\nBoard 6, the upload link line.\nBoards 7 to 9, all uploader copy (title, intro, button, helper lines).\nBoard 10, Mel reads the file after upload.\n\nUploader link radiusagent.com/u/7Q4K is a placeholder.\n\nImport row is 16 boards: the CSV document bubble from WhatsApp is replaced by the uploader.",
+      "w": 560,
+      "x": 7520,
+      "y": 27818
+    },
+    "smsCrmP1": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Find Jordan Lee, Messages",
+      "w": 240,
+      "x": 0,
+      "y": 28798
+    },
+    "smsCrmP2": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Update preferences, Messages",
+      "w": 240,
+      "x": 0,
+      "y": 30038
+    },
+    "smsCrmP3": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Draft a message, Messages",
+      "w": 240,
+      "x": 0,
+      "y": 31278
+    },
+    "smsCrmP4": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Remind me Tuesday, Messages",
+      "w": 240,
+      "x": 0,
+      "y": 32518
+    },
+    "smsCrmP5": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Check-in campaign, Messages",
+      "w": 240,
+      "x": 0,
+      "y": 33758
+    },
+    "smsCrmP6": {
+      "kind": "title1",
+      "maxW": 4300,
+      "page": "crm",
+      "text": "CRM prompt: Top buyers, Messages",
+      "w": 240,
+      "x": 0,
+      "y": 34998
+    },
+    "emLink": {
+      "fill": "blue",
+      "maxH": 200,
+      "page": "crm",
+      "size": 40,
+      "text": "Email path → Mel CRM, page Email → https://claude.ai/artifact/Wk8cmkeWjAkkksCkch2u8q",
+      "w": 2000,
+      "x": 0,
+      "y": 36302
+    },
+    "movedMain": {
+      "fill": "blue",
+      "maxH": 300,
+      "page": "main",
+      "size": 40,
+      "text": "ARCHIVED. Old CRM design. New CRM flows, plus the edge cases and recovery boards from this page, live in Mel CRM → https://claude.ai/artifact/Wk8cmkeWjAkkksCkch2u8q",
+      "w": 2000,
+      "x": 0,
+      "y": 2900
+    },
+    "movedInapp": {
+      "fill": "blue",
+      "maxH": 200,
+      "page": "crm",
+      "size": 40,
+      "text": "Moved to Mel CRM, page In-app → https://claude.ai/artifact/Wk8cmkeWjAkkksCkch2u8q",
+      "w": 1400,
+      "x": 6300,
+      "y": 21
+    },
+    "movedWa": {
+      "fill": "blue",
+      "maxH": 200,
+      "page": "crm",
+      "size": 40,
+      "text": "Moved to Mel CRM, page WhatsApp → https://claude.ai/artifact/Wk8cmkeWjAkkksCkch2u8q",
+      "w": 1400,
+      "x": 6800,
+      "y": 18678
+    },
+    "movedSms": {
+      "fill": "blue",
+      "maxH": 200,
+      "page": "crm",
+      "size": 40,
+      "text": "Moved to Mel CRM, page Messages → https://claude.ai/artifact/Wk8cmkeWjAkkksCkch2u8q",
+      "w": 1400,
+      "x": 8200,
+      "y": 27558
+    },
+    "home-title": {
+      "x": 0,
+      "y": -300,
+      "text": "Home screen · port of Implemented Home, Mel brand mark",
+      "kind": "title1",
+      "maxW": 860,
+      "page": "home"
+    },
+    "home-copy": {
+      "x": 940,
+      "y": 0,
+      "w": 260,
+      "text": "Copy not from Biju: \"Ask Mel\" placeholder in the search bar. Floating orb hidden, bar replaces it (Rec, pending KJ).",
+      "fill": "orange",
+      "page": "home"
+    }
+  },
+  "order": [
+    "CmpH01Dark.dc.html",
+    "CmpH01Light.dc.html",
+    "CmpH02Dark.dc.html",
+    "CmpH02Light.dc.html",
+    "CmpH03Dark.dc.html",
+    "CmpH03Light.dc.html",
+    "CmpH04Dark.dc.html",
+    "CmpH04Light.dc.html",
+    "CmpH05Dark.dc.html",
+    "CmpH05Light.dc.html",
+    "CmpH06Dark.dc.html",
+    "CmpH06Light.dc.html",
+    "CmpH07Dark.dc.html",
+    "CmpH07Light.dc.html",
+    "CmpH08Dark.dc.html",
+    "CmpH08Light.dc.html",
+    "CmpH09Dark.dc.html",
+    "CmpH09bDark.dc.html",
+    "CmpH09Light.dc.html",
+    "CmpH09bLight.dc.html",
+    "CmpH10Dark.dc.html",
+    "CmpH10Light.dc.html",
+    "CmpV01Dark.dc.html",
+    "CmpV01Light.dc.html",
+    "CmpE01Dark.dc.html",
+    "CmpE01Light.dc.html",
+    "CmpE02Dark.dc.html",
+    "CmpE02Light.dc.html",
+    "CmpE03Dark.dc.html",
+    "CmpE03Light.dc.html",
+    "CmpE04Dark.dc.html",
+    "CmpE04Light.dc.html",
+    "CmpE05Dark.dc.html",
+    "CmpE05Light.dc.html",
+    "CxH01Dark.dc.html",
+    "CxH01Light.dc.html",
+    "CxH02Dark.dc.html",
+    "CxH02Light.dc.html",
+    "CxH03Dark.dc.html",
+    "CxH03Light.dc.html",
+    "CxH04Dark.dc.html",
+    "CxH04Light.dc.html",
+    "CxH05Dark.dc.html",
+    "CxH05Light.dc.html",
+    "CxH06Dark.dc.html",
+    "CxH06Light.dc.html",
+    "CxH06bDark.dc.html",
+    "CxH06bLight.dc.html",
+    "CxH07Dark.dc.html",
+    "CxH07Light.dc.html",
+    "CxH08Dark.dc.html",
+    "CxH08Light.dc.html",
+    "CxV01Dark.dc.html",
+    "CxV01Light.dc.html",
+    "CxE01Dark.dc.html",
+    "CxE01Light.dc.html",
+    "CxE02Dark.dc.html",
+    "CxE02Light.dc.html",
+    "CxE03Dark.dc.html",
+    "CxE03Light.dc.html",
+    "CxE04Dark.dc.html",
+    "CxE04Light.dc.html",
+    "CxE05Dark.dc.html",
+    "CxE05Light.dc.html",
+    "CxProtoDark.dc.html",
+    "CxProtoLight.dc.html",
+    "CxH08bDark.dc.html",
+    "CxH08bLight.dc.html",
+    "Main.dc.html",
+    "Light.dc.html",
+    "SignupPhoneDark.dc.html",
+    "SignupPhoneLight.dc.html",
+    "SignupCodeDark.dc.html",
+    "SignupCodeLight.dc.html",
+    "ConnectorsDark.dc.html",
+    "ConnectorsLight.dc.html",
+    "ChatLiveDark.dc.html",
+    "ChatLiveLight.dc.html",
+    "ChatAutoRouteDark.dc.html",
+    "ChatAutoRouteLight.dc.html",
+    "CrmWelcomeDark.dc.html",
+    "CrmImportDark.dc.html",
+    "CrmDoneDark.dc.html",
+    "CrmSkillsDark.dc.html",
+    "CrmWelcomeLight.dc.html",
+    "CrmImportLight.dc.html",
+    "CrmDoneLight.dc.html",
+    "CrmSkillsLight.dc.html",
+    "CrmAgentSendDark.dc.html",
+    "CrmAgentUpdateDark.dc.html",
+    "CrmAgentCampaignDark.dc.html",
+    "CrmAgentCloseDark.dc.html",
+    "CrmAgentSendLight.dc.html",
+    "CrmAgentUpdateLight.dc.html",
+    "CrmAgentCampaignLight.dc.html",
+    "CrmAgentCloseLight.dc.html",
+    "CrmFlowDraftEditDark.dc.html",
+    "CrmFlowDraftEditLight.dc.html",
+    "CrmFlowDraftSentDark.dc.html",
+    "CrmFlowDraftSentLight.dc.html",
+    "CrmFlowEmailReviewDark.dc.html",
+    "CrmFlowEmailReviewLight.dc.html",
+    "CrmFlowMissingEmailDark.dc.html",
+    "CrmFlowMissingEmailLight.dc.html",
+    "CrmFlowSendFailedDark.dc.html",
+    "CrmFlowSendFailedLight.dc.html",
+    "CrmFlowStatusReviewDark.dc.html",
+    "CrmFlowStatusReviewLight.dc.html",
+    "CrmFlowStatusSavedDark.dc.html",
+    "CrmFlowStatusSavedLight.dc.html",
+    "CrmFlowPrefsReviewDark.dc.html",
+    "CrmFlowPrefsReviewLight.dc.html",
+    "CrmFlowCampReviewDark.dc.html",
+    "CrmFlowCampReviewLight.dc.html",
+    "CrmFlowCampEnrolledDark.dc.html",
+    "CrmFlowCampEnrolledLight.dc.html",
+    "CrmFlowCampUnavailableDark.dc.html",
+    "CrmFlowCampUnavailableLight.dc.html",
+    "CrmFlowCampMissingDark.dc.html",
+    "CrmFlowCampMissingLight.dc.html",
+    "CrmLaterDark.dc.html",
+    "CrmLaterLight.dc.html",
+    "CrmReadyDark.dc.html",
+    "CrmReadyLight.dc.html",
+    "CrmResumeDark.dc.html",
+    "CrmResumeLight.dc.html",
+    "ChatSwitchDark.dc.html",
+    "ChatSwitchLight.dc.html",
+    "MktM01Dark.dc.html",
+    "MktM01Light.dc.html",
+    "MktM02Dark.dc.html",
+    "MktM02Light.dc.html",
+    "MktM03Dark.dc.html",
+    "MktM03Light.dc.html",
+    "MktM04Dark.dc.html",
+    "MktM04Light.dc.html",
+    "MktM05Dark.dc.html",
+    "MktM05Light.dc.html",
+    "MktM06Dark.dc.html",
+    "MktM06Light.dc.html",
+    "MktM07Dark.dc.html",
+    "MktM07Light.dc.html",
+    "MktM08Dark.dc.html",
+    "MktM08Light.dc.html",
+    "MktM09Dark.dc.html",
+    "MktM09Light.dc.html",
+    "MktM10Dark.dc.html",
+    "MktM10Light.dc.html",
+    "MktM11Dark.dc.html",
+    "MktM11Light.dc.html",
+    "MktV1Dark.dc.html",
+    "MktV1Light.dc.html",
+    "MktV2Dark.dc.html",
+    "MktV2Light.dc.html",
+    "MktV3Dark.dc.html",
+    "MktV3Light.dc.html",
+    "MktV4Dark.dc.html",
+    "MktV4Light.dc.html",
+    "MktV5Dark.dc.html",
+    "MktV5Light.dc.html",
+    "MktR1Dark.dc.html",
+    "MktR1Light.dc.html",
+    "MktR2Dark.dc.html",
+    "MktR2Light.dc.html",
+    "MktR3Dark.dc.html",
+    "MktR3Light.dc.html",
+    "MktR4Dark.dc.html",
+    "MktR4Light.dc.html",
+    "MktR5Dark.dc.html",
+    "MktR5Light.dc.html",
+    "MktR6Dark.dc.html",
+    "MktR6Light.dc.html",
+    "MktR7Dark.dc.html",
+    "MktR7Light.dc.html",
+    "MktR8Dark.dc.html",
+    "MktR8Light.dc.html",
+    "MktR9Dark.dc.html",
+    "MktR9Light.dc.html",
+    "MktR10Dark.dc.html",
+    "MktR10Light.dc.html",
+    "MktC1Dark.dc.html",
+    "MktC1Light.dc.html",
+    "MktC2Dark.dc.html",
+    "MktC2Light.dc.html",
+    "MktC3Dark.dc.html",
+    "MktC3Light.dc.html",
+    "MktC4Dark.dc.html",
+    "MktC4Light.dc.html",
+    "MktC5Dark.dc.html",
+    "MktC5Light.dc.html",
+    "MktC6Dark.dc.html",
+    "MktC6Light.dc.html",
+    "ChatLiveDark-lo57.dc.html",
+    "CrmWelcomeLight-xga7.dc.html",
+    "MktC2bDark.dc.html",
+    "MktC2bLight.dc.html",
+    "MktPubEmailDark.dc.html",
+    "MktPubEmailLight.dc.html",
+    "MktPubViewerDark.dc.html",
+    "MktPubViewerLight.dc.html",
+    "MktStopDark.dc.html",
+    "MktStopLight.dc.html",
+    "MktNewChatDark.dc.html",
+    "MktNewChatLight.dc.html",
+    "MktNoClientsDark.dc.html",
+    "MktNoClientsLight.dc.html",
+    "MktPubWebDark.dc.html",
+    "MktPubWebLight.dc.html",
+    "MktCsvDoneDark.dc.html",
+    "MktCsvDoneLight.dc.html",
+    "MktClientAddedDark.dc.html",
+    "MktClientAddedLight.dc.html",
+    "MktB1Dark.dc.html",
+    "MktB1Light.dc.html",
+    "MktB2Dark.dc.html",
+    "MktB2Light.dc.html",
+    "MktB3Dark.dc.html",
+    "MktB3Light.dc.html",
+    "MktB4Dark.dc.html",
+    "MktB4Light.dc.html",
+    "ChatLiveLight-lo57.dc.html",
+    "CrmH2Dark.dc.html",
+    "CrmH2Light.dc.html",
+    "CrmH4Dark.dc.html",
+    "CrmH4Light.dc.html",
+    "CrmP1aDark.dc.html",
+    "CrmP1aLight.dc.html",
+    "CrmP1bDark.dc.html",
+    "CrmP1bLight.dc.html",
+    "CrmP2aDark.dc.html",
+    "CrmP2aLight.dc.html",
+    "CrmP2bDark.dc.html",
+    "CrmP2bLight.dc.html",
+    "CrmP3aDark.dc.html",
+    "CrmP3aLight.dc.html",
+    "CrmP3bDark.dc.html",
+    "CrmP3bLight.dc.html",
+    "CrmP4aDark.dc.html",
+    "CrmP4aLight.dc.html",
+    "CrmP4bDark.dc.html",
+    "CrmP4bLight.dc.html",
+    "CrmP4cDark.dc.html",
+    "CrmP4cLight.dc.html",
+    "CrmP5aDark.dc.html",
+    "CrmP5aLight.dc.html",
+    "CrmP5bDark.dc.html",
+    "CrmP5bLight.dc.html",
+    "CrmP6aDark.dc.html",
+    "CrmP6aLight.dc.html",
+    "CrmP6bDark.dc.html",
+    "CrmP6bLight.dc.html",
+    "IntroAppADark.dc.html",
+    "FlowAppDarkS1.dc.html",
+    "FlowAppDarkS2.dc.html",
+    "FlowAppDarkS3.dc.html",
+    "FlowAppDarkS4.dc.html",
+    "FlowAppDarkS5.dc.html",
+    "IntroAppCDark.dc.html",
+    "BranchApp1DarkR.dc.html",
+    "IntroAppALight.dc.html",
+    "FlowAppLightS1.dc.html",
+    "FlowAppLightS2.dc.html",
+    "FlowAppLightS3.dc.html",
+    "FlowAppLightS4.dc.html",
+    "FlowAppLightS5.dc.html",
+    "IntroAppCLight.dc.html",
+    "BranchApp1LightR.dc.html",
+    "IntroWaA.dc.html",
+    "FlowWaS1.dc.html",
+    "FlowWaS2.dc.html",
+    "FlowWaS3.dc.html",
+    "BranchWa1.dc.html",
+    "BranchWa1R.dc.html",
+    "BranchWa2.dc.html",
+    "BranchWa2R.dc.html",
+    "IntroSmsA.dc.html",
+    "FlowSmsS1.dc.html",
+    "FlowSmsS2.dc.html",
+    "FlowSmsS3.dc.html",
+    "BranchSms1.dc.html",
+    "BranchSms1R.dc.html",
+    "BranchSms2.dc.html",
+    "BranchSms2R.dc.html",
+    "IntroMailA.dc.html",
+    "FlowMailS1.dc.html",
+    "FlowMailS2.dc.html",
+    "FlowMailS3.dc.html",
+    "BranchMail1.dc.html",
+    "BranchMail1R.dc.html",
+    "BranchMail2.dc.html",
+    "BranchMail2R.dc.html",
+    "IntroWaB.dc.html",
+    "IntroSmsB.dc.html",
+    "IntroMailB.dc.html",
+    "IntroWaC.dc.html",
+    "IntroSmsC.dc.html",
+    "IntroMailC.dc.html",
+    "CrmFlowDarkS01.dc.html",
+    "CrmFlowDarkS02.dc.html",
+    "CrmFlowDarkS03.dc.html",
+    "CrmFlowDarkS04.dc.html",
+    "CrmFlowDarkS05.dc.html",
+    "CrmFlowDarkS06.dc.html",
+    "CrmFlowDarkS07.dc.html",
+    "CrmFlowDarkS08.dc.html",
+    "CrmFlowDarkS09.dc.html",
+    "CrmFlowDarkS10.dc.html",
+    "CrmFlowDarkS11.dc.html",
+    "CrmFlowDarkS12.dc.html",
+    "CrmFlowDarkS13.dc.html",
+    "CrmFlowLightS01.dc.html",
+    "CrmFlowLightS02.dc.html",
+    "CrmFlowLightS03.dc.html",
+    "CrmFlowLightS04.dc.html",
+    "CrmFlowLightS05.dc.html",
+    "CrmFlowLightS06.dc.html",
+    "CrmFlowLightS07.dc.html",
+    "CrmFlowLightS08.dc.html",
+    "CrmFlowLightS09.dc.html",
+    "CrmFlowLightS10.dc.html",
+    "CrmFlowLightS11.dc.html",
+    "CrmFlowLightS12.dc.html",
+    "CrmFlowLightS13.dc.html",
+    "CrmP1DarkS1.dc.html",
+    "CrmP1DarkS2.dc.html",
+    "CrmP1DarkS3.dc.html",
+    "CrmP1LightS1.dc.html",
+    "CrmP1LightS2.dc.html",
+    "CrmP1LightS3.dc.html",
+    "CrmP2DarkS1.dc.html",
+    "CrmP2DarkS2.dc.html",
+    "CrmP2DarkS3.dc.html",
+    "CrmP2DarkS4.dc.html",
+    "CrmP2DarkS5.dc.html",
+    "CrmP2DarkS6.dc.html",
+    "CrmP2LightS1.dc.html",
+    "CrmP2LightS2.dc.html",
+    "CrmP2LightS3.dc.html",
+    "CrmP2LightS4.dc.html",
+    "CrmP2LightS5.dc.html",
+    "CrmP2LightS6.dc.html",
+    "CrmP3DarkS1.dc.html",
+    "CrmP3DarkS2.dc.html",
+    "CrmP3DarkS3.dc.html",
+    "CrmP3DarkS4.dc.html",
+    "CrmP3DarkS5.dc.html",
+    "CrmP3DarkS6.dc.html",
+    "CrmP3DarkS7.dc.html",
+    "CrmP3DarkS8.dc.html",
+    "CrmP3LightS1.dc.html",
+    "CrmP3LightS2.dc.html",
+    "CrmP3LightS3.dc.html",
+    "CrmP3LightS4.dc.html",
+    "CrmP3LightS5.dc.html",
+    "CrmP3LightS6.dc.html",
+    "CrmP3LightS7.dc.html",
+    "CrmP3LightS8.dc.html",
+    "CrmP4DarkS1.dc.html",
+    "CrmP4DarkS2.dc.html",
+    "CrmP4DarkS3.dc.html",
+    "CrmP4DarkS4.dc.html",
+    "CrmP4DarkS5.dc.html",
+    "CrmP4DarkS6.dc.html",
+    "CrmP4LightS1.dc.html",
+    "CrmP4LightS2.dc.html",
+    "CrmP4LightS3.dc.html",
+    "CrmP4LightS4.dc.html",
+    "CrmP4LightS5.dc.html",
+    "CrmP4LightS6.dc.html",
+    "CrmP5DarkS1.dc.html",
+    "CrmP5DarkS2.dc.html",
+    "CrmP5DarkS3.dc.html",
+    "CrmP5DarkS4.dc.html",
+    "CrmP5DarkS5.dc.html",
+    "CrmP5DarkS6.dc.html",
+    "CrmP5LightS1.dc.html",
+    "CrmP5LightS2.dc.html",
+    "CrmP5LightS3.dc.html",
+    "CrmP5LightS4.dc.html",
+    "CrmP5LightS5.dc.html",
+    "CrmP5LightS6.dc.html",
+    "CrmP6DarkS1.dc.html",
+    "CrmP6DarkS2.dc.html",
+    "CrmP6DarkS3.dc.html",
+    "CrmP6LightS1.dc.html",
+    "CrmP6LightS2.dc.html",
+    "CrmP6LightS3.dc.html",
+    "CrmWaS01.dc.html",
+    "CrmWaS02.dc.html",
+    "CrmWaS03.dc.html",
+    "CrmWaS04.dc.html",
+    "CrmWaS05.dc.html",
+    "CrmWaS06.dc.html",
+    "CrmWaS07.dc.html",
+    "CrmWaS08.dc.html",
+    "CrmWaS09.dc.html",
+    "CrmWaS10.dc.html",
+    "CrmWaS11.dc.html",
+    "CrmWaS12.dc.html",
+    "CrmWaS13.dc.html",
+    "CrmWaS14.dc.html",
+    "CrmWaP1S1.dc.html",
+    "CrmWaP1S2.dc.html",
+    "CrmWaP1S3.dc.html",
+    "CrmWaP2S1.dc.html",
+    "CrmWaP2S2.dc.html",
+    "CrmWaP2S3.dc.html",
+    "CrmWaP2S4.dc.html",
+    "CrmWaP2S5.dc.html",
+    "CrmWaP2S6.dc.html",
+    "CrmWaP3S1.dc.html",
+    "CrmWaP3S2.dc.html",
+    "CrmWaP3S3.dc.html",
+    "CrmWaP3S4.dc.html",
+    "CrmWaP3S5.dc.html",
+    "CrmWaP3S6.dc.html",
+    "CrmWaP3S7.dc.html",
+    "CrmWaP3S8.dc.html",
+    "CrmWaP3S9.dc.html",
+    "CrmWaP4S1.dc.html",
+    "CrmWaP4S2.dc.html",
+    "CrmWaP4S3.dc.html",
+    "CrmWaP4S4.dc.html",
+    "CrmWaP4S5.dc.html",
+    "CrmWaP4S6.dc.html",
+    "CrmWaP5S1.dc.html",
+    "CrmWaP5S2.dc.html",
+    "CrmWaP5S3.dc.html",
+    "CrmWaP5S4.dc.html",
+    "CrmWaP5S5.dc.html",
+    "CrmWaP5S6.dc.html",
+    "CrmWaP6S1.dc.html",
+    "CrmWaP6S2.dc.html",
+    "CrmWaP6S3.dc.html",
+    "BranchApp2DarkR.dc.html",
+    "BranchApp2LightR.dc.html",
+    "IntroAppBDark.dc.html",
+    "IntroAppBLight.dc.html",
+    "CrmSmS01.dc.html",
+    "CrmSmS02.dc.html",
+    "CrmSmS03.dc.html",
+    "CrmSmS04.dc.html",
+    "CrmSmS05.dc.html",
+    "CrmSmS06.dc.html",
+    "CrmSmU01.dc.html",
+    "CrmSmU02.dc.html",
+    "CrmSmU03.dc.html",
+    "CrmSmS07.dc.html",
+    "CrmSmS08.dc.html",
+    "CrmSmS09.dc.html",
+    "CrmSmS10.dc.html",
+    "CrmSmS11.dc.html",
+    "CrmSmS12.dc.html",
+    "CrmSmS13.dc.html",
+    "CrmSmP1S1.dc.html",
+    "CrmSmP1S2.dc.html",
+    "CrmSmP1S3.dc.html",
+    "CrmSmP2S1.dc.html",
+    "CrmSmP2S2.dc.html",
+    "CrmSmP2S3.dc.html",
+    "CrmSmP2S4.dc.html",
+    "CrmSmP2S5.dc.html",
+    "CrmSmP2S6.dc.html",
+    "CrmSmP3S1.dc.html",
+    "CrmSmP3S2.dc.html",
+    "CrmSmP3S3.dc.html",
+    "CrmSmP3S4.dc.html",
+    "CrmSmP3S5.dc.html",
+    "CrmSmP3S6.dc.html",
+    "CrmSmP3S7.dc.html",
+    "CrmSmP3S8.dc.html",
+    "CrmSmP3S9.dc.html",
+    "CrmSmP4S1.dc.html",
+    "CrmSmP4S2.dc.html",
+    "CrmSmP4S3.dc.html",
+    "CrmSmP4S4.dc.html",
+    "CrmSmP4S5.dc.html",
+    "CrmSmP4S6.dc.html",
+    "CrmSmP5S1.dc.html",
+    "CrmSmP5S2.dc.html",
+    "CrmSmP5S3.dc.html",
+    "CrmSmP5S4.dc.html",
+    "CrmSmP5S5.dc.html",
+    "CrmSmP5S6.dc.html",
+    "CrmSmP6S1.dc.html",
+    "CrmSmP6S2.dc.html",
+    "CrmSmP6S3.dc.html",
+    "HomeDark.dc.html",
+    "HomeLight.dc.html"
+  ],
+  "pages": [
+    {
+      "id": "onboarding",
+      "name": "Onboarding"
+    },
+    {
+      "id": "intimation",
+      "name": "Mel chat"
+    },
+    {
+      "id": "home",
+      "name": "Home screen"
+    },
+    {
+      "id": "crm",
+      "name": "CRM skill flow"
+    },
+    {
+      "id": "mktdesign",
+      "name": "Marketing skill flow"
+    },
+    {
+      "id": "campaign",
+      "name": "Campaigns skill flow"
+    },
+    {
+      "id": "cx",
+      "name": "Client experience"
+    },
+    {
+      "id": "main",
+      "name": "Archived · CRM Skill"
+    }
+  ],
+  "title": "Mel welcome"
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>2 Mel: reading, Messages</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.im{width:390px;height:844px;position:relative;overflow:hidden;box-sizing:border-box;background:#FFFFFF;color:#000;font-family:-apple-system,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:17px;line-height:1.3}
+.im-top{position:absolute;inset:0 0 auto 0;height:118px;background:#F6F6F6;border-bottom:1px solid #D1D1D6;display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;box-sizing:border-box}
+.im-back{position:absolute;left:8px;bottom:26px;display:flex;align-items:center;color:#0A84FF;background:none;border:0;padding:0;font:inherit;cursor:pointer}
+.im-contact{display:flex;flex-direction:column;align-items:center;gap:3px}
+.im-ava{width:50px;height:50px;border-radius:50%;background:#12A867;display:flex;align-items:center;justify-content:center}
+.im-ava>span{width:34px;height:34px;color:#fff}
+.im-contact small{font-size:11px;color:#000}
+.im-body{position:absolute;inset:118px 0 78px 0;overflow-y:auto;padding:10px 16px 6px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px;box-sizing:border-box}
+.im-day{align-self:center;font-size:11px;color:#8E8E93;margin:4px 0 8px}
+.im-in,.im-out{max-width:78%;border-radius:18px;padding:8px 13px;position:relative}
+.im-in{align-self:flex-start;background:#E9E9EB}
+.im-out{align-self:flex-end;background:#34C759;color:#fff}
+.im-in p,.im-out p{margin:0;white-space:pre-line}
+.im-foot{align-self:flex-end;font-size:11px;color:#8E8E93;margin:2px 12px 0 0}
+.im-bar{position:absolute;inset:auto 0 0 0;height:78px;background:#FFFFFF;border-top:1px solid #D1D1D6;display:flex;align-items:flex-start;gap:10px;padding:8px 10px 0;box-sizing:border-box}
+.im-plus{width:34px;height:34px;border-radius:50%;border:0;background:#E9E9EB;color:#000;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
+.im-field{flex:1;height:34px;border-radius:17px;background:#FFFFFF;border:1px solid #C7C7CC;padding:0 14px;font:inherit;font-size:17px;color:#000}
+.im-mic{width:34px;height:34px;border:0;background:none;color:#8E8E93;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
+.im-in a{color:#0A84FF;text-decoration:underline}
+</style>
+</helmet>
+<div class="im">
+<header class="im-top"><button type="button" class="im-back" aria-label="Back"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><div class="im-contact"><span class="im-ava" role="img" aria-label="MEL"><span><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" style="width:100%;height:100%;display:block"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle cx="60" cy="60" r="13" fill="#12A867"></circle></svg></span></span><small>MEL ›</small></div></header>
+<div class="im-body"><span class="im-day">Text Message · Today 10:02 AM</span><div class="im-in"><p>Hey, I’m MEL, your AI assistant.
+I can:
+1 Add and manage your clients
+2 Market a listing
+3 Run follow-up campaigns
+4 Keep clients updated
+5 Check transaction files
+6 Prepare documents</p></div><div class="im-in"><p>Do you want to start by adding your clients? Reply yes, or pick a number.</p></div><div class="im-out"><p>Yes</p></div><div class="im-in"><p>On it. Checking your CRM.</p></div><div class="im-in"><p>Checked your CRM: 0 contacts.
+I’m your CRM assistant. Let’s bring your contacts in so I can help with follow-ups.
+How do you want to add them?
+1 Upload a CSV
+2 Import from another CRM
+3 I’ll add contacts later</p></div><div class="im-out"><p>1</p></div><div class="im-in"><p>Texts can’t carry files, so upload the CSV with this link. Any column layout works, I match the fields for you.
+<a href="https://radiusagent.com/u/7Q4K">radiusagent.com/u/7Q4K</a></p></div><div class="im-in"><p>On it. Reading clients-export.csv.</p></div><div class="im-in"><p>Read 1,280 rows and matched name, phone, email, address, client type and notes.
+32 are duplicates. Import 1,248 and skip them?
+1 Yes, skip the duplicates
+2 Show me the duplicates first</p></div><div class="im-out"><p>1</p></div><div class="im-in"><p>On it. Importing 1,248 contacts.</p></div><div class="im-in"><p>Done. Here is what came in:
+1,248 imported · 836 buyers · 412 sellers
+32 duplicates skipped
+12 need a phone or email
+See them in Radius: <a href="https://radiusagent.com/crm">radiusagent.com/crm</a></p></div><div class="im-out"><p>What can you do with them?</p></div><div class="im-in"><p>Try one of these, or ask in your own words.
+1 Find Jordan Lee
+2 Update Jordan’s preferences to 3 beds
+3 Draft a message to Jordan
+4 Remind me to call Jordan on Tuesday
+5 Start a check-in campaign for inactive clients
+6 Show my top buyers this month</p></div><div class="im-out"><p>2</p></div><div class="im-in"><p>On it. Reading Jordan’s record.</p></div></div>
+<footer class="im-bar"><button type="button" class="im-plus" aria-label="Apps"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><label style="flex:1;display:flex"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Text Message</span><input class="im-field" type="text" placeholder="Text Message"></label><button type="button" class="im-mic" aria-label="Audio message"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v5a4 4 0 0 0 4 4Zm6-4a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.94V22h2v-3.06A8 8 0 0 0 20 11Z"/></svg></button></footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

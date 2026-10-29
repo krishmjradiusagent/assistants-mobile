@@ -1,0 +1,28 @@
+/* c-trace: shadcn Chain of Thought pattern on Radius Mobile DS tokens. One summary line, opens into the steps Mel took.
+   Running = open, spinner. Done = collapsed, check. Tap the summary to open. Canvas-only, pending DS decision. */
+.c-trace { display: flex; flex-direction: column; gap: var(--space-1); margin-bottom: var(--space-2); color: var(--text-secondary); font-size: var(--t-meta-size); line-height: 1.4; }
+.c-trace__sum { display: flex; align-items: center; gap: var(--space-2); min-height: var(--size-hit-ios); padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.c-trace__sum:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; border-radius: 4px; }
+.c-trace__title { flex: none; }
+.c-trace__chev { width: 14px; height: 14px; flex: none; transition: transform .18s ease; }
+.c-trace__sum[aria-expanded="true"] .c-trace__chev { transform: rotate(180deg); }
+.c-trace__icon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; }
+.c-trace__icon svg { width: 16px; height: 16px; color: var(--status-success-fg); }
+.c-trace__spin { display: block; width: 12px; height: 12px; border-radius: 50%; border: 1.8px solid var(--border-card); border-top-color: var(--text-primary); animation: c-trace-spin .8s linear infinite; }
+.c-trace__steps { display: flex; flex-direction: column; margin-left: 7px; padding-left: calc(8px + var(--space-2)); border-left: 1px solid var(--border-card); }
+.c-trace__line { display: flex; align-items: center; gap: var(--space-2); min-height: 28px; }
+.c-trace__line[data-status="running"] .c-trace__text { color: var(--text-primary); }
+.c-trace[data-running="true"] .c-trace__title { color: var(--text-primary); }
+@keyframes c-trace-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .c-trace__spin { animation: none; } .c-trace__chev { transition: none; } }
+
+/* Thinking line without a trace: same spinner, shimmer on the text (shadcn shimmer pattern). */
+.c-thinking { display: flex !important; flex-direction: row; align-items: center; gap: var(--space-2); min-height: 20px; line-height: 20px; }
+.c-thinking .c-trace__spin { flex: none; display: inline-block; margin: 0; vertical-align: middle; }
+.c-thinking__text { display: inline-block; line-height: 20px; }
+.c-thinking__text { background: linear-gradient(90deg, var(--text-secondary) 0%, var(--text-primary) 50%, var(--text-secondary) 100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: c-shimmer 1.6s linear infinite; }
+@keyframes c-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .c-thinking__text { animation: none; color: var(--text-secondary); background: none; } }
+
+.c-thinking>*{margin:0 !important}
+.typeset .c-thinking,.typeset .c-thinking>*{margin-block-start:0 !important}

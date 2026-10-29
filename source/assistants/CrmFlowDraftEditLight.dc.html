@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-expression="quiet" data-platform="ios">
+<head>
+<meta charset="utf-8">
+<title>Draft: edit and review again, light</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="c-skill-pills.css?v=109">
+<link rel="stylesheet" href="mel-brand.css?v=109">
+<link rel="stylesheet" href="mel-chat-overrides.css?v=109">
+<link rel="stylesheet" href="c-prompt-row.css?v=109">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rm-root" data-theme="light" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans)">
+<sc-if value="{{isChat}}" hint-placeholder-val="{{ true }}">
+<div data-scroll="1" style="position: absolute; inset: 0; overflow-y: auto; display: flex; flex-direction: column-reverse; padding: calc(var(--space-8) + var(--size-control-lg) + var(--space-6)) var(--space-gutter) calc(var(--size-control-lg) * 5 + var(--space-8) + var(--space-4))">
+<div class="rm-stack rm-stack--loose" style="margin-bottom: auto">
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="2">
+<div class="rm-stack">
+<sc-if value="{{m.isUser}}" hint-placeholder-val="{{ false }}">
+<article class="c-ai-message c-ai-message--user" data-slot="message" data-from="user" aria-label="Your message">
+<div class="c-ai-message__content" data-slot="message-content"><div class="rm-card rm-card--bordered"><p class="t-body" style="margin: 0">{{m.text}}</p></div></div>
+</article>
+</sc-if>
+<sc-if value="{{m.isMel}}" hint-placeholder-val="{{ true }}">
+<article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message">
+<div class="c-ai-message__content" data-slot="message-content">
+<div class="c-streaming-text c-mel-plain">
+<sc-if value="{{m.thinking}}" hint-placeholder-val="{{ false }}"><p class="t-meta t-secondary" role="status" style="margin: 0">Thinking…</p></sc-if>
+<sc-if value="{{m.hasText}}" hint-placeholder-val="{{ true }}"><p class="t-body c-streaming-text__body" style="margin: 0; white-space: pre-line">{{m.text}}</p></sc-if><sc-if value="{{m.hasTail}}" hint-placeholder-val="{{ false }}"><p class="t-body-strong" style="margin: var(--space-3) 0 0">{{m.tail}}</p></sc-if>
+</div>
+<sc-if value="{{m.acts}}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{hasCards}}" hint-placeholder-val="{{ true }}">
+<div class="c-prompt-rows" aria-label="Suggested prompts">
+<sc-for list="{{cards}}" as="c" hint-placeholder-count="3">
+<button type="button" class="{{c.cls}}" onClick="{{c.pick}}"><svg class="c-prompt-row__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2.5v6a2 2 0 0 0 2 2h6.5"/><path d="M10 7.5l3 3-3 3"/></svg><span class="c-prompt-row__text t-body-strong">{{c.text}}</span></button>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{hasLinks}}" hint-placeholder-val="{{ true }}">
+<div class="c-prompt-rows" aria-label="Suggested prompts">
+<sc-for list="{{links}}" as="c" hint-placeholder-count="3">
+<button type="button" class="{{c.cls}}" onClick="{{c.pick}}"><svg class="c-prompt-row__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2.5v6a2 2 0 0 0 2 2h6.5"/><path d="M10 7.5l3 3-3 3"/></svg><span class="c-prompt-row__text t-body-strong">{{c.text}}</span></button>
+</sc-for>
+</div>
+</sc-if>
+</sc-if>
+</div>
+</article>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+<header class="c-glass-header c-glass-header--soft-edge" style="position: absolute; inset: 0 0 auto 0; z-index: 7; display: grid; grid-template-columns: var(--size-control) minmax(0, 1fr) auto; align-items: center; gap: var(--space-3); padding: var(--space-8) var(--space-gutter) var(--space-3)">
+<button type="button" class="rm-btn rm-btn--glass" aria-label="Back to Radius home"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"/></svg></button>
+<div style="display: flex; align-items: center; justify-content: center; gap: var(--space-2); min-width: 0"><span class="mb-mark mb-mark--dock" data-skill="crm" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"/><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"/></svg></span><span class="t-row-title" style="min-width: 0; overflow-wrap: anywhere">MEL</span></div>
+<div style="display: flex; align-items: center; gap: var(--space-2)"><button type="button" class="rm-btn rm-btn--glass" aria-label="New chat"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z"/></svg></button><button type="button" class="rm-btn rm-btn--glass" aria-label="More" aria-haspopup="menu" aria-expanded="{{menuOpen}}" onClick="{{toggleMenu}}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Z"/></svg></button></div>
+</header>
+<footer class="c-glass-footer c-glass-footer--soft-edge" style="padding: var(--space-3) var(--space-gutter) calc(var(--space-3) + var(--space-8))">
+<div class="c-skill-pills" aria-label="Mel skills">
+<button type="button" class="c-skill-pill" style="padding-left: 12px"><span class="mb-mark mb-mark--inline" data-skill="crm" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"/><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"/></svg></span><span class="t-body-strong">Manage clients</span></button>
+<button type="button" class="c-skill-pill" style="padding-left: 12px"><span class="mb-mark mb-mark--inline" data-skill="marketing" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"/><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"/></svg></span><span class="t-body-strong">Create posts</span></button>
+<button type="button" class="c-skill-pill" style="padding-left: 12px"><span class="mb-mark mb-mark--inline" data-skill="mls" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"/><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"/></svg></span><span class="t-body-strong">Explore listings</span></button>
+<button type="button" class="c-skill-pill" style="padding-left: 12px"><span class="mb-mark mb-mark--inline" data-skill="compliance" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"/><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"/></svg></span><span class="t-body-strong">Check compliance</span></button>
+<button type="button" class="c-skill-pill" style="padding-left: 12px"><span class="mb-mark mb-mark--inline" data-skill="document" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"/><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"/></svg></span><span class="t-body-strong">Review documents</span></button>
+</div>
+<form class="c-chat-composer" aria-label="Message composer" data-typing="{{typing}}" onSubmit="{{send}}">
+<textarea rows="1" class="c-chat-composer__field t-body" aria-label="Message MEL" placeholder="Ask anything" value="{{draft}}" onChange="{{setDraft}}" onKeyDown="{{key}}"></textarea>
+<div class="c-chat-composer__toolbar"><div class="c-chat-composer__idle"><button type="button" class="rm-btn rm-btn--secondary c-chat-composer__icon" aria-label="Attachments and connected sources" aria-haspopup="menu"><svg width="20" height="20" class="ph"   viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"/></svg></button><span class="c-chat-composer__spacer"></span><button type="button" class="rm-btn rm-btn--secondary c-chat-composer__icon" aria-label="Dictate message"><svg width="20" height="20" class="ph"   viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"/></svg></button><button type="button" class="rm-btn rm-btn--voice c-chat-composer__speak" aria-label="Speak to MEL"><svg width="20" height="20" class="ph"   viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"/></svg><span class="t-body-strong">Speak</span></button></div><button type="submit" class="rm-btn rm-btn--primary c-chat-composer__send" aria-label="Send message"><svg width="20" height="20" class="ph"   viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"/></svg></button></div>
+</form>
+</footer>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; z-index: 9" onClick="{{closeMenu}}"></div>
+<div class="c-menu" role="menu" aria-label="More" style="position: absolute; display: block; z-index: 10; top: calc(var(--space-8) + var(--size-control) + var(--space-3)); right: var(--space-gutter)">
+<button type="button" class="c-menu__item t-body" role="menuitem" onClick="{{closeMenu}}">History</button>
+<button type="button" class="c-menu__item t-body" role="menuitem" onClick="{{closeMenu}}">Delete chat</button>
+</div>
+</sc-if>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+const START = { title: 'MEL CRM', text: 'Let’s bring your contacts together so I can help you manage relationships and follow-ups.\n\nHow would you like to add your contacts?', acts: ['csv', 'crm', 'later'] };
+const DRAFT = 'Draft to Jordan: “Hi Jordan, two homes near Oak Street match your budget. Want to tour on Saturday?”';
+const SKILLS_ALL = ['text', 'email', 'status', 'family', 'campaign', 'sched', 'hot', 'inactive'];
+const SKILLS = SKILLS_ALL.slice(0, 4).concat(['more']);
+const NODES = {
+  csv: { icon: 'file-csv', tone: 'clients', card: 'Upload a spreadsheet of your contacts. I match the fields and ask you to confirm before I import.', label: 'Upload a CSV', mel: 'Upload your CSV file. I match names, phones, emails, addresses and notes to your Radius CRM fields. I flag duplicates and ask you to confirm before I import.', acts: ['file'] },
+  crm: { icon: 'plugs-connected', tone: 'clients', card: 'Connect your current CRM. I bring your clients into Radius with their notes and relationships.', label: 'Import from another CRM', mel: 'Which CRM do you use? Connect your account and I bring your clients into Radius. Contact info, notes and relationships stay intact.', acts: [] },
+  later: { icon: 'clock', tone: '', card: 'Skip this for now. Ask me whenever you are ready to add contacts.', label: 'I’ll add contacts later', mel: 'No problem. Ask me to upload a CSV or import from another CRM whenever you are ready.', acts: [] },
+  file: { icon: 'upload-simple', tone: 'clients', card: 'Pick your contacts spreadsheet from your files.', label: 'Choose a CSV file', user: 'clients-export.csv', mel: 'I found 1,280 contacts and matched name, phone, email, address and notes to your Radius CRM fields. 32 look like duplicates. Import 1,248 contacts and skip the duplicates?', acts: ['import', 'dupes'] },
+  dupes: { icon: 'copy', tone: 'clients', card: 'See the 32 contacts that match someone already in the file.', label: 'Review duplicates', mel: '32 contacts match someone already in the file. I keep the most complete record of each. Import the rest?', acts: ['import'] },
+  import: { icon: 'download-simple', tone: 'clients', card: 'Import 1,248 contacts and skip the 32 duplicates.', label: 'Import contacts', mel: 'Import done. 1,248 contacts imported. 32 duplicates skipped. 12 need review.', acts: ['view', 'review'] },
+  review: { icon: 'list-checks', tone: 'clients', card: 'Open the 12 contacts that miss a phone number or an email.', label: 'Review 12 contacts', mel: '12 contacts miss a phone number or an email. Open them one by one, or leave them for later.', acts: ['view'] },
+  view: { icon: 'users', tone: 'clients', card: 'Open your imported contacts and see what I can do with them.', label: 'View contacts', mel: 'Your contacts are in MEL CRM. Here is what I can do with them. Pick one to try.', acts: SKILLS },
+  text: { icon: 'chat-circle', tone: 'reach', card: 'Send a text to Jordan asking if he still wants to tour on Saturday.', label: 'Send a text', mel: DRAFT, acts: ['sendmsg'] },
+  email: { icon: 'envelope-simple', tone: 'reach', card: 'Draft a follow-up email to Jordan about the homes near Oak Street.', label: 'Send an email', mel: 'Subject: Two homes near Oak Street\n\n“Hi Jordan, two homes near Oak Street match your budget. Want to tour on Saturday?”', acts: ['sendmsg'] },
+  status: { icon: 'arrows-left-right', tone: 'clients', card: 'Change Jordan’s status to Under contract.', label: 'Update a client status', mel: 'Jordan is now Under contract. I updated the record. Want me to schedule a follow-up?', acts: ['sched2'] },
+  sched2: { label: 'Schedule a follow-up', mel: 'Which client, and when? I add it to your calendar and remind you.', acts: [] },
+  more: { label: 'More examples', mel: '', acts: [] },
+  family: { icon: 'users', tone: 'clients', card: 'Add Jennifer as Jordan’s spouse and link their client profiles.', label: 'Add family members', mel: 'Which client, and who should I add? Share names and how they relate.', acts: [] },
+  campaign: { icon: 'megaphone-simple', tone: 'plan', card: 'Add my 12 inactive clients to a 4-week check-in campaign.', label: 'Start a campaign', mel: 'I can send a 4-week check-in to your 12 inactive clients. One text or email a week. Start the campaign?', acts: ['startcamp'] },
+  sched: { icon: 'calendar-check', tone: 'plan', card: 'Remind me to follow up with Jordan next Tuesday.', label: 'Schedule a follow-up', mel: 'Which client, and when? I add it to your calendar and remind you.', acts: [] },
+  hot: { icon: 'fire', tone: 'insight', card: 'Show me my hottest buyers and who I should contact today.', label: 'Find hot buyers', mel: '5 buyers looked at listings or replied this week. Want me to draft a message to each?', acts: ['draftmsg'] },
+  inactive: { icon: 'clock-counter-clockwise', tone: 'clients', card: 'Show clients I have not contacted in 90 days.', label: 'Find inactive clients', mel: '12 clients have not heard from you in 90 days. Want me to draft a check-in for each?', acts: ['draftcheck'] },
+  sendmsg: { label: 'Send message', mel: 'Sent. I log it on the client record.', acts: [] },
+  editmsg: { label: 'Edit message', mel: 'What should I change? Tell me the tone or the offer.', acts: [] },
+  startcamp: { label: 'Start campaign', mel: 'Campaign started. I send one check-in a week for four weeks and stop when a client replies.', acts: [] },
+  editplan: { label: 'Edit plan', mel: 'Tell me the length, the channel or the message and I update the plan.', acts: [] },
+  draftmsg: { label: 'Draft messages', mel: 'Drafts ready for 5 buyers. Review each one before I send.', acts: [] },
+  draftcheck: { label: 'Draft check-ins', mel: 'Drafts ready for 12 clients. Review each one before I send.', acts: [] }
+};
+Object.assign(NODES, {
+  send: { label: 'Send message', mel: 'Done. I’ve sent the message to Sarah and recorded it in her client activity.', acts: [] },
+  edit: { label: 'Edit message', mel: 'What should I change? Tell me the tone or the offer.', acts: [] }
+});
+const ICONS = ['arrows_left_right', 'calendar_check', 'chat_circle', 'clock', 'clock_counter_clockwise', 'copy', 'download_simple', 'envelope_simple', 'file_csv', 'fire', 'list_checks', 'megaphone_simple', 'plugs_connected', 'upload_simple', 'users'];
+const CHAIN = [];
+const DEFAULTS = { name: 'CRM Assistant', desc: 'Manage clients' };
+const FALLBACK = 'Got it. Tell me which client and I start there.';
+function build() {
+  const msgs = [{ role: 'user', text: 'Text Sarah Johnson and ask if she’s still looking to buy a home.', acts: false }, { role: 'mel', text: 'Absolutely. Here’s the message I’ve prepared:\n\n“Hey Sarah. Just checking in to see how your home search is going. Are you still looking to buy? I’d love to help you find the right place.”\n\nWould you like me to send it?', acts: false }, { role: 'user', text: 'Edit message', acts: false }, { role: 'mel', text: 'What should I change? Tell me the tone or the offer.', acts: false }, { role: 'user', text: 'Make it shorter.', acts: false }, { role: 'mel', text: 'Sure. Here’s a shorter version:\n\n“Hey Sarah. Are you still looking to buy a home? I’d love to help.”\n\nWould you like me to send it?', acts: true }];
+  return { msgs: msgs, acts: ['send'] };
+}
+const SKILL_ROWS = ['text', 'email', 'status', 'family', 'campaign', 'sched', 'hot', 'inactive'];
+const ROW = (id) => id === 'more' ? 'More examples' : (SKILL_ROWS.indexOf(id) >= 0 && NODES[id].card ? NODES[id].card : NODES[id].label);
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    const b = build();
+    this.state = { msgs: b.msgs, acts: b.acts, draft: '', typing: false, menuOpen: false, view: 'chat', editTab: 'Info', sheet: null, name: DEFAULTS.name, savedName: DEFAULTS.name, desc: DEFAULTS.desc, instr: '', notif: true, instrDraft: '', nameErrOff: false, toast: false };
+    this.timer = null;
+  }
+  componentWillUnmount() { if (this.timer) clearInterval(this.timer); if (this.toastTimer) clearTimeout(this.toastTimer); }
+  scrollDown(root) {
+    setTimeout(() => {
+      try { const el = root && root.querySelector('[data-scroll]'); if (el) el.scrollTop = 0; } catch (e) {}
+    }, 30);
+  }
+  respond(userText, reply, acts, root) {
+    if (this.state.typing) return;
+    const prev = this.state.msgs.map((m) => Object.assign({}, m, { acts: false }));
+    this.setState({ msgs: prev.concat([{ role: 'user', text: userText }, { role: 'mel', text: '', thinking: true }]), acts: [], draft: '', pending: null, typing: true });
+    this.scrollDown(root);
+    const words = reply.split(' ');
+    let n = 0;
+    setTimeout(() => {
+      this.timer = setInterval(() => {
+        n += 1;
+        const msgs = this.state.msgs.slice();
+        const done = n >= words.length;
+        msgs[msgs.length - 1] = { role: 'mel', text: words.slice(0, n).join(' '), acts: done && acts.length > 0 };
+        this.setState({ msgs: msgs, acts: done ? acts : [], typing: !done });
+        this.scrollDown(root);
+        if (done) { clearInterval(this.timer); this.timer = null; }
+      }, 60);
+    }, 800);
+  }
+  pick(id, root) {
+    if (id === 'more') { if (!this.state.typing) this.setState({ acts: SKILLS_ALL }); return; }
+    if (this.state.typing) return;
+    this.setState({ draft: ROW(id), pending: id });
+    setTimeout(() => { try { const f = root && root.querySelector('.c-chat-composer__field'); if (f) f.focus(); } catch (e) {} }, 30);
+  }
+  play(id, root) {
+    if (id === 'more') { if (!this.state.typing) this.setState({ acts: SKILLS_ALL }); return; }
+    const n = NODES[id];
+    this.respond(n.user || ROW(id), n.mel, n.acts || [], root);
+  }
+  renderVals() {
+    const s = this.state;
+    const rootOf = (e) => (e && e.target && e.target.closest) ? e.target.closest('.rm-root') : null;
+    const ask = (e) => { const t = s.draft.trim(); if (!t) return; if (s.pending && NODES[s.pending] && t === ROW(s.pending)) this.play(s.pending, rootOf(e)); else this.respond(t, FALLBACK, [], rootOf(e)); };
+    return {
+      isChat: s.view === 'chat', isEdit: s.view === 'edit', isInstr: s.view === 'instr',
+      title: s.savedName,
+      openEdit: () => this.setState({ view: 'edit', menuOpen: false, editTab: 'Info', sheet: null }),
+      closeEdit: () => this.setState({ view: 'chat', sheet: null, toast: false }),
+      name: s.name, desc: s.desc, instr: s.instr, notif: s.notif ? 'On' : 'Off',
+      nameError: !s.name.trim() && !s.nameErrOff,
+      dismissNameError: () => this.setState({ nameErrOff: true }),
+      setName: (e) => { const v = String(e.target.value); this.setState({ nameErrOff: false, name: v, savedName: v.trim() ? v.trim() : s.savedName }); },
+      setDesc: (e) => this.setState({ desc: String(e.target.value) }),
+      notifOn: s.notif,
+      toggleNotif: () => this.setState({ notif: !s.notif }),
+      tabs: ['Info', 'Documents', 'Links', 'Routines'].map((t) => ({ label: t, sel: s.editTab === t, pick: () => this.setState({ editTab: t }) })),
+      isInfo: s.editTab === 'Info', isEmpty: s.editTab !== 'Info',
+      emptyTitle: s.editTab === 'Documents' ? 'No documents' : s.editTab === 'Links' ? 'No links' : 'No routines',
+      emptyText: s.editTab === 'Documents' ? 'Documents you add appear here.' : s.editTab === 'Links' ? 'Links you add appear here.' : 'Routines you add appear here.',
+      e_files: s.editTab === 'Documents', e_link: s.editTab === 'Links', e_cal: s.editTab === 'Routines',
+      sheetReset: s.sheet === 'reset', sheetDiscard: s.sheet === 'discard', showToast: s.toast,
+      openInstr: () => this.setState({ view: 'instr', instrDraft: s.instr, sheet: null }),
+      instrDraft: s.instrDraft, setInstrDraft: (e) => this.setState({ instrDraft: String(e.target.value) }),
+      instrCount: s.instrDraft.length + ' / 500',
+      instrDirty: s.instrDraft !== s.instr, instrClean: s.instrDraft === s.instr,
+      instrBack: () => { if (s.instrDraft !== s.instr) this.setState({ sheet: 'discard' }); else this.setState({ view: 'edit', sheet: null }); },
+      instrDiscard: () => this.setState({ view: 'edit', sheet: null, instrDraft: s.instr }),
+      instrSave: () => { if (this.toastTimer) clearTimeout(this.toastTimer); this.setState({ instr: s.instrDraft, view: 'edit', sheet: null, toast: true }); this.toastTimer = setTimeout(() => this.setState({ toast: false }), 2600); },
+      openReset: () => this.setState({ sheet: 'reset' }),
+      closeSheet: () => this.setState({ sheet: null }),
+      confirmReset: () => this.setState({ name: DEFAULTS.name, savedName: DEFAULTS.name, desc: DEFAULTS.desc, instr: '', instrDraft: '', notif: true, nameErrOff: false, sheet: null }),
+      menuOpen: s.menuOpen,
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      msgs: s.msgs.map((m) => ({
+        isUser: m.role === 'user', isMel: m.role === 'mel',
+        text: m.text, title: m.title || '', hasTitle: !!m.title, hasTail: !!m.tail, tail: m.tail || '', thinking: !!m.thinking, hasText: !m.thinking, acts: !!m.acts
+      })),
+      cards: s.acts.map((id) => ({ text: ROW(id), cls: 'c-prompt-row' + (id === 'more' ? ' c-prompt-row--more' : ''), pick: (e) => this.pick(id, rootOf(e)) })),
+      links: [],
+      hasCards: s.acts.length > 0,
+      hasLinks: false,
+      draft: s.draft,
+      typing: !!s.draft.trim(), canSend: !!s.draft.trim(), cantSend: !s.draft.trim(),
+      setDraft: (e) => this.setState({ draft: String(e.target.value) }),
+      key: (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(e); } },
+      send: (e) => { e.preventDefault(); ask(e); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="4. Dragged, snaps to the side, light · static snapshot for developers"><style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  </style>
+<meta charset="utf-8">
+<title>Minimised, 4. Dragged, snaps to the side, light</title>
+<style>x-dc{display:none!important}</style>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="mel-brand.css">
+<link rel="stylesheet" href="mel-chat-overrides.css">
+<link rel="stylesheet" href="c-prompt-row.css">
+<link rel="stylesheet" href="c-typeset-chat.css">
+<link rel="stylesheet" href="c-trace.css">
+<link rel="stylesheet" href="chat-board.css">
+<link rel="stylesheet" href="voice.css">
+<link rel="stylesheet" href="concepts.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap"><style>
+body{margin:0}
+</style><style>
+body{margin:0}
+</style></head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="VMSnapLight"><div style="width: 390px; height: 844px; overflow: hidden;"><div class="sc-host" data-sc-name="Main"><div class="rm-root" data-theme="light" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans);"><div class="sk-page" aria-label="Clients, page content"><div class="sk-search"></div><div class="sk-chips"><span class="sk-chip"></span><span class="sk-chip"></span><span class="sk-chip"></span></div><div class="sk-card"><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%;"></span><span class="sk-bar sk-bar--s" style="width: 38%;"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%;"></span><span class="sk-bar sk-bar--s" style="width: 38%;"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%;"></span><span class="sk-bar sk-bar--s" style="width: 38%;"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%;"></span><span class="sk-bar sk-bar--s" style="width: 38%;"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%;"></span><span class="sk-bar sk-bar--s" style="width: 38%;"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%;"></span><span class="sk-bar sk-bar--s" style="width: 38%;"></span></span></div><div class="sk-row"><span class="sk-av"></span><span class="sk-lines"><span class="sk-bar" style="width: 62%;"></span><span class="sk-bar sk-bar--s" style="width: 38%;"></span></span></div></div></div><header class="m-chathead"><button type="button" class="m-avatar" aria-label="Profile">K</button><h1 class="m-chathead__title"><span class="sc-interp">Clients</span></h1><button type="button" class="m-bell" aria-label="Notifications, new"><svg width="22" height="22" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path></svg><span class="m-bell__dot" aria-hidden="true"></span></button></header><footer class="c-glass-footer c-glass-footer--soft-edge" style="padding: var(--space-3) var(--space-gutter) calc(var(--space-2) + var(--space-6));"><div class="m-navrow"><button type="button" class="m-mel" aria-label="Chat with Mel"><span class="mb-mark" role="img" aria-label="Mel"><svg viewBox="-10 -10 140 140" fill="none" aria-hidden="true"><g class="mm-float"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mm-ring" cx="60" cy="60" r="13" stroke="#FFFFFF" stroke-width="2.5" fill="none"></circle><circle class="mm-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></g></svg></span></button><nav class="m-nav" aria-label="Main"><button type="button" class="m-nav__item" aria-label="Dashboard" aria-current="false"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z"></path></svg></button><button type="button" class="m-nav__item" aria-label="Clients" aria-current="page"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z"></path></svg></button><button type="button" class="m-nav__item" aria-label="Transactions"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72v41.61A184,184,0,0,1,128,136a184.07,184.07,0,0,1-88-22.38V72Zm0,128H40V131.64A200.19,200.19,0,0,0,128,152a200.25,200.25,0,0,0,88-20.37V200ZM104,112a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H112A8,8,0,0,1,104,112Z"></path></svg></button></nav><button type="button" class="m-inbox" aria-label="Inbox"><svg width="24" height="24" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z"></path></svg></button></div></footer><div class="vb" data-side="left" data-kind="listen" data-drag="false" style="left: 16px; top: 430px;"><button type="button" class="vb-btn" aria-label="Back to Mel Voice. Drag to move, drop on the cross to end."><svg viewBox="-10 -10 140 140" fill="none" role="img" aria-label="Mel, listening"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="#12A867"></path><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="0.6s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="38" stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-opacity="0"><animate attributeName="r" values="40;15" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate><animate attributeName="stroke-opacity" values="0;0.85" dur="1.8s" begin="1.2s" repeatCount="indefinite"></animate></circle><circle cx="60" cy="60" r="15" fill="#FFFFFF"></circle></svg></button></div></div></div></div></div></div>
+
+
+
+</body></html>

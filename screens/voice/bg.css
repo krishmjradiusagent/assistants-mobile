@@ -1,0 +1,170 @@
+/* Background states (KJ, 28 Oct). iOS only. Dynamic Island, Live Activity, home + lock widgets for Mel chat and voice.
+   Accent on the Mel mark only. Prompt rows = c-prompt-row (tap = open chat + send). End = Mel error red. */
+.bg { position:relative; width:390px; height:844px; overflow:hidden; box-sizing:border-box; font-family:var(--font-sans); color:var(--text-primary); }
+.rm-root[data-theme="light"].bg { --wall:#DDE5E2; --wall-ink:#0E2B30; --wall-ink2:rgba(14,43,48,.62); --app:rgba(255,255,255,.55); --dock:rgba(255,255,255,.42); --wg:#FFFFFF; --wg-edge:rgba(14,43,48,.06); --la:rgba(246,248,247,.78); --la-edge:rgba(255,255,255,.7); --lw:rgba(255,255,255,.38); --lw-ink:#0E2B30; }
+.rm-root[data-theme="dark"].bg { --wall:#0B0F0E; --wall-ink:#FFFFFF; --wall-ink2:rgba(255,255,255,.62); --app:rgba(255,255,255,.09); --dock:rgba(255,255,255,.07); --wg:#1B1F1E; --wg-edge:rgba(255,255,255,.07); --la:rgba(30,34,33,.82); --la-edge:rgba(255,255,255,.08); --lw:rgba(255,255,255,.12); --lw-ink:#FFFFFF; }
+.bg { background:var(--wall); }
+
+/* Home screen skeleton: app grid + dock. Not real apps. */
+.hs { position:absolute; inset:0; padding:72px 24px 0; box-sizing:border-box; display:flex; flex-direction:column; gap:20px; }
+.hs-grid { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:26px 22px; padding:0 4px; }
+.hs-app { display:block; width:62px; height:62px; border-radius:15px; background:var(--app); justify-self:center; }
+.hs-dock { position:absolute; left:12px; right:12px; bottom:12px; height:92px; border-radius:34px; background:var(--dock); display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); align-items:center; padding:0 14px; }
+.hs-dock .hs-app { width:60px; height:60px; }
+.hs-row { display:flex; gap:18px; }
+
+/* Lock screen */
+.ls { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; padding-top:70px; box-sizing:border-box; color:var(--wall-ink); }
+.ls-date { margin:0; font:600 19px/24px var(--font-sans); color:var(--wall-ink2); }
+.ls-time { margin:0; font:700 96px/1 var(--font-sans); letter-spacing:-.03em; }
+.ls-inline { margin:0 0 2px; display:inline-flex; align-items:center; gap:6px; font:600 17px/22px var(--font-sans); color:var(--wall-ink2); }
+.ls-inline svg { width:16px; height:16px; }
+.ls-bottom { position:absolute; left:46px; right:46px; bottom:46px; display:flex; justify-content:space-between; }
+.ls-round { width:50px; height:50px; border-radius:50%; background:var(--lw); display:inline-flex; align-items:center; justify-content:center; color:var(--wall-ink); }
+.ls-bar { position:absolute; left:50%; bottom:8px; width:134px; height:5px; margin-left:-67px; border-radius:3px; background:var(--wall-ink); opacity:.85; }
+
+/* Mel mark (static, brand shape) */
+.bm { display:inline-block; flex:none; color:var(--mel-green); }
+.bm svg { display:block; width:100%; height:100%; }
+.bm[data-skill="crm"] { color:var(--mel-crm); }
+.bm[data-off="true"] { color:#7C8784; }
+.bm--mono { color:currentColor; }
+
+/* Dynamic Island */
+.di { position:absolute; z-index:10; top:11px; left:50%; transform:translateX(-50%); background:#000; color:#FFF; box-sizing:border-box; }
+.di--idle { width:126px; height:37px; border-radius:19px; }
+.di--c { height:37px; border-radius:19px; min-width:126px; display:flex; align-items:center; justify-content:space-between; gap:76px; padding:0 12px 0 8px; border:0; font:inherit; cursor:pointer; }
+.di--c .bm { width:24px; height:24px; }
+.di--c .bm svg path { }
+.di-lab { font:600 14px/18px var(--font-sans); white-space:nowrap; color:#FFF; }
+.di-lab[data-tone="mint"] { color:#3DDC97; }
+.di-lab[data-tone="err"] { color:#FF8A80; }
+.di-lab[data-tone="dim"] { color:rgba(255,255,255,.6); }
+.di-trail { display:inline-flex; align-items:center; gap:6px; }
+.di--x { width:370px; border-radius:44px; padding:16px 18px 18px; display:flex; flex-direction:column; gap:12px; }
+.di--min { position:absolute; z-index:10; top:11px; width:37px; height:37px; border-radius:50%; background:#000; display:inline-flex; align-items:center; justify-content:center; }
+.di--min .bm { width:22px; height:22px; }
+.di--other { width:196px; justify-content:space-between; gap:0; }
+.di-timer { display:inline-flex; align-items:center; gap:6px; font:600 14px/18px var(--font-sans); color:#FF9F0A; }
+.di-timer i { display:block; width:16px; height:16px; border-radius:50%; border:2px solid #FF9F0A; box-sizing:border-box; }
+
+/* Mini Dot field: 4 x 3 dots, Mel mint. Speak = ripple out, listen = ripple in, think = shimmer. */
+.dd { display:inline-grid; grid-template-columns:repeat(4, 4px); grid-auto-rows:4px; gap:3px; }
+.dd i { display:block; width:4px; height:4px; border-radius:50%; background:#3DDC97; opacity:.25; animation:dd 1.2s ease-in-out infinite; }
+.dd i:nth-child(4n+1) { animation-delay:0s; } .dd i:nth-child(4n+2) { animation-delay:.15s; } .dd i:nth-child(4n+3) { animation-delay:.3s; } .dd i:nth-child(4n+4) { animation-delay:.45s; }
+.dd[data-kind="listen"] i:nth-child(4n+1) { animation-delay:.45s; } .dd[data-kind="listen"] i:nth-child(4n+2) { animation-delay:.3s; } .dd[data-kind="listen"] i:nth-child(4n+3) { animation-delay:.15s; } .dd[data-kind="listen"] i:nth-child(4n+4) { animation-delay:0s; }
+.dd[data-kind="think"] i { animation-duration:2.4s; }
+.dd[data-kind="off"] i { animation:none; background:#7C8784; opacity:.5; }
+@keyframes dd { 0%,100% { opacity:.22; transform:scale(.8); } 40% { opacity:1; transform:scale(1.1); } }
+.la .dd i { background:var(--mel-green); }
+.rm-root[data-theme="dark"] .la .dd i { background:#3DDC97; }
+
+/* Ring progress (task) */
+.pr { width:20px; height:20px; transform:rotate(-90deg); }
+.pr circle { fill:none; stroke-width:3; }
+.pr .pr-bg { stroke:rgba(255,255,255,.2); }
+.pr .pr-fg { stroke:#3DDC97; stroke-linecap:round; }
+
+/* Expanded + Live Activity content */
+.dx-head { display:flex; align-items:center; gap:12px; }
+.dx-head .bm { width:40px; height:40px; }
+.dx-id { flex:1; min-width:0; display:flex; flex-direction:column; }
+.dx-t { margin:0; font:600 16px/21px var(--font-sans); }
+.dx-s { margin:0; font:400 13px/18px var(--font-sans); color:rgba(255,255,255,.62); }
+.dx-cap { margin:0; font:500 17px/23px var(--font-sans); letter-spacing:-.01em; color:#FFF; }
+.dx-draft { margin:0; padding:10px 12px; border-radius:14px; background:rgba(255,255,255,.1); color:rgba(255,255,255,.86); }
+/* Clamp on the inner line only: padding + clamp on one box leaked a half line into the padding (KJ comment, 28 Oct). */
+.dx-draft__t { margin:0; font:400 14px/19px var(--font-sans); color:inherit; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; max-height:38px; }
+.dx-bar { height:6px; border-radius:3px; background:rgba(255,255,255,.18); overflow:hidden; }
+.dx-bar i { display:block; height:100%; border-radius:3px; background:#3DDC97; }
+.la .dx-bar i { background:var(--mel-green); }
+.rm-root[data-theme="dark"] .la .dx-bar i { background:#3DDC97; }
+.dx-acts { display:flex; align-items:center; justify-content:flex-end; gap:10px; }
+.dx-btn { height:44px; min-width:44px; padding:0 16px; border:0; border-radius:22px; display:inline-flex; align-items:center; justify-content:center; gap:6px; font:600 15px/1 var(--font-sans); background:rgba(255,255,255,.16); color:#FFF; cursor:pointer; text-decoration:none; }
+.dx-btn--icon { width:44px; padding:0; }
+.dx-btn--end { background:#B42318; color:#FFF; }
+.dx-btn--light { background:#FFF; color:#000; }
+.dx-btn[aria-pressed="true"] { background:#FFF; color:#000; }
+.dx-btn:focus-visible { outline:2px solid #FFF; outline-offset:2px; }
+
+/* Lock screen Live Activity: same content, theme glass */
+.la { position:absolute; left:14px; right:14px; bottom:120px; z-index:5; padding:16px; border-radius:24px; background:var(--la); box-shadow:inset 0 0 0 1px var(--la-edge); -webkit-backdrop-filter:blur(30px) saturate(160%); backdrop-filter:blur(30px) saturate(160%); display:flex; flex-direction:column; gap:12px; color:var(--text-primary); }
+.la .dx-s { color:var(--text-secondary); }
+.la .dx-cap { color:var(--text-primary); }
+.la .dx-draft { background:var(--surface-input); color:var(--text-primary); }
+.la .dx-bar { background:var(--surface-input); }
+.la .dx-btn { background:var(--surface-input); color:var(--text-primary); }
+.la .dx-btn--end { background:#B42318; color:#FFF; }
+.la .dx-btn--light { background:var(--text-primary); color:var(--bg-page); }
+.la .di-lab[data-tone="mint"] { color:#0B7A4D; }
+.rm-root[data-theme="dark"] .la .di-lab[data-tone="mint"] { color:#3DDC97; }
+.la .di-lab[data-tone="err"] { color:var(--action-destructive); }
+.la .dx-btn:focus-visible { outline-color:var(--text-primary); }
+
+/* Home widgets */
+.wg { box-sizing:border-box; border-radius:24px; background:var(--wg); box-shadow:inset 0 0 0 1px var(--wg-edge), 0 6px 20px rgba(0,0,0,.08); color:var(--text-primary); text-decoration:none; display:flex; flex-direction:column; }
+.wg--s { width:170px; height:170px; padding:16px; justify-content:space-between; }
+.wg--m { width:358px; height:170px; padding:14px 16px; gap:6px; }
+.wg--l { width:358px; height:376px; padding:16px; gap:8px; }
+.wg-s__mark { width:40px; height:40px; }
+.wg-s__t { margin:0; font:600 17px/22px var(--font-sans); }
+.wg-s__d { margin:0; font:400 13px/18px var(--font-sans); color:var(--text-secondary); }
+.wg-s__ic { width:40px; height:40px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:var(--mel-green); color:#FFF; }
+.wg-top { display:flex; align-items:center; gap:10px; }
+.wg-top .bm { width:28px; height:28px; }
+.wg-pill { flex:1; min-width:0; height:44px; border-radius:22px; display:flex; align-items:center; gap:4px; padding:0 4px 0 16px; background:var(--surface-input); color:var(--text-secondary); font:400 15px/1 var(--font-sans); text-decoration:none; }
+.wg-pill span { flex:1; }
+.wg-pill b { flex:none; width:36px; height:36px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:var(--text-primary); }
+.wg-pill b.wg-voice { background:var(--mel-green); color:#FFF; }
+.wg-info { margin:4px 0 0; font:400 13px/18px var(--font-sans); color:var(--text-secondary); }
+.wg .c-prompt-row { min-height:40px; padding:9px 0; text-decoration:none; font-size:15px; line-height:20px; }
+.wg .c-prompt-row__text { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; overflow-wrap:normal; }
+.wg-fill { flex:1; }
+.wg-empty { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; text-align:center; }
+.wg-empty p { margin:0; }
+
+/* Lock screen widgets: iOS renders these monochrome (vibrant). */
+.lw-row { display:flex; gap:12px; margin-top:14px; }
+.lw-c { width:72px; height:72px; border-radius:50%; background:var(--lw); color:var(--lw-ink); display:inline-flex; align-items:center; justify-content:center; text-decoration:none; }
+.lw-c .bm { width:34px; height:34px; }
+.lw-r { width:158px; height:72px; border-radius:20px; background:var(--lw); color:var(--lw-ink); box-sizing:border-box; padding:10px 12px; display:flex; flex-direction:column; justify-content:center; gap:2px; text-decoration:none; }
+.lw-r b { display:inline-flex; align-items:center; gap:6px; font:700 14px/18px var(--font-sans); }
+.lw-r b .bm { width:16px; height:16px; }
+.lw-r span { font:500 13px/17px var(--font-sans); opacity:.8; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+
+/* Prototype helpers */
+.bg-tap { position:absolute; inset:0; z-index:1; border:0; padding:0; background:transparent; cursor:default; }
+.bg-hint { position:absolute; left:24px; right:24px; bottom:130px; z-index:4; margin:0; text-align:center; font:500 13px/18px var(--font-sans); color:var(--wall-ink2); }
+@media (prefers-reduced-motion: reduce) { .dd i { animation:none; opacity:.8; } }
+
+/* Mel brand colour + motion on every mark (KJ comment, 28 Oct). Source: Mel Brand Guidelines, 07 Mel in motion (same as mel-brand.css hero + chat Mel circle).
+   Green #12A867 on light surfaces, mint #3DDC97 on black island and dark. No skill teal in background states. */
+.bm { color:var(--mel-green); }
+.di .bm, .di--min .bm, .rm-root[data-theme="dark"] .bm { color:#3DDC97; }
+.bm--mono { color:currentColor !important; }
+.bm[data-off="true"] { color:#7C8784 !important; }
+.bm .bm-float { animation:bmf 3.2s ease-in-out infinite; }
+.bm .bm-ring { transform-box:fill-box; transform-origin:center; animation:bmr 3.2s ease-in-out infinite; }
+.bm .bm-dot { transform-box:fill-box; transform-origin:center; animation:bmd 3.2s ease-in-out infinite; }
+.bm[data-off="true"] .bm-float, .bm[data-off="true"] .bm-ring, .bm[data-off="true"] .bm-dot { animation:none; }
+.bm[data-off="true"] .bm-ring { opacity:0; }
+@keyframes bmf { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+@keyframes bmr { 0%,100% { transform:scale(1); opacity:.6; } 50% { transform:scale(2.3); opacity:0; } }
+@keyframes bmd { 0%,100% { transform:scale(1); } 50% { transform:scale(1.115); } }
+@media (prefers-reduced-motion: reduce) { .bm .bm-float, .bm .bm-ring, .bm .bm-dot { animation:none; } .bm .bm-ring { opacity:0; } }
+
+/* Buttons = Mel Brand Guidelines 08 Buttons (KJ, 28 Oct): pill, 48px, Mona Sans 600 16px, padding 0 22px, mint focus ring.
+   Open / Open chat / Try again = Accent (Mel-specific action): #12A867 bg, Deep Teal #0E2B30 label, hover #0F9A5E, pressed #0C8550 + white.
+   Mute = Outline on dark (island, dark LA) / Secondary on light LA. End = Mel error red (KJ approved earlier, not in brand file). */
+.dx-btn { height:48px; min-width:48px; padding:0 22px; border-radius:999px; font:600 16px/1 'Mona Sans', var(--font-sans); transition:background .15s ease, transform .1s ease; }
+.dx-btn:active { transform:scale(.97); }
+.dx-btn:focus-visible, .la .dx-btn:focus-visible { outline:none; box-shadow:0 0 0 3px #FFFFFF, 0 0 0 6px #5ED6A0; }
+.dx-btn--icon { width:48px; padding:0; }
+.dx-btn--light, .la .dx-btn--light { background:#12A867; color:#0E2B30; }
+.dx-btn--light:hover, .la .dx-btn--light:hover { background:#0F9A5E; }
+.dx-btn--light:active, .la .dx-btn--light:active { background:#0C8550; color:#FFFFFF; }
+.di .dx-btn--icon, .rm-root[data-theme="dark"] .la .dx-btn--icon { background:transparent; color:#FFFFFF; box-shadow:inset 0 0 0 1.5px #4E6F74; }
+.rm-root[data-theme="light"] .la .dx-btn--icon { background:#FFFFFF; color:#0E2B30; box-shadow:inset 0 0 0 1.5px #0E2B30; }
+.dx-btn--icon[aria-pressed="true"] { background:#FFFFFF !important; color:#0E2B30 !important; }
+/* Brand marks: SVGs copied from 07 Mel in motion; colours live in the SVG (Mel Green shape, white dot; Deep Teal + mint for needs you; Line grey for paused). */
+.bm--brand svg { overflow:visible; }

@@ -1,0 +1,21 @@
+/* c-code-boxes: one-digit boxes for a verification code. Proposed component, pending copy into the Radius Mobile DS.
+   Lives inside .c-text-field (label above, error below). Semantic tokens and type roles only. */
+.c-code-boxes { display: flex; gap: var(--space-3); justify-content: center; }
+.c-code-boxes__box {
+  box-sizing: border-box;
+  flex: 1;
+  min-width: var(--space-12);
+  height: var(--size-control-lg);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-input);
+  background: var(--surface-input);
+  color: var(--text-primary);
+  font-family: inherit;
+  text-align: center;
+  caret-color: var(--text-primary);
+}
+.c-code-boxes__box:focus { outline: none; box-shadow: 0 0 0 2px var(--bg-page), 0 0 0 4px var(--focus-ring); }
+.c-code-boxes__box[aria-invalid="true"] { box-shadow: inset 0 0 0 1px var(--status-danger-fg); }
+.c-code-boxes__box[aria-invalid="true"]:focus { box-shadow: 0 0 0 2px var(--bg-page), 0 0 0 4px var(--focus-ring); }
+[data-platform="android"] .c-code-boxes__box { min-width: var(--size-hit-android); }

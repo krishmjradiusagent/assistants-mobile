@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-expression="quiet" data-platform="ios">
+<head>
+<meta charset="utf-8">
+<title>Sign up code, dark</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="c-code-boxes.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rm-root" data-theme="dark" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: var(--bg-welcome)">
+<dc-import name="Main" autoplay="{{noPlay}}" hint-size="390px,844px"></dc-import>
+<div style="position: absolute; inset: 0; z-index: 10">
+<div class="rm-scrim"></div>
+<section class="rm-sheet c-inset-sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+<div class="c-inset-sheet__grab-wrap"><div class="rm-sheet__grab"></div></div>
+<header class="c-task-sheet__head">
+<div>
+<h2 id="sheet-title" class="t-sheet-title">{{sheetTitle}}</h2>
+<sc-if value="{{isPhoneStep}}" hint-placeholder-val="{{ true }}"><span class="c-task-sheet__sub t-caption">Your <span class="c-signup-options__trial-credit">$50</span> trial credit is ready.</span></sc-if>
+<sc-if value="{{isCode}}" hint-placeholder-val="{{ false }}"><span class="c-task-sheet__sub t-caption">{{codeSub}}</span></sc-if>
+</div>
+<button type="button" class="rm-btn rm-btn--glass" aria-label="Close" onClick="{{noop}}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg></button>
+</header>
+<div class="c-task-sheet__body">
+<div class="c-signup-options">
+<sc-if value="{{isPhoneStep}}" hint-placeholder-val="{{ true }}">
+<form class="c-signup-options__email" onSubmit="{{submitPhone}}">
+<label class="c-text-field"><span class="c-text-field__label t-body-strong">Phone number (+1)</span><input class="c-text-field__input t-body" type="tel" inputmode="tel" autocomplete="tel-national" name="phone" value="{{phone}}" onChange="{{setPhone}}"></label>
+<sc-if value="{{hasError}}" hint-placeholder-val="{{ false }}"><div class="c-alert c-alert--danger" role="alert"><svg class="ph c-alert__icon" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M120,136V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0ZM232,91.55v72.9a15.86,15.86,0,0,1-4.69,11.31l-51.55,51.55A15.86,15.86,0,0,1,164.45,232H91.55a15.86,15.86,0,0,1-11.31-4.69L28.69,175.76A15.86,15.86,0,0,1,24,164.45V91.55a15.86,15.86,0,0,1,4.69-11.31L80.24,28.69A15.86,15.86,0,0,1,91.55,24h72.9a15.86,15.86,0,0,1,11.31,4.69l51.55,51.55A15.86,15.86,0,0,1,232,91.55Zm-16,0L164.45,40H91.55L40,91.55v72.9L91.55,216h72.9L216,164.45ZM128,160a12,12,0,1,0,12,12A12,12,0,0,0,128,160Z"/></svg><div class="c-alert__body"><p class="t-body-strong">{{error}}</p></div><button type="button" class="c-alert__close" aria-label="Dismiss" onClick="{{dismissError}}"><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button></div></sc-if>
+<div class="c-signup-options__email-actions">
+<button type="submit" class="rm-btn rm-btn--primary rm-btn--block t-body-strong c-signup-options__button">Send code</button>
+</div>
+</form>
+</sc-if>
+<sc-if value="{{isCode}}" hint-placeholder-val="{{ false }}">
+<form class="c-signup-options__email" onSubmit="{{submitCode}}">
+<div class="c-text-field" role="group" aria-labelledby="code-label"><span id="code-label" class="c-text-field__label t-body-strong">4-digit code</span><div class="c-code-boxes"><sc-for list="{{boxes}}" as="b" hint-placeholder-count="4"><input class="c-code-boxes__box t-page-title" type="text" inputmode="numeric" maxlength="1" aria-label="{{b.label}}" aria-invalid="{{b.invalid}}" value="{{b.value}}" onChange="{{b.set}}" onKeyDown="{{b.key}}"></sc-for></div></div>
+<sc-if value="{{hasError}}" hint-placeholder-val="{{ false }}"><div class="c-alert c-alert--danger" role="alert"><svg class="ph c-alert__icon" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M120,136V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0ZM232,91.55v72.9a15.86,15.86,0,0,1-4.69,11.31l-51.55,51.55A15.86,15.86,0,0,1,164.45,232H91.55a15.86,15.86,0,0,1-11.31-4.69L28.69,175.76A15.86,15.86,0,0,1,24,164.45V91.55a15.86,15.86,0,0,1,4.69-11.31L80.24,28.69A15.86,15.86,0,0,1,91.55,24h72.9a15.86,15.86,0,0,1,11.31,4.69l51.55,51.55A15.86,15.86,0,0,1,232,91.55Zm-16,0L164.45,40H91.55L40,91.55v72.9L91.55,216h72.9L216,164.45ZM128,160a12,12,0,1,0,12,12A12,12,0,0,0,128,160Z"/></svg><div class="c-alert__body"><p class="t-body-strong">{{error}}</p></div><button type="button" class="c-alert__close" aria-label="Dismiss" onClick="{{dismissError}}"><svg class="ph" width="1em" height="1em" aria-hidden="true" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"/></svg></button></div></sc-if>
+<div class="c-signup-options__email-actions">
+<button type="submit" class="rm-btn rm-btn--primary rm-btn--block t-body-strong c-signup-options__button">Verify number</button>
+<button type="button" class="rm-btn rm-btn--ghost rm-btn--block t-body-strong c-signup-options__button" onClick="{{changeNumber}}">Change number</button>
+</div>
+</form>
+</sc-if>
+</div>
+</div>
+</section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { step: 'code', phone: '5550100123', digits: ['', '', '', ''], error: '', verified: false };
+  }
+  renderVals() {
+    const s = this.state;
+    const blank = ['', '', '', ''];
+    return {
+      noPlay: false, noop: () => {},
+      isPhoneStep: s.step === 'phone', isCode: s.step === 'code',
+      sheetTitle: s.step === 'code' ? 'Verify your number' : 'Sign up',
+      codeSub: s.verified ? 'Number verified.' : 'Enter the code sent to +1 ' + s.phone + '.',
+      dismissError: () => this.setState({ error: '' }),
+      phone: s.phone, error: s.error, hasError: !!s.error,
+      boxes: [0, 1, 2, 3].map((i) => ({
+        label: 'Digit ' + (i + 1) + ' of 4', value: s.digits[i], invalid: !!s.error,
+        set: (e) => {
+          const v = String(e.target.value).replace(/\D/g, '').slice(-1);
+          const d = s.digits.slice(); d[i] = v;
+          this.setState({ digits: d, error: '', verified: false });
+          if (v && e.target.nextElementSibling) e.target.nextElementSibling.focus();
+        },
+        key: (e) => {
+          if (e.key === 'Backspace' && !e.target.value && e.target.previousElementSibling) e.target.previousElementSibling.focus();
+        }
+      })),
+      setPhone: (e) => this.setState({ phone: String(e.target.value).replace(/\D/g, '').slice(0, 10), error: '' }),
+      submitPhone: (e) => {
+        e.preventDefault();
+        if (s.phone.length !== 10) { this.setState({ error: 'Enter a 10-digit number.' }); return; }
+        this.setState({ step: 'code', digits: blank, error: '', verified: false });
+      },
+      submitCode: (e) => {
+        e.preventDefault();
+        const code = s.digits.join('');
+        if (code.length !== 4) { this.setState({ error: 'Enter the 4-digit code.' }); return; }
+        if (code !== '1234') { this.setState({ error: 'Code is incorrect. Try again.' }); return; }
+        this.setState({ error: '', verified: true });
+      },
+      changeNumber: () => this.setState({ step: 'phone', digits: blank, error: '', verified: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

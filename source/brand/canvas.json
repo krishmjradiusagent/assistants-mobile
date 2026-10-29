@@ -1,0 +1,118 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Buttons.dc.html": {
+      "h": 974,
+      "is_interactive": true,
+      "title": "08 · Buttons",
+      "w": 1440,
+      "x": 6080,
+      "y": 1530
+    },
+    "Color.dc.html": {
+      "h": 1440,
+      "title": "02 · Color",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "Gradients.dc.html": {
+      "h": 986,
+      "title": "03 · Gradients",
+      "w": 1440,
+      "x": 4560,
+      "y": 0
+    },
+    "Iconography.dc.html": {
+      "h": 1022,
+      "title": "06 · Iconography",
+      "w": 1440,
+      "x": 3040,
+      "y": 1530
+    },
+    "Logo.dc.html": {
+      "h": 1280,
+      "title": "01 · Logo",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "h": 900,
+      "title": "Cover",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "MelMotion.dc.html": {
+      "h": 1248,
+      "title": "07 · Mel in motion",
+      "w": 1440,
+      "x": 4560,
+      "y": 1530
+    },
+    "Motion.dc.html": {
+      "h": 1826,
+      "is_interactive": true,
+      "title": "09 · Motion & interactions",
+      "w": 1440,
+      "x": 7600,
+      "y": 1530
+    },
+    "Patterns.dc.html": {
+      "h": 1240,
+      "title": "04 · Pattern",
+      "w": 1440,
+      "x": 0,
+      "y": 1530
+    },
+    "Typography.dc.html": {
+      "h": 1424,
+      "title": "05 · Typography",
+      "w": 1440,
+      "x": 1520,
+      "y": 1530
+    },
+    "Assistants.dc.html": {
+      "h": 1856,
+      "title": "10 · Assistants",
+      "w": 1440,
+      "x": 9120,
+      "y": 1530
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-12T16:50:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "title": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Mel brand guidelines · Mint",
+      "w": 240,
+      "x": 0,
+      "y": -260
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Logo.dc.html",
+    "Color.dc.html",
+    "Gradients.dc.html",
+    "Patterns.dc.html",
+    "Typography.dc.html",
+    "Iconography.dc.html",
+    "MelMotion.dc.html",
+    "Buttons.dc.html",
+    "Motion.dc.html",
+    "Assistants.dc.html"
+  ],
+  "pages": [],
+  "title": "Mel Brand Guidelines"
+}

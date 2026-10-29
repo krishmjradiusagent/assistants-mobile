@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en" data-theme="light" data-expression="quiet" data-platform="ios">
+<head>
+<meta charset="utf-8">
+<title>Chat live, light copy</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/radius-mobile/components/bundle.css">
+<link rel="stylesheet" href="mel-brand.css?v=109">
+<link rel="stylesheet" href="mel-chat-overrides.css?v=109">
+<link rel="stylesheet" href="c-prompt-row.css?v=109">
+<link rel="stylesheet" href="c-skill-pills.css?v=109">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@200..900&amp;display=swap">
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+.m-intro{display:flex;flex-direction:column;gap:var(--space-3);margin-top:var(--space-4)}
+.m-ir{display:flex;gap:var(--space-3);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--space-gutter) * -1);padding:0 var(--space-gutter);scroll-padding-inline:var(--space-gutter);scrollbar-width:none}
+.m-ir::-webkit-scrollbar{display:none}
+.m-ic{flex:none;width:280px;scroll-snap-align:start;display:flex;flex-direction:column;padding:0;border:0;border-radius:var(--radius-card);background:var(--surface-card);box-shadow:inset 0 0 0 1px var(--border-card);overflow:hidden;color:var(--text-primary);font:inherit;text-align:left;cursor:pointer}
+.m-ic__prev{display:block;aspect-ratio:4/3;background:var(--surface-tile);position:relative;overflow:hidden}
+.m-ic__body{display:flex;flex-direction:column;gap:var(--space-1);padding:var(--space-3) var(--space-3) var(--space-4)}
+.m-ic__head{display:flex;align-items:center;gap:var(--space-2)}
+.m-ic__desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.5em}
+.m-dots{display:flex;justify-content:center;gap:6px}
+.m-dots span{width:6px;height:6px;border-radius:50%;background:var(--text-tertiary);opacity:.5}
+.m-dots span.m-dot--on{width:16px;border-radius:3px;background:var(--text-primary);opacity:1}
+.m-iv{position:absolute;inset:0;box-sizing:border-box;padding:var(--space-4);display:flex;flex-direction:column;justify-content:center;gap:var(--space-2)}
+.m-iv b{font-weight:600}
+.m-iv--img{padding:0}
+.m-iv--img>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.m-iv--img>img.m-iv__float{inset:auto var(--space-3) var(--space-3) auto;width:38%;height:auto;aspect-ratio:4/5;border-radius:var(--radius-badge);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.m-iv--stats{display:grid;grid-template-columns:1fr 1fr;align-content:center}
+.m-iv--stats>div{display:flex;flex-direction:column;padding:var(--space-3);border-radius:var(--radius-tile);background:var(--surface-card)}
+.m-iv--steps>div,.m-iv--list>div{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-3);border-radius:var(--radius-tile);background:var(--surface-card)}
+.m-iv__dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--text-primary)}
+.m-iv__dot--off{background:transparent;box-shadow:inset 0 0 0 1.5px var(--text-tertiary)}
+.m-iv__ck{flex:none;display:flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;font-size:11px;font-weight:700}
+.m-iv__ck--ok{background:var(--status-success-bg);color:var(--status-success-fg)}
+.m-iv__ck--warn{background:var(--status-warning-bg);color:var(--status-warning-fg)}
+.m-iv__b{max-width:80%;padding:var(--space-2) var(--space-3);border-radius:14px}
+.m-iv__b--in{align-self:flex-start;background:var(--surface-card)}
+.m-iv__b--out{align-self:flex-end;background:var(--text-primary);color:var(--bg-page)}
+.m-iv--doc{align-items:flex-start}
+.m-iv__file{display:flex;align-items:center;gap:var(--space-3);width:100%;box-sizing:border-box;padding:var(--space-3);border-radius:var(--radius-tile);background:var(--surface-card)}
+.m-iv__file>div{display:flex;flex-direction:column}
+.m-iv__fic{flex:none;width:28px;height:36px;border-radius:4px;background:var(--surface-tile);box-shadow:inset 0 0 0 1px var(--border-card)}
+</style>
+</helmet>
+<div class="rm-root" data-theme="light" data-expression="quiet" data-platform="ios" style="position: relative; width: 390px; height: 844px; box-sizing: border-box; overflow: hidden; background: var(--bg-page); color: var(--text-primary); font-family: var(--font-sans)">
+<sc-if value="{{isChat}}" hint-placeholder-val="{{ true }}">
+
+<div data-scroll="1" style="position: absolute; inset: 0; overflow-y: auto; padding: calc(var(--space-8) + var(--size-control-lg) + var(--space-10)) var(--space-gutter) calc(var(--size-control-lg) * 5 + var(--space-8) + var(--space-4))">
+<div class="rm-stack rm-stack--loose">
+<sc-for list="{{msgs}}" as="m" hint-placeholder-count="2">
+<div class="rm-stack">
+<sc-if value="{{m.isUser}}" hint-placeholder-val="{{ false }}">
+<article class="c-ai-message c-ai-message--user" data-slot="message" data-from="user" aria-label="Your message">
+<div class="c-ai-message__content" data-slot="message-content"><div class="rm-card rm-card--bordered"><p class="t-body" style="margin: 0">{{m.text}}</p></div></div>
+</article>
+</sc-if>
+<sc-if value="{{m.isMel}}" hint-placeholder-val="{{ true }}">
+<article class="c-ai-message c-ai-message--assistant" data-slot="message" data-from="assistant" aria-label="MEL message">
+<div class="c-ai-message__content" data-slot="message-content">
+<div class="c-streaming-text c-mel-plain">
+<sc-if value="{{m.thinking}}" hint-placeholder-val="{{ false }}"><p class="t-meta t-secondary" role="status" style="margin: 0">Thinking…</p></sc-if>
+<sc-if value="{{m.hasText}}" hint-placeholder-val="{{ true }}"><p class="t-body c-streaming-text__body" style="margin: 0; white-space: pre-line">{{m.text}}</p></sc-if>
+</div>
+<sc-if value="{{m.isIntro}}" hint-placeholder-val="{{ true }}"><div class="m-intro"><div class="m-ir" role="list" aria-label="What Mel can do" onScroll="{{onRail}}"><button type="button" class="m-ic" role="listitem" onClick="{{pickCard0}}" aria-label="Marketing: Posts, reels, flyers and emails for any listing."><span class="m-ic__prev"><div class="m-iv m-iv--img"><img src="/_blob/7b70c41340c372da76fa7b2e7ee3f761" alt=""/><img class="m-iv__float" src="/_blob/6b77f9a00ae1cf27066859af78ce2f3e" alt=""/></div></span><span class="m-ic__body"><span class="m-ic__head"><span class="mb-mark mb-mark--inline" data-skill="marketing" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="t-body-strong">Marketing</span></span><span class="t-meta t-secondary m-ic__desc">Posts, reels, flyers and emails for any listing.</span></span></button><button type="button" class="m-ic" role="listitem" onClick="{{pickCard1}}" aria-label="CRM: Import contacts, track leads and draft follow-ups."><span class="m-ic__prev"><div class="m-iv m-iv--stats"><div><b class="t-body-strong">1,216</b><span class="t-caption t-secondary">Imported</span></div><div><b class="t-body-strong">812</b><span class="t-caption t-secondary">Buyers</span></div><div><b class="t-body-strong">404</b><span class="t-caption t-secondary">Sellers</span></div><div><b class="t-body-strong">32</b><span class="t-caption t-secondary">Skipped</span></div></div></span><span class="m-ic__body"><span class="m-ic__head"><span class="mb-mark mb-mark--inline" data-skill="crm" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="t-body-strong">CRM</span></span><span class="t-meta t-secondary m-ic__desc">Import contacts, track leads and draft follow-ups.</span></span></button><button type="button" class="m-ic" role="listitem" onClick="{{pickCard2}}" aria-label="Campaigns: Drip emails and texts that run on their own."><span class="m-ic__prev"><div class="m-iv m-iv--steps"><div><span class="m-iv__dot"></span><span class="t-meta">Day 1 · Email</span></div><div><span class="m-iv__dot"></span><span class="t-meta">Day 3 · Text</span></div><div><span class="m-iv__dot m-iv__dot--off"></span><span class="t-meta t-secondary">Day 7 · Call reminder</span></div></div></span><span class="m-ic__body"><span class="m-ic__head"><span class="mb-mark mb-mark--inline" data-skill="campaign" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="t-body-strong">Campaigns</span></span><span class="t-meta t-secondary m-ic__desc">Drip emails and texts that run on their own.</span></span></button><button type="button" class="m-ic" role="listitem" onClick="{{pickCard3}}" aria-label="Client experience: Keep clients updated and answer their questions."><span class="m-ic__prev"><div class="m-iv m-iv--chat"><span class="m-iv__b m-iv__b--in t-meta">Is the open house still on Saturday?</span><span class="m-iv__b m-iv__b--out t-meta">Yes, 1 to 4 PM. I’ll send the address.</span></div></span><span class="m-ic__body"><span class="m-ic__head"><span class="mb-mark mb-mark--inline" data-skill="client" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="t-body-strong">Client experience</span></span><span class="t-meta t-secondary m-ic__desc">Keep clients updated and answer their questions.</span></span></button><button type="button" class="m-ic" role="listitem" onClick="{{pickCard4}}" aria-label="Compliance: Check transaction files and flag what is missing."><span class="m-ic__prev"><div class="m-iv m-iv--list"><div><span class="m-iv__ck m-iv__ck--ok" aria-hidden="true">✓</span><span class="t-meta">Purchase agreement</span></div><div><span class="m-iv__ck m-iv__ck--ok" aria-hidden="true">✓</span><span class="t-meta">Seller disclosures</span></div><div><span class="m-iv__ck m-iv__ck--warn" aria-hidden="true">!</span><span class="t-meta">Inspection report missing</span></div></div></span><span class="m-ic__body"><span class="m-ic__head"><span class="mb-mark mb-mark--inline" data-skill="compliance" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="t-body-strong">Compliance</span></span><span class="t-meta t-secondary m-ic__desc">Check transaction files and flag what is missing.</span></span></button><button type="button" class="m-ic" role="listitem" onClick="{{pickCard5}}" aria-label="Documents: Fill, summarise and send documents for signing."><span class="m-ic__prev"><div class="m-iv m-iv--doc"><div class="m-iv__file"><span class="m-iv__fic" aria-hidden="true"></span><div><span class="t-meta">Purchase agreement.pdf</span><span class="t-caption t-secondary">4 pages</span></div></div><span class="rm-chip t-chip tone-success">Signed · 2 of 2</span></div></span><span class="m-ic__body"><span class="m-ic__head"><span class="mb-mark mb-mark--inline" data-skill="document" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="t-body-strong">Documents</span></span><span class="t-meta t-secondary m-ic__desc">Fill, summarise and send documents for signing.</span></span></button></div><div class="m-dots" aria-hidden="true"><sc-for list="{{dots}}" as="d" hint-placeholder-count="6"><span class="{{d.cls}}"></span></sc-for></div></div></sc-if><sc-if value="{{m.hasRows}}" hint-placeholder-val="{{ true }}">
+<div class="c-prompt-rows" aria-label="Suggested prompts">
+<sc-for list="{{m.rows}}" as="c" hint-placeholder-count="3">
+<button type="button" class="c-prompt-row" onClick="{{c.pick}}"><svg class="c-prompt-row__glyph" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 2.5v6a2 2 0 0 0 2 2h6.5"></path><path d="M10 7.5l3 3-3 3"></path></svg><span class="c-prompt-row__text t-body-strong">{{c.text}}</span></button>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</article>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+
+<header class="c-glass-header c-glass-header--soft-edge" style="position: absolute; inset: 0 0 auto 0; z-index: 7; display: grid; grid-template-columns: var(--size-control) minmax(0, 1fr) auto; align-items: center; gap: var(--space-3); padding: var(--space-8) var(--space-gutter) var(--space-3)">
+<button type="button" class="rm-btn rm-btn--glass" aria-label="Back to Radius home"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg></button>
+<div style="display: flex; align-items: center; justify-content: center; gap: var(--space-2); min-width: 0"><span class="mb-mark mb-mark--dock" data-skill="{{skin}}" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="t-row-title" style="min-width: 0; overflow-wrap: anywhere">MEL</span></div>
+<div style="display: flex; align-items: center; gap: var(--space-2)"><button type="button" class="rm-btn rm-btn--glass" aria-label="New chat" onClick="{{newChat}}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M229.66,58.34l-32-32a8,8,0,0,0-11.32,0l-96,96A8,8,0,0,0,88,128v32a8,8,0,0,0,8,8h32a8,8,0,0,0,5.66-2.34l96-96A8,8,0,0,0,229.66,58.34ZM124.69,152H104V131.31l64-64L188.69,88ZM200,76.69,179.31,56,192,43.31,212.69,64ZM224,128v80a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32h80a8,8,0,0,1,0,16H48V208H208V128a8,8,0,0,1,16,0Z"></path></svg></button><button type="button" class="rm-btn rm-btn--glass" aria-label="More" aria-haspopup="menu" aria-expanded="{{menuOpen}}" onClick="{{toggleMenu}}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Z"></path></svg></button></div>
+</header>
+
+<footer class="c-glass-footer c-glass-footer--soft-edge" style="padding: var(--space-3) var(--space-gutter) calc(var(--space-3) + var(--space-8))">
+<sc-if value="{{showPills}}" hint-placeholder-val="{{ false }}"><div class="c-skill-pills" aria-label="Mel skills">
+<sc-for list="{{pills}}" as="p" hint-placeholder-count="5">
+<button type="button" class="c-skill-pill" onClick="{{p.pick}}" style="padding-left: 12px"><span class="mb-mark mb-mark--inline" data-skill="{{p.id}}" role="img" aria-label="Mel"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M48 8 H72 A40 40 0 0 1 112 48 V72 A40 40 0 0 1 72 112 H19 A11 11 0 0 1 8 101 V48 A40 40 0 0 1 48 8 Z" fill="currentColor"></path><circle class="mb-dot" cx="60" cy="60" r="13" fill="#FFFFFF"></circle></svg></span><span class="t-body-strong">{{p.text}}</span></button>
+</sc-for>
+</div></sc-if>
+<form class="c-chat-composer" aria-label="Message composer" data-typing="{{typing}}" onSubmit="{{send}}">
+<textarea rows="1" class="c-chat-composer__field t-body" aria-label="Message MEL" placeholder="Ask anything" value="{{draft}}" onChange="{{setDraft}}" onKeyDown="{{key}}"></textarea>
+<div class="c-chat-composer__toolbar"><div class="c-chat-composer__idle"><button type="button" class="rm-btn rm-btn--secondary c-chat-composer__icon" aria-label="Attachments and connected sources" aria-haspopup="menu"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg></button><span class="c-chat-composer__spacer"></span><button type="button" class="rm-btn rm-btn--secondary c-chat-composer__icon" aria-label="Dictate message"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path></svg></button><button type="button" class="rm-btn rm-btn--voice c-chat-composer__speak" aria-label="Speak to MEL"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46ZM176,208A128.14,128.14,0,0,1,48,80,40.2,40.2,0,0,1,82.87,40a.61.61,0,0,0,0,.12l21,47L83.2,111.86a6.13,6.13,0,0,0-.57.77,16,16,0,0,0-1,15.7c9.06,18.53,27.73,37.06,46.46,46.11a16,16,0,0,0,15.75-1.14,8.44,8.44,0,0,0,.74-.56L168.89,152l47,21.05h0s.08,0,.11,0A40.21,40.21,0,0,1,176,208Z"></path></svg><span class="t-body-strong">Speak</span></button></div><button type="submit" class="rm-btn rm-btn--primary c-chat-composer__send" aria-label="Send message"><svg width="20" height="20" class="ph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"></path></svg></button></div>
+</form>
+</footer>
+
+</sc-if>
+<sc-if value="{{isHistory}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; overflow-y: auto; padding: calc(var(--space-8) + var(--size-control) + var(--space-8)) var(--space-gutter) var(--space-8)">
+<div class="rm-stack">
+<div class="rm-card rm-card--list">
+<button type="button" class="c-chat-row c-chat-row--plain" data-unread="" onClick="{{back}}"><span class="c-chat-row__body"><span class="c-chat-row__top"><span class="c-chat-row__title t-body-strong">Follow up with Jordan</span><span class="c-chat-row__time t-caption">2:14 PM</span></span><span class="c-chat-row__bottom"><span class="c-chat-row__preview t-meta">Draft: “Hi Jordan, two new homes near Oak Street match your budget and your timeline. Want to tour on Saturday?” Send it, or change the tone?</span><span class="c-chat-row__unread"></span></span></span></button>
+<button type="button" class="c-chat-row c-chat-row--plain" data-unread="" onClick="{{back}}"><span class="c-chat-row__body"><span class="c-chat-row__top"><span class="c-chat-row__title t-body-strong">Listing at 124 Oak Street</span><span class="c-chat-row__time t-caption">Yesterday</span></span><span class="c-chat-row__bottom"><span class="c-chat-row__preview t-meta">Three moves. Refresh the lead photo. Rewrite the first line of the description. Share the listing to Instagram. Want me to draft the description?</span><span class="c-chat-row__unread"></span></span></span></button>
+<button type="button" class="c-chat-row c-chat-row--plain" onClick="{{back}}"><span class="c-chat-row__body"><span class="c-chat-row__top"><span class="c-chat-row__title t-body-strong">Instagram post for Palo Alto</span><span class="c-chat-row__time t-caption">Mon</span></span><span class="c-chat-row__bottom"><span class="c-chat-row__preview t-meta">Draft post: “Just listed. 124 Oak Street, Palo Alto. 3 beds, 2 baths. Tour this weekend.” Publish it, or edit?</span></span></span></button>
+<button type="button" class="c-chat-row c-chat-row--plain" onClick="{{back}}"><span class="c-chat-row__body"><span class="c-chat-row__top"><span class="c-chat-row__title t-body-strong">Saturday tour schedule</span><span class="c-chat-row__time t-caption">Oct 9</span></span><span class="c-chat-row__bottom"><span class="c-chat-row__preview t-meta">Got it. Tell me the listing address and I start there. I pull showing windows from your calendar.</span></span></span></button>
+</div>
+</div>
+</div>
+<header class="c-glass-header c-glass-header--soft-edge" style="position: absolute; inset: 0 0 auto 0; z-index: 7; display: grid; grid-template-columns: var(--size-control) minmax(0, 1fr) var(--size-control); align-items: center; gap: var(--space-3); padding: var(--space-8) var(--space-gutter) var(--space-3)">
+<button type="button" class="rm-btn rm-btn--glass" aria-label="Back to chat" onClick="{{back}}"><svg class="ph" width="20" height="20" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg></button>
+<h1 class="t-sheet-title" style="margin: 0; text-align: center">History</h1>
+<span aria-hidden="true"></span>
+</header>
+</sc-if>
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; z-index: 9" onClick="{{closeMenu}}"></div>
+<div class="c-menu" role="menu" aria-label="More" style="position: absolute; display: block; z-index: 10; top: calc(var(--space-8) + var(--size-control) + var(--space-3)); right: var(--space-gutter)">
+<button type="button" class="c-menu__item t-body" role="menuitem" onClick="{{openHistory}}">History</button>
+<button type="button" class="c-menu__item t-body" role="menuitem" onClick="{{deleteChat}}">Delete chat</button>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+const WELCOME = 'Hi, I’m MEL, your real estate assistant. I can help with your listings, clients and everyday tasks. What would you like to work on first?';
+const SKILLS = [
+  { id: 'crm', name: 'CRM', row: 'Manage clients', title: 'MEL CRM', mel: 'Let’s bring your contacts together so I can help you manage relationships and follow-ups.\n\nHow would you like to add your contacts?', rows: ['Upload a CSV', 'Import from another CRM', 'I’ll add contacts later'] },
+  { id: 'marketing', name: 'Marketing', row: 'Create listing package', title: 'MEL Marketing', mel: 'I create the full marketing package for a listing: posts, reels, flyers, email, website and yard sign.\n\nWhich listing do you want to market?', rows: ['Market my newest listing', 'Pick from my active listings'] },
+  { id: 'campaign', name: 'Campaigns', row: 'Start a campaign', title: 'MEL Campaigns', mel: 'I set up drip emails and texts for a group of clients and keep them running.\n\nWho should this campaign reach?', rows: ['Buyers in my CRM', 'Past clients', 'Pick clients myself'] },
+  { id: 'client', name: 'Client experience', row: 'Client experience', title: 'MEL Client experience', mel: 'I keep your clients updated and answer their questions while you work.\n\nWhere do you want to start?', rows: ['Invite clients to their portal', 'See what clients asked today'] },
+  { id: 'mls', name: 'MLS', row: 'Explore listings', title: 'MEL MLS', mel: 'I search listings, pull comps and track changes for you.\n\nWhat do you want to look up?', rows: ['Find homes for a buyer', 'Pull comps for an address'] },
+  { id: 'compliance', name: 'Compliance', row: 'Check compliance', title: 'MEL Compliance', mel: 'I check your transaction files and flag what is missing before it becomes a problem.\n\nWhich transaction should I check?', rows: ['Check my open transactions', 'Check one file'] },
+  { id: 'document', name: 'Document', row: 'Review documents', title: 'MEL Document', mel: 'I read, summarise and prepare documents for signature.\n\nWhich document should I start with?', rows: ['Summarise a contract', 'Prepare a document for signing'] }
+];
+const ROUTE = [[/campaign|drip/i, 'campaign'], [/keep clients|client experience|portal/i, 'client'], [/post|flyer|reel|market|social|instagram/i, 'marketing'], [/comp|listing|mls|homes? for|search homes/i, 'mls'], [/compliance|disclosure|transaction file/i, 'compliance'], [/contract|document|sign/i, 'document'], [/client|contact|follow.?up|lead|crm/i, 'crm']];
+const FALLBACK = 'Got it. Tell me which client or listing and I start there.';
+function skillByText(t) {
+  const low = t.toLowerCase();
+  const direct = SKILLS.filter((k) => k.row.toLowerCase() === low)[0];
+  if (direct) return direct;
+  const hit = ROUTE.filter((r) => r[0].test(low))[0];
+  return hit ? SKILLS.filter((k) => k.id === hit[1])[0] : null;
+}
+function welcomeMsg() { return { role: 'mel', text: WELCOME, rows: [], intro: true }; }
+const CARDS = ["Help me with marketing", "Help me manage my clients", "Help me set up a campaign", "Help me keep clients updated", "Check my compliance", "Help me with documents"];
+function skillMsg(k, switched) {
+  return { role: 'mel', title: k.title, text: k.mel, rows: k.rows };
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { msgs: [welcomeMsg()], skill: null, draft: '', typing: false, view: 'chat', menuOpen: false, card: 0 };
+    this.timer = null;
+  }
+  componentDidMount() { if (this.state.msgs.length < 2) return; setTimeout(() => { try { document.querySelectorAll('[data-scroll]').forEach((el) => { el.scrollTop = el.scrollHeight; }); } catch (e) {} }, 50); }
+  componentWillUnmount() { if (this.timer) clearInterval(this.timer); }
+  scrollDown(root) {
+    setTimeout(() => {
+      try { const el = root && root.querySelector('[data-scroll]'); if (el) el.scrollTop = el.scrollHeight; } catch (e) {}
+    }, 30);
+  }
+  pick(text, root) {
+    if (this.state.typing) return;
+    this.setState({ draft: text });
+    setTimeout(() => { try { const f = root && root.querySelector('.c-chat-composer__field'); if (f) f.focus(); } catch (e) {} }, 30);
+  }
+  ask(text, root) {
+    const t = String(text || '').trim();
+    if (!t || this.state.typing) return;
+    const k = skillByText(t);
+    const switched = !!(k && this.state.skill && this.state.skill !== k.id);
+    const final = k ? skillMsg(k, switched) : { role: 'mel', text: FALLBACK, rows: [] };
+    const prev = this.state.msgs.map((m) => Object.assign({}, m, { rows: [] }));
+    this.setState({ msgs: prev.concat([{ role: 'user', text: t }, { role: 'mel', text: '', thinking: true, rows: [] }]), draft: '', typing: true, skill: k ? k.id : this.state.skill });
+    this.scrollDown(root);
+    const words = final.text.split(' ');
+    let n = 0;
+    setTimeout(() => {
+      this.timer = setInterval(() => {
+        n += 1;
+        const msgs = this.state.msgs.slice();
+        const done = n >= words.length;
+        msgs[msgs.length - 1] = Object.assign({}, final, { text: words.slice(0, n).join(' '), rows: done ? final.rows : [] });
+        this.setState({ msgs: msgs, typing: !done });
+        this.scrollDown(root);
+        if (done) { clearInterval(this.timer); this.timer = null; }
+      }, 60);
+    }, 800);
+  }
+  reset() {
+    if (this.timer) { clearInterval(this.timer); this.timer = null; }
+    this.setState({ msgs: [welcomeMsg()], skill: null, draft: '', typing: false, view: 'chat' });
+  }
+  renderVals() {
+    const s = this.state;
+    const rootOf = (e) => (e && e.target && e.target.closest) ? e.target.closest('.rm-root') : null;
+    const cur = SKILLS.filter((k) => k.id === s.skill)[0];
+    return {
+      isChat: s.view === 'chat', isHistory: s.view === 'history',
+      skin: cur ? cur.id : 'mel', hasSkill: !!cur, skill: cur ? cur.name : '',
+      menuOpen: s.menuOpen,
+      toggleMenu: () => this.setState({ menuOpen: !s.menuOpen }),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      openHistory: () => this.setState({ view: 'history', menuOpen: false }),
+      deleteChat: () => this.reset(),
+      back: () => this.setState({ view: 'chat' }),
+      newChat: () => this.reset(),
+      msgs: s.msgs.map((m) => ({
+        isUser: m.role === 'user', isMel: m.role === 'mel',
+        text: m.text, title: m.title || '', hasTitle: !!m.title, thinking: !!m.thinking, hasText: !m.thinking,
+        isIntro: !!m.intro && s.msgs.length === 1,
+        hasRows: !!(m.rows && m.rows.length), rows: (m.rows || []).map((r) => ({ text: r, pick: (e) => this.pick(r, rootOf(e)) }))
+      })),
+      showPills: s.msgs.length > 1,
+      onRail: (e) => { const i = Math.round(e.target.scrollLeft / 292); if (i !== s.card) this.setState({ card: i }); },
+      dots: CARDS.map((_, i) => ({ cls: i === s.card ? 'm-dot--on' : '' })),
+      pickCard0: (e) => this.pick(CARDS[0], rootOf(e)),
+      pickCard1: (e) => this.pick(CARDS[1], rootOf(e)),
+      pickCard2: (e) => this.pick(CARDS[2], rootOf(e)),
+      pickCard3: (e) => this.pick(CARDS[3], rootOf(e)),
+      pickCard4: (e) => this.pick(CARDS[4], rootOf(e)),
+      pickCard5: (e) => this.pick(CARDS[5], rootOf(e)),
+      pills: SKILLS.map((k) => ({ id: k.id, text: k.row, pick: (e) => this.ask(k.row, rootOf(e)) })),
+      draft: s.draft,
+      typing: !!s.draft.trim(), canSend: !!s.draft.trim(), cantSend: !s.draft.trim(),
+      setDraft: (e) => this.setState({ draft: String(e.target.value) }),
+      key: (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.ask(s.draft, rootOf(e)); } },
+      send: (e) => { e.preventDefault(); this.ask(s.draft, rootOf(e)); }
+    };
+  }
+}
+</script>
+</body>
+</html>
